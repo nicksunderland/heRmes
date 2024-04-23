@@ -1,0 +1,48 @@
+phenotype_id: PH215
+phenotype_version_id: 430
+name: Myocardial infarction
+definition: "Use MODIFIED CALIBER 'Myocardial infarction' phenotyping algorithm:\n\n\nAt
+  the specified date, a patient is considered to have had a 'Myocardial infarction'
+  IF they meet any of the criteria below on or before the specified date. \n\n\nThe
+  earliest date on which the individual meets any of the following criteria on or
+  before the specified date is defined as the first event date. \n\n\n1.  Primary
+  care diagnosis of MI: myo_infarct_gprd: category 1, category 2, category 3,  category
+  4, category 5, category 6, category 7\n\n\n2.  Secondary care diagnosis of MI: myo_infarct_hes:
+  category 1, category 5, category 6, category 7\n\n\n3.  Secondary care procedure
+  code for coronary thrombolysis: lysis_opcs category 2\n\n\n\n\n\n\n\n\n\n\n\n\n"
+publications:
+- Kuan V., Denaxas S., Gonzalez-Izquierdo A. et al. A chronological map of 308 physical
+  and mental health conditions from 4 million individuals in the National Health Service.
+  The Lancet Digital Health - DOI 10.1016/S2589-7500(19)30012-3
+author: Kuan V, Denaxas S, Gonzalez-Izquierdo A, Direk K, Bhatti O, Husain S, Sutaria
+  S, Hingorani M, Nitsch D, Parisinos C, Lumbers T, Mathur R, Sofat R, Casas JP, Wong
+  I, Hemingway H, Hingorani A
+collections:
+- 21
+- 18
+group_access: 1
+world_access: 1
+sex: '3'
+type: '2'
+phenoflowid: '622'
+data_sources:
+- 5
+- 9
+event_date_range: 01/01/1999 - 01/07/2016
+concept_information:
+- name: Myocardial infarction - Primary care
+  type: existing_concept
+  concept_id: 1296
+  concept_version_id: 3731
+- name: Myocardial infarction - Primary care
+  type: existing_concept
+  concept_id: 1297
+  concept_version_id: 3733
+- name: Myocardial infarction - Secondary care - Diagnoses
+  type: existing_concept
+  concept_id: 1298
+  concept_version_id: 3735
+owner: ieuan.scanlon
+template:
+  id: 1
+  version_id: 1

@@ -1,0 +1,65 @@
+phenotype_id: PH886
+phenotype_version_id: 1851
+name: Myocardial Infarction
+definition: "Background:\n\nSelf-harm is a major risk factor for suicide, with older
+  adults (older than 65 years) having reportedly greater suicidal intent than any
+  other age group. With the aging population rising and paucity of research focus
+  in this age group, the extent of the problem of self-harm needs to be established.
+  In a primary care cohort of older adults we aimed to investigate the incidence of
+  self-harm, subsequent clinical management, prevalence of mental and physical diagnoses,
+  and unnatural-cause mortality risk, including suicide.\n\n\nMethods:\n\nThe UK Clinical
+  Practice Research Datalink contains anonymised patient records from general practice
+  that routinely capture clinical information pertaining to both primary and secondary
+  care services. We identified 4124 adults aged 65 years and older with a self-harm
+  episode ascertained from Read codes recorded during 2001–14. We calculated standardised
+  incidence and in 2854 adults with at least 12 months follow-up examined the frequency
+  of psychiatric referrals and prescription of psychotropic medication after self-harm.
+  We estimated prevalence of mental and physical illness diagnoses before and after
+  self-harm and, using Cox regression in a matched cohort, we examined cause-specific
+  mortality risks.\n\n\nFindings:\n\nOverall incidence of self-harm in older adults
+  aged 65 years and older was 4·1 per 10 000 person-years with stable gender-specific
+  rates observed over the 13-year period. After self-harm, 335 (11·7%) of 2854 adults
+  were referred to mental health services, 1692 (59·3%) were prescribed an antidepressant,
+  and 336 (11·8%) were prescribed a tricyclic antidepressant (TCA). Having a diagnosed
+  previous mental illness was twice as prevalent in the self-harm cohort as in the
+  comparison cohort (prevalence ratio 2·10 [95% CI 2·03–2·17]) and with a previous
+  physical health condition prevalence was 20% higher in the self-harm cohort compared
+  to the comparison cohort (1·20 [1·17–1·23]). Adults from the self-harm cohort (n=2454)
+  died from unnatural causes an estimated 20 times more frequently than the comparison
+  cohort (n=48 921) during the first year. A markedly elevated risk of suicide (hazard
+  ratio 145·4 [95% CI 53·9–392·3]) was observed in the self-harm cohort.\n\n\nInterpretation:
+  \n\nWithin primary care, we have identified a group of older adults at high risk
+  from unnatural death, particularly within the first year of self-harm. We have highlighted
+  a high frequency of prescription of TCAs, known to be potentially fatally toxic
+  in overdose. We emphasise the need for early intervention, careful alternative prescribing,
+  and increased support when older adults consult after an episode of self-harm and
+  with other health conditions.\n\n\n\n\n\n\n\n\n"
+publications:
+- Catherine Morgan, Roger T Webb, Mathew J Carr, Evangelos Kontopantelis, Carolyn
+  A Chew-Graham, Nav Kapur, Darren M. Ashcroft, Self-harm in a primary care cohort
+  of older people incidence, clinical management, and risk of suicide and other causes
+  of death. Psychiatry, 5, 2018.
+author: Catherine Morgan, Roger T Webb, Mathew J Carr, Evangelos Kontopantelis, Carolyn
+  A Chew-Graham, Nav Kapur, Darren M. Ashcroft
+collections:
+- 25
+- 18
+group_access: 1
+world_access: 1
+sex: '3'
+type: '2'
+data_sources: 5
+event_date_range: 01/01/2001 - 31/12/2014
+concept_information:
+- name: Myocardial Infarction - Primary Care
+  type: existing_concept
+  concept_id: 2651
+  concept_version_id: 6715
+- name: Myocardial Infarction - Primary Care
+  type: existing_concept
+  concept_id: 2652
+  concept_version_id: 6717
+owner: ieuan.scanlon
+template:
+  id: 1
+  version_id: 1

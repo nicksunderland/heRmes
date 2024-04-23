@@ -1,0 +1,44 @@
+phenotype_id: PH741
+phenotype_version_id: 1482
+name: Myocardial Infarction
+definition: "Aims: \n\nTo determine association between HbA1C variability and hypoglycemia
+  requiring hospitalization (HH) in adults with type 1 diabetes (T1D) and type 2 diabetes
+  (T2D).\n\n\nMethods: \n\nUsing nested case-control design in electronic health record
+  data in England, one case with first or recurrent HH was matched to one control
+  who had not experienced HH in incident T1D and T2D adults. HbA1C variability was
+  determined by standard deviation of ≥3 HbA1C results. Conditional logistic models
+  were applied to determine association of HbA1C variability with first and recurrent
+  HH.\n\n\nResults: \n\nIn T1D, every 1.0% increase in HbA1C variability was associated
+  with 90% higher first HH risk (95% CI, 1.25–2.89) and 392% higher recurrent HH risk
+  (95% CI, 1.17–20.61). In T2D, a 1.0% increase in HbA1C variability was associated
+  with 556% higher first HH risk (95% CI, 3.88–11.08) and 573% higher recurrent HH
+  risk (95% CI,1.59–28.51). In T2D for first HH, the association was the strongest
+  in non-insulin non-sulfonylurea users (P b 0.0001); for recurrent HH, the association
+  was stronger in insulin users than sulfonylurea users (P = 0.07). The HbA1C variability-HH
+  association was stronger in more recent years in T2D (P ≤ 0.004).\n\n\nConclusions:
+  \n\nHbA1C variability is a strong predictor for HH in T1D and T2D.\n\n\n\n\n\n\n\n\n"
+publications:
+- 'Victor W Zhong, Juhaeri Juhaeri, Stephen R Cole, Christian M Shay, Carolyn A Chew-Graham,
+  Penny Gordon-Larsen, Evangelos Kontopantelis, Elizabeth J Mayer-Davis, HbA1C variability
+  and hypoglycemia hospitalization in adults with type 1 and type 2 diabetes: A nested
+  case-control study. Journal of Diabetes and Its Complications, 32(2), 2017.'
+author: Victor W Zhong, Juhaeri Juhaeri, Stephen R Cole, Christian M Shay, Carolyn
+  A Chew-Graham, Penny Gordon-Larsen, Evangelos Kontopantelis, Elizabeth J Mayer-Davis
+collections:
+- 25
+- 18
+group_access: 1
+world_access: 1
+sex: '3'
+type: '2'
+data_sources: 5
+event_date_range: 01/04/1997 - 31/03/2014
+concept_information:
+- name: Myocardial Infarction - Primary Care
+  type: existing_concept
+  concept_id: 2161
+  concept_version_id: 5460
+owner: ieuan.scanlon
+template:
+  id: 1
+  version_id: 1

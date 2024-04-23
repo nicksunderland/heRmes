@@ -1,0 +1,50 @@
+phenotype_id: PH942
+phenotype_version_id: 2120
+name: CCU000 Acute Myocardial Infarction (AMI)
+definition: |2+
+
+
+
+
+
+
+
+
+publications:
+- Angela Wood, Rachel Denholm, Sam Hollings, Jennifer Cooper, Samantha Ip,Venexia
+  Walker, Spiros Denaxas, Ashley Akbari, Amitava Banerjee, William Whiteley, Alvina
+  Lai, Jonathan Sterne, Cathie Sudlow, CVD-COVID-UK consortium. Linked electronic
+  health records for research on a nationwide cohort of more than 54 million people
+  in England data resource BMJ 2021; 373 :n826 doi:10.1136/bmj.n826 https://www.bmj.com/content/373/bmj.n826
+author: Angela Wood, Rachel Denholm, Sam Hollings, Jennifer Cooper, Samantha Ip, Venexia
+  Walker, Spiros Denaxas, Ashley Akbari, Amitava Banerjee, William Whiteley, Alvina
+  Lai, Jonathan Sterne, Cathie Sudlow, CVD-COVID-UK consortium
+collections:
+- 20
+- 18
+group_access: 1
+world_access: 1
+sex: '3'
+type: '2'
+data_sources:
+- 37
+- 1
+- 2
+- 38
+- 3
+event_date_range: 31/01/2020 - 31/10/2020
+concept_information:
+- name: 'CCU000 Acute Myocardial Infarction (AMI) - Phenotypes - England hospitalization
+    EHR: AMI diagnosis'
+  type: existing_concept
+  concept_id: 2720
+  concept_version_id: 7241
+- name: 'CCU000 Acute Myocardial Infarction (AMI) - Phenotypes - England primary care
+    EHR: AMI diagnosis'
+  type: existing_concept
+  concept_id: 2721
+  concept_version_id: 7242
+owner: ieuan.scanlon
+template:
+  id: 1
+  version_id: 1

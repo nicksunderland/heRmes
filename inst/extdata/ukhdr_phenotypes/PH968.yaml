@@ -1,0 +1,63 @@
+phenotype_id: PH968
+phenotype_version_id: 2146
+name: CCU002_01 Heart failure
+definition: |2+
+
+
+
+
+
+
+
+
+
+
+publications:
+- Rochelle Knight, Venexia Walker, Samantha Ip, Jennifer A Cooper, Thomas Bolton,
+  Spencer Keene, Rachel Denholm, Ashley Akbari, Hoda Abbasizanjani, Fatemeh Torabi,
+  Efosa Omigie, Sam Hollings, Teri-Louise North, Renin Toms, Emanuele Di Angelantonio,
+  Spiros Denaxas, Johan H Thygesen, Christopher Tomlinson, Ben Bray, Craig J Smith,
+  Mark Barber, George Davey Smith, Nishi Chaturvedi, Cathie Sudlow, William N Whiteley,
+  Angela Wood, Jonathan A C Sterne, for the CVD-COVID-UK/COVID-IMPACT consortium and
+  th
+author: Rochelle Knight, Venexia Walker, Samantha Ip, Jennifer A Cooper, Thomas Bolton,
+  Spencer Keene, Rachel Denholm, Ashley Akbari, Hoda Abbasizanjani, Fatemeh Torabi,
+  Efosa Omigie, Sam Hollings, Teri-Louise North, Renin Toms, Emanuele Di Angelantonio,
+  Spiros Denaxas, Johan H Thygesen, Christopher Tomlinson, Ben Bray, Craig J Smith,
+  Mark Barber, George Davey Smith, Nishi Chaturvedi, Cathie Sudlow, William N Whiteley,
+  Angela Wood, Jonathan A C Sterne
+collections:
+- 20
+- 18
+group_access: 1
+world_access: 1
+sex: '3'
+type: '2'
+data_sources:
+- 37
+- 1
+- 2
+- 38
+- 3
+- 4
+- 39
+- 40
+- 41
+event_date_range: 01/01/1997 - 07/12/2020
+concept_information:
+- name: 'CCU002_01 Heart failure - Phenotypes - England primary care EHR: HF diagnosis'
+  type: existing_concept
+  concept_id: 2792
+  concept_version_id: 7313
+- name: 'CCU002_01 Heart failure - Phenotypes - England hospitalization EHR: HF diagnosis'
+  type: existing_concept
+  concept_id: 2793
+  concept_version_id: 7314
+- name: 'CCU002_01 Heart failure - Phenotypes - Wales primary care EHR: HF diagnosis'
+  type: existing_concept
+  concept_id: 2794
+  concept_version_id: 7315
+owner: ieuan.scanlon
+template:
+  id: 1
+  version_id: 1

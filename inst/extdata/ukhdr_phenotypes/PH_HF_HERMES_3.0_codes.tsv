@@ -1,0 +1,260 @@
+concept_id	concept_history_id	concept_history_date	component_id	component_history_id	logical_type	codelist_id	codelist_history_id	id	code	description	concept_version_id	concept_name	coding_system.id	coding_system.name	coding_system.description	phenotype_id	phenotype_version_id	phenotype_name
+									A3681	Diphtheritic cardiomyopathy				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									B3324	Viral cardiomyopathy				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I255	Ischemic cardiomyopathy				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I420	Dilated cardiomyopathy				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I421	Obstructive hypertrophic cardiomyopathy				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I422	Other hypertrophic cardiomyopathy				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I425	Other restrictive cardiomyopathy				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I426	Alcoholic cardiomyopathy				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I427	Cardiomyopathy due to drug and external agent				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I428	Other cardiomyopathies				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I429	"Cardiomyopathy, unspecified"				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I43	Cardiomyopathy in diseases classified elsewhere				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									O903	Peripartum cardiomyopathy				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									Z941	Heart transplant status				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									Z943	Heart and lungs transplant status				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									T8630	Unspecified complication of heart-lung transplant				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									T8631	Heart-lung transplant rejection				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									T8632	Heart-lung transplant failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									T8633	Heart-lung transplant infection				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									T8639	Other complications of heart-lung transplant				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									T863	Heart-lung transplant failure and rejection				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									T862	Heart transplant failure and rejection				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									T8620	Unspecified complication of heart transplant				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									T8621	Heart transplant rejection				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									T8622	Heart transplant failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									T8623	Heart transplant infection				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									T86290	Cardiac allograft vasculopathy				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									T86298	Other complications of heart transplant				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I0981	Rheumatic heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I110	Hypertensive heart disease with heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I130	"Hypertensive heart and chronic kidney disease with heart failure and stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease"				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I132	"Hypertensive heart and chronic kidney disease with heart failure and with stage 5 chronic kidney disease, or end stage renal disease"				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I500	Congestive heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I501	"Left ventricular failure, unspecified"				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I502	Systolic (congestive) heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I5020	Unspecified systolic (congestive) heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I5021	Acute systolic (congestive) heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I5022	Chronic systolic (congestive) heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I5023	Acute on chronic systolic (congestive) heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I5030	Unspecified diastolic (congestive) heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I5031	Acute diastolic (congestive) heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I5032	Chronic diastolic (congestive) heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I5033	Acute on chronic diastolic (congestive) heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I504	Combined systolic (congestive) and diastolic (congestive) heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I5040	Unspecified combined systolic (congestive) and diastolic (congestive) heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I5041	Acute combined systolic (congestive) and diastolic (congestive) heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I5042	Chronic combined systolic (congestive) and diastolic (congestive) heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I5043	Acute on chronic combined systolic (congestive) and diastolic (congestive) heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I50810	"Right heart failure, unspecified"				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I50811	Acute right heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I50812	Chronic right heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I50813	Acute on chronic right heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I50814	Right heart failure due to left heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I5082	Biventricular heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I5083	High output heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I5084	End stage heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I5089	Other heart failure				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I509	"Heart failure, unspecified"				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I97130	Postprocedural heart failure following cardiac surgery				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									I97131	Postprocedural heart failure following other surgery				ICD10 codes	ICD10 Codes	PH_HF_HERMES_3.0		Heart failure
+									402	Malignant hypertensive heart disease with heart failure				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									4021	Benign hypertensive heart disease with heart failure				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									4029	Unspecified hypertensive heart disease with heart failure				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									4280	"Congestive heart failure, unspecified"				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									4281	Left heart failure				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									42820	"Systolic heart failure, unspecified"				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									42821	Acute systolic heart failure				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									42822	Chronic systolic heart failure				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									42823	Acute on chronic systolic heart failure				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									42830	"Diastolic heart failure, unspecified"				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									42831	Acute diastolic heart failure				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									42832	Chronic diastolic heart failure				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									42833	Acute on chronic diastolic heart failure				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									42840	"Combined systolic and diastolic heart failure, unspecified"				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									42841	Acute combined systolic and diastolic heart failure				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									42842	Chronic combined systolic and diastolic heart failure				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									42843	Acute on chronic combined systolic and diastolic heart failure				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									4289	"Heart failure, unspecified"				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									39891	Rheumatic heart failure (congestive)				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									40201	Malignant hypertensive heart disease with heart failure				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									40211	Benign hypertensive heart disease with heart failure				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									40291	Unspecified hypertensive heart disease with heart failure				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									40401	"Hypertensive heart and chronic kidney disease, malignant, with heart failure and with chronic kidney disease stage I through stage IV, or unspecified"				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									40403	"Hypertensive heart and chronic kidney disease, malignant, with heart failure and with chronic kidney disease stage V or end stage renal disease"				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									40411	"Hypertensive heart and chronic kidney disease, benign, with heart failure and with chronic kidney disease stage I through stage IV, or unspecified"				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									40413	"Hypertensive heart and chronic kidney disease, benign, with heart failure and chronic kidney disease stage V or end stage renal disease"				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									40491	"Hypertensive heart and chronic kidney disease, unspecified, with heart failure and with chronic kidney disease stage I through stage IV, or unspecified"				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									40493	"Hypertensive heart and chronic kidney disease, unspecified, with heart failure and chronic kidney disease stage V or end stage renal disease"				ICD9 codes	ICD9 codes	PH_HF_HERMES_3.0		Heart failure
+									K01	Transplantation of heart and lung				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K011	Allotransplantation of heart and lung				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K012	Revision of transplantation of heart and lung				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K018	Other specified transplantation of heart and lung				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K019	Unspecified transplantation of heart and lung				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K02	Other transplantation of heart				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K021	Allotransplantation of heart NEC				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K022	Xenotransplantation of heart				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K023	Implantation of prosthetic heart				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K024	Piggyback transplantation of heart				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K025	Revision of implantation of prosthetic heart				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K026	Revision of transplantation of heart NEC				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K028	Other specified other transplantation of heart				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K029	Unspecified other transplantation of heart				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K54	Open heart assist operations				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K541	Open implantation of ventricular assist device				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K542	Open removal of ventricular assist device				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K548	Other specified open heart assist operations				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K549	Unspecified open heart assist operations				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K56	Transluminal heart assist operations				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K561	Transluminal insertion of pulsation balloon into aorta				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K562	Transluminal insertion of heart assist system NEC				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K563	Transluminal maintenance of heart assist system				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K564	Transluminal removal of heart assist system				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K568	Other specified transluminal heart assist operations				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K569	Unspecified transluminal heart assist operations				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K607	Implantation of intravenous biventricular cardiac pacemaker system				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K617	Implantation of biventricular cardiac pacemaker system				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K733	Renewal of intravenous biventricular cardiac pacemaker				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									K743	Renewal of biventricular cardiac pacemaker NEC				OPCS4 codes	OPCS4 codes	PH_HF_HERMES_3.0		Heart failure
+									14A6.00	H/O: heart failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									14AM.00	H/O: Heart failure in last year				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									1J60.00	Suspected heart failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									1O1..00	Heart failure confirmed				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									21264	Heart failure resolved				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									2JZ..00	On optimal heart failure therapy				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									388D.00	New York Heart Association classification of heart failure symptoms				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									38DE.00	"Congestive heart failure, hypertension, age, diabetes, stroke 2 risk score"				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									38DE0	"Congestive heart failure, hypertension, age 2, diabetes mellitus, stroke 2, vascular disease, age, sex category score"				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									661M500	Heart failure self-management plan agreed				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									661N500	Heart failure self-management plan review				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									662f.00	New York Heart Association classification - class I				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									662g.00	New York Heart Association classification - class II				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									662h.00	New York Heart Association classification - class III				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									662i.00	New York Heart Association classification - class IV				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									662p.00	Heart failure 6 month review				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									662T.00	Congestive heart failure monitoring				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									662W.00	Heart failure annual review				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									679W100	Education about deteriorating heart failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									679X.00	Heart failure education				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									67D4.00	Heart failure information given to patient				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7900	Transplantation of heart and lung				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7900000	Allotransplantation of heart and lung				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7900100	Revision of transplantation of heart and lung				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7900y00	Other specified transplantation of heart and lung				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7900z00	Transplantation of heart and lung NOS				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7901	Other transplantation of heart				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7901000	Allotransplantation of heart NEC				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7901100	Xenotransplantation of heart				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7901200	Implantation of prosthetic heart				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7901300	Piggyback transplantation of heart				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7901400	Revision of implantation of prosthetic heart				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7901500	Revision of transplantation of heart NEC				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7901y00	Other specified other transplantation of heart				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7901z00	Other transplantation of heart NOS				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7933	Transluminal heart assist operations				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7933000	Transluminal insertion of pulsation balloon into aorta				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7933001	Transluminal insertion of heart assist system NEC				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7933200	Transluminal maintenance of heart assist system				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7933300	Transluminal removal of heart assist system				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7933400	Implantation of ventricular assist device				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7933500	Implantation of right ventricular assist device				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7933600	Implantation of left ventricular assist device				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7933700	Implantation of biventricular assist device				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7933y00	Other specified transluminal heart assist operation				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7933z00	Transluminal heart assist operation NOS				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7936J00	Implantation of intravenous biventricular cardiac pacemaker system				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									7937900	Implantation of biventricular cardiac pacemaker system				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									793L.00	Open heart assist operations				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									793L0	Open implantation of ventricular assist device				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									793L100	Open removal of ventricular assist device				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									793Ly00	Other specified open heart assist operations				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									793Lz00	Open heart assist operations NOS				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									8B29.00	Cardiac failure therapy				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									8CeC.00	Preferred place of care for next exacerbation heart failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									8CL3.00	Heart failure care plan discussed with patient				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									8CMK.00	Has heart failure management plan				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									8CMW800	Heart failure clinical pathway				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									8H2S.00	Admit heart failure emergency				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									8H7o000	Fast track heart failure referral for transthoracic two dimensional echocardiogram				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									8HBE.00	Heart failure follow-up				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									8Hg8.00	Discharge from practice nurse heart failure clinic				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									8HgD.00	Discharge from heart failure nurse service				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									8HHb.00	Referral to heart failure nurse				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									8HHz.00	Referral to heart failure exercise programme				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									8Hk0.00	Referred to heart failure education group				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									8HTL.00	Referral to heart failure clinic				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									8HTL000	Referral to rapid access heart failure clinic				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									8I98.00	Heart failure rehabilitation programme not available				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									8IB8.00	Referral to heart failure exercise programme not indicated				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									8IE0.00	Referral to heart failure education group declined				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									8IE1.00	Referral to heart failure exercise programme declined				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9h1..00	Exception reporting: LVD quality indicators				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9h11.00	Excepted from LVD quality indicators: Patient unsuitable				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9h12.00	Excepted from LVD quality indicators: Informed dissent				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9hH..00	Exception reporting: heart failure quality indicators				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9hH0.00	Excepted from heart failure quality indicators: Patient unsuitable				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9hH1.00	Excepted from heart failure quality indicators: Informed dissent				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9N0k.00	Seen in heart failure clinic				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9N2p.00	Seen by community heart failure nurse				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9N4s.00	Did not attend practice nurse heart failure clinic				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9N4w.00	Did not attend heart failure clinic				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9N6T.00	Referred by heart failure nurse specialist				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9Or..00	Heart failure monitoring administration				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9On..00	Left ventricular dysfunction monitoring administration				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9On0.00	Left ventricular dysfunction monitoring first letter				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9On1.00	Left ventricular dysfunction monitoring second letter				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9On2.00	Left ventricular dysfunction monitoring third letter				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9On3.00	Left ventricular dysfunction monitoring verbal invite				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9On4.00	Left ventricular dysfunction monitoring telephone invite				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9Or0.00	Heart failure review completed				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9Or1.00	Heart failure monitoring telephone invite				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9Or2.00	Heart failure monitoring verbal invite				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9Or3.00	Heart failure monitoring first letter				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9Or4.00	Heart failure monitoring second letter				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									9Or5.00	Heart failure monitoring third letter				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G1yz100	Rheumatic left ventricular failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G210100	Malignant hypertensive heart disease with congestive cardiac failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G211100	Benign hypertensive heart disease with congestive cardiac failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G21z100	Hypertensive heart disease NOS with congestive cardiac failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G232.00	Hypertensive heart&renal dis wth (congestive) heart failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G234.00	Hypertensive heart and renal disease with both (congestive) heart failure and renalfailure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G554000	Congestive cardiomyopathy				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G58..00	Heart failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G58..11	Cardiac failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G580.00	Congestive heart failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G580.11	Congestive cardiac failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G580.12	Right heart failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G580.13	Right ventricular failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G580.14	Biventricular failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G580000	Acute congestive heart failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G580100	Chronic congestive heart failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G580200	Decompensated cardiac failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G580300	Compensated cardiac failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G580400	Congestive heart failure due to valvular disease				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G581.00	Left ventricular failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G581.11	Asthma - cardiac				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G581.13	Impaired left ventricular function				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G581000	Acute left ventricular failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G582.00	Acute heart failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G583.00	Heart failure with normal ejection fraction				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G583.11	HFNEF - heart failure with normal ejection fraction				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G583.12	Heart failure with preserved ejection fraction				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G584.00	Right ventricular failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G58z.00	Heart failure NOS				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G58z.12	Cardiac failure NOS				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G5y4z00	Post cardiac operation heart failure NOS				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G5yy900	Left ventricular systolic dysfunction				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									G5yyA00	Left ventricular diastolic dysfunction				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									L09y200	Cardiac failure following abortive pregnancy				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									Q48y100	Congenital cardiac failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									Q490.00	Neonatal cardiac failure				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									SP08400	Heart transplant failure and rejection				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									SP08500	Heart-lung transplant failure and rejection				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									SP11100	Cardiac insufficiency as a complication of care				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									SP11111	Heart failure as a complication of care				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									TB00000	"Transplantation of heart as the cause of abnormal reaction of patient, or of later complication, without mention of misadventure at the time of operation"				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									ZRad.00	New York Heart Assoc classification heart failure symptoms				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									ZV42100	[V]Heart transplanted				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									ZV45M00	[V]Biventricular pacemaker in situ				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure
+									ZV59600	[V]Heart and lungs transplant status				Read codes v2	Read codes v2	PH_HF_HERMES_3.0		Heart failure

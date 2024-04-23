@@ -1,0 +1,31 @@
+phenotype_id: PH1074
+phenotype_version_id: 2351
+name: Congestive heart failure - Elixhauser primary care
+definition: Congestive heart failure comorbidity category for Elixhauser index, defined
+  in Read codes for primary care by David Metcalfe et. al.
+publications:
+- Metcalfe, D., Masters, J., Delmestri, A. et al. Coding algorithms for defining Charlson
+  and Elixhauser co-morbidities in Read-coded databases. BMC Med Res Methodol 19,
+  115 (2019). https://doi.org/10.1186/s12874-019-0753-5
+- Elixhauser A, Steiner C, Harris DR, et al. Comorbidity measures for use with administrative
+  data. Med Care. 1998;36(1):8–27.
+- 'Lyons J, Akbari A, Agrawal U, et al Protocol for the development of the Wales Multimorbidity
+  e-Cohort (WMC): data sources and methods to construct a population-based research
+  platform to investigate multimorbidity BMJ Open 2021;11:e047101. doi: 10.1136/bmjopen-2020-047101'
+author: David Metcalfe, James Masters, Antonella Delmestri, Andrew Judge, Daniel Perry,
+  Cheryl Zogg, Belinda Gabbe, Matthew Costa
+collections: 18
+tags: 29
+group_access: 1
+world_access: 1
+sex: '3'
+type: '2'
+concept_information:
+- name: Congestive heart failure Read codes - Elixhauser
+  type: existing_concept
+  concept_id: 3342
+  concept_version_id: 10221
+owner: coldeaa
+template:
+  id: 1
+  version_id: 1

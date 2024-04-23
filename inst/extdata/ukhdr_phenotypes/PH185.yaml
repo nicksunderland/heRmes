@@ -1,0 +1,46 @@
+phenotype_id: PH185
+phenotype_version_id: 370
+name: Hypertrophic Cardiomyopathy
+definition: "At the specified date, a patient is defined as having had 'Hypertrophic
+  Cardiomyopathy' IF they meet the criteria for any of the following on or before
+  the specified date. The earliest date on which the individual meets any of the following
+  criteria on or before the specified date is defined as the first event date:\n\n\nPrimary
+  care\n\n\n1. 'Hypertrophic Cardiomyopathy' diagnosis or history of diagnosis during
+  a consultation \n\nOR\nSecondary care (ICD10)\n\n\n1. ALL diagnoses of 'Hypertrophic
+  Cardiomyopathy' or history of diagnosis during a hospitalization\n\n\n\n\n\n\n\n\n\n\n\n\n"
+publications:
+- Kuan V., Denaxas S., Gonzalez-Izquierdo A. et al. A chronological map of 308 physical
+  and mental health conditions from 4 million individuals in the National Health Service.
+  The Lancet Digital Health - DOI 10.1016/S2589-7500(19)30012-3
+author: Kuan V, Denaxas S, Gonzalez-Izquierdo A, Direk K, Bhatti O, Husain S, Sutaria
+  S, Hingorani M, Nitsch D, Parisinos C, Lumbers T, Mathur R, Sofat R, Casas JP, Wong
+  I, Hemingway H, Hingorani A
+collections:
+- 21
+- 18
+group_access: 1
+world_access: 1
+sex: '3'
+type: '2'
+phenoflowid: '536'
+data_sources:
+- 5
+- 9
+event_date_range: 01/01/1999 - 01/07/2016
+concept_information:
+- name: Hypertrophic Cardiomyopathy - Primary care
+  type: existing_concept
+  concept_id: 1215
+  concept_version_id: 3569
+- name: Hypertrophic Cardiomyopathy - Primary care
+  type: existing_concept
+  concept_id: 1216
+  concept_version_id: 3571
+- name: Hypertrophic Cardiomyopathy - Secondary care - Diagnoses
+  type: existing_concept
+  concept_id: 1217
+  concept_version_id: 3573
+owner: ieuan.scanlon
+template:
+  id: 1
+  version_id: 1

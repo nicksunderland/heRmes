@@ -1,0 +1,73 @@
+phenotype_id: PH949
+phenotype_version_id: 2127
+name: CCU002_01 Acute myocardial infarction
+definition: |2+
+
+
+
+
+
+
+
+
+
+
+
+
+publications:
+- Rochelle Knight, Venexia Walker, Samantha Ip, Jennifer A Cooper, Thomas Bolton,
+  Spencer Keene, Rachel Denholm, Ashley Akbari, Hoda Abbasizanjani, Fatemeh Torabi,
+  Efosa Omigie, Sam Hollings, Teri-Louise North, Renin Toms, Emanuele Di Angelantonio,
+  Spiros Denaxas, Johan H Thygesen, Christopher Tomlinson, Ben Bray, Craig J Smith,
+  Mark Barber, George Davey Smith, Nishi Chaturvedi, Cathie Sudlow, William N Whiteley,
+  Angela Wood, Jonathan A C Sterne, for the CVD-COVID-UK/COVID-IMPACT consortium and
+  th
+author: Rochelle Knight, Venexia Walker, Samantha Ip, Jennifer A Cooper, Thomas Bolton,
+  Spencer Keene, Rachel Denholm, Ashley Akbari, Hoda Abbasizanjani, Fatemeh Torabi,
+  Efosa Omigie, Sam Hollings, Teri-Louise North, Renin Toms, Emanuele Di Angelantonio,
+  Spiros Denaxas, Johan H Thygesen, Christopher Tomlinson, Ben Bray, Craig J Smith,
+  Mark Barber, George Davey Smith, Nishi Chaturvedi, Cathie Sudlow, William N Whiteley,
+  Angela Wood, Jonathan A C Sterne
+collections:
+- 20
+- 18
+group_access: 1
+world_access: 1
+sex: '3'
+type: '2'
+data_sources:
+- 37
+- 1
+- 2
+- 38
+- 3
+- 4
+- 39
+- 40
+- 41
+event_date_range: 01/01/1997 - 07/12/2020
+concept_information:
+- name: 'CCU002_01 Acute myocardial infarction - Phenotypes - England hospitalization
+    EHR: AMI diagnosis'
+  type: existing_concept
+  concept_id: 2739
+  concept_version_id: 7260
+- name: 'CCU002_01 Acute myocardial infarction - Phenotypes - England primary care
+    EHR: AMI diagnosis'
+  type: existing_concept
+  concept_id: 2740
+  concept_version_id: 7261
+- name: 'CCU002_01 Acute myocardial infarction - Phenotypes - England hospitalization
+    EHR: AMI (as covariate) diagnosis'
+  type: existing_concept
+  concept_id: 2741
+  concept_version_id: 7262
+- name: 'CCU002_01 Acute myocardial infarction - Phenotypes - Wales primary care EHR:
+    AMI diagnosis'
+  type: existing_concept
+  concept_id: 2742
+  concept_version_id: 7263
+owner: ieuan.scanlon
+template:
+  id: 1
+  version_id: 1

@@ -1,0 +1,6 @@
+concept_id	concept_history_id	concept_history_date	component_id	component_history_id	logical_type	codelist_id	codelist_history_id	id	code	description	concept_version_id	concept_name	coding_system.id	coding_system.name	coding_system.description	phenotype_id	phenotype_version_id	phenotype_name
+769	2677	2021-10-06T15:59:59.732249Z	973	1660	1	973	1606	51215	418304008	Diastolic heart failure (disorder)	2677	Heart failure - Secondary care	9	SNOMED  CT codes	SNOMED CT codes	PH25	50	Heart failure
+769	2677	2021-10-06T15:59:59.732249Z	973	1660	1	973	1606	51213	426263006	Congestive heart failure due to left ventricular systolic dysfunction (disorder)	2677	Heart failure - Secondary care	9	SNOMED  CT codes	SNOMED CT codes	PH25	50	Heart failure
+769	2677	2021-10-06T15:59:59.732249Z	973	1660	1	973	1606	51212	42343007	Congestive heart failure (disorder)	2677	Heart failure - Secondary care	9	SNOMED  CT codes	SNOMED CT codes	PH25	50	Heart failure
+769	2677	2021-10-06T15:59:59.732249Z	973	1660	1	973	1606	51214	48447003	Chronic heart failure (disorder)	2677	Heart failure - Secondary care	9	SNOMED  CT codes	SNOMED CT codes	PH25	50	Heart failure
+769	2677	2021-10-06T15:59:59.732249Z	973	1660	1	973	1606	51216	10633002	Acute congestive heart failure (disorder)	2677	Heart failure - Secondary care	9	SNOMED  CT codes	SNOMED CT codes	PH25	50	Heart failure

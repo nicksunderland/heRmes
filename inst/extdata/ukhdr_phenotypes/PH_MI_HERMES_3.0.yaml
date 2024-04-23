@@ -1,0 +1,26 @@
+phenotype_id: PH_MI_HERMES_3.0
+phenotype_version_id: 1
+name: Myocardial infarction
+definition: |+
+  HERMES 3.0 Myocardial Infarction definition
+
+publications:
+- 'Unpublished'
+author: HERMES consortium
+collections: NA
+group_access: NA
+world_access: NA
+sex: '3'
+type: NA
+phenoflowid: NA
+data_sources: NA
+event_date_range: NA
+concept_information:
+- name: Myocardial infarction
+  type: existing_concept
+  concept_id: 769
+  concept_version_id: 2677
+owner: NA
+template:
+  id: 1
+  version_id: 1

@@ -1,0 +1,54 @@
+phenotype_id: PH988
+phenotype_version_id: 2166
+name: CCU002_02 Acute Myocardial Infarction (AMI)
+definition: |+
+  Code type is set to 1 for incident events, and 0 for prevalent events.
+
+
+
+
+
+
+
+
+
+publications:
+- 'Association of COVID-19 vaccines ChAdOx1 and BNT162b2 with major venous, arterial,
+  and thrombocytopenic events: whole population cohort study in 46 million adults
+  in England CVD-COVID-UK consortium, William N Whiteley, Samantha Ip, Jennifer A
+  Cooper, Thomas Bolton, Spencer Keene, Venexia Walker, Rachel Denholm, Ashley Akbari,
+  Efosa Omigie, Sam Hollings, Emanuele Di Angelantonio, Spiros Denaxas, Angela Wood,
+  Jonathan A C Sterne, Cathie Sudlow medRxiv 2021.08.18.21262222; doi: https://doi.org/10.1'
+author: CVD-COVID-UK consortium, William N Whiteley, Samantha Ip, Jennifer A Cooper,
+  Thomas Bolton, Spencer Keene, Venexia Walker, Rachel Denholm, Ashley Akbari, Efosa
+  Omigie, Sam Hollings, Emanuele Di Angelantonio, Spiros Denaxas, Angela Wood, Jonathan
+  A C Sterne, Cathie Sudlow
+collections:
+- 20
+- 18
+group_access: 1
+world_access: 1
+sex: '3'
+type: '2'
+data_sources:
+- 37
+- 1
+- 2
+- 38
+- 3
+event_date_range: 08/12/2020 - 18/03/2021
+concept_information:
+- name: 'CCU002_02 Acute Myocardial Infarction (AMI) - Phenotypes - England hospitalization
+    EHR: MI diagnosis'
+  type: existing_concept
+  concept_id: 2842
+  concept_version_id: 7363
+- name: 'CCU002_02 Acute Myocardial Infarction (AMI) - Phenotypes - England primary
+    care EHR: MI diagnosis'
+  type: existing_concept
+  concept_id: 2843
+  concept_version_id: 7364
+owner: ieuan.scanlon
+template:
+  id: 1
+  version_id: 1

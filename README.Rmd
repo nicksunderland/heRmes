@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 
 # heRmes <img src="man/figures/hex.png" align="right" width="190"/>
 ```{r setup, include = FALSE}
-library(heRmes) 
+library(heRmes)
 ```
 
 <!-- badges: start -->

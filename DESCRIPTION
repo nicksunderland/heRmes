@@ -12,10 +12,9 @@ RoxygenNote: 7.3.1
 Imports: 
     ConceptLibraryClient,
     data.table,
+    eulerr,
     ggpubr,
-    igraph,
     S7,
-    UpSetR,
     yaml
 Remotes:
     SwanseaUniversityMedical/ConceptLibraryClient

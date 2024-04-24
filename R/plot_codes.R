@@ -2,63 +2,60 @@
 globalVariables(c("group", "coding_system.name", "code"),
                 package = "heRmes")
 
-plot_code_overlap <- function(pheno_ids = NULL) {
 
-  stopifnot("pheno_ids must be length > 1" = length(pheno_ids) > 1 | is.null(pheno_ids))
+#' @title Plot phenotype code overlap
+#' @param pheno_ids a list of strings, valid phenotype IDs
+#' @param types a vector of strings, one or more of c("ICD10 codes", "ICD9 codes", "OPCS4 codes", "Read codes v2", "Med codes", "SNOMED  CT codes", "OXMIS codes")
+#' @return a plot
+#' @export
+#'
+plot_code_overlap <- function(pheno_ids = c("PH_HF_HERMES_3.0", "PH25", "PH129"),
+                              types = c("ICD10 codes", "ICD9 codes", "OPCS4 codes", "Read codes v2",
+                                        "Med codes", "SNOMED  CT codes", "OXMIS codes")) {
 
-  # get the phenotypes in the local library
-  pheno_lib <- list.files(system.file("extdata", "ukhdr_phenotypes", package = "heRmes"), pattern = ".yaml$", full.names = TRUE)
-
-  # filter based on the input ids
-  if (!is.null(pheno_ids)) {
-    pheno_lib <- pheno_lib[grepl(paste0(pheno_ids, collapse = "|"), pheno_lib)]
-  }
+  stopifnot("pheno_ids must be length > 1" = length(pheno_ids) > 1)
 
   # gather the data
-  dat <- lapply(pheno_lib, function(file) {
+  dat <- lapply(pheno_ids, function(id) {
 
     # get the meta data
-    meta <- yaml::read_yaml(file)
-    name <- paste0(meta$phenotype_id, " - ", meta$name, " (", strsplit(meta$author, ",", fixed = TRUE)[[1]][[1]], " et al.)")
+    meta <- get_metadata(id)
 
     # get the codes
-    codes <- data.table::fread(sub(".yaml$", "_codes.tsv", file), select = c("code", "coding_system.name"))
-    codes[, group := name]
+    codes <- get_codes(id)[, c("code", "coding_system.name")]
+    codes[, group := paste0(meta$name, " (", meta$phenotype_id, ")")]
 
   }) |> data.table::rbindlist()
 
   # list to take the plots
   code_types <- unique(dat$coding_system.name)
+  code_types <- code_types[code_types %in% types]
   plot_list <- list()
 
+  # plot each type of code separately
   for (i in seq_along(code_types)) {
 
     d <- dat[coding_system.name == code_types[[i]], ]
-    d <- split(d, by = "group", drop = TRUE)
-    d <- lapply(d, function(x) x[, code])
+    d <- split(d, by = "group")
+    d <- lapply(d, function(x) unique(x[, code]))
 
     # plot
-    if (length(d) > 1) {
-      p <- UpSetR::upset(UpSetR::fromList(d), order.by = "freq")
-      plot_list <- c(plot_list, list(p))
-    }
+    p <- plot(eulerr::euler(d, shape = "ellipse"),
+              quantities = TRUE,
+              labels     = FALSE,
+              main       = list(label = code_types[[i]], fontsize = 8, font = 2),
+              legend     = list(fontsize = 8))
+    plot_list[[ code_types[[i]] ]] <- p
 
   }
 
-  p0 <- ggpubr::ggarrange(plotlist = plot_list, ncol = 3)
+  # combine
+  p0 <- ggpubr::ggarrange(plotlist = plot_list, ncol = 2, nrow = ceiling(length(p)/2))
 
+  # return
+  return(p0)
 }
-#
-#   size <- 10
-#   mat <- matrix(sample(c(0,1), size ^ 2, replace = TRUE, prob = c(0.9, 0.1)), nrow = size, ncol = size)
-#   codes <- LETTERS[1:size]
-#   code_colours <- sample(c("red", "green"), size, replace = TRUE)
-#   colnames(mat) = rownames(mat) = LETTERS[1:size]
-#   network <- igraph::graph_from_adjacency_matrix(mat, diag = FALSE)
-#   igraph::V(network)$color <- code_colours
-#   plot(network)
-#
-# }
+
 
 
 

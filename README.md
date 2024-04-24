@@ -147,6 +147,8 @@ To see the intersection of the codes in two or more phenotype files use
 the `plot_code_overlap()` function.
 
 ``` r
-# under development
-# plot_code_overlap(pheno_ids = c("PH_DCM_HERMES_3.0", "PH1002"))
+plot_code_overlap(pheno_ids = c("PH_HF_HERMES_3.0", "PH1028", "PH1055", "PH1074", "PH182", "PH25", "PH530", "PH531", "PH631", "PH687", "PH968", "PH993"), 
+                  types = c("ICD10 codes", "ICD9 codes", "OPCS4 codes", "Read codes v2", "SNOMED  CT codes"))
 ```
+
+<img src="man/figures/README-plot-1.png" width="80%" style="display: block; margin: auto;" />

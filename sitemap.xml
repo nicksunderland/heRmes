@@ -28,6 +28,9 @@
     <loc>https://nicksunderland.github.io/heRmes/reference/get_icd9cm.html</loc>
   </url>
   <url>
+    <loc>https://nicksunderland.github.io/heRmes/reference/get_metadata.html</loc>
+  </url>
+  <url>
     <loc>https://nicksunderland.github.io/heRmes/reference/get_opcs.html</loc>
   </url>
   <url>
@@ -50,6 +53,9 @@
   </url>
   <url>
     <loc>https://nicksunderland.github.io/heRmes/reference/phenotype.html</loc>
+  </url>
+  <url>
+    <loc>https://nicksunderland.github.io/heRmes/reference/plot_code_overlap.html</loc>
   </url>
   <url>
     <loc>https://nicksunderland.github.io/heRmes/reference/search_codes.html</loc>

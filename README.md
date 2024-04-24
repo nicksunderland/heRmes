@@ -4,8 +4,6 @@
 # heRmes <img src="man/figures/hex.png" align="right" width="190"/>
 
 <!-- badges: start -->
-
-[![R-CMD-check](https://github.com/nicksunderland/heRmes/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nicksunderland/heRmes/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of **heRmes** is to standardise the heart failure phenotyping

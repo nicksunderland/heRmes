@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# heRmes <img src="vignettes/figures/hex.png" align="right" width="190"/>
+# heRmes <img src="man/figures/hex.png" align="right" width="190"/>
 
 <!-- badges: start -->
 

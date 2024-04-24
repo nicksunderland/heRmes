@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# heRmes <img src="vignettes/figures/hex.png" align="right" width="190"/>
+# heRmes <img src="man/figures/hex.png" align="right" width="190"/>
 ```{r setup, include = FALSE}
 library(heRmes)
 ```

@@ -6,13 +6,12 @@
 #'
 #' @import ConceptLibraryClient
 #' @import data.table
-update_library <- function() {
+update_library <- function(search_terms = c("heart failure", "cardiomyopathy", "myocardial infarction")) {
 
   # connect to API
   client <- ConceptLibraryClient::Connection$new(public = TRUE)
 
   # get phenotypes
-  search_terms <- c("heart failure", "cardiomyopathy", "myocardial infarction")
   search_results <- lapply(search_terms, function(x) client$phenotypes$get(search = x)[, c("name", "phenotype_id")]) |>
     data.table::rbindlist()
   pheno_ids <- search_results[grepl(paste0(search_terms, collapse = "|"), name, ignore.case = TRUE), phenotype_id]

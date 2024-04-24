@@ -4,7 +4,12 @@
 \alias{update_library}
 \title{Update code library}
 \usage{
-update_library()
+update_library(
+  search_terms = c("heart failure", "cardiomyopathy", "myocardial infarction")
+)
+}
+\arguments{
+\item{search_terms}{a vector of strings to search the concept library phenotypes for}
 }
 \value{
 boolean, success status

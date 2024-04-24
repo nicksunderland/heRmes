@@ -1,6 +1,7 @@
 #' @title Update code library
 #' @description
 #' Update the internal code library from the Concept Library API
+#' @param search_terms a vector of strings to search the concept library phenotypes for
 #' @return boolean, success status
 #' @export
 #'

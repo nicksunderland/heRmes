@@ -1,4 +1,9 @@
+# Silence R CMD check
+globalVariables(c("description", "code", "name", "phenotype_id", "V1", "V2", "V3", "ReadCode", "Description", "conceptId", "term", "pheno_codes"),
+                package = "heRmes")
+
 #' @title get phenotype codes
+#' @param pheno_id a string, a valid phenotype id (see `get_phenotypes()`)
 #' @return a data.table
 #' @export
 #'
@@ -122,7 +127,11 @@ get_opcs <- function() {
 }
 
 
+
 #' @title get read codes
+#' @param regexes a list of regular expressions
+#' @param terms a list of strings to search for
+#' @param sources a vector of strings, one or more of c("icd9cm", "icd10cm", "icd10", "snomed", "opcs", "readcodes_v2", "readcodes_v3")
 #' @return a data.table
 #' @export
 #'

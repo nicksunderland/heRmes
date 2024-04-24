@@ -11,6 +11,13 @@ search_codes(
     "readcodes_v3")
 )
 }
+\arguments{
+\item{regexes}{a list of regular expressions}
+
+\item{terms}{a list of strings to search for}
+
+\item{sources}{a vector of strings, one or more of c("icd9cm", "icd10cm", "icd10", "snomed", "opcs", "readcodes_v2", "readcodes_v3")}
+}
 \value{
 a data.table
 }

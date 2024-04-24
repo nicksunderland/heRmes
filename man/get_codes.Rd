@@ -6,6 +6,9 @@
 \usage{
 get_codes(pheno_id)
 }
+\arguments{
+\item{pheno_id}{a string, a valid phenotype id (see \code{get_phenotypes()})}
+}
 \value{
 a data.table
 }

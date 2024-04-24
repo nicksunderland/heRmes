@@ -1,3 +1,6 @@
+# Silence R CMD check
+globalVariables(c("group", "coding_system.name", "code"),
+                package = "heRmes")
 
 plot_code_overlap <- function(pheno_ids = NULL) {
 

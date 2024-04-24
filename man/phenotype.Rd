@@ -4,7 +4,7 @@
 \alias{phenotype}
 \title{Phenotype}
 \usage{
-phenotype(ids, codes, name, pheno_id, include = NULL, exclude = NULL)
+phenotype(ids, codes, name, include, exclude = NULL)
 }
 \arguments{
 \item{ids}{a vector of characters IDs}
@@ -12,8 +12,6 @@ phenotype(ids, codes, name, pheno_id, include = NULL, exclude = NULL)
 \item{codes}{a vector of diagnosis codes}
 
 \item{name}{a string, a name for the phenotype}
-
-\item{pheno_id}{a string or list of strings, a valid phenotype id (see \code{get_phenotypes()})}
 
 \item{include}{a string or list of strings, a valid phenotype id (see \code{get_phenotypes()})}
 

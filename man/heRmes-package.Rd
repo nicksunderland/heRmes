@@ -8,6 +8,13 @@
 \description{
 A collection of tools for phenotyping and processing heart failure GWAS data.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://nicksunderland.github.io/heRmes/}
+}
+
+}
 \author{
 \strong{Maintainer}: Nicholas Sunderland \email{nicholas.sunderland@bristol.ac.uk} (\href{https://orcid.org/0000-0003-3625-630X}{ORCID})
 

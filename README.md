@@ -147,3 +147,8 @@ update_library(search_terms = c("heart failure", "cardiomyopathy", "myocardial i
 
 To see the intersection of the codes in two or more phenotype files use
 the `plot_code_overlap()` function.
+
+``` r
+# under development
+# plot_code_overlap(pheno_ids = c("PH_DCM_HERMES_3.0", "PH1002"))
+```

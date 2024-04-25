@@ -74,25 +74,31 @@
 <p>For example, view the first 6 phenotypes.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/get_phenotypes.html">get_phenotypes</a></span><span class="op">(</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span>
-<span><span class="co">#&gt;                   congHD                      DCM            Heart failure </span></span>
-<span><span class="co">#&gt;   "PH_congHD_HERMES_3.0"      "PH_DCM_HERMES_3.0"       "PH_HF_HERMES_3.0" </span></span>
-<span><span class="co">#&gt;    Myocardial infarction CCU002_02 Cardiomyopathy </span></span>
-<span><span class="co">#&gt;       "PH_MI_HERMES_3.0"                 "PH1002"</span></span></code></pre></div>
+<span><span class="co">#&gt;                         CCU002_02 Cardiomyopathy </span></span>
+<span><span class="co">#&gt;                                         "PH1002" </span></span>
+<span><span class="co">#&gt;                Acute Myocardial Infarction (AMI) </span></span>
+<span><span class="co">#&gt;                                         "PH1024" </span></span>
+<span><span class="co">#&gt;                  Heart Failure (fatal/non-fatal) </span></span>
+<span><span class="co">#&gt;                                         "PH1028" </span></span>
+<span><span class="co">#&gt; Congestive heart failure - Charlson primary care </span></span>
+<span><span class="co">#&gt;                                         "PH1055" </span></span>
+<span><span class="co">#&gt;    Myocardial infarction - Charlson primary care </span></span>
+<span><span class="co">#&gt;                                         "PH1062"</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="codes">Codes<a class="anchor" aria-label="anchor" href="#codes"></a>
 </h3>
-<p>View the codes for phenotype <code>PH_HF_HERMES_3.0</code>.</p>
+<p>View the codes for <code>PH1645</code> corresponding to the HERMES Heart Failure phenotype.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># top 5 codes</span></span>
-<span><span class="fu"><a href="reference/get_codes.html">get_codes</a></span><span class="op">(</span>pheno_id <span class="op">=</span> <span class="st">"PH_HF_HERMES_3.0"</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"phenotype_id"</span>, <span class="st">"phenotype_name"</span>, <span class="st">"coding_system.name"</span>, <span class="st">"code"</span><span class="op">)</span><span class="op">]</span></span>
-<span><span class="co">#&gt;        phenotype_id phenotype_name coding_system.name   code</span></span>
-<span><span class="co">#&gt;              &lt;char&gt;         &lt;char&gt;             &lt;char&gt; &lt;char&gt;</span></span>
-<span><span class="co">#&gt; 1: PH_HF_HERMES_3.0  Heart failure        ICD10 codes  A3681</span></span>
-<span><span class="co">#&gt; 2: PH_HF_HERMES_3.0  Heart failure        ICD10 codes  B3324</span></span>
-<span><span class="co">#&gt; 3: PH_HF_HERMES_3.0  Heart failure        ICD10 codes   I255</span></span>
-<span><span class="co">#&gt; 4: PH_HF_HERMES_3.0  Heart failure        ICD10 codes   I420</span></span>
-<span><span class="co">#&gt; 5: PH_HF_HERMES_3.0  Heart failure        ICD10 codes   I421</span></span></code></pre></div>
+<span><span class="fu"><a href="reference/get_codes.html">get_codes</a></span><span class="op">(</span>pheno_id <span class="op">=</span> <span class="st">"PH1645"</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"phenotype_id"</span>, <span class="st">"phenotype_name"</span>, <span class="st">"coding_system.name"</span>, <span class="st">"code"</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co">#&gt;    phenotype_id phenotype_name coding_system.name   code</span></span>
+<span><span class="co">#&gt;          &lt;char&gt;         &lt;char&gt;             &lt;char&gt; &lt;char&gt;</span></span>
+<span><span class="co">#&gt; 1:       PH1645  Heart failure         ICD9 codes  40201</span></span>
+<span><span class="co">#&gt; 2:       PH1645  Heart failure         ICD9 codes  42830</span></span>
+<span><span class="co">#&gt; 3:       PH1645  Heart failure         ICD9 codes  42832</span></span>
+<span><span class="co">#&gt; 4:       PH1645  Heart failure         ICD9 codes   4281</span></span>
+<span><span class="co">#&gt; 5:       PH1645  Heart failure         ICD9 codes  42843</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="phenotyping-a-dataset">Phenotyping a dataset<a class="anchor" aria-label="anchor" href="#phenotyping-a-dataset"></a>
@@ -115,12 +121,12 @@
 <span><span class="co">#&gt; 8  ID_3   baz</span></span>
 <span><span class="co">#&gt; 9  ID_4   foo</span></span>
 <span><span class="co">#&gt; 10 ID_5   foo</span></span></code></pre></div>
-<p>Phenotype the individuals with phenotype <code>PH_HF_HERMES_3.0</code>, excluding phenotype <code>PH_congHD_HERMES_3.0</code>. There can be multiple included or excluded phenotypes given in a list.</p>
+<p>Phenotype the individuals with phenotype <code>PH1645</code> (heart failure), excluding phenotype <code>PH1637</code> (congenital heart disease). There can be multiple included or excluded phenotypes given in a list.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/phenotype.html">phenotype</a></span><span class="op">(</span><span class="va">dat</span><span class="op">$</span><span class="va">ids</span>, <span class="va">dat</span><span class="op">$</span><span class="va">codes</span>, </span>
 <span>                    name    <span class="op">=</span> <span class="st">"Heart Failure"</span>, </span>
-<span>                    include <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"PH_HF_HERMES_3.0"</span><span class="op">)</span>, </span>
-<span>                    exclude <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"PH_congHD_HERMES_3.0"</span><span class="op">)</span><span class="op">)</span></span>
+<span>                    include <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>HF <span class="op">=</span> <span class="st">"PH1645"</span><span class="op">)</span>, </span>
+<span>                    exclude <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>congHD <span class="op">=</span> <span class="st">"PH1637"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">result</span><span class="op">[</span><span class="op">]</span></span>
 <span><span class="co">#&gt;        id include exclude Heart Failure</span></span>
 <span><span class="co">#&gt;    &lt;char&gt;  &lt;lgcl&gt;  &lt;lgcl&gt;        &lt;lgcl&gt;</span></span>
@@ -173,9 +179,38 @@
 </h3>
 <p>To see the intersection of the codes in two or more phenotype files use the <code><a href="reference/plot_code_overlap.html">plot_code_overlap()</a></code> function.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/plot_code_overlap.html">plot_code_overlap</a></span><span class="op">(</span>pheno_ids <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"PH_HF_HERMES_3.0"</span>, <span class="st">"PH1028"</span>, <span class="st">"PH1055"</span>, <span class="st">"PH1074"</span>, <span class="st">"PH182"</span>, <span class="st">"PH25"</span>, <span class="st">"PH530"</span>, <span class="st">"PH531"</span>, <span class="st">"PH631"</span>, <span class="st">"PH687"</span>, <span class="st">"PH968"</span>, <span class="st">"PH993"</span><span class="op">)</span>, </span>
-<span>                  types <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ICD10 codes"</span>, <span class="st">"ICD9 codes"</span>, <span class="st">"OPCS4 codes"</span>, <span class="st">"Read codes v2"</span>, <span class="st">"SNOMED  CT codes"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/plot_code_overlap.html">plot_code_overlap</a></span><span class="op">(</span>pheno_ids <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"PH1645"</span>, <span class="st">"PH1028"</span>, <span class="st">"PH1055"</span>, <span class="st">"PH1074"</span>, <span class="st">"PH182"</span>, <span class="st">"PH25"</span>, <span class="st">"PH530"</span>, <span class="st">"PH531"</span>, <span class="st">"PH631"</span>, <span class="st">"PH687"</span>, <span class="st">"PH968"</span>, <span class="st">"PH993"</span><span class="op">)</span>, </span>
+<span>                  types <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ICD10 codes"</span>, <span class="st">"ICD9 codes"</span>, <span class="st">"OPCS4 codes"</span>, <span class="st">"Read codes v2"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-plot-1.png" width="80%" style="display: block; margin: auto;"></p>
+</div>
+<div class="section level3">
+<h3 id="update-library-from-ukhdr-unpublished">Update library from UKHDR (unpublished)<a class="anchor" aria-label="anchor" href="#update-library-from-ukhdr-unpublished"></a>
+</h3>
+<p>The package phenotype library can be updated with unpublished/development phenotypes from the <a href="https://phenotypes.healthdatagateway.org/api/v1/" class="external-link">UKHDR Phenotype Library API</a> using the below function. However, since unpublished phenotypes are not searchable by name, we need to pass the exact ID and also login details for the website (stored in a local <code>.Renviron</code> file in this example.)</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># development phenotypes, ids named for readability only</span></span>
+<span><span class="va">hermes_phenos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>`Congenital heart disease`    <span class="op">=</span> <span class="st">"PH1637"</span>, </span>
+<span>                   `Myocardial infarction`       <span class="op">=</span> <span class="st">"PH1636"</span>, </span>
+<span>                   `Secondary cardiomyopathies`  <span class="op">=</span> <span class="st">"PH1642"</span>, </span>
+<span>                   `Hypertrophic cardiomyopathy` <span class="op">=</span> <span class="st">"PH1640"</span>, </span>
+<span>                   `Dilated cardiomyopathy`      <span class="op">=</span> <span class="st">"PH1638"</span>, </span>
+<span>                   `Cardiomyopathy`              <span class="op">=</span> <span class="st">"PH1646"</span>, </span>
+<span>                   `Heart failure`               <span class="op">=</span> <span class="st">"PH1645"</span>, </span>
+<span>                   `Non-ischaemic cardiomyopathy`<span class="op">=</span> <span class="st">"PH1639"</span>, </span>
+<span>                   `Heart failure syndrome`      <span class="op">=</span> <span class="st">"PH1643"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># update</span></span>
+<span><span class="fu"><a href="reference/update_library.html">update_library</a></span><span class="op">(</span>search_terms <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">)</span>, </span>
+<span>               ids          <span class="op">=</span> <span class="va">hermes_phenos</span>, </span>
+<span>               UKHDR_UN     <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html" class="external-link">Sys.getenv</a></span><span class="op">(</span><span class="st">"UKHDR_UN"</span><span class="op">)</span>, </span>
+<span>               UKHDR_PW     <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html" class="external-link">Sys.getenv</a></span><span class="op">(</span><span class="st">"UKHDR_PW"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="plot-the-icd-10-hermes-phenotypes">Plot the ICD-10 HERMES phenotypes<a class="anchor" aria-label="anchor" href="#plot-the-icd-10-hermes-phenotypes"></a>
+</h3>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/plot_code_overlap.html">plot_code_overlap</a></span><span class="op">(</span>pheno_ids <span class="op">=</span> <span class="va">hermes_phenos</span>, types <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ICD10 codes"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p><img src="reference/figures/README-plot_hermes-1.png" align="centre" width="80%"></p>
 </div>
 </div>
 </div>

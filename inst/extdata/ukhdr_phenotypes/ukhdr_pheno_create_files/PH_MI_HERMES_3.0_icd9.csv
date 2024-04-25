@@ -1,0 +1,37 @@
+ICD9,description
+410,"Acute myocardial infarction of anterolateral wall, episode of care unspecified"
+41001,"Acute myocardial infarction of anterolateral wall, initial episode of care"
+41002,"Acute myocardial infarction of anterolateral wall, subsequent episode of care"
+4101,"Acute myocardial infarction of other anterior wall, episode of care unspecified"
+41011,"Acute myocardial infarction of other anterior wall, initial episode of care"
+41012,"Acute myocardial infarction of other anterior wall, subsequent episode of care"
+4102,"Acute myocardial infarction of inferolateral wall, episode of care unspecified"
+41021,"Acute myocardial infarction of inferolateral wall, initial episode of care"
+41022,"Acute myocardial infarction of inferolateral wall, subsequent episode of care"
+4103,"Acute myocardial infarction of inferoposterior wall, episode of care unspecified"
+41031,"Acute myocardial infarction of inferoposterior wall, initial episode of care"
+41032,"Acute myocardial infarction of inferoposterior wall, subsequent episode of care"
+4104,"Acute myocardial infarction of other inferior wall, episode of care unspecified"
+41041,"Acute myocardial infarction of other inferior wall, initial episode of care"
+41042,"Acute myocardial infarction of other inferior wall, subsequent episode of care"
+4105,"Acute myocardial infarction of other lateral wall, episode of care unspecified"
+41051,"Acute myocardial infarction of other lateral wall, initial episode of care"
+41052,"Acute myocardial infarction of other lateral wall, subsequent episode of care"
+4106,"True posterior wall infarction, episode of care unspecified"
+41061,"True posterior wall infarction, initial episode of care"
+41062,"True posterior wall infarction, subsequent episode of care"
+4107,"Subendocardial infarction, episode of care unspecified"
+41071,"Subendocardial infarction, initial episode of care"
+41072,"Subendocardial infarction, subsequent episode of care"
+4108,"Acute myocardial infarction of other specified sites, episode of care unspecified"
+41081,"Acute myocardial infarction of other specified sites, initial episode of care"
+41082,"Acute myocardial infarction of other specified sites, subsequent episode of care"
+4109,"Acute myocardial infarction of unspecified site, episode of care unspecified"
+41091,"Acute myocardial infarction of unspecified site, initial episode of care"
+41092,"Acute myocardial infarction of unspecified site, subsequent episode of care"
+411,Other acute and subacute forms of ischemic heart disease
+4110,Postmyocardial infarction syndrome
+4111,Intermediate coronary syndrome
+4118,Other acute and subacute forms of ischemic heart disease
+41181,Acute coronary occlusion without myocardial infarction
+412,Old myocardial infarction

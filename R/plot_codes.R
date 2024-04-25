@@ -50,7 +50,11 @@ plot_code_overlap <- function(pheno_ids = c("PH_HF_HERMES_3.0", "PH25", "PH129")
   }
 
   # combine
-  p0 <- ggpubr::ggarrange(plotlist = plot_list, ncol = 2, nrow = ceiling(length(p)/2))
+  if (length(plot_list) > 1) {
+    p0 <- ggpubr::ggarrange(plotlist = plot_list, ncol = 2, nrow = ceiling(length(p)/2))
+  } else {
+    p0 <- plot_list[[1]]
+  }
 
   # return
   return(p0)

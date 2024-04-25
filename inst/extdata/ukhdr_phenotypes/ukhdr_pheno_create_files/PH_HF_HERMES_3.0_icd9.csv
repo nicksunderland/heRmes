@@ -1,0 +1,27 @@
+ICD9,description,,other,other desc
+4280,Congestive heart failure,,4250,Endomyocardial fibrosis 
+4281,Left heart failure,,4252,Obscure cardiomyopathy of Africa
+42820,Systolic heart failure NOS,,4253,Endocardial fibroelastosis
+42821,Acute systolic heart failure,,4255,Alcoholic cardiomyopathy
+42822,Chronic systolic heart failure,,4257,Nutritional and metabolic cardiomyopathy
+42823,Acute on chronic systolic heart failure,,4258,Cardiomyopathy in other diseases classified elsewhere
+42830,Diastolic heart failure NOS,,4259,"Secondary cardiomyopathy, unspecified"
+42831,Acute diastolic heart failure,,42983,Takotsubo syndrome
+42832,Chronic diastolic heart failure,,,
+42833,Acute on chronic diastolic heart failure,,,
+42840,Systolic & diastolic heart failure NOS,,,
+42841,Acute systolic & diastolic heart failure,,,
+42842,Chronic systolic & diastolic heart failure,,,
+42843,Acute on chronic systolic & diastolic heart failure,,,
+4289,"Heart failure, unspecified",,,
+4254,Other primary cardiomyopathies,,,
+425,Cardiomyopathy,,,
+40201,Malignant hypertensive heart disease with heart failure,,,
+40211,Benign hypertensive heart disease with heart failure,,,
+40291,Unspecified hypertensive heart disease with heart failure,,,
+40401,Malignant hypertensive heart & kidney disease (stage 1-4) with heart failure,,,
+40403,Malignant hypertensive heart & kidney disease (stage 5) with heart failure,,,
+40411,Benign hypertensive heart & kidney disease (stage 1-4) with heart failure,,,
+40413,Benign hypertensive heart & kidney disease (stage 5) with heart failure,,,
+40491,Unspecified hypertensive heart  & kidney disease (stage 1-4) with heart failure,,,
+40493,Unspecified hypertensive heart  & kidney disease (stage 5) with heart failure,,,

@@ -1,0 +1,54 @@
+phenotype_id: PH1645
+phenotype_version_id: 3369
+name: Heart failure
+definition: 'Extract from Soltani et al. 2024 which looked at HF coding for identification
+  of HF admissions (not just diagnosis). - I50: ICD-10 codes beginning I50. This definition
+  of HF is widely used. - OIS: The Clinical Commissioning Groups Outcomes Indicator
+  Set (OIS) was used by English healthcare commissioners to evaluate quality of health
+  services and associated health outcomes. The OIS definition of HF comprises ICD-10
+  codes I11.0, I13.0, I13.2, I25.5, I50.0, I50.1, and I50.9.12 - NICOR: The UK National
+  Institute for Cardiovascular Outcomes Research (NICOR) definition of HF, which comprises
+  ICD-10 codes I11.0, I25.5, I42.0, I42.9, I50.0, I50.1, and I50.9. ## Proposed coding:
+  DCM: DCM code (- CongHD) NICM : DCM + RCM + NDLVC + ARVC + others (- CongHD, - MI,
+  - HCM, - secondary CM) HF: HF + DCM + RCM + NDLVC + ARVC + others (- CongHD, - HCM,
+  - secondary CM)'
+publications:
+- Aragam et al.
+- Bates et al.
+- Salimian et al.
+- Soltani et al.
+- ESC Cardiomyopathy Guidelines 2023
+author: Jiang, C., Sunderland, N., Henry, A., Shah, S., Lumbers, T.
+group_access: 3
+world_access: 2
+sex: '3'
+type: '2'
+concept_information:
+- name: Heart failure
+  type: existing_concept
+  concept_id: 3561
+  concept_version_id: 10879
+- name: Heart failure
+  type: existing_concept
+  concept_id: 3562
+  concept_version_id: 10880
+- name: Heart failure
+  type: existing_concept
+  concept_id: 3563
+  concept_version_id: 10881
+- name: Heart failure
+  type: existing_concept
+  concept_id: 3564
+  concept_version_id: 10882
+- name: Heart failure
+  type: existing_concept
+  concept_id: 3565
+  concept_version_id: 10872
+- name: Heart failure
+  type: existing_concept
+  concept_id: 3566
+  concept_version_id: 10873
+owner: nsunderland
+template:
+  id: 1
+  version_id: 1

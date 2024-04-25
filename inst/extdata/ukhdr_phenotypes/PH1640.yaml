@@ -1,0 +1,31 @@
+phenotype_id: PH1640
+phenotype_version_id: 3331
+name: Hypertrophic cardiomyopathy
+publications:
+- Aragam et al.
+author: Sunderland, N., Jiang, C., Henry, A., Shah, S., Lumbers, T.
+group_access: 3
+world_access: 2
+sex: '3'
+type: '2'
+concept_information:
+- name: Hypertrophic cardiomyopathy
+  type: existing_concept
+  concept_id: 3540
+  concept_version_id: 10776
+- name: Hypertrophic cardiomyopathy
+  type: existing_concept
+  concept_id: 3541
+  concept_version_id: 10777
+- name: Hypertrophic cardiomyopathy
+  type: existing_concept
+  concept_id: 3542
+  concept_version_id: 10778
+- name: Hypertrophic cardiomyopathy
+  type: existing_concept
+  concept_id: 3543
+  concept_version_id: 10827
+owner: nsunderland
+template:
+  id: 1
+  version_id: 1

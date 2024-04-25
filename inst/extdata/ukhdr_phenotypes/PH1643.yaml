@@ -1,0 +1,37 @@
+phenotype_id: PH1643
+phenotype_version_id: 3361
+name: Heart failure syndrome
+author: Sunderland, N., Jiang, C., Henry, A., Shah, S., Lumbers, T.
+group_access: 3
+world_access: 2
+sex: '3'
+type: '2'
+concept_information:
+- name: Heart failure syndrome
+  type: existing_concept
+  concept_id: 3554
+  concept_version_id: 10849
+- name: Heart failure syndrome
+  type: existing_concept
+  concept_id: 3555
+  concept_version_id: 10850
+- name: Heart failure syndrome
+  type: existing_concept
+  concept_id: 3556
+  concept_version_id: 10862
+- name: Heart failure syndrome
+  type: existing_concept
+  concept_id: 3557
+  concept_version_id: 10863
+- name: Heart failure syndrome
+  type: existing_concept
+  concept_id: 3558
+  concept_version_id: 10853
+- name: Heart failure syndrome
+  type: existing_concept
+  concept_id: 3559
+  concept_version_id: 10854
+owner: nsunderland
+template:
+  id: 1
+  version_id: 1

@@ -5,11 +5,20 @@
 \title{Update code library}
 \usage{
 update_library(
-  search_terms = c("heart failure", "cardiomyopathy", "myocardial infarction")
+  search_terms = c("heart failure", "cardiomyopathy", "myocardial infarction"),
+  ids = NULL,
+  UKHDR_UN = NULL,
+  UKHDR_PW = NULL
 )
 }
 \arguments{
 \item{search_terms}{a vector of strings to search the concept library phenotypes for}
+
+\item{ids}{a vector of phenotypes IDs to pull}
+
+\item{UKHDR_UN}{UK-HDR website username (if pulling unpublished phenotypes)}
+
+\item{UKHDR_PW}{UK-HDR website password (if pulling unpublished phenotypes)}
 }
 \value{
 boolean, success status

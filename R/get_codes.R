@@ -98,20 +98,20 @@ get_icd10 <- function() {
 }
 
 
-#' @title get SNOMED CT codes
-#' @param version a string, either "int" (international) or "uk"
-#' @return a data.table
-#' @export
+#' #' @title get SNOMED CT codes
+#' #' @param version a string, either "int" (international) or "uk"
+#' #' @return a data.table
+#' #' @export
+#' #'
+#' get_snomed <- function(version = "int") {
 #'
-get_snomed <- function(version = "int") {
-
-  version <- match.arg(version, choices = c("uk", "int"))
-  code_file <- system.file("extdata", "snomed", paste0("sct2_description_", version, ".txt"), package = "heRmes")
-  codes <- data.table::fread(code_file, quote="")
-  codes <- codes[, list(code = as.character(conceptId), description = term)]
-  return(codes)
-
-}
+#'   version <- match.arg(version, choices = c("uk", "int"))
+#'   code_file <- system.file("extdata", "snomed", paste0("sct2_description_", version, ".txt"), package = "heRmes")
+#'   codes <- data.table::fread(code_file, quote="")
+#'   codes <- codes[, list(code = as.character(conceptId), description = term)]
+#'   return(codes)
+#'
+#' }
 
 #' @title get read codes v3
 #' @return a data.table
@@ -174,7 +174,7 @@ search_codes <- function(regexes = list("heart\\s*failure",
   if ("icd9cm" %in% sources)       codes <- c(codes, list(icd9cm = get_icd9cm()))
   if ("icd10cm" %in% sources)      codes <- c(codes, list(icd10cm = get_icd10cm()))
   if ("icd10" %in% sources)        codes <- c(codes, list(icd10 = get_icd10()))
-  if ("snomed" %in% sources)       codes <- c(codes, list(snomed = get_snomed()))
+  # if ("snomed" %in% sources)       codes <- c(codes, list(snomed = get_snomed()))
   if ("opcs" %in% sources)         codes <- c(codes, list(opcs = get_opcs()))
   if ("readcodes_v2" %in% sources) codes <- c(codes, list(readcodes_v2 = get_readcodes_v2()))
   if ("readcodes_v3" %in% sources) codes <- c(codes, list(readcodes_v3 = get_readcodes_v3()))

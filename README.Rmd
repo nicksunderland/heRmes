@@ -42,10 +42,10 @@ get_phenotypes()[1:5]
 ```
 
 ### Codes
-View the codes for phenotype `PH_HF_HERMES_3.0`.
+View the codes for `PH1645` corresponding to the HERMES Heart Failure phenotype.
 ```{r codes}
 # top 5 codes
-get_codes(pheno_id = "PH_HF_HERMES_3.0")[1:5, c("phenotype_id", "phenotype_name", "coding_system.name", "code")]
+get_codes(pheno_id = "PH1645")[1:5, c("phenotype_id", "phenotype_name", "coding_system.name", "code")]
 ```
 
 ### Phenotyping a dataset
@@ -58,12 +58,12 @@ dat <- data.frame(ids   = paste0("ID_", c(1:(n/2), 1:(n/2))),
 dat
 ```
 
-Phenotype the individuals with phenotype `PH_HF_HERMES_3.0`, excluding phenotype `PH_congHD_HERMES_3.0`. There can be multiple included or excluded phenotypes given in a list. 
+Phenotype the individuals with phenotype `PH1645` (heart failure), excluding phenotype `PH1637` (congenital heart disease). There can be multiple included or excluded phenotypes given in a list. 
 ```{r phenotype}
 result <- phenotype(dat$ids, dat$codes, 
                     name    = "Heart Failure", 
-                    include = list("PH_HF_HERMES_3.0"), 
-                    exclude = list("PH_congHD_HERMES_3.0"))
+                    include = list(HF = "PH1645"), 
+                    exclude = list(congHD = "PH1637"))
 result[]
 ```
 
@@ -76,7 +76,32 @@ update_library(search_terms = c("heart failure", "cardiomyopathy", "myocardial i
 ### Plotting phenotype 
 To see the intersection of the codes in two or more phenotype files use the `plot_code_overlap()` function. 
 ```{r plot, out.width="80%", fig.align='center', fig.width=12, fig.height=18}
-plot_code_overlap(pheno_ids = c("PH_HF_HERMES_3.0", "PH1028", "PH1055", "PH1074", "PH182", "PH25", "PH530", "PH531", "PH631", "PH687", "PH968", "PH993"), 
-                  types = c("ICD10 codes", "ICD9 codes", "OPCS4 codes", "Read codes v2", "SNOMED  CT codes"))
+plot_code_overlap(pheno_ids = c("PH1645", "PH1028", "PH1055", "PH1074", "PH182", "PH25", "PH530", "PH531", "PH631", "PH687", "PH968", "PH993"), 
+                  types = c("ICD10 codes", "ICD9 codes", "OPCS4 codes", "Read codes v2"))
 ```
 
+### Update library from UKHDR (unpublished)
+The package phenotype library can be updated with unpublished/development phenotypes from the [UKHDR Phenotype Library API](https://phenotypes.healthdatagateway.org/api/v1/) using the below function. However, since unpublished phenotypes are not searchable by name, we need to pass the exact ID and also login details for the website (stored in a local `.Renviron` file in this example.) 
+```{r update_private, eval = TRUE}
+# development phenotypes, ids named for readability only
+hermes_phenos <- c(`Congenital heart disease`    = "PH1637", 
+                   `Myocardial infarction`       = "PH1636", 
+                   `Secondary cardiomyopathies`  = "PH1642", 
+                   `Hypertrophic cardiomyopathy` = "PH1640", 
+                   `Dilated cardiomyopathy`      = "PH1638", 
+                   `Cardiomyopathy`              = "PH1646", 
+                   `Heart failure`               = "PH1645", 
+                   `Non-ischaemic cardiomyopathy`= "PH1639", 
+                   `Heart failure syndrome`      = "PH1643")
+
+# update
+update_library(search_terms = c(), 
+               ids          = hermes_phenos, 
+               UKHDR_UN     = Sys.getenv("UKHDR_UN"), 
+               UKHDR_PW     = Sys.getenv("UKHDR_PW"))
+```
+
+### Plot the ICD-10 HERMES phenotypes
+```{r plot_hermes}
+plot_code_overlap(pheno_ids = hermes_phenos, types = c("ICD10 codes"))
+```

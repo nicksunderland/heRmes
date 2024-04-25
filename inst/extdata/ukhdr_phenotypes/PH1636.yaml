@@ -1,0 +1,41 @@
+phenotype_id: PH1636
+phenotype_version_id: 3300
+name: Myocardial infarction
+definition: Previous UKBB [codes](https://github.com/UK-Digital-Heart-Project/UKBB_filter)
+publications:
+- Mehta et al.
+- Tsai et al.
+author: Jiang, C., Sunderland, N., Henry, A., Shah, S., Lumbers, T.
+group_access: 3
+world_access: 2
+sex: '3'
+type: '2'
+concept_information:
+- name: Myocardial infarction
+  type: existing_concept
+  concept_id: 3502
+  concept_version_id: 10719
+- name: Myocardial infarction
+  type: existing_concept
+  concept_id: 3503
+  concept_version_id: 10770
+- name: Myocardial infarction
+  type: existing_concept
+  concept_id: 3504
+  concept_version_id: 10771
+- name: Myocardial infarction
+  type: existing_concept
+  concept_id: 3505
+  concept_version_id: 10772
+- name: Myocardial infarction
+  type: existing_concept
+  concept_id: 3507
+  concept_version_id: 10724
+- name: Myocardial infarction
+  type: existing_concept
+  concept_id: 3522
+  concept_version_id: 10721
+owner: nsunderland
+template:
+  id: 1
+  version_id: 1

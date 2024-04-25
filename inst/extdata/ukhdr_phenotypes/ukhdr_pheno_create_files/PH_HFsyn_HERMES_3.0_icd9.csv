@@ -1,0 +1,25 @@
+ICD9,description
+4280,Congestive heart failure
+4281,Left heart failure
+42820,Systolic heart failure NOS
+42821,Acute systolic heart failure
+42822,Chronic systolic heart failure
+42823,Acute on chronic systolic heart failure
+42830,Diastolic heart failure NOS
+42831,Acute diastolic heart failure
+42832,Chronic diastolic heart failure
+42833,Acute on chronic diastolic heart failure
+42840,Systolic & diastolic heart failure NOS
+42841,Acute systolic & diastolic heart failure
+42842,Chronic systolic & diastolic heart failure
+42843,Acute on chronic systolic & diastolic heart failure
+4289,"Heart failure, unspecified"
+40201,Malignant hypertensive heart disease with heart failure
+40211,Benign hypertensive heart disease with heart failure
+40291,Unspecified hypertensive heart disease with heart failure
+40401,Malignant hypertensive heart & kidney disease (stage 1-4) with heart failure
+40403,Malignant hypertensive heart & kidney disease (stage 5) with heart failure
+40411,Benign hypertensive heart & kidney disease (stage 1-4) with heart failure
+40413,Benign hypertensive heart & kidney disease (stage 5) with heart failure
+40491,Unspecified hypertensive heart  & kidney disease (stage 1-4) with heart failure
+40493,Unspecified hypertensive heart  & kidney disease (stage 5) with heart failure

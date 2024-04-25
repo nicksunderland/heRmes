@@ -1,0 +1,29 @@
+phenotype_id: PH1646
+phenotype_version_id: 3368
+name: Cardiomyopathy
+author: Sunderland, N., Jiang, C., Henry, A., Shah, S., Lumbers, T.
+group_access: 3
+world_access: 2
+sex: '3'
+type: '2'
+concept_information:
+- name: Cardiomyopathy
+  type: existing_concept
+  concept_id: 3567
+  concept_version_id: 10878
+- name: Cardiomyopathy
+  type: existing_concept
+  concept_id: 3568
+  concept_version_id: 10875
+- name: Cardiomyopathy
+  type: existing_concept
+  concept_id: 3569
+  concept_version_id: 10876
+- name: Cardiomyopathy
+  type: existing_concept
+  concept_id: 3570
+  concept_version_id: 10877
+owner: nsunderland
+template:
+  id: 1
+  version_id: 1

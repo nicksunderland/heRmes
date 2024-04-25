@@ -34,26 +34,33 @@ For example, view the first 6 phenotypes.
 
 ``` r
 get_phenotypes()[1:5]
-#>                   congHD                      DCM            Heart failure 
-#>   "PH_congHD_HERMES_3.0"      "PH_DCM_HERMES_3.0"       "PH_HF_HERMES_3.0" 
-#>    Myocardial infarction CCU002_02 Cardiomyopathy 
-#>       "PH_MI_HERMES_3.0"                 "PH1002"
+#>                         CCU002_02 Cardiomyopathy 
+#>                                         "PH1002" 
+#>                Acute Myocardial Infarction (AMI) 
+#>                                         "PH1024" 
+#>                  Heart Failure (fatal/non-fatal) 
+#>                                         "PH1028" 
+#> Congestive heart failure - Charlson primary care 
+#>                                         "PH1055" 
+#>    Myocardial infarction - Charlson primary care 
+#>                                         "PH1062"
 ```
 
 ### Codes
 
-View the codes for phenotype `PH_HF_HERMES_3.0`.
+View the codes for `PH1645` corresponding to the HERMES Heart Failure
+phenotype.
 
 ``` r
 # top 5 codes
-get_codes(pheno_id = "PH_HF_HERMES_3.0")[1:5, c("phenotype_id", "phenotype_name", "coding_system.name", "code")]
-#>        phenotype_id phenotype_name coding_system.name   code
-#>              <char>         <char>             <char> <char>
-#> 1: PH_HF_HERMES_3.0  Heart failure        ICD10 codes  A3681
-#> 2: PH_HF_HERMES_3.0  Heart failure        ICD10 codes  B3324
-#> 3: PH_HF_HERMES_3.0  Heart failure        ICD10 codes   I255
-#> 4: PH_HF_HERMES_3.0  Heart failure        ICD10 codes   I420
-#> 5: PH_HF_HERMES_3.0  Heart failure        ICD10 codes   I421
+get_codes(pheno_id = "PH1645")[1:5, c("phenotype_id", "phenotype_name", "coding_system.name", "code")]
+#>    phenotype_id phenotype_name coding_system.name   code
+#>          <char>         <char>             <char> <char>
+#> 1:       PH1645  Heart failure         ICD9 codes  40201
+#> 2:       PH1645  Heart failure         ICD9 codes  42830
+#> 3:       PH1645  Heart failure         ICD9 codes  42832
+#> 4:       PH1645  Heart failure         ICD9 codes   4281
+#> 5:       PH1645  Heart failure         ICD9 codes  42843
 ```
 
 ### Phenotyping a dataset
@@ -80,15 +87,15 @@ dat
 #> 10 ID_5   foo
 ```
 
-Phenotype the individuals with phenotype `PH_HF_HERMES_3.0`, excluding
-phenotype `PH_congHD_HERMES_3.0`. There can be multiple included or
-excluded phenotypes given in a list.
+Phenotype the individuals with phenotype `PH1645` (heart failure),
+excluding phenotype `PH1637` (congenital heart disease). There can be
+multiple included or excluded phenotypes given in a list.
 
 ``` r
 result <- phenotype(dat$ids, dat$codes, 
                     name    = "Heart Failure", 
-                    include = list("PH_HF_HERMES_3.0"), 
-                    exclude = list("PH_congHD_HERMES_3.0"))
+                    include = list(HF = "PH1645"), 
+                    exclude = list(congHD = "PH1637"))
 result[]
 #>        id include exclude Heart Failure
 #>    <char>  <lgcl>  <lgcl>        <lgcl>
@@ -147,8 +154,53 @@ To see the intersection of the codes in two or more phenotype files use
 the `plot_code_overlap()` function.
 
 ``` r
-plot_code_overlap(pheno_ids = c("PH_HF_HERMES_3.0", "PH1028", "PH1055", "PH1074", "PH182", "PH25", "PH530", "PH531", "PH631", "PH687", "PH968", "PH993"), 
-                  types = c("ICD10 codes", "ICD9 codes", "OPCS4 codes", "Read codes v2", "SNOMED  CT codes"))
+plot_code_overlap(pheno_ids = c("PH1645", "PH1028", "PH1055", "PH1074", "PH182", "PH25", "PH530", "PH531", "PH631", "PH687", "PH968", "PH993"), 
+                  types = c("ICD10 codes", "ICD9 codes", "OPCS4 codes", "Read codes v2"))
 ```
 
 <img src="man/figures/README-plot-1.png" width="80%" style="display: block; margin: auto;" />
+
+### Update library from UKHDR (unpublished)
+
+The package phenotype library can be updated with
+unpublished/development phenotypes from the [UKHDR Phenotype Library
+API](https://phenotypes.healthdatagateway.org/api/v1/) using the below
+function. However, since unpublished phenotypes are not searchable by
+name, we need to pass the exact ID and also login details for the
+website (stored in a local `.Renviron` file in this example.)
+
+``` r
+# development phenotypes, ids named for readability only
+hermes_phenos <- c(`Congenital heart disease`    = "PH1637", 
+                   `Myocardial infarction`       = "PH1636", 
+                   `Secondary cardiomyopathies`  = "PH1642", 
+                   `Hypertrophic cardiomyopathy` = "PH1640", 
+                   `Dilated cardiomyopathy`      = "PH1638", 
+                   `Cardiomyopathy`              = "PH1646", 
+                   `Heart failure`               = "PH1645", 
+                   `Non-ischaemic cardiomyopathy`= "PH1639", 
+                   `Heart failure syndrome`      = "PH1643")
+
+# update
+update_library(search_terms = c(), 
+               ids          = hermes_phenos, 
+               UKHDR_UN     = Sys.getenv("UKHDR_UN"), 
+               UKHDR_PW     = Sys.getenv("UKHDR_PW"))
+#> [i] reading phenotype id: PH1637 - skipping, already exists
+#> [i] reading phenotype id: PH1636 - skipping, already exists
+#> [i] reading phenotype id: PH1642 - skipping, already exists
+#> [i] reading phenotype id: PH1640 - skipping, already exists
+#> [i] reading phenotype id: PH1638 - skipping, already exists
+#> [i] reading phenotype id: PH1646 - skipping, already exists
+#> [i] reading phenotype id: PH1645 - skipping, already exists
+#> [i] reading phenotype id: PH1639 - skipping, already exists
+#> [i] reading phenotype id: PH1643 - skipping, already exists
+```
+
+### Plot the ICD-10 HERMES phenotypes
+
+``` r
+plot_code_overlap(pheno_ids = hermes_phenos, types = c("ICD10 codes"))
+```
+
+<img src="man/figures/README-plot_hermes-1.png" width="100%" />

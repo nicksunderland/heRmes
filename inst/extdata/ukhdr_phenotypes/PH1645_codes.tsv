@@ -1,0 +1,226 @@
+concept_id	concept_history_id	concept_history_date	component_id	component_history_id	logical_type	codelist_id	codelist_history_id	id	code	description	attributes	concept_version_id	concept_name	coding_system.id	coding_system.name	coding_system.description	phenotype_id	phenotype_version_id	phenotype_name
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359485	40201	Malignant hypertensive heart disease with heart failure		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359476	42830	Diastolic heart failure NOS		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359478	42832	Chronic diastolic heart failure		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359471	4281	Left heart failure		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359483	42843	Acute on chronic systolic & diastolic heart failure		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359477	42831	Acute diastolic heart failure		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9340	11586	1	9340	10779	360108	4252	Obscure cardiomyopathy of Africa		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359492	40491	Unspecified hypertensive heart  & kidney disease (stage 1-4) with heart failure		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359484	4289	Heart failure, unspecified		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359486	40211	Benign hypertensive heart disease with heart failure		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359482	42842	Chronic systolic & diastolic heart failure		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9340	11586	1	9340	10779	360106	425	Cardiomyopathy		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359470	4280	Congestive heart failure		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9340	11586	1	9340	10779	360107	4250	Endomyocardial fibrosis		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359472	42820	Systolic heart failure NOS		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359490	40411	Benign hypertensive heart & kidney disease (stage 1-4) with heart failure		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9340	11586	1	9340	10779	360105	4254	Other primary cardiomyopathies		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9340	11586	1	9340	10779	360109	4253	Endocardial fibroelastosis		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359487	40291	Unspecified hypertensive heart disease with heart failure		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9340	11586	1	9340	10779	360114	42983	Takotsubo syndrome		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359493	40493	Unspecified hypertensive heart  & kidney disease (stage 5) with heart failure		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359480	42840	Systolic & diastolic heart failure NOS		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359473	42821	Acute systolic heart failure		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359481	42841	Acute systolic & diastolic heart failure		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359491	40413	Benign hypertensive heart & kidney disease (stage 5) with heart failure		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359474	42822	Chronic systolic heart failure		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359488	40401	Malignant hypertensive heart & kidney disease (stage 1-4) with heart failure		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359475	42823	Acute on chronic systolic heart failure		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359489	40403	Malignant hypertensive heart & kidney disease (stage 5) with heart failure		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3561	10879	2024-04-25T19:32:26.595698Z	9312	11585	1	9312	10748	359479	42833	Acute on chronic diastolic heart failure		10879	Heart failure	17	ICD9 codes	ICD9 codes	PH1645	3369	Heart failure
+3562	10880	2024-04-25T19:32:26.728958Z	9343	11593	1	9343	10783	360130	I425	Other restrictive cardiomyopathy		10880	Heart failure	4	ICD10 codes	ICD10 Codes	PH1645	3369	Heart failure
+3562	10880	2024-04-25T19:32:26.728958Z	9343	11593	1	9343	10783	360126	I42	Cardiomyopathy		10880	Heart failure	4	ICD10 codes	ICD10 Codes	PH1645	3369	Heart failure
+3562	10880	2024-04-25T19:32:26.728958Z	9314	11590	1	9314	10750	359500	I500	Congestive heart failure		10880	Heart failure	4	ICD10 codes	ICD10 Codes	PH1645	3369	Heart failure
+3562	10880	2024-04-25T19:32:26.728958Z	9314	11590	1	9314	10750	359499	I50	Heart failure		10880	Heart failure	4	ICD10 codes	ICD10 Codes	PH1645	3369	Heart failure
+3562	10880	2024-04-25T19:32:26.728958Z	9343	11593	1	9343	10783	360133	I428	Other cardiomyopathies		10880	Heart failure	4	ICD10 codes	ICD10 Codes	PH1645	3369	Heart failure
+3562	10880	2024-04-25T19:32:26.728958Z	9314	11590	1	9314	10750	359497	I130	Hypertensive heart and renal disease with (congestive) heart failure		10880	Heart failure	4	ICD10 codes	ICD10 Codes	PH1645	3369	Heart failure
+3562	10880	2024-04-25T19:32:26.728958Z	9314	11590	1	9314	10750	359501	I501	Left ventricular failure		10880	Heart failure	4	ICD10 codes	ICD10 Codes	PH1645	3369	Heart failure
+3562	10880	2024-04-25T19:32:26.728958Z	9314	11590	1	9314	10750	359498	I132	Hypertensive heart and renal disease with both (congestive) heart failure and renal failure		10880	Heart failure	4	ICD10 codes	ICD10 Codes	PH1645	3369	Heart failure
+3562	10880	2024-04-25T19:32:26.728958Z	9314	11590	1	9314	10750	359496	I110	Hypertensive heart disease with (congestive) heart failure		10880	Heart failure	4	ICD10 codes	ICD10 Codes	PH1645	3369	Heart failure
+3562	10880	2024-04-25T19:32:26.728958Z	9343	11593	1	9343	10783	360134	I429	Cardiomyopathy, unspecified		10880	Heart failure	4	ICD10 codes	ICD10 Codes	PH1645	3369	Heart failure
+3562	10880	2024-04-25T19:32:26.728958Z	9343	11593	1	9343	10783	360127	I420	Dilated cardiomyopathy		10880	Heart failure	4	ICD10 codes	ICD10 Codes	PH1645	3369	Heart failure
+3562	10880	2024-04-25T19:32:26.728958Z	9314	11590	1	9314	10750	359502	I509	Heart failure, unspecified		10880	Heart failure	4	ICD10 codes	ICD10 Codes	PH1645	3369	Heart failure
+3562	10880	2024-04-25T19:32:26.728958Z	9343	11593	1	9343	10783	360125	I255	Ischaemic cardiomyopathy		10880	Heart failure	4	ICD10 codes	ICD10 Codes	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359609	G5800	Acute congestive heart failure		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359618	G5y4z	Post cardiac operation heart failure NOS		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359615	G583.	Heart failure with normal ejection fraction		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359573	1O1..	Heart failure confirmed		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359610	G5801	Chronic congestive heart failure		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359599	9Or1.	Heart failure monitoring telephone invite		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9344	11599	1	9344	10786	360153	G554z	Other primary cardiomyopathy NOS		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359588	8H2S.	Admit heart failure emergency		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359593	8IE0.	Referral to heart failure education group declined		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359591	8HHz.	Referral to heart failure exercise programme		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359607	G58..	Heart failure		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359606	G234.	Hypertensive heart and renal disease with both (congestive) heart failure and renal failure		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359605	G232.	Hypertensive heart and renal disease with (congestive) heart failure		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9344	11599	1	9344	10786	360148	G5541	Constrictive cardiomyopathy		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359584	8CeC.	Preferred place of care for next exacerbation of heart failure		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359596	9N6T.	Referred by heart failure nurse specialist		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359585	8CL3.	Heart failure care plan discussed with patient		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359597	9Or..	Heart failure monitoring administration		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359617	G58z.	Heart failure NOS		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9344	11599	1	9344	10786	360151	G5544	Primary dilated cardiomyopathy		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9344	11599	1	9344	10786	360149	G5542	Familial cardiomyopathy		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359614	G582.	Acute heart failure		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9344	11599	1	9344	10786	360143	G55..	Cardiomyopathy		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9344	11599	1	9344	10786	360142	G343.	Ischaemic cardiomyopathy		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359581	679W1	Education about deteriorating heart failure		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359616	G584.	Right ventricular failure		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359578	662p.	Heart failure 6 month review		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9344	11599	1	9344	10786	360165	G559.	Arrhythmogenic right ventricular cardiomyopathy		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359603	9Or5.	Heart failure monitoring third letter		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359580	662W.	Heart failure annual review		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359598	9Or0.	Heart failure review completed		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359579	662T.	Congestive heart failure monitoring		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359587	8CMW8	Heart failure clinical pathway		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359601	9Or3.	Heart failure monitoring first letter		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359572	14AM.	H/O: Heart failure in last year		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359600	9Or2.	Heart failure monitoring verbal invite		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359589	8HBE.	Heart failure follow-up		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359583	67D4.	Heart failure information given to patient		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359576	661M5	Heart failure self-management plan agreed		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359608	G580.	Congestive heart failure		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359594	8IE1.	Referral to heart failure exercise programme declined		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359575	388D.	New York Heart Association classification of heart failure symptoms		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359590	8HHb.	Referral to heart failure nurse		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9344	11599	1	9344	10786	360169	G55z.	Cardiomyopathy NOS		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359612	G581.	Left ventricular failure		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9344	11599	1	9344	10786	360171	Gyu5N	[X]Other restrictive cardiomyopathy		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359574	2JZ..	On optimal heart failure therapy		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9344	11599	1	9344	10786	360172	Gyu5P	[X]Other cardiomyopathies		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9344	11599	1	9344	10786	360146	G554.	Other primary cardiomyopathies		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359577	661N5	Heart failure self-management plan review		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359571	14A6.	H/O: heart failure		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9344	11599	1	9344	10786	360147	G5540	Congestive cardiomyopathy		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359602	9Or4.	Heart failure monitoring second letter		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359592	8Hk0.	Referred to heart failure education group		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359613	G5810	Acute left ventricular failure		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359586	8CMK.	Has heart failure management plan		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359595	9N2p.	Seen by community heart failure nurse		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3563	10881	2024-04-25T19:32:26.975361Z	9320	11597	1	9320	10756	359582	679X.	Heart failure education		10881	Heart failure	5	Read codes v2	Read codes v2	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359661	Y20By	Right ventricular failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359714	YautY	Heart failure self-management plan review		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359708	YatBi	Heart failure self management plan		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359683	YakrM	Heart failure annual review		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360201	Y207r	Familial dilated cardiomyopathy		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360246	YMAkP	Ischaemic cardiomyopathy		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360178	Y207a	Cardiomyopathy NOS		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359658	Y20Bs	Heart failure as a complication of care		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359674	Ya3Ha	Acute congestive heart failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359693	YaoSI	Heart failure monitoring administration		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359689	YaoGZ	Referred by heart failure nurse specialist		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360234	YE0Qw	(Congestive obstructive) or (congestive cardiomyopathy)		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360186	Y207i	DCM - Dilated cardiomyopathy		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360203	Y207s	Restrictive cardiomyopathy		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360190	Y207K	Other primary cardiomyopathies		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359707	YaqWc	Heart failure education		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359679	Yakgm	Congestive heart failure monitoring		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359657	Y20Bq	Heart failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359667	Y20C5	Biventricular failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359690	YaoS5	Heart failure information given to patient		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360193	Y207m	Primary dilated cardiomyopathy		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359722	YaYAU	Acute left ventricular failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359662	Y20Bz	RVF - Right ventricular failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359730	YMH3d	Left heart failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359687	Yandz	Referral to heart failure nurs		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360188	Y207j	Congestive cardiomyopathy		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359660	Y20Bw	Heart failure NOS		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359691	YaoS6	Heart failure info given to pt		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359727	YE1OF	[Cardiac insufficiency] or [heart failure] as a complication of care		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359695	YaoSK	Heart failure review completed		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359685	Yandx	Admit heart failure emergency		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359684	YalSS	Heart failure confirmed		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359725	YE0R5	Heart failure: [right] or [congestive]		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359715	YauUR	Has heart failure management plan		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359694	YaoSJ	Heart failure monitoring admin		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359673	Ya1gx	Sepsis-associated right ventricular failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360194	Y207M	Familial cardiomyopathy		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359680	Yakgv	Congestive heart failure monit		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359701	YapRc	Heart failure monitoring second letter		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359681	Yakk0	New York Heart Association classification of heart failure symptoms		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359729	YMAkY	Hypertensive heart and renal disease with both (congestive) heart failure and renal failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360227	YaRD4	RCM - Restrictive cardiomyopathy		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359723	YaYAV	Acute heart failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359720	YavQI	Rehabilitation for heart failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359672	Ya1gw	Sepsis-associated left ventricular failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360185	Y207h	Dilated cardiomyopathy		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359688	Yane4	Seen by community heart failure nurse		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360189	Y207k	COCM - Congestive cardiomyopathy		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360187	Y207I	Cardiomyopathy		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359700	YapRa	Heart failure monitoring first letter		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359706	YaQvG	HF - Heart failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359671	Ya04n	H/O: heart failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359659	Y20Bv	Post cardiac operation heart failure NOS		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360207	Y207w	Restrictive cardiomyopathy without endomyocardial fibrosis		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359669	Y20C7	CHF - Congestive heart failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359710	YatxI	HFNEF - heart failure with normal ejection fraction		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359664	Y20C1	RHF - Right heart failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359663	Y20C0	Right heart failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359668	Y20C6	Congestive heart failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359677	YabP2	H/O: Heart failure in last year		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360223	Ya3KE	Arrhythmogenic right ventricular cardiomyopathy		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359719	YavpN	Heart failure with preserved ejection fraction		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359726	YE0S3	(Congestive cardiac failure) or (dropsy) or (cardiac insufficiency) or (right heart failure) or (right ventricular failure)		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359697	YaovL	Heart failure 6 month review		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359711	Yau8E	Referral to heart failure education group declined		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359716	Yauv2	Heart failure self-management plan agreed		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359717	Yauyl	Education about deteriorating heart failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360239	YMAHb	[X]Other restrictive cardiomyopathy		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359682	YakrL	Heart failure follow-up		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359686	Yandy	Referral to heart failure nurse		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359675	Ya3Hb	Chronic congestive heart failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359699	YapQ2	Heart failure monitoring telephone invite		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359698	YaoY4	Referred to heart failure education group		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360240	YMAHc	[X]Other cardiomyopathies		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359712	YaudC	Preferred place of care for next exacerbation of heart failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360209	Y207x	Familial restrictive cardiomyopathy		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359724	Yaz0A	Heart failure with reduced ejection fraction		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360206	Y207u	Restrictive cardiomyopathy with endomyocardial fibrosis		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360196	Y207N	Other primary cardiomyopathy NOS		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359665	Y20C2	Left ventricular failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359704	YapRV	Heart failure monitoring verbal invite		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360205	Y207t	Constrictive cardiomyopathy		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359718	Yaviz	Heart failure clinical pathway		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359696	YaoSM	Heart failure care plan discussed with patient		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359692	YaoS7	Referral to heart failure exercise programme		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9345	11605	1	9345	10789	360226	YaRD3	CCM - Congestive cardiomyopathy		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359676	Yabcn	H/O:Heart failure in last year		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359702	YapRd	Heart failure monit 2nd letter		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359703	YapRe	Heart failure monitoring third letter		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359713	YauR9	Referral to heart failure exercise programme declined		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359666	Y20C4	LVF - Left ventricular failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359728	YMAkW	Hypertensive heart and renal disease with (congestive) heart failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359709	Yatsi	Heart failure with normal ejection fraction		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359721	Yax9d	On optimal heart failure therapy		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3564	10882	2024-04-25T19:32:27.399912Z	9323	11602	1	9323	10759	359678	YafEZ	Refractory heart failure		10882	Heart failure	6	Read codes v3	Read codes v3	PH1645	3369	Heart failure
+3565	10872	2024-04-25T19:02:19.192550Z	9331	11574	1	9331	10768	359921	1079	20002 - Cardiomyopathy		10872	Heart failure	12	UKBioBank codes	UKBioBank codes	PH1645	3369	Heart failure
+3565	10872	2024-04-25T19:02:19.192550Z	9331	11574	1	9331	10768	359920	1076	20002 - HF/pulmonary oedema		10872	Heart failure	12	UKBioBank codes	UKBioBank codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359944	K569	Unspecified transluminal heart assist operations		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359937	K542	Open removal of ventricular assist device		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359922	K01	Transplantation of heart and lung		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359947	K733	Renewal of intravenous biventricular cardiac pacemaker		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359928	K021	Allotransplantation of heart NEC		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359926	K019	Unspecified transplantation of heart and lung		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359933	K026	Revision of transplantation of heart NEC		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359932	K025	Revision of implantation of prosthetic heart		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359930	K023	Implantation of prosthetic heart		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359931	K024	Piggyback transplantation of heart		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359924	K012	Revision of transplantation of heart and lung		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359940	K562	Transluminal insertion of heart assist system NEC		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359936	K541	Open implantation of ventricular assist device		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359948	K743	Renewal of biventricular cardiac pacemaker NEC		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359939	K549	Unspecified open heart assist operations		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359946	K617	Implantation of biventricular cardiac pacemaker system		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359929	K022	Xenotransplantation of heart		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359927	K02	Other transplantation of heart		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359945	K607	Implantation of intravenous biventricular cardiac pacemaker system		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359923	K011	Allotransplantation of heart and lung		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359935	K029	Unspecified other transplantation of heart		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359938	K548	Other specified open heart assist operations		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359934	K028	Other specified other transplantation of heart		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359925	K018	Other specified transplantation of heart and lung		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359943	K568	Other specified transluminal heart assist operations		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359941	K563	Transluminal maintenance of heart assist system		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure
+3566	10873	2024-04-25T19:02:19.264207Z	9332	11575	1	9332	10769	359942	K564	Transluminal removal of heart assist system		10873	Heart failure	7	OPCS4 codes	OPCS4 codes	PH1645	3369	Heart failure

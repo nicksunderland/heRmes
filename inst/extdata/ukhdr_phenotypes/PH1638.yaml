@@ -1,0 +1,31 @@
+phenotype_id: PH1638
+phenotype_version_id: 3301
+name: Dilated cardiomyopathy
+publications:
+- Faden et al.
+author: Sunderland, N., Jiang, C., Henry, A., Shah, S., Lumbers, T.
+group_access: 3
+world_access: 2
+sex: '3'
+type: '2'
+concept_information:
+- name: Dilated cardiomyopathy
+  type: existing_concept
+  concept_id: 3514
+  concept_version_id: 10773
+- name: Dilated cardiomyopathy
+  type: existing_concept
+  concept_id: 3515
+  concept_version_id: 10697
+- name: Dilated cardiomyopathy
+  type: existing_concept
+  concept_id: 3516
+  concept_version_id: 10774
+- name: Dilated cardiomyopathy
+  type: existing_concept
+  concept_id: 3517
+  concept_version_id: 10775
+owner: nsunderland
+template:
+  id: 1
+  version_id: 1

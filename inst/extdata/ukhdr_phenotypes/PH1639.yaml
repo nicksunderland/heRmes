@@ -1,0 +1,29 @@
+phenotype_id: PH1639
+phenotype_version_id: 3370
+name: Non-ischaemic cardiomyopathy
+author: Sunderland, N., Jiang, C., Henry, A., Shah, S., Lumbers, T.
+group_access: 3
+world_access: 2
+sex: '3'
+type: '2'
+concept_information:
+- name: Non-ischaemic cardiomyopathy
+  type: existing_concept
+  concept_id: 3520
+  concept_version_id: 10883
+- name: Non-ischaemic cardiomyopathy
+  type: existing_concept
+  concept_id: 3521
+  concept_version_id: 10884
+- name: Non-ischaemic cardiomyopathy
+  type: existing_concept
+  concept_id: 3544
+  concept_version_id: 10885
+- name: Non-ischaemic cardiomyopathy
+  type: existing_concept
+  concept_id: 3545
+  concept_version_id: 10886
+owner: nsunderland
+template:
+  id: 1
+  version_id: 1

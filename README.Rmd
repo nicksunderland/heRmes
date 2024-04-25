@@ -82,7 +82,7 @@ plot_code_overlap(pheno_ids = c("PH1645", "PH1028", "PH1055", "PH1074", "PH182",
 
 ### Update library from UKHDR (unpublished)
 The package phenotype library can be updated with unpublished/development phenotypes from the [UKHDR Phenotype Library API](https://phenotypes.healthdatagateway.org/api/v1/) using the below function. However, since unpublished phenotypes are not searchable by name, we need to pass the exact ID and also login details for the website (stored in a local `.Renviron` file in this example.) 
-```{r update_private, eval = TRUE}
+```{r update_private, eval=FALSE}
 # development phenotypes, ids named for readability only
 hermes_phenos <- c(`Congenital heart disease`    = "PH1637", 
                    `Myocardial infarction`       = "PH1636", 
@@ -102,6 +102,7 @@ update_library(search_terms = c(),
 ```
 
 ### Plot the ICD-10 HERMES phenotypes
-```{r plot_hermes}
+```{r plot_hermes, eval=FALSE}
 plot_code_overlap(pheno_ids = hermes_phenos, types = c("ICD10 codes"))
 ```
+<img src="man/figures/README-plot_hermes-1.png" align="centre" width="80%"/>

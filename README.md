@@ -186,15 +186,6 @@ update_library(search_terms = c(),
                ids          = hermes_phenos, 
                UKHDR_UN     = Sys.getenv("UKHDR_UN"), 
                UKHDR_PW     = Sys.getenv("UKHDR_PW"))
-#> [i] reading phenotype id: PH1637 - skipping, already exists
-#> [i] reading phenotype id: PH1636 - skipping, already exists
-#> [i] reading phenotype id: PH1642 - skipping, already exists
-#> [i] reading phenotype id: PH1640 - skipping, already exists
-#> [i] reading phenotype id: PH1638 - skipping, already exists
-#> [i] reading phenotype id: PH1646 - skipping, already exists
-#> [i] reading phenotype id: PH1645 - skipping, already exists
-#> [i] reading phenotype id: PH1639 - skipping, already exists
-#> [i] reading phenotype id: PH1643 - skipping, already exists
 ```
 
 ### Plot the ICD-10 HERMES phenotypes
@@ -203,4 +194,4 @@ update_library(search_terms = c(),
 plot_code_overlap(pheno_ids = hermes_phenos, types = c("ICD10 codes"))
 ```
 
-<img src="man/figures/README-plot_hermes-1.png" width="100%" />
+<img src="man/figures/README-plot_hermes-1.png" align="centre" width="80%"/>

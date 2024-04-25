@@ -7,8 +7,7 @@
 search_codes(
   regexes = list("heart\\\\s*failure", "ventric[ulare]+\\\\s*(dysfunction|failure)"),
   terms = list("Transplantation of heart and lung"),
-  sources = c("icd9cm", "icd10cm", "icd10", "snomed", "opcs", "readcodes_v2",
-    "readcodes_v3")
+  sources = c("icd9cm", "icd10cm", "icd10", "opcs", "readcodes_v2", "readcodes_v3")
 )
 }
 \arguments{
@@ -16,7 +15,7 @@ search_codes(
 
 \item{terms}{a list of strings to search for}
 
-\item{sources}{a vector of strings, one or more of c("icd9cm", "icd10cm", "icd10", "snomed", "opcs", "readcodes_v2", "readcodes_v3")}
+\item{sources}{a vector of strings, one or more of c("icd9cm", "icd10cm", "icd10", "opcs", "readcodes_v2", "readcodes_v3")}
 }
 \value{
 a data.table

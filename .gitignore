@@ -3,3 +3,4 @@ inst/doc
 inst/extdata/snomed
 docs
 .Rprofile
+.DS_Store

@@ -71,7 +71,7 @@
 <div class="section level3">
 <h3 id="avaiable-phenotypes">Avaiable phenotypes<a class="anchor" aria-label="anchor" href="#avaiable-phenotypes"></a>
 </h3>
-<p>For example, view the first 6 phenotypes.</p>
+<p>For example, view the first 5 phenotypes.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/get_phenotypes.html">get_phenotypes</a></span><span class="op">(</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span>
 <span><span class="co">#&gt;                         CCU002_02 Cardiomyopathy </span></span>
@@ -108,33 +108,36 @@
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">2020</span><span class="op">)</span></span>
 <span><span class="va">n</span>   <span class="op">&lt;-</span> <span class="fl">10</span></span>
 <span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>ids   <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"ID_"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="op">(</span><span class="va">n</span><span class="op">/</span><span class="fl">2</span><span class="op">)</span>, <span class="fl">1</span><span class="op">:</span><span class="op">(</span><span class="va">n</span><span class="op">/</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>, </span>
-<span>                  codes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"I420"</span>, <span class="st">"foo"</span>, <span class="st">"bar"</span>, <span class="st">"baz"</span><span class="op">)</span>, <span class="va">n</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
+<span>                  codes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"I420"</span>, <span class="st">"foo"</span>, <span class="st">"bar"</span>, <span class="st">"baz"</span><span class="op">)</span>, <span class="va">n</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, </span>
+<span>                  codes1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"I420"</span>, <span class="st">"foo"</span>, <span class="st">"bar"</span>, <span class="st">"baz"</span><span class="op">)</span>, <span class="va">n</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">dat</span></span>
-<span><span class="co">#&gt;     ids codes</span></span>
-<span><span class="co">#&gt; 1  ID_1   baz</span></span>
-<span><span class="co">#&gt; 2  ID_2   baz</span></span>
-<span><span class="co">#&gt; 3  ID_3   bar</span></span>
-<span><span class="co">#&gt; 4  ID_4   foo</span></span>
-<span><span class="co">#&gt; 5  ID_5   baz</span></span>
-<span><span class="co">#&gt; 6  ID_1  I420</span></span>
-<span><span class="co">#&gt; 7  ID_2  I420</span></span>
-<span><span class="co">#&gt; 8  ID_3   baz</span></span>
-<span><span class="co">#&gt; 9  ID_4   foo</span></span>
-<span><span class="co">#&gt; 10 ID_5   foo</span></span></code></pre></div>
-<p>Phenotype the individuals with phenotype <code>PH1645</code> (heart failure), excluding phenotype <code>PH1637</code> (congenital heart disease). There can be multiple included or excluded phenotypes given in a list.</p>
+<span><span class="co">#&gt;     ids codes codes1</span></span>
+<span><span class="co">#&gt; 1  ID_1   baz   I420</span></span>
+<span><span class="co">#&gt; 2  ID_2   baz   I420</span></span>
+<span><span class="co">#&gt; 3  ID_3   bar    baz</span></span>
+<span><span class="co">#&gt; 4  ID_4   foo    baz</span></span>
+<span><span class="co">#&gt; 5  ID_5   baz    baz</span></span>
+<span><span class="co">#&gt; 6  ID_1  I420    foo</span></span>
+<span><span class="co">#&gt; 7  ID_2  I420    foo</span></span>
+<span><span class="co">#&gt; 8  ID_3   baz    baz</span></span>
+<span><span class="co">#&gt; 9  ID_4   foo    foo</span></span>
+<span><span class="co">#&gt; 10 ID_5   foo   I420</span></span></code></pre></div>
+<p>Phenotype the individuals with phenotype <code>PH1643</code> (heart failure syndrome) or <code>PH1646</code> (cardiomyopathy), excluding phenotypes <code>PH1637</code> (congenital heart disease) and <code>PH1636</code> (myocardial infarction). There can be multiple included or excluded phenotypes given in a list. If the phenotype IDs are named, these names are used as column names in the result. The overall result is given in the column <code>overall</code>, although this can be renamed by giving the <code>name</code> parameter.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/phenotype.html">phenotype</a></span><span class="op">(</span><span class="va">dat</span><span class="op">$</span><span class="va">ids</span>, <span class="va">dat</span><span class="op">$</span><span class="va">codes</span>, </span>
-<span>                    name    <span class="op">=</span> <span class="st">"Heart Failure"</span>, </span>
-<span>                    include <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>HF <span class="op">=</span> <span class="st">"PH1645"</span><span class="op">)</span>, </span>
-<span>                    exclude <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>congHD <span class="op">=</span> <span class="st">"PH1637"</span><span class="op">)</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/phenotype.html">phenotype</a></span><span class="op">(</span>x        <span class="op">=</span> <span class="va">dat</span>, </span>
+<span>                    id_col   <span class="op">=</span> <span class="st">"ids"</span>,</span>
+<span>                    code_col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"codes"</span>, <span class="st">"codes1"</span><span class="op">)</span>, </span>
+<span>                    name     <span class="op">=</span> <span class="st">"Heart Failure"</span>, </span>
+<span>                    include  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>HFsyn  <span class="op">=</span> <span class="st">"PH1643"</span>, CM <span class="op">=</span> <span class="st">"PH1646"</span><span class="op">)</span>, </span>
+<span>                    exclude  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>congHD <span class="op">=</span> <span class="st">"PH1637"</span>, MI <span class="op">=</span> <span class="st">"PH1636"</span>, HCM <span class="op">=</span> <span class="st">"PH1640"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">result</span><span class="op">[</span><span class="op">]</span></span>
-<span><span class="co">#&gt;        id include exclude Heart Failure</span></span>
-<span><span class="co">#&gt;    &lt;char&gt;  &lt;lgcl&gt;  &lt;lgcl&gt;        &lt;lgcl&gt;</span></span>
-<span><span class="co">#&gt; 1:   ID_1    TRUE   FALSE          TRUE</span></span>
-<span><span class="co">#&gt; 2:   ID_2    TRUE   FALSE          TRUE</span></span>
-<span><span class="co">#&gt; 3:   ID_3   FALSE   FALSE         FALSE</span></span>
-<span><span class="co">#&gt; 4:   ID_4   FALSE   FALSE         FALSE</span></span>
-<span><span class="co">#&gt; 5:   ID_5   FALSE   FALSE         FALSE</span></span></code></pre></div>
+<span><span class="co">#&gt;       ids  HFsyn     CM congHD     MI    HCM include exclude Heart Failure</span></span>
+<span><span class="co">#&gt;    &lt;char&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt;  &lt;lgcl&gt;  &lt;lgcl&gt;        &lt;lgcl&gt;</span></span>
+<span><span class="co">#&gt; 1:   ID_1  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE</span></span>
+<span><span class="co">#&gt; 2:   ID_2  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE</span></span>
+<span><span class="co">#&gt; 3:   ID_3  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE         FALSE</span></span>
+<span><span class="co">#&gt; 4:   ID_4  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE         FALSE</span></span>
+<span><span class="co">#&gt; 5:   ID_5  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="update-library-from-ukhdr">Update library from UKHDR<a class="anchor" aria-label="anchor" href="#update-library-from-ukhdr"></a>

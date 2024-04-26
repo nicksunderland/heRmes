@@ -4,18 +4,33 @@
 \alias{phenotype}
 \title{Phenotype}
 \usage{
-phenotype(ids, codes, name, include, exclude = NULL)
+phenotype(
+  x,
+  id_col,
+  code_col,
+  include,
+  exclude = NULL,
+  name = "overall",
+  include_multi = "any",
+  exclude_multi = "any"
+)
 }
 \arguments{
-\item{ids}{a vector of characters IDs}
+\item{x}{a data.frame like object}
 
-\item{codes}{a vector of diagnosis codes}
+\item{id_col}{a string, the name of the id column}
 
-\item{name}{a string, a name for the phenotype}
+\item{code_col}{a single string, or vector of strings, the diagnosis code column(s)}
 
 \item{include}{a string or list of strings, a valid phenotype id (see \code{get_phenotypes()})}
 
 \item{exclude}{a string or list of strings, a valid phenotype id (see \code{get_phenotypes()})}
+
+\item{name}{a string, a name for the phenotype}
+
+\item{include_multi}{a string, how to deal with multiple include phenotypes, either 'all' (all required) or 'any' (all required)}
+
+\item{exclude_multi}{a string, how to deal with multiple exclude phenotypes, either 'all' (all required) or 'any' (all required)}
 }
 \value{
 a data.table

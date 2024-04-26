@@ -30,7 +30,7 @@ phenotypes and obtain the codes.
 
 ### Avaiable phenotypes
 
-For example, view the first 6 phenotypes.
+For example, view the first 5 phenotypes.
 
 ``` r
 get_phenotypes()[1:5]
@@ -72,38 +72,45 @@ EHR code).
 set.seed(2020)
 n   <- 10
 dat <- data.frame(ids   = paste0("ID_", c(1:(n/2), 1:(n/2))), 
-                  codes = sample(c("I420", "foo", "bar", "baz"), n, replace = TRUE))
+                  codes = sample(c("I420", "foo", "bar", "baz"), n, replace = TRUE), 
+                  codes1 = sample(c("I420", "foo", "bar", "baz"), n, replace = TRUE))
 dat
-#>     ids codes
-#> 1  ID_1   baz
-#> 2  ID_2   baz
-#> 3  ID_3   bar
-#> 4  ID_4   foo
-#> 5  ID_5   baz
-#> 6  ID_1  I420
-#> 7  ID_2  I420
-#> 8  ID_3   baz
-#> 9  ID_4   foo
-#> 10 ID_5   foo
+#>     ids codes codes1
+#> 1  ID_1   baz   I420
+#> 2  ID_2   baz   I420
+#> 3  ID_3   bar    baz
+#> 4  ID_4   foo    baz
+#> 5  ID_5   baz    baz
+#> 6  ID_1  I420    foo
+#> 7  ID_2  I420    foo
+#> 8  ID_3   baz    baz
+#> 9  ID_4   foo    foo
+#> 10 ID_5   foo   I420
 ```
 
-Phenotype the individuals with phenotype `PH1645` (heart failure),
-excluding phenotype `PH1637` (congenital heart disease). There can be
-multiple included or excluded phenotypes given in a list.
+Phenotype the individuals with phenotype `PH1643` (heart failure
+syndrome) or `PH1646` (cardiomyopathy), excluding phenotypes `PH1637`
+(congenital heart disease) and `PH1636` (myocardial infarction). There
+can be multiple included or excluded phenotypes given in a list. If the
+phenotype IDs are named, these names are used as column names in the
+result. The overall result is given in the column `overall`, although
+this can be renamed by giving the `name` parameter.
 
 ``` r
-result <- phenotype(dat$ids, dat$codes, 
-                    name    = "Heart Failure", 
-                    include = list(HF = "PH1645"), 
-                    exclude = list(congHD = "PH1637"))
+result <- phenotype(x        = dat, 
+                    id_col   = "ids",
+                    code_col = c("codes", "codes1"), 
+                    name     = "Heart Failure", 
+                    include  = list(HFsyn  = "PH1643", CM = "PH1646"), 
+                    exclude  = list(congHD = "PH1637", MI = "PH1636", HCM = "PH1640"))
 result[]
-#>        id include exclude Heart Failure
-#>    <char>  <lgcl>  <lgcl>        <lgcl>
-#> 1:   ID_1    TRUE   FALSE          TRUE
-#> 2:   ID_2    TRUE   FALSE          TRUE
-#> 3:   ID_3   FALSE   FALSE         FALSE
-#> 4:   ID_4   FALSE   FALSE         FALSE
-#> 5:   ID_5   FALSE   FALSE         FALSE
+#>       ids  HFsyn     CM congHD     MI    HCM include exclude Heart Failure
+#>    <char> <lgcl> <lgcl> <lgcl> <lgcl> <lgcl>  <lgcl>  <lgcl>        <lgcl>
+#> 1:   ID_1  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE
+#> 2:   ID_2  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE
+#> 3:   ID_3  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE         FALSE
+#> 4:   ID_4  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE         FALSE
+#> 5:   ID_5  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE
 ```
 
 ### Update library from UKHDR

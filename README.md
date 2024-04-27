@@ -65,7 +65,11 @@ get_codes(pheno_id = "PH1645")[1:5, c("phenotype_id", "phenotype_name", "coding_
 
 ### Phenotyping a dataset
 
-Create sample data in long format (same IDs on multiple lines).
+Create sample data. This can be in long (only one column containing
+diagnosis codes) or wide format (multiple columns containing diagnosis
+codes). *n.b. prioritising coding based on diagnosis code position
+(e.g. primary vs. secondary vs. tertiary positions) is not currently
+supported.*
 
 ``` r
 set.seed(2020)

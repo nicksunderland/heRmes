@@ -130,10 +130,10 @@ It is important to inspect your dataset (`x`) and phenotype coding (use
 `get_codes()`) prior to running the phenotyping to avoid join issues
 related to formatting differences.
 
-Output formatting can be change by altering the inputs. If the phenotype
-IDs are named, these names are used as column names in the result. The
-overall result is given in the column `overall`, although this can be
-renamed by giving the `name` parameter.
+Output formatting can be changed by altering the inputs. If the
+phenotype IDs are named, these names are used as column names in the
+result. The overall result is given in the column `overall`, although
+this can be renamed by giving the `name` parameter.
 
 ``` r
 # change format

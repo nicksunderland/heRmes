@@ -103,7 +103,7 @@
 <div class="section level3">
 <h3 id="phenotyping-a-dataset">Phenotyping a dataset<a class="anchor" aria-label="anchor" href="#phenotyping-a-dataset"></a>
 </h3>
-<p>Create sample data in long format (multiple ID entries per asscoaited EHR code).</p>
+<p>Create sample data in long format (same IDs on multiple lines).</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">2020</span><span class="op">)</span></span>
 <span><span class="va">n</span>   <span class="op">&lt;-</span> <span class="fl">10</span></span>
@@ -122,15 +122,68 @@
 <span><span class="co">#&gt; 8  ID_3   baz    baz</span></span>
 <span><span class="co">#&gt; 9  ID_4   foo    foo</span></span>
 <span><span class="co">#&gt; 10 ID_5   foo   I420</span></span></code></pre></div>
-<p>Phenotype the individuals with phenotype <code>PH1643</code> (heart failure syndrome) or <code>PH1646</code> (cardiomyopathy), excluding phenotypes <code>PH1637</code> (congenital heart disease) and <code>PH1636</code> (myocardial infarction). There can be multiple included or excluded phenotypes given in a list. If the phenotype IDs are named, these names are used as column names in the result. The overall result is given in the column <code>overall</code>, although this can be renamed by giving the <code>name</code> parameter.</p>
+<p>Phenotype the individuals with phenotype <code>PH1643</code> (heart failure syndrome) or <code>PH1646</code> (cardiomyopathy), excluding phenotypes <code>PH1637</code> (congenital heart disease) and <code>PH1636</code> (myocardial infarction). There can be multiple included or excluded phenotypes given in a list.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/phenotype.html">phenotype</a></span><span class="op">(</span>x        <span class="op">=</span> <span class="va">dat</span>, </span>
 <span>                    id_col   <span class="op">=</span> <span class="st">"ids"</span>,</span>
 <span>                    code_col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"codes"</span>, <span class="st">"codes1"</span><span class="op">)</span>, </span>
-<span>                    name     <span class="op">=</span> <span class="st">"Heart Failure"</span>, </span>
-<span>                    include  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>HFsyn  <span class="op">=</span> <span class="st">"PH1643"</span>, CM <span class="op">=</span> <span class="st">"PH1646"</span><span class="op">)</span>, </span>
-<span>                    exclude  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>congHD <span class="op">=</span> <span class="st">"PH1637"</span>, MI <span class="op">=</span> <span class="st">"PH1636"</span>, HCM <span class="op">=</span> <span class="st">"PH1640"</span><span class="op">)</span><span class="op">)</span></span>
+<span>                    include  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"PH1643"</span>, <span class="st">"PH1646"</span><span class="op">)</span>, </span>
+<span>                    exclude  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"PH1637"</span>, <span class="st">"PH1636"</span>, <span class="st">"PH1640"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">result</span><span class="op">[</span><span class="op">]</span></span>
+<span><span class="co">#&gt;       ids PH1643 PH1646 PH1637 PH1636 PH1640 include exclude overall</span></span>
+<span><span class="co">#&gt;    &lt;char&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt;  &lt;lgcl&gt;  &lt;lgcl&gt;  &lt;lgcl&gt;</span></span>
+<span><span class="co">#&gt; 1:   ID_1  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE    TRUE</span></span>
+<span><span class="co">#&gt; 2:   ID_2  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE    TRUE</span></span>
+<span><span class="co">#&gt; 3:   ID_3  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE   FALSE</span></span>
+<span><span class="co">#&gt; 4:   ID_4  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE   FALSE</span></span>
+<span><span class="co">#&gt; 5:   ID_5  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE    TRUE</span></span></code></pre></div>
+<div class="section level4">
+<h4 id="code-formatting-issues">Code formatting issues<a class="anchor" aria-label="anchor" href="#code-formatting-issues"></a>
+</h4>
+<p>Many of the coding systems have slight formating differences - for example an ICD-10 code may appear as <code>I509</code> or <code>I50.9</code> in a dataset. The <code><a href="reference/phenotype.html">phenotype()</a></code> provides a way to clean these codes through use of the <code>gsub</code> argument. This takes a 3 element list: [[1]] is a string representing the regular expression pattern, [[2]] is the replacement string, and [[3]] is a character or character vector which can be one or more of: <code>x</code> (apply to codes in <code>x</code>), <code>pheno</code> (apply to all codes in phenotypes), <code>both</code> (apply to everything), or a valid phenotype ID found in <code>include</code> or <code>exclude</code> (apply to specific phenotype datasets). Other arguments can be passed to <code>gsub</code> through <code>...</code>.</p>
+<p>It is important to inspect your dataset (<code>x</code>) and phenotype coding (use <code><a href="reference/get_codes.html">get_codes()</a></code>) prior to running the phenotyping to avoid join issues related to formatting differences.</p>
+<p>Output formatting can be change by altering the inputs. If the phenotype IDs are named, these names are used as column names in the result. The overall result is given in the column <code>overall</code>, although this can be renamed by giving the <code>name</code> parameter.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># change format</span></span>
+<span><span class="va">dat</span><span class="op">[</span><span class="fl">10</span>, <span class="st">"codes1"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"I42.0"</span></span>
+<span><span class="va">dat</span><span class="op">[</span><span class="op">]</span></span>
+<span><span class="co">#&gt;     ids codes codes1</span></span>
+<span><span class="co">#&gt; 1  ID_1   baz   I420</span></span>
+<span><span class="co">#&gt; 2  ID_2   baz   I420</span></span>
+<span><span class="co">#&gt; 3  ID_3   bar    baz</span></span>
+<span><span class="co">#&gt; 4  ID_4   foo    baz</span></span>
+<span><span class="co">#&gt; 5  ID_5   baz    baz</span></span>
+<span><span class="co">#&gt; 6  ID_1  I420    foo</span></span>
+<span><span class="co">#&gt; 7  ID_2  I420    foo</span></span>
+<span><span class="co">#&gt; 8  ID_3   baz    baz</span></span>
+<span><span class="co">#&gt; 9  ID_4   foo    foo</span></span>
+<span><span class="co">#&gt; 10 ID_5   foo  I42.0</span></span>
+<span></span>
+<span><span class="co"># without dealing with the error ID_5 is incorrectly classified as no HF. </span></span>
+<span><span class="va">wrong</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/phenotype.html">phenotype</a></span><span class="op">(</span>x        <span class="op">=</span> <span class="va">dat</span>, </span>
+<span>                   id_col   <span class="op">=</span> <span class="st">"ids"</span>,</span>
+<span>                   code_col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"codes"</span>, <span class="st">"codes1"</span><span class="op">)</span>,</span>
+<span>                   include  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>HFsyn  <span class="op">=</span> <span class="st">"PH1643"</span>, CM <span class="op">=</span> <span class="st">"PH1646"</span><span class="op">)</span>, </span>
+<span>                   exclude  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>congHD <span class="op">=</span> <span class="st">"PH1637"</span>, MI <span class="op">=</span> <span class="st">"PH1636"</span>, HCM <span class="op">=</span> <span class="st">"PH1640"</span><span class="op">)</span>, </span>
+<span>                   name     <span class="op">=</span> <span class="st">"Heart Failure"</span><span class="op">)</span></span>
+<span><span class="va">wrong</span><span class="op">[</span><span class="op">]</span></span>
+<span><span class="co">#&gt;       ids  HFsyn     CM congHD     MI    HCM include exclude Heart Failure</span></span>
+<span><span class="co">#&gt;    &lt;char&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt;  &lt;lgcl&gt;  &lt;lgcl&gt;        &lt;lgcl&gt;</span></span>
+<span><span class="co">#&gt; 1:   ID_1  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE</span></span>
+<span><span class="co">#&gt; 2:   ID_2  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE</span></span>
+<span><span class="co">#&gt; 3:   ID_3  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE         FALSE</span></span>
+<span><span class="co">#&gt; 4:   ID_4  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE         FALSE</span></span>
+<span><span class="co">#&gt; 5:   ID_5  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE         FALSE</span></span>
+<span></span>
+<span><span class="co"># deal with formatting issue using gsub</span></span>
+<span><span class="va">pheno</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/phenotype.html">phenotype</a></span><span class="op">(</span>x        <span class="op">=</span> <span class="va">dat</span>, </span>
+<span>                   id_col   <span class="op">=</span> <span class="st">"ids"</span>,</span>
+<span>                   code_col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"codes"</span>, <span class="st">"codes1"</span><span class="op">)</span>,</span>
+<span>                   include  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>HFsyn  <span class="op">=</span> <span class="st">"PH1643"</span>, CM <span class="op">=</span> <span class="st">"PH1646"</span><span class="op">)</span>, </span>
+<span>                   exclude  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>congHD <span class="op">=</span> <span class="st">"PH1637"</span>, MI <span class="op">=</span> <span class="st">"PH1636"</span>, HCM <span class="op">=</span> <span class="st">"PH1640"</span><span class="op">)</span>, </span>
+<span>                   gsub     <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"\\."</span>, <span class="st">""</span>, <span class="st">"x"</span><span class="op">)</span>,</span>
+<span>                   name     <span class="op">=</span> <span class="st">"Heart Failure"</span><span class="op">)</span></span>
+<span><span class="va">pheno</span><span class="op">[</span><span class="op">]</span></span>
 <span><span class="co">#&gt;       ids  HFsyn     CM congHD     MI    HCM include exclude Heart Failure</span></span>
 <span><span class="co">#&gt;    &lt;char&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt;  &lt;lgcl&gt;  &lt;lgcl&gt;        &lt;lgcl&gt;</span></span>
 <span><span class="co">#&gt; 1:   ID_1  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE</span></span>
@@ -139,11 +192,12 @@
 <span><span class="co">#&gt; 4:   ID_4  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE         FALSE</span></span>
 <span><span class="co">#&gt; 5:   ID_5  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE</span></span></code></pre></div>
 </div>
+</div>
 <div class="section level3">
 <h3 id="update-library-from-ukhdr">Update library from UKHDR<a class="anchor" aria-label="anchor" href="#update-library-from-ukhdr"></a>
 </h3>
-<p>The package phenotype library can be updated from the <a href="https://phenotypes.healthdatagateway.org/api/v1/" class="external-link">UKHDR Phenotype Library API</a> using the below function. This queries the library for phenotypes matching enteries in the <code>search_terms</code> argument.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<p>This package’s phenotype library can be updated from the <a href="https://phenotypes.healthdatagateway.org/api/v1/" class="external-link">UKHDR Phenotype Library API</a> using the below function. This queries the library for phenotypes matching enteries in the <code>search_terms</code> argument.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/update_library.html">update_library</a></span><span class="op">(</span>search_terms <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"heart failure"</span>, <span class="st">"cardiomyopathy"</span>, <span class="st">"myocardial infarction"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [i] reading phenotype id: PH25 - skipping, already exists</span></span>
 <span><span class="co">#&gt; [i] reading phenotype id: PH182 - skipping, already exists</span></span>
@@ -178,18 +232,9 @@
 <span><span class="co">#&gt; [i] reading phenotype id: PH1062 - skipping, already exists</span></span></code></pre></div>
 </div>
 <div class="section level3">
-<h3 id="plotting-phenotype">Plotting phenotype<a class="anchor" aria-label="anchor" href="#plotting-phenotype"></a>
-</h3>
-<p>To see the intersection of the codes in two or more phenotype files use the <code><a href="reference/plot_code_overlap.html">plot_code_overlap()</a></code> function.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/plot_code_overlap.html">plot_code_overlap</a></span><span class="op">(</span>pheno_ids <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"PH1645"</span>, <span class="st">"PH1028"</span>, <span class="st">"PH1055"</span>, <span class="st">"PH1074"</span>, <span class="st">"PH182"</span>, <span class="st">"PH25"</span>, <span class="st">"PH530"</span>, <span class="st">"PH531"</span>, <span class="st">"PH631"</span>, <span class="st">"PH687"</span>, <span class="st">"PH968"</span>, <span class="st">"PH993"</span><span class="op">)</span>, </span>
-<span>                  types <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ICD10 codes"</span>, <span class="st">"ICD9 codes"</span>, <span class="st">"OPCS4 codes"</span>, <span class="st">"Read codes v2"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-plot-1.png" width="80%" style="display: block; margin: auto;"></p>
-</div>
-<div class="section level3">
 <h3 id="update-library-from-ukhdr-unpublished">Update library from UKHDR (unpublished)<a class="anchor" aria-label="anchor" href="#update-library-from-ukhdr-unpublished"></a>
 </h3>
-<p>The package phenotype library can be updated with unpublished/development phenotypes from the <a href="https://phenotypes.healthdatagateway.org/api/v1/" class="external-link">UKHDR Phenotype Library API</a> using the below function. However, since unpublished phenotypes are not searchable by name, we need to pass the exact ID and also login details for the website (stored in a local <code>.Renviron</code> file in this example.)</p>
+<p>This package’s phenotype library can be updated with unpublished/development phenotypes from the <a href="https://phenotypes.healthdatagateway.org/api/v1/" class="external-link">UKHDR Phenotype Library API</a> using the below function. However, since unpublished phenotypes are not searchable by name, we need to pass the exact ID and also login details for the website (stored in a local <code>.Renviron</code> file in this example.)</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># development phenotypes, ids named for readability only</span></span>
 <span><span class="va">hermes_phenos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>`Congenital heart disease`    <span class="op">=</span> <span class="st">"PH1637"</span>, </span>
@@ -209,9 +254,18 @@
 <span>               UKHDR_PW     <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html" class="external-link">Sys.getenv</a></span><span class="op">(</span><span class="st">"UKHDR_PW"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
+<h3 id="plotting-phenotype">Plotting phenotype<a class="anchor" aria-label="anchor" href="#plotting-phenotype"></a>
+</h3>
+<p>To see the intersection of the codes in two or more phenotype files use the <code><a href="reference/plot_code_overlap.html">plot_code_overlap()</a></code> function.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/plot_code_overlap.html">plot_code_overlap</a></span><span class="op">(</span>pheno_ids <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"PH1645"</span>, <span class="st">"PH1028"</span>, <span class="st">"PH1055"</span>, <span class="st">"PH1074"</span>, <span class="st">"PH182"</span>, <span class="st">"PH25"</span>, <span class="st">"PH530"</span>, <span class="st">"PH531"</span>, <span class="st">"PH631"</span>, <span class="st">"PH687"</span>, <span class="st">"PH968"</span>, <span class="st">"PH993"</span><span class="op">)</span>, </span>
+<span>                  types <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ICD10 codes"</span>, <span class="st">"ICD9 codes"</span>, <span class="st">"OPCS4 codes"</span>, <span class="st">"Read codes v2"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p><img src="reference/figures/README-plot-1.png" width="80%" style="display: block; margin: auto;"></p>
+</div>
+<div class="section level3">
 <h3 id="plot-the-icd-10-hermes-phenotypes">Plot the ICD-10 HERMES phenotypes<a class="anchor" aria-label="anchor" href="#plot-the-icd-10-hermes-phenotypes"></a>
 </h3>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/plot_code_overlap.html">plot_code_overlap</a></span><span class="op">(</span>pheno_ids <span class="op">=</span> <span class="va">hermes_phenos</span>, types <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ICD10 codes"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-plot_hermes-1.png" align="centre" width="80%"></p>
 </div>

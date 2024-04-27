@@ -48,9 +48,11 @@
 <span>  <span class="va">code_col</span>,</span>
 <span>  <span class="va">include</span>,</span>
 <span>  exclude <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  gsub <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  name <span class="op">=</span> <span class="st">"overall"</span>,</span>
 <span>  include_multi <span class="op">=</span> <span class="st">"any"</span>,</span>
-<span>  exclude_multi <span class="op">=</span> <span class="st">"any"</span></span>
+<span>  exclude_multi <span class="op">=</span> <span class="st">"any"</span>,</span>
+<span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -76,6 +78,13 @@
 <dd><p>a string or list of strings, a valid phenotype id (see <code><a href="get_phenotypes.html">get_phenotypes()</a></code>)</p></dd>
 
 
+<dt>gsub</dt>
+<dd><p>a list of characters of length 3, pre-processing of phenotype codes and/or codes in <code>x</code>. E.g. c(".", "", "both"). NULL to turn off.
+Element 1: a character, regex pattern.
+Element 2: a character, replacement string.
+Element 3: a character vector, one or more of: 'x' (apply to codes in <code>x</code> only), 'pheno' (apply to codes in pheno files only), 'both' (apply to both <code>x</code> and all pheno files), or a phenotype_id in <code>include</code> or <code>exclude</code> (apply to that phenotype).</p></dd>
+
+
 <dt>name</dt>
 <dd><p>a string, a name for the phenotype</p></dd>
 
@@ -86,6 +95,10 @@
 
 <dt>exclude_multi</dt>
 <dd><p>a string, how to deal with multiple exclude phenotypes, either 'all' (all required) or 'any' (all required)</p></dd>
+
+
+<dt>...</dt>
+<dd><p>other parameters passed to gsub</p></dd>
 
 </dl></div>
     <div class="section level2">

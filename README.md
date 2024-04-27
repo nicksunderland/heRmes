@@ -173,7 +173,7 @@ pheno <- phenotype(x        = dat,
                    code_col = c("codes", "codes1"),
                    include  = list(HFsyn  = "PH1643", CM = "PH1646"), 
                    exclude  = list(congHD = "PH1637", MI = "PH1636", HCM = "PH1640"), 
-                   gsub     = c("\\.", "", "x"),
+                   gsub     = list("\\.", "", c("x")),
                    name     = "Heart Failure")
 pheno[]
 #>       ids  HFsyn     CM congHD     MI    HCM include exclude Heart Failure

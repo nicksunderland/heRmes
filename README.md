@@ -65,8 +65,7 @@ get_codes(pheno_id = "PH1645")[1:5, c("phenotype_id", "phenotype_name", "coding_
 
 ### Phenotyping a dataset
 
-Create sample data in long format (multiple ID entries per asscoaited
-EHR code).
+Create sample data in long format (same IDs on multiple lines).
 
 ``` r
 set.seed(2020)
@@ -91,19 +90,88 @@ dat
 Phenotype the individuals with phenotype `PH1643` (heart failure
 syndrome) or `PH1646` (cardiomyopathy), excluding phenotypes `PH1637`
 (congenital heart disease) and `PH1636` (myocardial infarction). There
-can be multiple included or excluded phenotypes given in a list. If the
-phenotype IDs are named, these names are used as column names in the
-result. The overall result is given in the column `overall`, although
-this can be renamed by giving the `name` parameter.
+can be multiple included or excluded phenotypes given in a list.
 
 ``` r
 result <- phenotype(x        = dat, 
                     id_col   = "ids",
                     code_col = c("codes", "codes1"), 
-                    name     = "Heart Failure", 
-                    include  = list(HFsyn  = "PH1643", CM = "PH1646"), 
-                    exclude  = list(congHD = "PH1637", MI = "PH1636", HCM = "PH1640"))
+                    include  = list("PH1643", "PH1646"), 
+                    exclude  = list("PH1637", "PH1636", "PH1640"))
 result[]
+#>       ids PH1643 PH1646 PH1637 PH1636 PH1640 include exclude overall
+#>    <char> <lgcl> <lgcl> <lgcl> <lgcl> <lgcl>  <lgcl>  <lgcl>  <lgcl>
+#> 1:   ID_1  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE    TRUE
+#> 2:   ID_2  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE    TRUE
+#> 3:   ID_3  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE   FALSE
+#> 4:   ID_4  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE   FALSE
+#> 5:   ID_5  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE    TRUE
+```
+
+#### Code formatting issues
+
+Many of the coding systems have slight formating differences - for
+example an ICD-10 code may appear as `I509` or `I50.9` in a dataset. The
+`phenotype()` provides a way to clean these codes through use of the
+`gsub` argument. This takes a 3 element list: \[\[1\]\] is a string
+representing the regular expression pattern, \[\[2\]\] is the
+replacement string, and \[\[3\]\] is a character or character vector
+which can be one or more of: `x` (apply to codes in `x`), `pheno` (apply
+to all codes in phenotypes), `both` (apply to everything), or a valid
+phenotype ID found in `include` or `exclude` (apply to specific
+phenotype datasets). Other arguments can be passed to `gsub` through
+`...`.
+
+It is important to inspect your dataset (`x`) and phenotype coding (use
+`get_codes()`) prior to running the phenotyping to avoid join issues
+related to formatting differences.
+
+Output formatting can be change by altering the inputs. If the phenotype
+IDs are named, these names are used as column names in the result. The
+overall result is given in the column `overall`, although this can be
+renamed by giving the `name` parameter.
+
+``` r
+# change format
+dat[10, "codes1"] <- "I42.0"
+dat[]
+#>     ids codes codes1
+#> 1  ID_1   baz   I420
+#> 2  ID_2   baz   I420
+#> 3  ID_3   bar    baz
+#> 4  ID_4   foo    baz
+#> 5  ID_5   baz    baz
+#> 6  ID_1  I420    foo
+#> 7  ID_2  I420    foo
+#> 8  ID_3   baz    baz
+#> 9  ID_4   foo    foo
+#> 10 ID_5   foo  I42.0
+
+# without dealing with the error ID_5 is incorrectly classified as no HF. 
+wrong <- phenotype(x        = dat, 
+                   id_col   = "ids",
+                   code_col = c("codes", "codes1"),
+                   include  = list(HFsyn  = "PH1643", CM = "PH1646"), 
+                   exclude  = list(congHD = "PH1637", MI = "PH1636", HCM = "PH1640"), 
+                   name     = "Heart Failure")
+wrong[]
+#>       ids  HFsyn     CM congHD     MI    HCM include exclude Heart Failure
+#>    <char> <lgcl> <lgcl> <lgcl> <lgcl> <lgcl>  <lgcl>  <lgcl>        <lgcl>
+#> 1:   ID_1  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE
+#> 2:   ID_2  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE
+#> 3:   ID_3  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE         FALSE
+#> 4:   ID_4  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE         FALSE
+#> 5:   ID_5  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE         FALSE
+
+# deal with formatting issue using gsub
+pheno <- phenotype(x        = dat, 
+                   id_col   = "ids",
+                   code_col = c("codes", "codes1"),
+                   include  = list(HFsyn  = "PH1643", CM = "PH1646"), 
+                   exclude  = list(congHD = "PH1637", MI = "PH1636", HCM = "PH1640"), 
+                   gsub     = c("\\.", "", "x"),
+                   name     = "Heart Failure")
+pheno[]
 #>       ids  HFsyn     CM congHD     MI    HCM include exclude Heart Failure
 #>    <char> <lgcl> <lgcl> <lgcl> <lgcl> <lgcl>  <lgcl>  <lgcl>        <lgcl>
 #> 1:   ID_1  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE
@@ -115,10 +183,10 @@ result[]
 
 ### Update library from UKHDR
 
-The package phenotype library can be updated from the [UKHDR Phenotype
-Library API](https://phenotypes.healthdatagateway.org/api/v1/) using the
-below function. This queries the library for phenotypes matching
-enteries in the `search_terms` argument.
+This package’s phenotype library can be updated from the [UKHDR
+Phenotype Library API](https://phenotypes.healthdatagateway.org/api/v1/)
+using the below function. This queries the library for phenotypes
+matching enteries in the `search_terms` argument.
 
 ``` r
 update_library(search_terms = c("heart failure", "cardiomyopathy", "myocardial infarction"))
@@ -155,21 +223,9 @@ update_library(search_terms = c("heart failure", "cardiomyopathy", "myocardial i
 #> [i] reading phenotype id: PH1062 - skipping, already exists
 ```
 
-### Plotting phenotype
-
-To see the intersection of the codes in two or more phenotype files use
-the `plot_code_overlap()` function.
-
-``` r
-plot_code_overlap(pheno_ids = c("PH1645", "PH1028", "PH1055", "PH1074", "PH182", "PH25", "PH530", "PH531", "PH631", "PH687", "PH968", "PH993"), 
-                  types = c("ICD10 codes", "ICD9 codes", "OPCS4 codes", "Read codes v2"))
-```
-
-<img src="man/figures/README-plot-1.png" width="80%" style="display: block; margin: auto;" />
-
 ### Update library from UKHDR (unpublished)
 
-The package phenotype library can be updated with
+This package’s phenotype library can be updated with
 unpublished/development phenotypes from the [UKHDR Phenotype Library
 API](https://phenotypes.healthdatagateway.org/api/v1/) using the below
 function. However, since unpublished phenotypes are not searchable by
@@ -194,6 +250,18 @@ update_library(search_terms = c(),
                UKHDR_UN     = Sys.getenv("UKHDR_UN"), 
                UKHDR_PW     = Sys.getenv("UKHDR_PW"))
 ```
+
+### Plotting phenotype
+
+To see the intersection of the codes in two or more phenotype files use
+the `plot_code_overlap()` function.
+
+``` r
+plot_code_overlap(pheno_ids = c("PH1645", "PH1028", "PH1055", "PH1074", "PH182", "PH25", "PH530", "PH531", "PH631", "PH687", "PH968", "PH993"), 
+                  types = c("ICD10 codes", "ICD9 codes", "OPCS4 codes", "Read codes v2"))
+```
+
+<img src="man/figures/README-plot-1.png" width="80%" style="display: block; margin: auto;" />
 
 ### Plot the ICD-10 HERMES phenotypes
 

@@ -10,9 +10,11 @@ phenotype(
   code_col,
   include,
   exclude = NULL,
+  gsub = NULL,
   name = "overall",
   include_multi = "any",
-  exclude_multi = "any"
+  exclude_multi = "any",
+  ...
 )
 }
 \arguments{
@@ -26,11 +28,18 @@ phenotype(
 
 \item{exclude}{a string or list of strings, a valid phenotype id (see \code{get_phenotypes()})}
 
+\item{gsub}{a list of characters of length 3, pre-processing of phenotype codes and/or codes in \code{x}. E.g. c(".", "", "both"). NULL to turn off.
+Element 1: a character, regex pattern.
+Element 2: a character, replacement string.
+Element 3: a character vector, one or more of: 'x' (apply to codes in \code{x} only), 'pheno' (apply to codes in pheno files only), 'both' (apply to both \code{x} and all pheno files), or a phenotype_id in \code{include} or \code{exclude} (apply to that phenotype).}
+
 \item{name}{a string, a name for the phenotype}
 
 \item{include_multi}{a string, how to deal with multiple include phenotypes, either 'all' (all required) or 'any' (all required)}
 
 \item{exclude_multi}{a string, how to deal with multiple exclude phenotypes, either 'all' (all required) or 'any' (all required)}
+
+\item{...}{other parameters passed to gsub}
 }
 \value{
 a data.table

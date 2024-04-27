@@ -274,3 +274,7 @@ plot_code_overlap(pheno_ids = hermes_phenos, types = c("ICD10 codes"))
 ```
 
 <img src="man/figures/README-plot_hermes-1.png" align="centre" width="80%"/>
+
+### ESC primary cardiomyopathy phenotypes
+
+<img src="man/figures/esc_phenotypes.png" align="centre" width="80%"/>

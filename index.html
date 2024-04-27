@@ -103,7 +103,7 @@
 <div class="section level3">
 <h3 id="phenotyping-a-dataset">Phenotyping a dataset<a class="anchor" aria-label="anchor" href="#phenotyping-a-dataset"></a>
 </h3>
-<p>Create sample data in long format (same IDs on multiple lines).</p>
+<p>Create sample data. This can be in long (only one column containing diagnosis codes) or wide format (multiple columns containing diagnosis codes). <em>n.b. prioritising coding based on diagnosis code position (e.g. primary vs. secondary vs. tertiary positions) is not currently supported.</em></p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">2020</span><span class="op">)</span></span>
 <span><span class="va">n</span>   <span class="op">&lt;-</span> <span class="fl">10</span></span>

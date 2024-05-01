@@ -7,26 +7,29 @@
 phenotype(
   x,
   id_col,
-  code_col,
   include,
   exclude = NULL,
+  code_cols = list(`ICD9 codes` = NULL, `ICD10 codes` = NULL, `OPCS4 codes` = NULL,
+    `Read codes v2` = NULL, `Read codes v3` = NULL),
   gsub = NULL,
   name = "overall",
   include_multi = "any",
   exclude_multi = "any",
+  verbose = TRUE,
   ...
 )
 }
 \arguments{
-\item{x}{a data.frame like object}
+\item{x}{a data.frame like object or file path readable by data.table::fread}
 
 \item{id_col}{a string, the name of the id column}
-
-\item{code_col}{a single string, or vector of strings, the diagnosis code column(s)}
 
 \item{include}{a string or list of strings, a valid phenotype id (see \code{get_phenotypes()})}
 
 \item{exclude}{a string or list of strings, a valid phenotype id (see \code{get_phenotypes()})}
+
+\item{code_cols}{a list of named strings, the diagnosis and procedure code column(s). List elements must be one or more of
+\code{icd9}, \code{icd10}, \code{opcs}, \code{readv2}, \code{readv3}}
 
 \item{gsub}{a list of characters of length 3, pre-processing of phenotype codes and/or codes in \code{x}. E.g. c(".", "", "both"). NULL to turn off.
 Element 1: a character, regex pattern.
@@ -38,6 +41,8 @@ Element 3: a character vector, one or more of: 'x' (apply to codes in \code{x} o
 \item{include_multi}{a string, how to deal with multiple include phenotypes, either 'all' (all required) or 'any' (all required)}
 
 \item{exclude_multi}{a string, how to deal with multiple exclude phenotypes, either 'all' (all required) or 'any' (all required)}
+
+\item{verbose}{a logical, print progress}
 
 \item{...}{other parameters passed to gsub}
 }

@@ -97,19 +97,31 @@ syndrome) or `PH1646` (cardiomyopathy), excluding phenotypes `PH1637`
 can be multiple included or excluded phenotypes given in a list.
 
 ``` r
-result <- phenotype(x        = dat, 
-                    id_col   = "ids",
-                    code_col = c("codes", "codes1"), 
-                    include  = list("PH1643", "PH1646"), 
-                    exclude  = list("PH1637", "PH1636", "PH1640"))
+result <- phenotype(x         = dat, 
+                    id_col    = "ids",
+                    code_cols = list("ICD10 codes" = c("codes", "codes1")), 
+                    include   = list("PH1643", "PH1646"), 
+                    exclude   = list("PH1637", "PH1636", "PH1640"))
+#> Phenotyping...
+#> [i] processing 10 records
+#> [i] pivoting data longer
+#> [i] getting inclusion phenotype codes from PhenoID(s) PH1643, PH1646 
+#> [i] getting exclusion phenotype codes from PhenoID(s) PH1637, PH1636, PH1640 
+#> [i] assessing phenotype PH1643 
+#> [i] assessing phenotype PH1646 
+#> [i] assessing phenotype PH1637 
+#> [i] assessing phenotype PH1636 
+#> [i] assessing phenotype PH1640 
+#> [i] summarising phenotyping of participants
+#> [i] finished
 result[]
-#>       ids PH1643 PH1646 PH1637 PH1636 PH1640 include exclude overall
-#>    <char> <lgcl> <lgcl> <lgcl> <lgcl> <lgcl>  <lgcl>  <lgcl>  <lgcl>
-#> 1:   ID_1  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE    TRUE
-#> 2:   ID_2  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE    TRUE
-#> 3:   ID_3  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE   FALSE
-#> 4:   ID_4  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE   FALSE
-#> 5:   ID_5  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE    TRUE
+#>       ids PH1643 PH1646 PH1637 PH1636 PH1640   none include exclude overall
+#>    <char> <lgcl> <lgcl> <lgcl> <lgcl> <lgcl> <lgcl>  <lgcl>  <lgcl>  <lgcl>
+#> 1:   ID_1  FALSE   TRUE  FALSE  FALSE  FALSE  FALSE    TRUE   FALSE    TRUE
+#> 2:   ID_2  FALSE   TRUE  FALSE  FALSE  FALSE  FALSE    TRUE   FALSE    TRUE
+#> 3:   ID_3  FALSE  FALSE  FALSE  FALSE  FALSE   TRUE   FALSE   FALSE   FALSE
+#> 4:   ID_4  FALSE  FALSE  FALSE  FALSE  FALSE   TRUE   FALSE   FALSE   FALSE
+#> 5:   ID_5  FALSE   TRUE  FALSE  FALSE  FALSE  FALSE    TRUE   FALSE    TRUE
 ```
 
 #### Code formatting issues
@@ -152,37 +164,76 @@ dat[]
 #> 10 ID_5   foo  I42.0
 
 # without dealing with the error ID_5 is incorrectly classified as no HF. 
-wrong <- phenotype(x        = dat, 
-                   id_col   = "ids",
-                   code_col = c("codes", "codes1"),
-                   include  = list(HFsyn  = "PH1643", CM = "PH1646"), 
-                   exclude  = list(congHD = "PH1637", MI = "PH1636", HCM = "PH1640"), 
-                   name     = "Heart Failure")
+wrong <- phenotype(x         = dat, 
+                   id_col    = "ids",
+                   code_cols = list("ICD10 codes" = c("codes", "codes1")),
+                   include   = list(HFsyn  = "PH1643", CM = "PH1646"), 
+                   exclude   = list(congHD = "PH1637", MI = "PH1636", HCM = "PH1640"), 
+                   name      = "Heart Failure")
+#> Phenotyping...
+#> [i] processing 10 records
+#> [i] pivoting data longer
+#> [i] getting inclusion phenotype codes from PhenoID(s) PH1643, PH1646 
+#> [i] getting exclusion phenotype codes from PhenoID(s) PH1637, PH1636, PH1640 
+#> [i] assessing phenotype PH1643 
+#> [i] assessing phenotype PH1646 
+#> [i] assessing phenotype PH1637 
+#> [i] assessing phenotype PH1636 
+#> [i] assessing phenotype PH1640 
+#> [i] summarising phenotyping of participants
+#> [i] finished
 wrong[]
-#>       ids  HFsyn     CM congHD     MI    HCM include exclude Heart Failure
-#>    <char> <lgcl> <lgcl> <lgcl> <lgcl> <lgcl>  <lgcl>  <lgcl>        <lgcl>
-#> 1:   ID_1  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE
-#> 2:   ID_2  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE
-#> 3:   ID_3  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE         FALSE
-#> 4:   ID_4  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE         FALSE
-#> 5:   ID_5  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE         FALSE
+#>       ids  HFsyn     CM congHD     MI    HCM   none include exclude
+#>    <char> <lgcl> <lgcl> <lgcl> <lgcl> <lgcl> <lgcl>  <lgcl>  <lgcl>
+#> 1:   ID_1  FALSE   TRUE  FALSE  FALSE  FALSE  FALSE    TRUE   FALSE
+#> 2:   ID_2  FALSE   TRUE  FALSE  FALSE  FALSE  FALSE    TRUE   FALSE
+#> 3:   ID_3  FALSE  FALSE  FALSE  FALSE  FALSE   TRUE   FALSE   FALSE
+#> 4:   ID_4  FALSE  FALSE  FALSE  FALSE  FALSE   TRUE   FALSE   FALSE
+#> 5:   ID_5  FALSE  FALSE  FALSE  FALSE  FALSE   TRUE   FALSE   FALSE
+#>    Heart Failure
+#>           <lgcl>
+#> 1:          TRUE
+#> 2:          TRUE
+#> 3:         FALSE
+#> 4:         FALSE
+#> 5:         FALSE
 
 # deal with formatting issue using gsub
-pheno <- phenotype(x        = dat, 
-                   id_col   = "ids",
-                   code_col = c("codes", "codes1"),
-                   include  = list(HFsyn  = "PH1643", CM = "PH1646"), 
-                   exclude  = list(congHD = "PH1637", MI = "PH1636", HCM = "PH1640"), 
-                   gsub     = list("\\.", "", c("x")),
-                   name     = "Heart Failure")
+pheno <- phenotype(x         = dat, 
+                   id_col    = "ids",
+                   code_cols = list("ICD10 codes" = c("codes", "codes1")),
+                   include   = list(HFsyn  = "PH1643", CM = "PH1646"), 
+                   exclude   = list(congHD = "PH1637", MI = "PH1636", HCM = "PH1640"), 
+                   gsub      = list("\\.", "", c("x")),
+                   name      = "Heart Failure")
+#> Phenotyping...
+#> [i] processing 10 records
+#> [i] pivoting data longer
+#> [i] cleaning input codes with regex [ \. ], replacement [  ]
+#> [i] getting inclusion phenotype codes from PhenoID(s) PH1643, PH1646 
+#> [i] getting exclusion phenotype codes from PhenoID(s) PH1637, PH1636, PH1640 
+#> [i] assessing phenotype PH1643 
+#> [i] assessing phenotype PH1646 
+#> [i] assessing phenotype PH1637 
+#> [i] assessing phenotype PH1636 
+#> [i] assessing phenotype PH1640 
+#> [i] summarising phenotyping of participants
+#> [i] finished
 pheno[]
-#>       ids  HFsyn     CM congHD     MI    HCM include exclude Heart Failure
-#>    <char> <lgcl> <lgcl> <lgcl> <lgcl> <lgcl>  <lgcl>  <lgcl>        <lgcl>
-#> 1:   ID_1  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE
-#> 2:   ID_2  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE
-#> 3:   ID_3  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE         FALSE
-#> 4:   ID_4  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE         FALSE
-#> 5:   ID_5  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE
+#>       ids  HFsyn     CM congHD     MI    HCM   none include exclude
+#>    <char> <lgcl> <lgcl> <lgcl> <lgcl> <lgcl> <lgcl>  <lgcl>  <lgcl>
+#> 1:   ID_1  FALSE   TRUE  FALSE  FALSE  FALSE  FALSE    TRUE   FALSE
+#> 2:   ID_2  FALSE   TRUE  FALSE  FALSE  FALSE  FALSE    TRUE   FALSE
+#> 3:   ID_3  FALSE  FALSE  FALSE  FALSE  FALSE   TRUE   FALSE   FALSE
+#> 4:   ID_4  FALSE  FALSE  FALSE  FALSE  FALSE   TRUE   FALSE   FALSE
+#> 5:   ID_5  FALSE   TRUE  FALSE  FALSE  FALSE  FALSE    TRUE   FALSE
+#>    Heart Failure
+#>           <lgcl>
+#> 1:          TRUE
+#> 2:          TRUE
+#> 3:         FALSE
+#> 4:         FALSE
+#> 5:          TRUE
 ```
 
 ### Update library from UKHDR
@@ -266,6 +317,26 @@ plot_code_overlap(pheno_ids = c("PH1645", "PH1028", "PH1055", "PH1074", "PH182",
 ```
 
 <img src="man/figures/README-plot-1.png" width="80%" style="display: block; margin: auto;" />
+
+### Example phenotyping of UKBB data
+
+``` r
+pheno_ukbb <- phenotype(file_path, 
+                        id_col    = "eid", 
+                        code_cols = list("ICD10 codes" = "diag_icd10", "ICD9 codes" = "diag_icd9"),
+                        include   = list(HFsyn  = "PH1643", CM = "PH1646"), 
+                        exclude   = list(congHD = "PH1637", MI = "PH1636", HCM = "PH1640"), 
+                        gsub      = list("\\.", "", c("x")),
+                        name      = "Heart Failure")
+
+plot(eulerr::euler(pheno_ukbb[, mget(names(pheno_ukbb)[!names(pheno_ukbb) %in% c("eid", "none")])], shape = "circle"),
+          quantities = TRUE,
+          labels     = FALSE,
+          main       = list(label = "UKBB Heart failure phenotyping", fontsize = 8, font = 2),
+          legend     = list(fontsize = 8))
+```
+
+<img src="man/figures/README-plot_hermes_ukbb.png" align="centre" width="80%"/>
 
 ### Plot the ICD-10 HERMES phenotypes
 

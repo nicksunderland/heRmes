@@ -61,11 +61,11 @@ dat
 
 Phenotype the individuals with phenotype `PH1643` (heart failure syndrome) or `PH1646` (cardiomyopathy), excluding phenotypes `PH1637` (congenital heart disease) and `PH1636` (myocardial infarction). There can be multiple included or excluded phenotypes given in a list. 
 ```{r phenotype}
-result <- phenotype(x        = dat, 
-                    id_col   = "ids",
-                    code_col = c("codes", "codes1"), 
-                    include  = list("PH1643", "PH1646"), 
-                    exclude  = list("PH1637", "PH1636", "PH1640"))
+result <- phenotype(x         = dat, 
+                    id_col    = "ids",
+                    code_cols = list("ICD10 codes" = c("codes", "codes1")), 
+                    include   = list("PH1643", "PH1646"), 
+                    exclude   = list("PH1637", "PH1636", "PH1640"))
 result[]
 ```
 
@@ -82,22 +82,22 @@ dat[10, "codes1"] <- "I42.0"
 dat[]
 
 # without dealing with the error ID_5 is incorrectly classified as no HF. 
-wrong <- phenotype(x        = dat, 
-                   id_col   = "ids",
-                   code_col = c("codes", "codes1"),
-                   include  = list(HFsyn  = "PH1643", CM = "PH1646"), 
-                   exclude  = list(congHD = "PH1637", MI = "PH1636", HCM = "PH1640"), 
-                   name     = "Heart Failure")
+wrong <- phenotype(x         = dat, 
+                   id_col    = "ids",
+                   code_cols = list("ICD10 codes" = c("codes", "codes1")),
+                   include   = list(HFsyn  = "PH1643", CM = "PH1646"), 
+                   exclude   = list(congHD = "PH1637", MI = "PH1636", HCM = "PH1640"), 
+                   name      = "Heart Failure")
 wrong[]
 
 # deal with formatting issue using gsub
-pheno <- phenotype(x        = dat, 
-                   id_col   = "ids",
-                   code_col = c("codes", "codes1"),
-                   include  = list(HFsyn  = "PH1643", CM = "PH1646"), 
-                   exclude  = list(congHD = "PH1637", MI = "PH1636", HCM = "PH1640"), 
-                   gsub     = list("\\.", "", c("x")),
-                   name     = "Heart Failure")
+pheno <- phenotype(x         = dat, 
+                   id_col    = "ids",
+                   code_cols = list("ICD10 codes" = c("codes", "codes1")),
+                   include   = list(HFsyn  = "PH1643", CM = "PH1646"), 
+                   exclude   = list(congHD = "PH1637", MI = "PH1636", HCM = "PH1640"), 
+                   gsub      = list("\\.", "", c("x")),
+                   name      = "Heart Failure")
 pheno[]
 ```
 
@@ -134,6 +134,27 @@ To see the intersection of the codes in two or more phenotype files use the `plo
 plot_code_overlap(pheno_ids = c("PH1645", "PH1028", "PH1055", "PH1074", "PH182", "PH25", "PH530", "PH531", "PH631", "PH687", "PH968", "PH993"), 
                   types = c("ICD10 codes", "ICD9 codes", "OPCS4 codes", "Read codes v2"))
 ```
+
+### Example phenotyping of UKBB data
+```{r ukbb_datapath, include=FALSE, eval=FALSE}
+file_path <- "/Users/xx20081/Desktop/hesin_diag.txt"
+```
+```{r plot_hermes_ukbb, eval=FALSE}
+pheno_ukbb <- phenotype(file_path, 
+                        id_col    = "eid", 
+                        code_cols = list("ICD10 codes" = "diag_icd10", "ICD9 codes" = "diag_icd9"),
+                        include   = list(HFsyn  = "PH1643", CM = "PH1646"), 
+                        exclude   = list(congHD = "PH1637", MI = "PH1636", HCM = "PH1640"), 
+                        gsub      = list("\\.", "", c("x")),
+                        name      = "Heart Failure")
+
+plot(eulerr::euler(pheno_ukbb[, mget(names(pheno_ukbb)[!names(pheno_ukbb) %in% c("eid", "none")])], shape = "circle"),
+          quantities = TRUE,
+          labels     = FALSE,
+          main       = list(label = "UKBB Heart failure phenotyping", fontsize = 8, font = 2),
+          legend     = list(fontsize = 8))
+```
+<img src="man/figures/README-plot_hermes_ukbb.png" align="centre" width="80%"/>
 
 ### Plot the ICD-10 HERMES phenotypes
 ```{r plot_hermes, eval=FALSE}

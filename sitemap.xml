@@ -19,28 +19,10 @@
     <loc>https://nicksunderland.github.io/heRmes/reference/get_codes.html</loc>
   </url>
   <url>
-    <loc>https://nicksunderland.github.io/heRmes/reference/get_icd10.html</loc>
-  </url>
-  <url>
-    <loc>https://nicksunderland.github.io/heRmes/reference/get_icd10cm.html</loc>
-  </url>
-  <url>
-    <loc>https://nicksunderland.github.io/heRmes/reference/get_icd9cm.html</loc>
-  </url>
-  <url>
     <loc>https://nicksunderland.github.io/heRmes/reference/get_metadata.html</loc>
   </url>
   <url>
-    <loc>https://nicksunderland.github.io/heRmes/reference/get_opcs.html</loc>
-  </url>
-  <url>
     <loc>https://nicksunderland.github.io/heRmes/reference/get_phenotypes.html</loc>
-  </url>
-  <url>
-    <loc>https://nicksunderland.github.io/heRmes/reference/get_readcodes_v2.html</loc>
-  </url>
-  <url>
-    <loc>https://nicksunderland.github.io/heRmes/reference/get_readcodes_v3.html</loc>
   </url>
   <url>
     <loc>https://nicksunderland.github.io/heRmes/reference/heRmes-package.html</loc>
@@ -53,9 +35,6 @@
   </url>
   <url>
     <loc>https://nicksunderland.github.io/heRmes/reference/plot_code_overlap.html</loc>
-  </url>
-  <url>
-    <loc>https://nicksunderland.github.io/heRmes/reference/search_codes.html</loc>
   </url>
   <url>
     <loc>https://nicksunderland.github.io/heRmes/reference/update_library.html</loc>

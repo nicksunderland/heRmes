@@ -45,13 +45,15 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">phenotype</span><span class="op">(</span></span>
 <span>  <span class="va">x</span>,</span>
 <span>  <span class="va">id_col</span>,</span>
-<span>  <span class="va">code_col</span>,</span>
 <span>  <span class="va">include</span>,</span>
 <span>  exclude <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  code_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>`ICD9 codes` <span class="op">=</span> <span class="cn">NULL</span>, `ICD10 codes` <span class="op">=</span> <span class="cn">NULL</span>, `OPCS4 codes` <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>    `Read codes v2` <span class="op">=</span> <span class="cn">NULL</span>, `Read codes v3` <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span>,</span>
 <span>  gsub <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  name <span class="op">=</span> <span class="st">"overall"</span>,</span>
 <span>  include_multi <span class="op">=</span> <span class="st">"any"</span>,</span>
 <span>  exclude_multi <span class="op">=</span> <span class="st">"any"</span>,</span>
+<span>  verbose <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -59,15 +61,11 @@
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>x</dt>
-<dd><p>a data.frame like object</p></dd>
+<dd><p>a data.frame like object or file path readable by data.table::fread</p></dd>
 
 
 <dt>id_col</dt>
 <dd><p>a string, the name of the id column</p></dd>
-
-
-<dt>code_col</dt>
-<dd><p>a single string, or vector of strings, the diagnosis code column(s)</p></dd>
 
 
 <dt>include</dt>
@@ -76,6 +74,11 @@
 
 <dt>exclude</dt>
 <dd><p>a string or list of strings, a valid phenotype id (see <code><a href="get_phenotypes.html">get_phenotypes()</a></code>)</p></dd>
+
+
+<dt>code_cols</dt>
+<dd><p>a list of named strings, the diagnosis and procedure code column(s). List elements must be one or more of
+<code>icd9</code>, <code>icd10</code>, <code>opcs</code>, <code>readv2</code>, <code>readv3</code></p></dd>
 
 
 <dt>gsub</dt>
@@ -95,6 +98,10 @@ Element 3: a character vector, one or more of: 'x' (apply to codes in <code>x</c
 
 <dt>exclude_multi</dt>
 <dd><p>a string, how to deal with multiple exclude phenotypes, either 'all' (all required) or 'any' (all required)</p></dd>
+
+
+<dt>verbose</dt>
+<dd><p>a logical, print progress</p></dd>
 
 
 <dt>...</dt>

@@ -124,19 +124,31 @@
 <span><span class="co">#&gt; 10 ID_5   foo   I420</span></span></code></pre></div>
 <p>Phenotype the individuals with phenotype <code>PH1643</code> (heart failure syndrome) or <code>PH1646</code> (cardiomyopathy), excluding phenotypes <code>PH1637</code> (congenital heart disease) and <code>PH1636</code> (myocardial infarction). There can be multiple included or excluded phenotypes given in a list.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/phenotype.html">phenotype</a></span><span class="op">(</span>x        <span class="op">=</span> <span class="va">dat</span>, </span>
-<span>                    id_col   <span class="op">=</span> <span class="st">"ids"</span>,</span>
-<span>                    code_col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"codes"</span>, <span class="st">"codes1"</span><span class="op">)</span>, </span>
-<span>                    include  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"PH1643"</span>, <span class="st">"PH1646"</span><span class="op">)</span>, </span>
-<span>                    exclude  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"PH1637"</span>, <span class="st">"PH1636"</span>, <span class="st">"PH1640"</span><span class="op">)</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/phenotype.html">phenotype</a></span><span class="op">(</span>x         <span class="op">=</span> <span class="va">dat</span>, </span>
+<span>                    id_col    <span class="op">=</span> <span class="st">"ids"</span>,</span>
+<span>                    code_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"ICD10 codes"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"codes"</span>, <span class="st">"codes1"</span><span class="op">)</span><span class="op">)</span>, </span>
+<span>                    include   <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"PH1643"</span>, <span class="st">"PH1646"</span><span class="op">)</span>, </span>
+<span>                    exclude   <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"PH1637"</span>, <span class="st">"PH1636"</span>, <span class="st">"PH1640"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Phenotyping...</span></span>
+<span><span class="co">#&gt; [i] processing 10 records</span></span>
+<span><span class="co">#&gt; [i] pivoting data longer</span></span>
+<span><span class="co">#&gt; [i] getting inclusion phenotype codes from PhenoID(s) PH1643, PH1646 </span></span>
+<span><span class="co">#&gt; [i] getting exclusion phenotype codes from PhenoID(s) PH1637, PH1636, PH1640 </span></span>
+<span><span class="co">#&gt; [i] assessing phenotype PH1643 </span></span>
+<span><span class="co">#&gt; [i] assessing phenotype PH1646 </span></span>
+<span><span class="co">#&gt; [i] assessing phenotype PH1637 </span></span>
+<span><span class="co">#&gt; [i] assessing phenotype PH1636 </span></span>
+<span><span class="co">#&gt; [i] assessing phenotype PH1640 </span></span>
+<span><span class="co">#&gt; [i] summarising phenotyping of participants</span></span>
+<span><span class="co">#&gt; [i] finished</span></span>
 <span><span class="va">result</span><span class="op">[</span><span class="op">]</span></span>
-<span><span class="co">#&gt;       ids PH1643 PH1646 PH1637 PH1636 PH1640 include exclude overall</span></span>
-<span><span class="co">#&gt;    &lt;char&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt;  &lt;lgcl&gt;  &lt;lgcl&gt;  &lt;lgcl&gt;</span></span>
-<span><span class="co">#&gt; 1:   ID_1  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE    TRUE</span></span>
-<span><span class="co">#&gt; 2:   ID_2  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE    TRUE</span></span>
-<span><span class="co">#&gt; 3:   ID_3  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE   FALSE</span></span>
-<span><span class="co">#&gt; 4:   ID_4  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE   FALSE</span></span>
-<span><span class="co">#&gt; 5:   ID_5  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE    TRUE</span></span></code></pre></div>
+<span><span class="co">#&gt;       ids PH1643 PH1646 PH1637 PH1636 PH1640   none include exclude overall</span></span>
+<span><span class="co">#&gt;    &lt;char&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt;  &lt;lgcl&gt;  &lt;lgcl&gt;  &lt;lgcl&gt;</span></span>
+<span><span class="co">#&gt; 1:   ID_1  FALSE   TRUE  FALSE  FALSE  FALSE  FALSE    TRUE   FALSE    TRUE</span></span>
+<span><span class="co">#&gt; 2:   ID_2  FALSE   TRUE  FALSE  FALSE  FALSE  FALSE    TRUE   FALSE    TRUE</span></span>
+<span><span class="co">#&gt; 3:   ID_3  FALSE  FALSE  FALSE  FALSE  FALSE   TRUE   FALSE   FALSE   FALSE</span></span>
+<span><span class="co">#&gt; 4:   ID_4  FALSE  FALSE  FALSE  FALSE  FALSE   TRUE   FALSE   FALSE   FALSE</span></span>
+<span><span class="co">#&gt; 5:   ID_5  FALSE   TRUE  FALSE  FALSE  FALSE  FALSE    TRUE   FALSE    TRUE</span></span></code></pre></div>
 <div class="section level4">
 <h4 id="code-formatting-issues">Code formatting issues<a class="anchor" aria-label="anchor" href="#code-formatting-issues"></a>
 </h4>
@@ -160,37 +172,76 @@
 <span><span class="co">#&gt; 10 ID_5   foo  I42.0</span></span>
 <span></span>
 <span><span class="co"># without dealing with the error ID_5 is incorrectly classified as no HF. </span></span>
-<span><span class="va">wrong</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/phenotype.html">phenotype</a></span><span class="op">(</span>x        <span class="op">=</span> <span class="va">dat</span>, </span>
-<span>                   id_col   <span class="op">=</span> <span class="st">"ids"</span>,</span>
-<span>                   code_col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"codes"</span>, <span class="st">"codes1"</span><span class="op">)</span>,</span>
-<span>                   include  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>HFsyn  <span class="op">=</span> <span class="st">"PH1643"</span>, CM <span class="op">=</span> <span class="st">"PH1646"</span><span class="op">)</span>, </span>
-<span>                   exclude  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>congHD <span class="op">=</span> <span class="st">"PH1637"</span>, MI <span class="op">=</span> <span class="st">"PH1636"</span>, HCM <span class="op">=</span> <span class="st">"PH1640"</span><span class="op">)</span>, </span>
-<span>                   name     <span class="op">=</span> <span class="st">"Heart Failure"</span><span class="op">)</span></span>
+<span><span class="va">wrong</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/phenotype.html">phenotype</a></span><span class="op">(</span>x         <span class="op">=</span> <span class="va">dat</span>, </span>
+<span>                   id_col    <span class="op">=</span> <span class="st">"ids"</span>,</span>
+<span>                   code_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"ICD10 codes"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"codes"</span>, <span class="st">"codes1"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>                   include   <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>HFsyn  <span class="op">=</span> <span class="st">"PH1643"</span>, CM <span class="op">=</span> <span class="st">"PH1646"</span><span class="op">)</span>, </span>
+<span>                   exclude   <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>congHD <span class="op">=</span> <span class="st">"PH1637"</span>, MI <span class="op">=</span> <span class="st">"PH1636"</span>, HCM <span class="op">=</span> <span class="st">"PH1640"</span><span class="op">)</span>, </span>
+<span>                   name      <span class="op">=</span> <span class="st">"Heart Failure"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Phenotyping...</span></span>
+<span><span class="co">#&gt; [i] processing 10 records</span></span>
+<span><span class="co">#&gt; [i] pivoting data longer</span></span>
+<span><span class="co">#&gt; [i] getting inclusion phenotype codes from PhenoID(s) PH1643, PH1646 </span></span>
+<span><span class="co">#&gt; [i] getting exclusion phenotype codes from PhenoID(s) PH1637, PH1636, PH1640 </span></span>
+<span><span class="co">#&gt; [i] assessing phenotype PH1643 </span></span>
+<span><span class="co">#&gt; [i] assessing phenotype PH1646 </span></span>
+<span><span class="co">#&gt; [i] assessing phenotype PH1637 </span></span>
+<span><span class="co">#&gt; [i] assessing phenotype PH1636 </span></span>
+<span><span class="co">#&gt; [i] assessing phenotype PH1640 </span></span>
+<span><span class="co">#&gt; [i] summarising phenotyping of participants</span></span>
+<span><span class="co">#&gt; [i] finished</span></span>
 <span><span class="va">wrong</span><span class="op">[</span><span class="op">]</span></span>
-<span><span class="co">#&gt;       ids  HFsyn     CM congHD     MI    HCM include exclude Heart Failure</span></span>
-<span><span class="co">#&gt;    &lt;char&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt;  &lt;lgcl&gt;  &lt;lgcl&gt;        &lt;lgcl&gt;</span></span>
-<span><span class="co">#&gt; 1:   ID_1  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE</span></span>
-<span><span class="co">#&gt; 2:   ID_2  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE</span></span>
-<span><span class="co">#&gt; 3:   ID_3  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE         FALSE</span></span>
-<span><span class="co">#&gt; 4:   ID_4  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE         FALSE</span></span>
-<span><span class="co">#&gt; 5:   ID_5  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE         FALSE</span></span>
+<span><span class="co">#&gt;       ids  HFsyn     CM congHD     MI    HCM   none include exclude</span></span>
+<span><span class="co">#&gt;    &lt;char&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt;  &lt;lgcl&gt;  &lt;lgcl&gt;</span></span>
+<span><span class="co">#&gt; 1:   ID_1  FALSE   TRUE  FALSE  FALSE  FALSE  FALSE    TRUE   FALSE</span></span>
+<span><span class="co">#&gt; 2:   ID_2  FALSE   TRUE  FALSE  FALSE  FALSE  FALSE    TRUE   FALSE</span></span>
+<span><span class="co">#&gt; 3:   ID_3  FALSE  FALSE  FALSE  FALSE  FALSE   TRUE   FALSE   FALSE</span></span>
+<span><span class="co">#&gt; 4:   ID_4  FALSE  FALSE  FALSE  FALSE  FALSE   TRUE   FALSE   FALSE</span></span>
+<span><span class="co">#&gt; 5:   ID_5  FALSE  FALSE  FALSE  FALSE  FALSE   TRUE   FALSE   FALSE</span></span>
+<span><span class="co">#&gt;    Heart Failure</span></span>
+<span><span class="co">#&gt;           &lt;lgcl&gt;</span></span>
+<span><span class="co">#&gt; 1:          TRUE</span></span>
+<span><span class="co">#&gt; 2:          TRUE</span></span>
+<span><span class="co">#&gt; 3:         FALSE</span></span>
+<span><span class="co">#&gt; 4:         FALSE</span></span>
+<span><span class="co">#&gt; 5:         FALSE</span></span>
 <span></span>
 <span><span class="co"># deal with formatting issue using gsub</span></span>
-<span><span class="va">pheno</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/phenotype.html">phenotype</a></span><span class="op">(</span>x        <span class="op">=</span> <span class="va">dat</span>, </span>
-<span>                   id_col   <span class="op">=</span> <span class="st">"ids"</span>,</span>
-<span>                   code_col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"codes"</span>, <span class="st">"codes1"</span><span class="op">)</span>,</span>
-<span>                   include  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>HFsyn  <span class="op">=</span> <span class="st">"PH1643"</span>, CM <span class="op">=</span> <span class="st">"PH1646"</span><span class="op">)</span>, </span>
-<span>                   exclude  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>congHD <span class="op">=</span> <span class="st">"PH1637"</span>, MI <span class="op">=</span> <span class="st">"PH1636"</span>, HCM <span class="op">=</span> <span class="st">"PH1640"</span><span class="op">)</span>, </span>
-<span>                   gsub     <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"\\."</span>, <span class="st">""</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"x"</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>                   name     <span class="op">=</span> <span class="st">"Heart Failure"</span><span class="op">)</span></span>
+<span><span class="va">pheno</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/phenotype.html">phenotype</a></span><span class="op">(</span>x         <span class="op">=</span> <span class="va">dat</span>, </span>
+<span>                   id_col    <span class="op">=</span> <span class="st">"ids"</span>,</span>
+<span>                   code_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"ICD10 codes"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"codes"</span>, <span class="st">"codes1"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>                   include   <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>HFsyn  <span class="op">=</span> <span class="st">"PH1643"</span>, CM <span class="op">=</span> <span class="st">"PH1646"</span><span class="op">)</span>, </span>
+<span>                   exclude   <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>congHD <span class="op">=</span> <span class="st">"PH1637"</span>, MI <span class="op">=</span> <span class="st">"PH1636"</span>, HCM <span class="op">=</span> <span class="st">"PH1640"</span><span class="op">)</span>, </span>
+<span>                   gsub      <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"\\."</span>, <span class="st">""</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"x"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>                   name      <span class="op">=</span> <span class="st">"Heart Failure"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Phenotyping...</span></span>
+<span><span class="co">#&gt; [i] processing 10 records</span></span>
+<span><span class="co">#&gt; [i] pivoting data longer</span></span>
+<span><span class="co">#&gt; [i] cleaning input codes with regex [ \. ], replacement [  ]</span></span>
+<span><span class="co">#&gt; [i] getting inclusion phenotype codes from PhenoID(s) PH1643, PH1646 </span></span>
+<span><span class="co">#&gt; [i] getting exclusion phenotype codes from PhenoID(s) PH1637, PH1636, PH1640 </span></span>
+<span><span class="co">#&gt; [i] assessing phenotype PH1643 </span></span>
+<span><span class="co">#&gt; [i] assessing phenotype PH1646 </span></span>
+<span><span class="co">#&gt; [i] assessing phenotype PH1637 </span></span>
+<span><span class="co">#&gt; [i] assessing phenotype PH1636 </span></span>
+<span><span class="co">#&gt; [i] assessing phenotype PH1640 </span></span>
+<span><span class="co">#&gt; [i] summarising phenotyping of participants</span></span>
+<span><span class="co">#&gt; [i] finished</span></span>
 <span><span class="va">pheno</span><span class="op">[</span><span class="op">]</span></span>
-<span><span class="co">#&gt;       ids  HFsyn     CM congHD     MI    HCM include exclude Heart Failure</span></span>
-<span><span class="co">#&gt;    &lt;char&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt;  &lt;lgcl&gt;  &lt;lgcl&gt;        &lt;lgcl&gt;</span></span>
-<span><span class="co">#&gt; 1:   ID_1  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE</span></span>
-<span><span class="co">#&gt; 2:   ID_2  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE</span></span>
-<span><span class="co">#&gt; 3:   ID_3  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE         FALSE</span></span>
-<span><span class="co">#&gt; 4:   ID_4  FALSE  FALSE  FALSE  FALSE  FALSE   FALSE   FALSE         FALSE</span></span>
-<span><span class="co">#&gt; 5:   ID_5  FALSE   TRUE  FALSE  FALSE  FALSE    TRUE   FALSE          TRUE</span></span></code></pre></div>
+<span><span class="co">#&gt;       ids  HFsyn     CM congHD     MI    HCM   none include exclude</span></span>
+<span><span class="co">#&gt;    &lt;char&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt; &lt;lgcl&gt;  &lt;lgcl&gt;  &lt;lgcl&gt;</span></span>
+<span><span class="co">#&gt; 1:   ID_1  FALSE   TRUE  FALSE  FALSE  FALSE  FALSE    TRUE   FALSE</span></span>
+<span><span class="co">#&gt; 2:   ID_2  FALSE   TRUE  FALSE  FALSE  FALSE  FALSE    TRUE   FALSE</span></span>
+<span><span class="co">#&gt; 3:   ID_3  FALSE  FALSE  FALSE  FALSE  FALSE   TRUE   FALSE   FALSE</span></span>
+<span><span class="co">#&gt; 4:   ID_4  FALSE  FALSE  FALSE  FALSE  FALSE   TRUE   FALSE   FALSE</span></span>
+<span><span class="co">#&gt; 5:   ID_5  FALSE   TRUE  FALSE  FALSE  FALSE  FALSE    TRUE   FALSE</span></span>
+<span><span class="co">#&gt;    Heart Failure</span></span>
+<span><span class="co">#&gt;           &lt;lgcl&gt;</span></span>
+<span><span class="co">#&gt; 1:          TRUE</span></span>
+<span><span class="co">#&gt; 2:          TRUE</span></span>
+<span><span class="co">#&gt; 3:         FALSE</span></span>
+<span><span class="co">#&gt; 4:         FALSE</span></span>
+<span><span class="co">#&gt; 5:          TRUE</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level3">
@@ -263,9 +314,28 @@
 <p><img src="reference/figures/README-plot-1.png" width="80%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level3">
-<h3 id="plot-the-icd-10-hermes-phenotypes">Plot the ICD-10 HERMES phenotypes<a class="anchor" aria-label="anchor" href="#plot-the-icd-10-hermes-phenotypes"></a>
+<h3 id="example-phenotyping-of-ukbb-data">Example phenotyping of UKBB data<a class="anchor" aria-label="anchor" href="#example-phenotyping-of-ukbb-data"></a>
 </h3>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">pheno_ukbb</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/phenotype.html">phenotype</a></span><span class="op">(</span><span class="va">file_path</span>, </span>
+<span>                        id_col    <span class="op">=</span> <span class="st">"eid"</span>, </span>
+<span>                        code_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"ICD10 codes"</span> <span class="op">=</span> <span class="st">"diag_icd10"</span>, <span class="st">"ICD9 codes"</span> <span class="op">=</span> <span class="st">"diag_icd9"</span><span class="op">)</span>,</span>
+<span>                        include   <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>HFsyn  <span class="op">=</span> <span class="st">"PH1643"</span>, CM <span class="op">=</span> <span class="st">"PH1646"</span><span class="op">)</span>, </span>
+<span>                        exclude   <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>congHD <span class="op">=</span> <span class="st">"PH1637"</span>, MI <span class="op">=</span> <span class="st">"PH1636"</span>, HCM <span class="op">=</span> <span class="st">"PH1640"</span><span class="op">)</span>, </span>
+<span>                        gsub      <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"\\."</span>, <span class="st">""</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"x"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>                        name      <span class="op">=</span> <span class="st">"Heart Failure"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu">eulerr</span><span class="fu">::</span><span class="fu"><a href="https://jolars.github.io/eulerr/reference/euler.html" class="external-link">euler</a></span><span class="op">(</span><span class="va">pheno_ukbb</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/get.html" class="external-link">mget</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">pheno_ukbb</span><span class="op">)</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">pheno_ukbb</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"eid"</span>, <span class="st">"none"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span><span class="op">]</span>, shape <span class="op">=</span> <span class="st">"circle"</span><span class="op">)</span>,</span>
+<span>          quantities <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>          labels     <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>          main       <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>label <span class="op">=</span> <span class="st">"UKBB Heart failure phenotyping"</span>, fontsize <span class="op">=</span> <span class="fl">8</span>, font <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>,</span>
+<span>          legend     <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>fontsize <span class="op">=</span> <span class="fl">8</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p><img src="reference/figures/README-plot_hermes_ukbb.png" align="centre" width="80%"></p>
+</div>
+<div class="section level3">
+<h3 id="plot-the-icd-10-hermes-phenotypes">Plot the ICD-10 HERMES phenotypes<a class="anchor" aria-label="anchor" href="#plot-the-icd-10-hermes-phenotypes"></a>
+</h3>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/plot_code_overlap.html">plot_code_overlap</a></span><span class="op">(</span>pheno_ids <span class="op">=</span> <span class="va">hermes_phenos</span>, types <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ICD10 codes"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-plot_hermes-1.png" align="centre" width="80%"></p>
 </div>

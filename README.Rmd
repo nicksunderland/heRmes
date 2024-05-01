@@ -101,11 +101,15 @@ pheno <- phenotype(x         = dat,
 pheno[]
 ```
 
+---
+
 ### Update library from UKHDR
 This package's phenotype library can be updated from the [UKHDR Phenotype Library API](https://phenotypes.healthdatagateway.org/api/v1/) using the below function. This queries the library for phenotypes matching enteries in the `search_terms` argument. 
 ```{r update, eval = TRUE}
 update_library(search_terms = c("heart failure", "cardiomyopathy", "myocardial infarction"))
 ```
+
+---
 
 ### Update library from UKHDR (unpublished)
 This package's phenotype library can be updated with unpublished/development phenotypes from the [UKHDR Phenotype Library API](https://phenotypes.healthdatagateway.org/api/v1/) using the below function. However, since unpublished phenotypes are not searchable by name, we need to pass the exact ID and also login details for the website (stored in a local `.Renviron` file in this example.) 
@@ -128,6 +132,8 @@ update_library(search_terms = c(),
                UKHDR_PW     = Sys.getenv("UKHDR_PW"))
 ```
 
+---
+
 ### Plotting phenotype 
 To see the intersection of the codes in two or more phenotype files use the `plot_code_overlap()` function. 
 ```{r plot, out.width="80%", fig.align='center', fig.width=12, fig.height=18}
@@ -135,7 +141,11 @@ plot_code_overlap(pheno_ids = c("PH1645", "PH1028", "PH1055", "PH1074", "PH182",
                   types = c("ICD10 codes", "ICD9 codes", "OPCS4 codes", "Read codes v2"))
 ```
 
+---
+
 ### Example phenotyping of UKBB data
+Phenotyping of the UK biobank hospital admissions data. 
+
 ```{r ukbb_datapath, include=FALSE, eval=FALSE}
 file_path <- "/Users/xx20081/Desktop/hesin_diag.txt"
 ```
@@ -156,11 +166,19 @@ plot(eulerr::euler(pheno_ukbb[, mget(names(pheno_ukbb)[!names(pheno_ukbb) %in% c
 ```
 <img src="man/figures/README-plot_hermes_ukbb.png" align="centre" width="80%"/>
 
+---
+
 ### Plot the ICD-10 HERMES phenotypes
+Plot the overlap of the HERMES phenotypes with all other heart failure phenotypes in the UKHDR Phenotype library.
+
 ```{r plot_hermes, eval=FALSE}
 plot_code_overlap(pheno_ids = hermes_phenos, types = c("ICD10 codes"))
 ```
 <img src="man/figures/README-plot_hermes-1.png" align="centre" width="80%"/>
 
+---
+
 ### ESC primary cardiomyopathy phenotypes
+The primary cardiomyopathy phenotypes described in the ESC cardiomyopathy guidelines. 
+
 <img src="man/figures/esc_phenotypes.png" align="centre" width="80%"/>

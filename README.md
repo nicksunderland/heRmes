@@ -236,6 +236,8 @@ pheno[]
 #> 5:          TRUE
 ```
 
+------------------------------------------------------------------------
+
 ### Update library from UKHDR
 
 This package’s phenotype library can be updated from the [UKHDR
@@ -278,6 +280,8 @@ update_library(search_terms = c("heart failure", "cardiomyopathy", "myocardial i
 #> [i] reading phenotype id: PH1062 - skipping, already exists
 ```
 
+------------------------------------------------------------------------
+
 ### Update library from UKHDR (unpublished)
 
 This package’s phenotype library can be updated with
@@ -306,6 +310,8 @@ update_library(search_terms = c(),
                UKHDR_PW     = Sys.getenv("UKHDR_PW"))
 ```
 
+------------------------------------------------------------------------
+
 ### Plotting phenotype
 
 To see the intersection of the codes in two or more phenotype files use
@@ -318,7 +324,11 @@ plot_code_overlap(pheno_ids = c("PH1645", "PH1028", "PH1055", "PH1074", "PH182",
 
 <img src="man/figures/README-plot-1.png" width="80%" style="display: block; margin: auto;" />
 
+------------------------------------------------------------------------
+
 ### Example phenotyping of UKBB data
+
+Phenotyping of the UK biobank hospital admissions data.
 
 ``` r
 pheno_ukbb <- phenotype(file_path, 
@@ -338,7 +348,12 @@ plot(eulerr::euler(pheno_ukbb[, mget(names(pheno_ukbb)[!names(pheno_ukbb) %in% c
 
 <img src="man/figures/README-plot_hermes_ukbb.png" align="centre" width="80%"/>
 
+------------------------------------------------------------------------
+
 ### Plot the ICD-10 HERMES phenotypes
+
+Plot the overlap of the HERMES phenotypes with all other heart failure
+phenotypes in the UKHDR Phenotype library.
 
 ``` r
 plot_code_overlap(pheno_ids = hermes_phenos, types = c("ICD10 codes"))
@@ -346,6 +361,11 @@ plot_code_overlap(pheno_ids = hermes_phenos, types = c("ICD10 codes"))
 
 <img src="man/figures/README-plot_hermes-1.png" align="centre" width="80%"/>
 
+------------------------------------------------------------------------
+
 ### ESC primary cardiomyopathy phenotypes
+
+The primary cardiomyopathy phenotypes described in the ESC
+cardiomyopathy guidelines.
 
 <img src="man/figures/esc_phenotypes.png" align="centre" width="80%"/>

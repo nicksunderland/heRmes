@@ -189,9 +189,10 @@ dat <- dat[diag_icd10 %in% codes$code, ]
 dat[codes, description := i.description, on = c("diag_icd10" = "code")]
 
 V <- crossprod(table(unique(dat[, .(eid, description)]))) |> as.matrix()
-N <- as.matrix(rowSums(V))
+N <- rowSums(V)
+diag(V) <- N
 V <- apply(V, 2, function(x) x / matrix(diag(V), ncol = 1))
-diag_names <- data.table(description = colnames(V))
+diag_names <- data.table::data.table(description = colnames(V))
 diag_names[dat, code := i.diag_icd10, on = "description"]
 diag_names <- paste0(diag_names$description, " (", diag_names$code, ")")
 V <- cbind(V, N)
@@ -209,7 +210,10 @@ ggplot(Vmelt, aes(x = ICD10_2, y = ICD10_1, fill = value, label = round(value, 2
   scale_fill_gradient(low = "white", high = "blue", limits = c(0, 1)) + 
   scale_color_manual(values = c("TRUE" = "white", "FALSE" = "black")) +
   theme_minimal() +
-  labs(x = "Diagnosed ICD10 (X)", y = "Diagnosed ICD10 (Y)", title = "Co-occurrence of ICD10 codes", fill = "P(X,Y)/P(Y)") +
+  labs(x = "Diagnosed ICD10 (X)", y = "Diagnosed ICD10 (Y)", 
+       title = "Co-occurrence of ICD10 codes", 
+       subtitle = "Proportion of co-occurrence X&Y versus all Y codes",
+       fill = "(X&Y)/sum(Y) %") +
   coord_fixed() 
 ```
 <img src="man/figures/cooccurrence.png" align="centre" width="100%"/>

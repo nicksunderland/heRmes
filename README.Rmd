@@ -190,26 +190,26 @@ dat[codes, description := i.description, on = c("diag_icd10" = "code")]
 
 V <- crossprod(table(unique(dat[, .(eid, description)]))) |> as.matrix()
 N <- as.matrix(rowSums(V))
-V <- V / diag(V)
-diag_names <- data.table(description = rownames(V))
+V <- apply(V, 2, function(x) x / matrix(diag(V), ncol = 1))
+diag_names <- data.table(description = colnames(V))
 diag_names[dat, code := i.diag_icd10, on = "description"]
 diag_names <- paste0(diag_names$description, " (", diag_names$code, ")")
 V <- cbind(V, N)
 V <- rbind(V, c(t(N), 0))
 MORE_LETTERS <- c(LETTERS, paste0("A", LETTERS))
-rownames(V) <- c(MORE_LETTERS[1:length(diag_names)], "Num")
-colnames(V) <- c(paste0(diag_names, " - ", MORE_LETTERS[1:length(diag_names)]), "Num")
+rownames(V) <- c(paste0(diag_names, " - ", MORE_LETTERS[1:length(diag_names)]), "Num")
+colnames(V) <- c(MORE_LETTERS[1:length(diag_names)], "Num")
 Vmelt <- reshape2::melt(V) |> data.table::as.data.table()
 names(Vmelt) <- c("ICD10_1", "ICD10_2", "value")
 
 # Plot 
-ggplot(Vmelt, aes(x = ICD10_1, y = ICD10_2, fill = value, label = round(value, 2))) +
+ggplot(Vmelt, aes(x = ICD10_2, y = ICD10_1, fill = value, label = round(value, 2))) +
   geom_tile(color = "white") +
   geom_text(size = 2, aes(color = grepl("Num", ICD10_1) | grepl("Num", ICD10_2)), show.legend = FALSE) + 
   scale_fill_gradient(low = "white", high = "blue", limits = c(0, 1)) + 
   scale_color_manual(values = c("TRUE" = "white", "FALSE" = "black")) +
   theme_minimal() +
-  labs(x = "Diagnosed ICD10", y = "Diagnosed ICD10", title = "Co-occurrence of ICD10 codes", fill = "%") +
+  labs(x = "Diagnosed ICD10 (X)", y = "Diagnosed ICD10 (Y)", title = "Co-occurrence of ICD10 codes", fill = "P(X,Y)/P(Y)") +
   coord_fixed() 
 ```
 <img src="man/figures/cooccurrence.png" align="centre" width="100%"/>

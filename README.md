@@ -295,7 +295,8 @@ website (stored in a local `.Renviron` file in this example.)
 # development phenotypes, ids named for readability only
 hermes_phenos <- c(`Congenital heart disease`    = "PH1637", 
                    `Myocardial infarction`       = "PH1636", 
-                   `Cardiomyopathy (exc. HCM, restrictive, ischaemic & infective)`  = "PH1646", 
+                   `Cardiomyopathy (exc. HCM, restrictive, ischaemic & infective)`  = "PH1646",
+                   `Cardiomyopathy (all)`        = "PH1647", 
                    `Hypertrophic cardiomyopathy` = "PH1640", 
                    `Dilated cardiomyopathy`      = "PH1638", 
                    `Heart failure`               = "PH1645")

@@ -117,7 +117,8 @@ This package's phenotype library can be updated with unpublished/development phe
 # development phenotypes, ids named for readability only
 hermes_phenos <- c(`Congenital heart disease`    = "PH1637", 
                    `Myocardial infarction`       = "PH1636", 
-                   `Cardiomyopathy (exc. HCM, restrictive, ischaemic & infective)`  = "PH1646", 
+                   `Cardiomyopathy (exc. HCM, restrictive, ischaemic & infective)`  = "PH1646",
+                   `Cardiomyopathy (all)`        = "PH1647", 
                    `Hypertrophic cardiomyopathy` = "PH1640", 
                    `Dilated cardiomyopathy`      = "PH1638", 
                    `Heart failure`               = "PH1645")
@@ -179,8 +180,9 @@ plot_code_overlap(pheno_ids = hermes_phenos, types = c("ICD10 codes"))
 Co-occurrence matrix of heart failure (PH1645) and cardiomyopathy (PH1646) codes.
 ```{r cooccurrence, include=FALSE, eval=FALSE}
 hf_codes <- get_codes("PH1645")
-cm_codes <- get_codes("PH1646")
+cm_codes <- get_codes("PH1647")
 codes <- rbind(hf_codes, cm_codes)
+codes <- codes[coding_system.name == "ICD10 codes", ]
 file_path <- "/Users/xx20081/Desktop/hesin_diag.txt"
 dat <- data.table::fread(file_path)
 dat <- dat[diag_icd10 %in% codes$code, ]

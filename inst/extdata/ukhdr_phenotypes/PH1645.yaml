@@ -1,5 +1,5 @@
 phenotype_id: PH1645
-phenotype_version_id: 3369
+phenotype_version_id: 3380
 name: Heart failure
 definition: 'Extract from Soltani et al. 2024 which looked at HF coding for identification
   of HF admissions (not just diagnosis). - I50: ICD-10 codes beginning I50. This definition
@@ -19,6 +19,7 @@ publications:
 - Soltani et al.
 - ESC Cardiomyopathy Guidelines 2023
 author: Jiang, C., Sunderland, N., Henry, A., Shah, S., Lumbers, T.
+group: 12
 group_access: 3
 world_access: 2
 sex: '3'
@@ -27,23 +28,23 @@ concept_information:
 - name: Heart failure
   type: existing_concept
   concept_id: 3561
-  concept_version_id: 10879
+  concept_version_id: 10887
 - name: Heart failure
   type: existing_concept
   concept_id: 3562
-  concept_version_id: 10880
+  concept_version_id: 10888
 - name: Heart failure
   type: existing_concept
   concept_id: 3563
-  concept_version_id: 10881
+  concept_version_id: 10889
 - name: Heart failure
   type: existing_concept
   concept_id: 3564
-  concept_version_id: 10882
+  concept_version_id: 10890
 - name: Heart failure
   type: existing_concept
   concept_id: 3565
-  concept_version_id: 10872
+  concept_version_id: 10891
 - name: Heart failure
   type: existing_concept
   concept_id: 3566

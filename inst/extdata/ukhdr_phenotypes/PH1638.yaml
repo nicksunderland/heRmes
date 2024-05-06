@@ -1,9 +1,10 @@
 phenotype_id: PH1638
-phenotype_version_id: 3301
+phenotype_version_id: 3377
 name: Dilated cardiomyopathy
 publications:
 - Faden et al.
 author: Sunderland, N., Jiang, C., Henry, A., Shah, S., Lumbers, T.
+group: 12
 group_access: 3
 world_access: 2
 sex: '3'

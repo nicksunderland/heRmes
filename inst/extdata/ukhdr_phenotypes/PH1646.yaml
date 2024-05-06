@@ -1,7 +1,8 @@
 phenotype_id: PH1646
-phenotype_version_id: 3368
-name: Cardiomyopathy
+phenotype_version_id: 3383
+name: Cardiomyopathy (exc. HCM, restrictive, ischaemic & infective)
 author: Sunderland, N., Jiang, C., Henry, A., Shah, S., Lumbers, T.
+group: 12
 group_access: 3
 world_access: 2
 sex: '3'
@@ -10,19 +11,19 @@ concept_information:
 - name: Cardiomyopathy
   type: existing_concept
   concept_id: 3567
-  concept_version_id: 10878
+  concept_version_id: 10892
 - name: Cardiomyopathy
   type: existing_concept
   concept_id: 3568
-  concept_version_id: 10875
+  concept_version_id: 10893
 - name: Cardiomyopathy
   type: existing_concept
   concept_id: 3569
-  concept_version_id: 10876
+  concept_version_id: 10894
 - name: Cardiomyopathy
   type: existing_concept
   concept_id: 3570
-  concept_version_id: 10877
+  concept_version_id: 10895
 owner: nsunderland
 template:
   id: 1

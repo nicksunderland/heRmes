@@ -1,5 +1,5 @@
 phenotype_id: PH1637
-phenotype_version_id: 3292
+phenotype_version_id: 3379
 name: Congenital heart disease
 definition: NHS ACHD review [codes](https://www.england.nhs.uk/wp-content/uploads/2013/12/chd13-proc-list-1.pdf)
   Society of thoracic surgeons [codes](https://www.sts.org/sites/default/files/documents/Congenital%20Cardiac%20Surgery%20ICD9%20to%20ICD10%20Crosswalk%20Final%208-2015.pdf)
@@ -11,6 +11,7 @@ publications:
 - 'Hammad et al. '
 - Chami et al.
 author: Jiang, C., Sunderland, N., Henry, A., Shah, S., Lumbers, T.
+group: 12
 group_access: 3
 world_access: 2
 sex: '3'

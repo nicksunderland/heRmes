@@ -1,9 +1,9 @@
 concept_id	concept_history_id	concept_history_date	component_id	component_history_id	logical_type	codelist_id	codelist_history_id	id	code	description	attributes	concept_version_id	concept_name	coding_system.id	coding_system.name	coding_system.description	phenotype_id	phenotype_version_id	phenotype_name
-3514	10773	2024-04-25T12:37:32.632736Z	9230	11145	1	9230	10637	358612	4254	Other primary cardiomyopathies		10773	Dilated cardiomyopathy	17	ICD9 codes	ICD9 codes	PH1638	3301	Dilated cardiomyopathy
-3514	10773	2024-04-25T12:37:32.632736Z	9230	11145	1	9230	10637	358613	425	Cardiomyopathy		10773	Dilated cardiomyopathy	17	ICD9 codes	ICD9 codes	PH1638	3301	Dilated cardiomyopathy
-3515	10697	2024-04-24T16:28:17.137557Z	9127	10829	1	9127	10526	356127	I420	Dilated cardiomyopathy		10697	Dilated cardiomyopathy	4	ICD10 codes	ICD10 Codes	PH1638	3301	Dilated cardiomyopathy
-3516	10774	2024-04-25T12:37:32.659541Z	9128	11146	1	9128	10527	356128	G5544	Primary dilated cardiomyopathy		10774	Dilated cardiomyopathy	5	Read codes v2	Read codes v2	PH1638	3301	Dilated cardiomyopathy
-3517	10775	2024-04-25T12:37:32.687345Z	9129	11147	1	9129	10528	356129	Y207h	Dilated cardiomyopathy		10775	Dilated cardiomyopathy	6	Read codes v3	Read codes v3	PH1638	3301	Dilated cardiomyopathy
-3517	10775	2024-04-25T12:37:32.687345Z	9129	11147	1	9129	10528	356133	Y207r	Familial dilated cardiomyopathy		10775	Dilated cardiomyopathy	6	Read codes v3	Read codes v3	PH1638	3301	Dilated cardiomyopathy
-3517	10775	2024-04-25T12:37:32.687345Z	9129	11147	1	9129	10528	356130	Y207i	DCM - Dilated cardiomyopathy		10775	Dilated cardiomyopathy	6	Read codes v3	Read codes v3	PH1638	3301	Dilated cardiomyopathy
-3517	10775	2024-04-25T12:37:32.687345Z	9129	11147	1	9129	10528	356132	Y207m	Primary dilated cardiomyopathy		10775	Dilated cardiomyopathy	6	Read codes v3	Read codes v3	PH1638	3301	Dilated cardiomyopathy
+3514	10773	2024-04-25T12:37:32.632736Z	9230	11145	1	9230	10637	358612	4254	Other primary cardiomyopathies		10773	Dilated cardiomyopathy	17	ICD9 codes	ICD9 codes	PH1638	3377	Dilated cardiomyopathy
+3514	10773	2024-04-25T12:37:32.632736Z	9230	11145	1	9230	10637	358613	425	Cardiomyopathy		10773	Dilated cardiomyopathy	17	ICD9 codes	ICD9 codes	PH1638	3377	Dilated cardiomyopathy
+3515	10697	2024-04-24T16:28:17.137557Z	9127	10829	1	9127	10526	356127	I420	Dilated cardiomyopathy		10697	Dilated cardiomyopathy	4	ICD10 codes	ICD10 Codes	PH1638	3377	Dilated cardiomyopathy
+3516	10774	2024-04-25T12:37:32.659541Z	9128	11146	1	9128	10527	356128	G5544	Primary dilated cardiomyopathy		10774	Dilated cardiomyopathy	5	Read codes v2	Read codes v2	PH1638	3377	Dilated cardiomyopathy
+3517	10775	2024-04-25T12:37:32.687345Z	9129	11147	1	9129	10528	356129	Y207h	Dilated cardiomyopathy		10775	Dilated cardiomyopathy	6	Read codes v3	Read codes v3	PH1638	3377	Dilated cardiomyopathy
+3517	10775	2024-04-25T12:37:32.687345Z	9129	11147	1	9129	10528	356133	Y207r	Familial dilated cardiomyopathy		10775	Dilated cardiomyopathy	6	Read codes v3	Read codes v3	PH1638	3377	Dilated cardiomyopathy
+3517	10775	2024-04-25T12:37:32.687345Z	9129	11147	1	9129	10528	356130	Y207i	DCM - Dilated cardiomyopathy		10775	Dilated cardiomyopathy	6	Read codes v3	Read codes v3	PH1638	3377	Dilated cardiomyopathy
+3517	10775	2024-04-25T12:37:32.687345Z	9129	11147	1	9129	10528	356132	Y207m	Primary dilated cardiomyopathy		10775	Dilated cardiomyopathy	6	Read codes v3	Read codes v3	PH1638	3377	Dilated cardiomyopathy

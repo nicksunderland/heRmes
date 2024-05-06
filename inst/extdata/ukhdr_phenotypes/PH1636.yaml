@@ -1,11 +1,12 @@
 phenotype_id: PH1636
-phenotype_version_id: 3300
+phenotype_version_id: 3378
 name: Myocardial infarction
 definition: Previous UKBB [codes](https://github.com/UK-Digital-Heart-Project/UKBB_filter)
 publications:
 - Mehta et al.
 - Tsai et al.
 author: Jiang, C., Sunderland, N., Henry, A., Shah, S., Lumbers, T.
+group: 12
 group_access: 3
 world_access: 2
 sex: '3'

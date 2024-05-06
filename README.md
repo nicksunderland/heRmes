@@ -295,13 +295,10 @@ website (stored in a local `.Renviron` file in this example.)
 # development phenotypes, ids named for readability only
 hermes_phenos <- c(`Congenital heart disease`    = "PH1637", 
                    `Myocardial infarction`       = "PH1636", 
-                   `Secondary cardiomyopathies`  = "PH1642", 
+                   `Cardiomyopathy (exc. HCM, restrictive, ischaemic & infective)`  = "PH1646", 
                    `Hypertrophic cardiomyopathy` = "PH1640", 
                    `Dilated cardiomyopathy`      = "PH1638", 
-                   `Cardiomyopathy`              = "PH1646", 
-                   `Heart failure`               = "PH1645", 
-                   `Non-ischaemic cardiomyopathy`= "PH1639", 
-                   `Heart failure syndrome`      = "PH1643")
+                   `Heart failure`               = "PH1645")
 
 # update
 update_library(search_terms = c(), 
@@ -334,7 +331,7 @@ Phenotyping of the UK biobank hospital admissions data.
 pheno_ukbb <- phenotype(file_path, 
                         id_col    = "eid", 
                         code_cols = list("ICD10 codes" = "diag_icd10", "ICD9 codes" = "diag_icd9"),
-                        include   = list(HFsyn  = "PH1643", CM = "PH1646"), 
+                        include   = list(HF  = "PH1645", CM = "PH1646"), 
                         exclude   = list(congHD = "PH1637", MI = "PH1636", HCM = "PH1640"), 
                         gsub      = list("\\.", "", c("x")),
                         name      = "Heart Failure")
@@ -360,6 +357,15 @@ plot_code_overlap(pheno_ids = hermes_phenos, types = c("ICD10 codes"))
 ```
 
 <img src="man/figures/README-plot_hermes-1.png" align="centre" width="80%"/>
+
+------------------------------------------------------------------------
+
+### Co-occurrence of UKBB ICD-10 codes
+
+Co-occurrence matrix of heart failure (PH1645) and cardiomyopathy
+(PH1646) codes.
+
+<img src="man/figures/cooccurrence.png" align="centre" width="100%"/>
 
 ------------------------------------------------------------------------
 

@@ -64,8 +64,8 @@ Phenotype the individuals with phenotype `PH1643` (heart failure syndrome) or `P
 result <- phenotype(x         = dat, 
                     id_col    = "ids",
                     code_cols = list("ICD10 codes" = c("codes", "codes1")), 
-                    include   = list("PH1643", "PH1646"), 
-                    exclude   = list("PH1637", "PH1636", "PH1640"))
+                    include   = list("PH1645"), 
+                    exclude   = list("PH1637"))
 result[]
 ```
 
@@ -85,8 +85,8 @@ dat[]
 wrong <- phenotype(x         = dat, 
                    id_col    = "ids",
                    code_cols = list("ICD10 codes" = c("codes", "codes1")),
-                   include   = list(HFsyn  = "PH1643", CM = "PH1646"), 
-                   exclude   = list(congHD = "PH1637", MI = "PH1636", HCM = "PH1640"), 
+                   include   = list(HF     = "PH1645"), 
+                   exclude   = list(congHD = "PH1637"), 
                    name      = "Heart Failure")
 wrong[]
 
@@ -94,8 +94,8 @@ wrong[]
 pheno <- phenotype(x         = dat, 
                    id_col    = "ids",
                    code_cols = list("ICD10 codes" = c("codes", "codes1")),
-                   include   = list(HFsyn  = "PH1643", CM = "PH1646"), 
-                   exclude   = list(congHD = "PH1637", MI = "PH1636", HCM = "PH1640"), 
+                   include   = list(HF     = "PH1645"), 
+                   exclude   = list(congHD = "PH1637"), 
                    gsub      = list("\\.", "", c("x")),
                    name      = "Heart Failure")
 pheno[]
@@ -133,7 +133,6 @@ To see the intersection of the codes in two or more phenotype files use the `plo
 plot_code_overlap(pheno_ids = c("PH1645", "PH1028", "PH1055", "PH1074", "PH182", "PH25", "PH530", "PH531", "PH631", "PH687", "PH968", "PH993"), 
                   types = c("ICD10 codes", "ICD9 codes", "OPCS4 codes", "Read codes v2"))
 ```
-
 
 
 ### ESC primary cardiomyopathy phenotypes

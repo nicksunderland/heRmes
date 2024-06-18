@@ -12,14 +12,19 @@ RoxygenNote: 7.3.1
 Imports: 
     ConceptLibraryClient,
     data.table,
+    BibTexLibraries,
     eulerr,
     ggpubr,
     S7,
     yaml
 Remotes:
+    nicksunderland/BibTexLibraries,
     SwanseaUniversityMedical/ConceptLibraryClient
 Suggests: 
     knitr,
     rmarkdown
 VignetteBuilder: knitr
 URL: https://nicksunderland.github.io/heRmes/
+Depends: 
+    R (>= 2.10)
+LazyData: true

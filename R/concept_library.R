@@ -10,7 +10,7 @@
 #'
 #' @import ConceptLibraryClient
 #' @import data.table
-update_library <- function(search_terms = c("heart failure", "cardiomyopathy", "myocardial infarction"), ids = NULL, UKHDR_UN = NULL, UKHDR_PW = NULL) {
+update_library <- function(search_terms = c("heart failure", "cardiomyopathy", "myocardial infarction"), ids = NULL, UKHDR_UN = NULL, UKHDR_PW = NULL, overwrite = FALSE) {
 
   # connect to API
   public_flag <- ifelse(is.null(UKHDR_UN) | is.null(UKHDR_PW), TRUE, FALSE)
@@ -36,7 +36,7 @@ update_library <- function(search_terms = c("heart failure", "cardiomyopathy", "
 
     pheno_file <- file.path(system.file("extdata", "ukhdr_phenotypes", package = "heRmes"), paste0(id, ".yaml"))
 
-    if (!file.exists(pheno_file)) {
+    if (!file.exists(pheno_file) | overwrite) {
       cat(" - downloading")
 
       client$phenotypes$save_definition_file(pheno_file, id)

@@ -1,0 +1,131 @@
+---
+title: "HERMES 3.0 sex-stratified analysis"
+author: Dr. Clara Jiang
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{HERMES 3.0 sex-stratified analysis}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+bibliography: "`r BibTexLibraries::get_bib_path('hermes3')`"
+csl: "`r BibTexLibraries::get_bib_format('american-medical-association-no-et-al.csl')`"
+link-citations: true
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+<style>
+body {
+text-align: justify}
+</style>
+
+## Aim  
+To perform a multi-ancestry sex-stratified genome-wide association study (GWAS) meta-analysis of HF, ischaemic HF and non-ischaemic HF.  
+
+## Rationale  
+Heart failure (HF) has shown substantial sex differences in its clinical presentations and risk profiles, but much remains unclear about HF in women.[@groenewegenEpidemiologyHeartFailure2020; @heidenreich2022AHAACC2022; @kenchaiahHeartFailureWomen2015] Sex-stratified genome-wide association studies (GWAS) have provided mechanistic insights into diseases with known phenotypic sex differences.[@cardiogramplusc4dconsortiumLargescaleAssociationAnalysis2013; @boerDecipheringOsteoarthritisGenetics2021] This project aims to identify sex-specific HF risk loci, by performing a sex-stratified GWAS of all-cause HF and subtypes stratified by ischaemic aetiology, including an analysis of the X chromosome (ChrX). This research, particularly the analysis of non-ischaemic HF, is envisioned to build new knowledge on the sex-specific genetic basis of HF and identify non-traditional risk factors.  
+
+HF amongst individuals with congenital heart disease represents a distinct entity, largely due to structural malformations during embryonic cardiogenesis. Whilst most cases remain unexplained, genetic association studies have highlighted variants in important patterning genes as potential causal factors.[@lahmCongenitalHeartDisease2021] In this study, we are interested in why hearts that seemingly developed normally then go on to fail. Given the often dramatic structural abnormalities seen in congenital heart disease and likely distinct pathophysiology (embryonic patterning), we have excluded this subgroup from our HF definition.  
+
+Chronic respiratory disease, predominantly COPD, is a common comorbidity amongst patients with diagnosed HF.[@ehteshami-afsharClinicalCharacteristicsOutcomes2021] Whilst outcomes are poorer in this HF subgroup, standard HF therapeutics offer similar prognostic benefits suggesting shared underlying pathophysiological mechanisms.[@ehteshami-afsharClinicalCharacteristicsOutcomes2021] Diagnosis of either, or both, conditions can be challenging due to overlapping clinical signs and symptoms. However, chronic respiratory disease and HF share multiple upstream risk factors - smoking being the most obvious - therefore conditioning on chronic respiratory disease status has the potential to induce bias in the data. Therefore, we have not excluded chronic respiratory disease patients from our HF definition, as long as they also have a definite, non-ambiguous, HF diagnostic code.  
+
+## Study phenotypes
+
+| Phenotype   | Name             | Brief Description                                       |
+|-------------|------------------|---------------------------------------------------------|
+| Phenotype 1 | All HF           | Clinical syndrome of HF, any cause or manifestation     |
+| Phenotype 2 | Ischaemic HF     | HF comorbid with antecedent CAD                         |
+| Phenotype 3 | Non-ischaemic HF | HF without CAD                                          |
+
+## Methods  
+*Subjects:* Individuals of European, South Asian, East Asian, African, Hispanic, and Indigenous American ancestries who are free of congenital heart disease, and with or without prevalent HF.  
+
+*Genotypes:* Autosomal and ChrX SNPs (preferably imputed against HRC, TOPMED, or population-specific haplotypes).  
+
+*Phenotypes:* Three phenotypes as described above (minimum of 500 cases and 500 controls in each sex for each ancestry-specific GWAS analysis).  
+
+
+## Return of results  
+The Cardiovascular Knowledge Portal team are developing a private data repository for HERMES3 with functionality to validate file formats and run QC on cohort-level GWAS summary data. If our initial pilot study is successful, we will switch to this platform. In the meantime, please, return results for your study to the analysis team at UQ via the UQRDM. To get access to UQRDM, please provide your analyst email address to Clara Jiang at j.jiang@uq.edu.au.
+
+
+## Phenotype definition
+To define phenotypes in your study, please follow a two-step approach described below: 
+
+### Step 1  
+For each participant, define the status (TRUE / FALSE) for the following phenotype classifiers: 
+
+| Classifier              | Classifier ID | Description                                                                 |
+|-------------------------|---------------|-----------------------------------------------------------------------------|
+|Congenital heart disease | CongHD        | Any congenital malformation of the heart or great vessels defined by a diagnosis, or relevant surgical or percutaneous procedure |
+|Heart failure            | HF            | Diagnosis of heart failure of any cause                                     |
+|Coronary artery disease  | CAD           | Diagnosis of myocardial infarction, history of coronary thrombolysis procedure and surgical or percutaneous procedure for coronary artery revascularization |
+
+Where available, manually adjudicated clinical definitions made by trained physicians are preferred.  
+
+For de novo adjudication using electronic health records, please define these classifiers as the presence of at least 1 relevant diagnosis/procedure code listed in Appendix Ia-c. Where appropriate, please also include other code systems (e.g. READ and CPT) by mapping the recommended codes.  
+
+If self-reported data are available, individuals who lack a HF or CAD diagnosis/procedure code, but self-report to have had these conditions, should be excluded from the study.   
+
+Please contact the central analyst team for cohort-specific adjudication not mentioned here.  
+
+### Step 2   
+For each participant, classify the status (case/control/exclude) for target GWAS phenotypes by combining classifier status from Step 1 using the logic described below.  
+
+*Table 1. GWAS Phenotype classifiers for all-cause HF, ischaemic HF, and non-ischaemic HF (phenotypes 1-3)*  
+
+| CongHD | HF   | CAD   | Category                | Phenotype |
+|--------|------|-------|-------------------------|-----------|
+| TRUE   | ANY  | ANY   | Exclude                 |           |
+| FALSE  | TRUE | TRUE  | Ischaemic HF case       |1 & 2      |
+| FALSE  | TRUE | FALSE | Non-ischaemic HF case   |1 & 3      |
+| FALSE  | FALSE| TRUE  | Exclude                 |           |
+| FALSE  | FALSE| FALSE | CONTROL                 |           |
+
+*Figure 1. Phenotyping algorithm*  
+
+<img src="figures/phenotyping_algorithm.png" align="centre" width="80%"/>
+
+
+
+
+## Obtaining concept codes  
+Load the `heRmes` R package.  
+```{r setup, message=FALSE, warning=FALSE}
+library(heRmes)
+```
+Obtain the codes with the `get_codes` function. The codes are available within the package structure at: 
+`inst/extdata/ukhdr_phenotypes` and from the [UKHDR Phenotype Library](https://phenotypes.healthdatagateway.org) website.
+
+### UKHDR phenoptype codes
+```{r ids}
+hermes3_pheno_ids <- list(congenital_heart_disease = "PH1645", 
+                          heart_failure            = "PH1645", 
+                          coronary_artery_disease  = "PH1645")
+```
+
+### Congenital heart disease
+```{r chd_codes}
+chd <- get_codes(pheno_id = hermes3_pheno_ids[["congenital_heart_disease"]])[1:5, c("phenotype_id", "phenotype_name", "coding_system.name", "code")]
+chd[]
+```
+
+### Heart failure
+```{r hf_codes}
+hf <- get_codes(pheno_id = hermes3_pheno_ids[["heart_failure"]])[1:5, c("phenotype_id", "phenotype_name", "coding_system.name", "code")]
+hf[]
+```
+
+### Coronary artery disease
+```{r cad_codes}
+cad <- get_codes(pheno_id = hermes3_pheno_ids[["coronary_artery_disease"]])[1:5, c("phenotype_id", "phenotype_name", "coding_system.name", "code")]
+cad[]
+```
+
+
+## References  
+

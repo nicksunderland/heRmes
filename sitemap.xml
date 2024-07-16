@@ -1,51 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://nicksunderland.github.io/heRmes/404.html</loc>
-  </url>
-  <url>
-    <loc>https://nicksunderland.github.io/heRmes/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://nicksunderland.github.io/heRmes/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://nicksunderland.github.io/heRmes/articles/hermes_3_codes.html</loc>
-  </url>
-  <url>
-    <loc>https://nicksunderland.github.io/heRmes/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://nicksunderland.github.io/heRmes/articles/ukbb_phenotyping.html</loc>
-  </url>
-  <url>
-    <loc>https://nicksunderland.github.io/heRmes/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://nicksunderland.github.io/heRmes/index.html</loc>
-  </url>
-  <url>
-    <loc>https://nicksunderland.github.io/heRmes/reference/get_codes.html</loc>
-  </url>
-  <url>
-    <loc>https://nicksunderland.github.io/heRmes/reference/get_metadata.html</loc>
-  </url>
-  <url>
-    <loc>https://nicksunderland.github.io/heRmes/reference/get_phenotypes.html</loc>
-  </url>
-  <url>
-    <loc>https://nicksunderland.github.io/heRmes/reference/heRmes-package.html</loc>
-  </url>
-  <url>
-    <loc>https://nicksunderland.github.io/heRmes/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://nicksunderland.github.io/heRmes/reference/phenotype.html</loc>
-  </url>
-  <url>
-    <loc>https://nicksunderland.github.io/heRmes/reference/plot_code_overlap.html</loc>
-  </url>
-  <url>
-    <loc>https://nicksunderland.github.io/heRmes/reference/update_library.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://nicksunderland.github.io/heRmes/404.html</loc></url>
+<url><loc>https://nicksunderland.github.io/heRmes/LICENSE-text.html</loc></url>
+<url><loc>https://nicksunderland.github.io/heRmes/LICENSE.html</loc></url>
+<url><loc>https://nicksunderland.github.io/heRmes/articles/hermes_3_codes.html</loc></url>
+<url><loc>https://nicksunderland.github.io/heRmes/articles/index.html</loc></url>
+<url><loc>https://nicksunderland.github.io/heRmes/articles/ukbb_phenotyping.html</loc></url>
+<url><loc>https://nicksunderland.github.io/heRmes/authors.html</loc></url>
+<url><loc>https://nicksunderland.github.io/heRmes/index.html</loc></url>
+<url><loc>https://nicksunderland.github.io/heRmes/reference/get_codes.html</loc></url>
+<url><loc>https://nicksunderland.github.io/heRmes/reference/get_metadata.html</loc></url>
+<url><loc>https://nicksunderland.github.io/heRmes/reference/get_phenotypes.html</loc></url>
+<url><loc>https://nicksunderland.github.io/heRmes/reference/heRmes-package.html</loc></url>
+<url><loc>https://nicksunderland.github.io/heRmes/reference/index.html</loc></url>
+<url><loc>https://nicksunderland.github.io/heRmes/reference/phenotype.html</loc></url>
+<url><loc>https://nicksunderland.github.io/heRmes/reference/plot_code_overlap.html</loc></url>
+<url><loc>https://nicksunderland.github.io/heRmes/reference/update_library.html</loc></url>
 </urlset>
+

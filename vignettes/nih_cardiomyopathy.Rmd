@@ -1,0 +1,104 @@
+---
+title: "Cardiomyopathy phenotyping NIH"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Cardiomyopathy phenotyping NIH}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, echo=FALSE, include=FALSE, eval=FALSE}
+library(heRmes)
+library(readxl)
+library(data.table)
+library(glue)
+library(irr)
+
+file <- "/Users/xx20081/Library/CloudStorage/OneDrive-SharedLibraries-VUMC/Shaffer, Lauren L - Phenotype Workstream/phenotyping_code_consensus/nih_cardiomyopathy_phenotyping_combined.xlsx"
+
+tabs <- list(DCM_IsA                         = "DCM_IsA",
+             LVSD_IsA                        = "LVSD_IsA", 
+             Myocardial_infarction           = "Myocardial_infarction",
+             Coronary_artery_bypass_grafting = "Coronary_artery_bypass_grafting",
+             Percutaneous_coronary_intervent = "Percutaneous_coronary_intervent",
+             Thrombolysis_coronary           = "Thrombolysis_coronary",
+             Congenital_heart_disease        = "Congenital_heart_disease", 
+             Congenital_heart_procedure      = "Congenital_heart_procedure")
+
+meta <- lapply(tabs, function(x) {
+  r <- read_xlsx(file, x, n_max=5, col_names=FALSE)
+  d <- data.table()
+  d[, r$...1 := lapply(r$...2, function(x) x[[1]])]
+}) |> rbindlist(idcol="concept")
+
+dat <- lapply(tabs, function(x) read_xlsx(file, x, skip=13)) |> rbindlist(idcol="concept")
+cols <- c("QW","RTL","NS","LL","Concensus")
+dat[, (cols) := lapply(.SD, function(x) as.numeric(!is.na(x))), .SDcols = cols]
+dat <- dat[Concensus==1 & Source != "SNOMED"]
+dat[, agreement := rowSums(.SD)/4, .SDcols = c("QW","RTL","NS","LL")]
+dat[meta, Concept := i.Title, on="concept"]
+
+fwrite(dat, "/Users/xx20081/git/heRmes/docs/cardiomyopathy_codes_dat.tsv", sep="\t")
+fwrite(meta, "/Users/xx20081/git/heRmes/docs/cardiomyopathy_metadata_dat.tsv", sep="\t")
+
+fwrite(dat[, .(Concept, Code, Source, Description)], "/Users/xx20081/git/heRmes/inst/extdata/nih_cardiomyopathy_codes/cardiomyopathy_codes.tsv", sep="\t")
+
+fwrite(meta[, .(Concept=Title, Definition, Reference, Terminologies, `Search expressions`)], "/Users/xx20081/git/heRmes/inst/extdata/nih_cardiomyopathy_codes/cardiomyopathy_metadata.tsv", sep="\t")
+
+```
+
+## Download codes 
+
+To download the codes and search strategies clink the links:
+
+<a href="https://github.com/nicksunderland/heRmes/tree/main/inst/extdata/nih_cardiomyopathy_codes/cardiomyopathy_codes.tsv" download>
+  <button style="background-color: #002855; color: white; padding: 10px 20px; border: none; border-radius: 5px; text-align: center; text-decoration: none; display: inline-block; font-size: 12px;">
+    Download cardiomyopathy_codes.tsv
+  </button>
+</a>
+
+<a href="https://github.com/nicksunderland/heRmes/tree/main/inst/extdata/nih_cardiomyopathy_codes/cardiomyopathy_metadata.tsv" download>
+  <button style="background-color: #002855; color: white; padding: 10px 20px; border: none; border-radius: 5px; text-align: center; text-decoration: none; display: inline-block; font-size: 12px;">
+    Download cardiomyopathy_metadata.tsv
+  </button>
+</a>
+
+
+```{r gen, echo=FALSE, results='asis', message=FALSE, warning=FALSE}
+library(data.table)
+library(glue)
+library(knitr)
+library(here)
+
+dat <- fread(here("docs/cardiomyopathy_codes_dat.tsv"))
+meta <- fread(here("docs/cardiomyopathy_metadata_dat.tsv"))
+
+for (con in unique(dat$concept)) {
+  m0 <- meta[concept==con]
+  d0 <- dat[concept==con]
+  
+  str <- glue("## {m0$Title} \n
+    **Definition:**          {m0$Definition}. \n
+    **Reference:**           {m0$Reference}. \n
+    **Terminologies:**      `{m0$Terminologies}`. \n
+    **Search expressions:** `{m0$`Search expressions`}`. \n
+
+
+")
+  
+  # the text
+  cat(str)
+  
+  # the table 
+  print(kable(d0[Source != "SNOMED", .(Code, Source, Description)]))
+  
+}
+
+```

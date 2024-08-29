@@ -22,7 +22,8 @@ Remotes:
     SwanseaUniversityMedical/ConceptLibraryClient
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown, 
+    here
 VignetteBuilder: knitr
 URL: https://nicksunderland.github.io/heRmes/
 Depends: 

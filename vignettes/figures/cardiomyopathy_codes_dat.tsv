@@ -1,0 +1,156 @@
+concept	Code	Source	Description	QW	RTL	NS	LL	Votes	Concensus	Comment	agreement	Concept
+DCM_IsA	I420	ICD10	Dilated cardiomyopathy	1	1	1	1	4	1		1	Dilated cardiomyopathy
+LVSD_IsA	I502	ICD10	Systolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	I5020	ICD10	Unspecified systolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	I5021	ICD10	Acute systolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	I5022	ICD10	Chronic systolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	I5023	ICD10	Acute on chronic systolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	I504	ICD10	Combined systolic (congestive) and diastolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	I5040	ICD10	Unspecified combined systolic (congestive) and diastolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	I5041	ICD10	Acute combined systolic (congestive) and diastolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	I5042	ICD10	Chronic combined systolic (congestive) and diastolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	I5043	ICD10	Acute on chronic combined systolic (congestive) and diastolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	42821	ICD9	Acute systolic heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	42822	ICD9	Chronic systolic heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	42823	ICD9	Acute on chronic systolic heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	42840	ICD9	Combined systolic and diastolic heart failure, unspecified	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	42841	ICD9	Acute combined systolic and diastolic heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	42842	ICD9	Chronic combined systolic and diastolic heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	42843	ICD9	Acute on chronic combined systolic and diastolic heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	42820	ICD9	Systolic heart failure, unspecified	1	1	1	0	3	1		0.75	Left ventricular systolic dysfunction
+Myocardial_infarction	I21	ICD10	Acute myocardial infarction	0	0	0	1	1	1		0.25	Myocardial infarction
+Myocardial_infarction	I21A	ICD10	Other type of myocardial infarction	1	1	1	1	4	1		1	Myocardial infarction
+Myocardial_infarction	I21A1	ICD10	Myocardial infarction type 2	0	1	1	0	2	1	Is this what we want?   I think we could refer to universal definiion/subtypes of MI here if needed.	0.5	Myocardial infarction
+Myocardial_infarction	I21A9	ICD10	Other myocardial infarction type	0	1	1	0	2	1		0.5	Myocardial infarction
+Myocardial_infarction	I21B	ICD10	Myocardial infarction with coronary microvascular dysfunction	0	0	0	1	1	1		0.25	Myocardial infarction
+Myocardial_infarction	I252	ICD10	Old myocardial infarction	1	1	1	0	3	1		0.75	Myocardial infarction
+Myocardial_infarction	4110	ICD9	Postmyocardial infarction syndrome	1	0	0	1	2	1		0.5	Myocardial infarction
+Myocardial_infarction	412	ICD9	Old myocardial infarction	1	1	1	0	3	1		0.75	Myocardial infarction
+Myocardial_infarction	42979	ICD9	Certain sequelae of myocardial infarction, not elsewhere classified, other	1	1	1	0	3	1		0.75	Myocardial infarction
+Coronary_artery_bypass_grafting	K40	OPCS4	Saphenous vein graft replacement of coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K401	OPCS4	Saphenous vein graft replacement of one coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K402	OPCS4	Saphenous vein graft replacement of two coronary arteries	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K403	OPCS4	Saphenous vein graft replacement of three coronary arteries	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K404	OPCS4	Saphenous vein graft replacement of four or more coronary arteries	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K408	OPCS4	Other specified saphenous vein graft replacement of coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K409	OPCS4	Unspecified saphenous vein graft replacement of coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K41	OPCS4	Other autograft replacement of coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K411	OPCS4	Autograft replacement of one coronary artery NEC	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K412	OPCS4	Autograft replacement of two coronary arteries NEC	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K413	OPCS4	Autograft replacement of three coronary arteries NEC	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K414	OPCS4	Autograft replacement of four or more coronary arteries NEC	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K418	OPCS4	Other specified other autograft replacement of coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K419	OPCS4	Unspecified other autograft replacement of coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K42	OPCS4	Allograft replacement of coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K421	OPCS4	Allograft replacement of one coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K422	OPCS4	Allograft replacement of two coronary arteries	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K423	OPCS4	Allograft replacement of three coronary arteries	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K424	OPCS4	Allograft replacement of four or more coronary arteries	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K428	OPCS4	Other specified allograft replacement of coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K429	OPCS4	Unspecified allograft replacement of coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K43	OPCS4	Prosthetic replacement of coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K431	OPCS4	Prosthetic replacement of one coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K432	OPCS4	Prosthetic replacement of two coronary arteries	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K433	OPCS4	Prosthetic replacement of three coronary arteries	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K434	OPCS4	Prosthetic replacement of four or more coronary arteries	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K438	OPCS4	Other specified prosthetic replacement of coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K439	OPCS4	Unspecified prosthetic replacement of coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K44	OPCS4	Other replacement of coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K441	OPCS4	Replacement of coronary arteries using multiple methods	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K442	OPCS4	Revision of replacement of coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K448	OPCS4	Other specified other replacement of coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K449	OPCS4	Unspecified other replacement of coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K45	OPCS4	Connection of thoracic artery to coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K451	OPCS4	Double anastomosis of mammary arteries to coronary arteries	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K452	OPCS4	Double anastomosis of thoracic arteries to coronary arteries NEC	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K453	OPCS4	Anastomosis of mammary artery to left anterior descending coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K454	OPCS4	Anastomosis of mammary artery to coronary artery NEC	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K455	OPCS4	Anastomosis of thoracic artery to coronary artery NEC	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K456	OPCS4	Revision of connection of thoracic artery to coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K458	OPCS4	Other specified connection of thoracic artery to coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K459	OPCS4	Unspecified connection of thoracic artery to coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K46	OPCS4	Other bypass of coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K461	OPCS4	Double implantation of mammary arteries into heart	1	1	1	1	4	1	RTL consensus proposal	1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K462	OPCS4	Double implantation of thoracic arteries into heart NEC	1	1	1	1	4	1	RTL consensus proposal	1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K463	OPCS4	Implantation of mammary artery into heart NEC	1	1	1	1	4	1	RTL consensus proposal	1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K464	OPCS4	Implantation of thoracic artery into heart NEC	1	1	1	1	4	1	RTL consensus proposal	1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K465	OPCS4	Revision of implantation of thoracic artery into heart	1	1	1	1	4	1	RTL consensus proposal	1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K468	OPCS4	Other specified other bypass of coronary artery	0	1	1	1	3	1		0.75	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	K469	OPCS4	Unspecified other bypass of coronary artery	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	33510	CPT4	Coronary artery bypass, vein only; single coronary venous graft	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	33511	CPT4	Coronary artery bypass, vein only; 2 coronary venous grafts	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	33512	CPT4	Coronary artery bypass, vein only; 3 coronary venous grafts	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	33513	CPT4	Coronary artery bypass, vein only; 4 coronary venous grafts	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	33514	CPT4	Coronary artery bypass, vein only; 5 coronary venous grafts	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	33516	CPT4	Coronary artery bypass, vein only; 6 or more coronary venous grafts	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	35600	CPT4	Harvest of upper extremity artery, 1 segment, for coronary artery bypass procedure, open	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	33533	CPT4	Coronary artery bypass, using arterial graft(s); single arterial graft	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	33534	CPT4	Coronary artery bypass, using arterial graft(s); 2 coronary arterial grafts	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	33535	CPT4	Coronary artery bypass, using arterial graft(s); 3 coronary arterial grafts	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	33536	CPT4	Coronary artery bypass, using arterial graft(s);  4 or more coronary arterial grafts	1	1	1	1	4	1		1	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	1006199	CPT4	Venous Grafting Only for Coronary Artery Bypass | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	1006200	CPT4	Coronary artery bypass, vein only | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	1006208	CPT4	Coronary artery bypass, using venous graft(s) and arterial graft(s) | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	1006216	CPT4	Arterial Grafting for Coronary Artery Bypass | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	1006217	CPT4	Coronary artery bypass, using arterial graft(s) | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	4110F	CPT4	Internal mammary artery graft performed for primary, isolated coronary artery bypass graft procedure (CABG) | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	33523	CPT4	Coronary artery bypass using vein or artery graft, 6 or more grafts	1	1	0	0	2	1		0.5	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	33522	CPT4	Coronary artery bypass using vein or artery graft, 5 grafts	1	1	0	0	2	1		0.5	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	33521	CPT4	Coronary artery bypass using vein or artery graft, 4 grafts	1	1	0	0	2	1		0.5	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	33519	CPT4	Coronary artery bypass using vein or artery graft, 3 grafts	1	1	0	0	2	1		0.5	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	33518	CPT4	Coronary artery bypass using vein or artery graft, 2 grafts	1	1	0	0	2	1		0.5	Coronary artery bypass grafting
+Coronary_artery_bypass_grafting	33517	CPT4	Coronary artery bypass using vein or artery graft, 1 graft	1	1	0	0	2	1		0.5	Coronary artery bypass grafting
+Percutaneous_coronary_intervent	K49	OPCS4	Transluminal balloon angioplasty of coronary artery	1	1	1	1	4	1		1	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	K491	OPCS4	Percutaneous transluminal balloon angioplasty of one coronary artery	1	1	1	1	4	1		1	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	K492	OPCS4	Percutaneous transluminal balloon angioplasty of multiple coronary arteries	1	1	1	1	4	1		1	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	K493	OPCS4	Percutaneous transluminal balloon angioplasty of bypass graft of coronary artery	1	1	1	1	4	1		1	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	K494	OPCS4	Percutaneous transluminal cutting balloon angioplasty of coronary artery	1	1	1	1	4	1		1	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	K498	OPCS4	Other specified transluminal balloon angioplasty of coronary artery	1	1	1	1	4	1		1	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	K499	OPCS4	Unspecified transluminal balloon angioplasty of coronary artery	1	1	1	1	4	1		1	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	K50	OPCS4	Other therapeutic transluminal operations on coronary artery	1	1	1	1	4	1		1	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	K501	OPCS4	Percutaneous transluminal laser coronary angioplasty	1	1	1	1	4	1		1	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	K502	OPCS4	Percutaneous transluminal coronary thrombolysis using streptokinase	1	1	1	0	3	1		0.75	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	K503	OPCS4	Percutaneous transluminal injection of therapeutic substance into coronary artery NEC	1	1	1	1	4	1		1	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	K504	OPCS4	Percutaneous transluminal atherectomy of coronary artery	1	1	1	1	4	1		1	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	K508	OPCS4	Other specified other therapeutic transluminal operations on coronary artery	1	1	1	0	3	1		0.75	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	K509	OPCS4	Unspecified other therapeutic transluminal operations on coronary artery	1	1	1	0	3	1		0.75	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	K75	OPCS4	Percutaneous transluminal balloon angioplasty and insertion of stent into coronary artery	1	0	0	1	2	1		0.5	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	K751	OPCS4	Percutaneous transluminal balloon angioplasty and insertion of 1-2 drug-eluting stents into coronary artery	1	1	1	1	4	1		1	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	K752	OPCS4	Percutaneous transluminal balloon angioplasty and insertion of 3 or more drug-eluting stents into coronary artery	1	1	1	1	4	1		1	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	K753	OPCS4	Percutaneous transluminal balloon angioplasty and insertion of 1-2 stents into coronary artery	1	1	1	1	4	1		1	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	K754	OPCS4	Percutaneous transluminal balloon angioplasty and insertion of 3 or more stents into coronary artery NEC	1	1	1	1	4	1		1	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	K758	OPCS4	Other specified percutaneous transluminal balloon angioplasty and insertion of stent into coronary artery	1	1	1	1	4	1		1	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	K759	OPCS4	Unspecified percutaneous transluminal balloon angioplasty and insertion of stent into coronary artery	1	1	1	1	4	1		1	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	92944	CPT4	Percutaneous transluminal revascularization of chronic total occlusion, coronary artery, coronary artery branch, or coronary artery bypass graft, any combination of intracoronary stent, atherectomy and angioplasty; each additional coronary artery, coro... | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	92943	CPT4	Percutaneous transluminal revascularization of chronic total occlusion, coronary artery, coronary artery branch, or coronary artery bypass graft, any combination of intracoronary stent, atherectomy and angioplasty; single vessel | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	92941	CPT4	Percutaneous transluminal revascularization of acute total/subtotal occlusion during acute myocardial infarction, coronary artery or coronary artery bypass graft, any combination of intracoronary stent, atherectomy and angioplasty, including aspiration... | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	92938	CPT4	Percutaneous transluminal revascularization of or through coronary artery bypass graft (internal mammary, free arterial, venous), any combination of intracoronary stent, atherectomy and angioplasty, including distal protection when performed; each addi... | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	92937	CPT4	Percutaneous transluminal revascularization of or through coronary artery bypass graft (internal mammary, free arterial, venous), any combination of intracoronary stent, atherectomy and angioplasty, including distal protection when performed; single ve... | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	92934	CPT4	Percutaneous transluminal coronary atherectomy, with intracoronary stent, with coronary angioplasty when performed; each additional branch of a major coronary artery (List separately in addition to code for primary procedure) | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	92933	CPT4	Percutaneous transluminal coronary atherectomy, with intracoronary stent, with coronary angioplasty when performed; single major coronary artery or branch | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	92929	CPT4	Percutaneous transcatheter placement of intracoronary stent(s), with coronary angioplasty when performed; each additional branch of a major coronary artery (List separately in addition to code for primary procedure) | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	92928	CPT4	Percutaneous transcatheter placement of intracoronary stent(s), with coronary angioplasty when performed; single major coronary artery or branch | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	92924	CPT4	Percutaneous transluminal coronary atherectomy, with coronary angioplasty when performed; single major coronary artery or branch | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	92925	CPT4	Percutaneous transluminal coronary atherectomy, with coronary angioplasty when performed; each additional branch of a major coronary artery (List separately in addition to code for primary procedure) | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	92921	CPT4	Percutaneous transluminal coronary angioplasty; each additional branch of a major coronary artery (List separately in addition to code for primary procedure) | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	92920	CPT4	Percutaneous transluminal coronary angioplasty; single major coronary artery or branch | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	37247	CPT4	Transluminal balloon angioplasty (except lower extremity artery(ies) for occlusive disease, intracranial, coronary, pulmonary, or dialysis circuit), open or percutaneous, including all imaging and radiological supervision and interpretation necessary t... | [Therapeutic or Preventive Procedure]	0	0	0	0	0	1		0	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	37246	CPT4	Transluminal balloon angioplasty (except lower extremity artery(ies) for occlusive disease, intracranial, coronary, pulmonary, or dialysis circuit), open or percutaneous, including all imaging and radiological supervision and interpretation necessary t... | [Therapeutic or Preventive Procedure]	0	0	0	0	0	1		0	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	1029697	CPT4	Transluminal balloon angioplasty (except lower extremity artery(ies) for occlusive disease, intracranial, coronary, pulmonary, or dialysis circuit), open or percutaneous, including all imaging and radiological supervision and interpretation necessary t... | [Therapeutic or Preventive Procedure]	0	0	0	0	0	1		0	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	1021168	CPT4	Percutaneous transluminal revascularization of chronic total occlusion, coronary artery, coronary artery branch, or coronary artery bypass graft, any combination of intracoronary stent, atherectomy and angioplasty | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	1021167	CPT4	Percutaneous transluminal revascularization of or through coronary artery bypass graft (internal mammary, free arterial, venous), any combination of intracoronary stent, atherectomy and angioplasty, including distal protection when performed | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	1021166	CPT4	Percutaneous transluminal coronary atherectomy, with intracoronary stent, with coronary angioplasty when performed | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	1021165	CPT4	Percutaneous transcatheter placement of intracoronary stent(s), with coronary angioplasty when performed | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	1021164	CPT4	Percutaneous transluminal coronary atherectomy, with coronary angioplasty when performed | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	1021163	CPT4	Percutaneous transluminal coronary angioplasty | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	0715T	CPT4	Percutaneous transluminal coronary lithotripsy (List separately in addition to code for primary procedure) | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Percutaneous coronary intervention
+Percutaneous_coronary_intervent	0659T	CPT4	Transcatheter intracoronary infusion of supersaturated oxygen in conjunction with percutaneous coronary revascularization during acute myocardial infarction, including catheter placement, imaging guidance (eg, fluoroscopy), angiography, and radiologic... | [Therapeutic or Preventive Procedure]	1	1	0	0	2	1		0.5	Percutaneous coronary intervention
+Thrombolysis_coronary	K502	OPCS4	Percutaneous transluminal coronary thrombolysis using streptokinase	1	1	1	1	4	1		1	Thrombolysis (coronary)
+Thrombolysis_coronary	92977	CPT4	Removal of heart artery blood clot by dissolving	1	1	1	0	3	1		0.75	Thrombolysis (coronary)
+Thrombolysis_coronary	92975	CPT4	Removal of heart artery blood clot by dissolving using imaging guidance	1	1	1	0	3	1		0.75	Thrombolysis (coronary)
+Thrombolysis_coronary	1012986	CPT4	Thrombolysis, coronary | [Therapeutic or Preventive Procedure]	1	1	1	0	3	1		0.75	Thrombolysis (coronary)
+Congenital_heart_disease	V1365	ICD9	Personal history of (corrected) congenital malformations of heart and circulatory system	0	0	1	0	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	7469	ICD9	Unspecified congenital anomaly of heart	0	0	1	0	1	1		0.25	Congenital heart disease
+Congenital_heart_procedure	K041	OPCS4	Repair of tetralogy of Fallot using valved right ventricular outflow conduit	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	K042	OPCS4	Repair of tetralogy of Fallot using right ventricular outflow conduit NEC	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	K043	OPCS4	Repair of tetralogy of Fallot using transannular patch	0	0	1	0	1	1		0.25	Congenital heart disease procedure

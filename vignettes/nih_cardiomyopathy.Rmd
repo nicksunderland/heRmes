@@ -45,8 +45,8 @@ dat <- dat[Concensus==1 & Source != "SNOMED"]
 dat[, agreement := rowSums(.SD)/4, .SDcols = c("QW","RTL","NS","LL")]
 dat[meta, Concept := i.Title, on="concept"]
 
-fwrite(dat, "/Users/xx20081/git/heRmes/docs/cardiomyopathy_codes_dat.tsv", sep="\t")
-fwrite(meta, "/Users/xx20081/git/heRmes/docs/cardiomyopathy_metadata_dat.tsv", sep="\t")
+fwrite(dat, "/Users/xx20081/git/heRmes/vignettes/figures/cardiomyopathy_codes_dat.tsv", sep="\t")
+fwrite(meta, "/Users/xx20081/git/heRmes/vignettes/figures/cardiomyopathy_metadata_dat.tsv", sep="\t")
 
 fwrite(dat[, .(Concept, Code, Source, Description)], "/Users/xx20081/git/heRmes/inst/extdata/nih_cardiomyopathy_codes/cardiomyopathy_codes.tsv", sep="\t")
 
@@ -77,8 +77,8 @@ library(glue)
 library(knitr)
 library(here)
 
-dat <- fread(here("docs/cardiomyopathy_codes_dat.tsv"))
-meta <- fread(here("docs/cardiomyopathy_metadata_dat.tsv"))
+dat <- fread(here("vignettes/figures/cardiomyopathy_codes_dat.tsv"))
+meta <- fread(here("vignettes/figures/cardiomyopathy_metadata_dat.tsv"))
 
 for (con in unique(dat$concept)) {
   m0 <- meta[concept==con]

@@ -74,10 +74,11 @@ for (con in unique(dat$concept)) {
   p <- ggplot(heat_dat[concept==con & Count>10], aes(x=Count, y=Code, fill=log(Count))) +
     geom_col(position = position_dodge(width=1)) +
     theme_bw(base_size=14) +
-    theme(legend.position = "none") +
+    theme(legend.position = "none", 
+          axis.text.y = element_text(size=8)) +
     facet_wrap(Source~cohort, scales = "free")
     
-  png(paste0("/Users/xx20081/git/heRmes/vignettes/figures/counts_", con, ".png"), height=600, width=600)
+  png(paste0("/Users/xx20081/git/heRmes/vignettes/figures/counts_", con, ".png"), height=700, width=700)
   print(p)
   dev.off()
 }

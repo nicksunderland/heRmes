@@ -54,6 +54,36 @@ fwrite(meta[, .(Concept=Title, Definition, Reference, Terminologies, `Search exp
 
 ```
 
+```{r heatmaps, echo=FALSE, include=FALSE, eval=FALSE}
+library(data.table)
+library(ggplot2)
+library(hfphenotyping)
+
+counts <- rbindlist(list("UK Biobank"  = ukbb_counts[, c("code", "code_type", "count")], 
+                         "NHS England" = nhs_counts[, c("code", "code_type", "count")], 
+                         "BioVU"       = biovu_counts[, c("code", "code_type", "count")]), idcol = "cohort")
+counts <- counts[, .(count=sum(count)), by=c("cohort","code","code_type")]
+heat_dat <- lapply(split(counts, by="cohort"), function(x) { dat[x, .(concept, Concept, Code, Source, Count = i.count), on = c("Code"="code", "Source"="code_type"), nomatch = NULL] 
+})|> rbindlist(idcol="cohort")
+
+heat_dat <- heat_dat[order(Count)][, Code := factor(Code, levels = unique(Code))]
+heat_dat[, Source := factor(Source, levels=unique(Source))]
+heat_dat[, cohort := factor(cohort, levels=unique(cohort))]
+
+for (con in unique(dat$concept)) {
+  p <- ggplot(heat_dat[concept==con & Count>10], aes(x=Count, y=Code, fill=log(Count))) +
+    geom_col(position = position_dodge(width=1)) +
+    theme_bw(base_size=14) +
+    theme(legend.position = "none") +
+    facet_wrap(Source~cohort, scales = "free")
+    
+  png(paste0("/Users/xx20081/git/heRmes/vignettes/figures/counts_", con, ".png"), height=600, width=600)
+  print(p)
+  dev.off()
+}
+```
+
+
 ## Download codes 
 
 To download the codes and search strategies clink the links:
@@ -90,6 +120,12 @@ for (con in unique(dat$concept)) {
     **Terminologies:**      `{m0$Terminologies}`. \n
     **Search expressions:** `{m0$`Search expressions`}`. \n
 
+    <center>
+    
+    ![](figures/counts_{con}.png)
+    
+    </center>
+    
 
 ")
   

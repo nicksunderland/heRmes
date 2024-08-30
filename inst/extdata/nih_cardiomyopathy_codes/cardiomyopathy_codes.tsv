@@ -465,3 +465,16 @@ Congenital heart disease procedure	93595	CPT4	Left heart catheterization for con
 Congenital heart disease procedure	93596	CPT4	Right and left heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone(s); normal native connections | [Diagnostic Procedure] - [Therapeutic or Preventive Procedure]
 Congenital heart disease procedure	93597	CPT4	Right and left heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone(s); abnormal native connections | [Diagnostic Procedure] - [Therapeutic or Preventive Procedure]
 Congenital heart disease procedure	93598	CPT4	Cardiac output measurement(s), thermodilution or other indicator dilution method, performed during cardiac catheterization for the evaluation of congenital heart defects (List separately in addition to code for primary procedure) | [Diagnostic Procedure]
+All cardiomyopathies	A3681	ICD10	Diphtheritic cardiomyopathy
+All cardiomyopathies	B3324	ICD10	Viral cardiomyopathy
+All cardiomyopathies	I42	ICD10	Cardiomyopathy
+All cardiomyopathies	I420	ICD10	Dilated cardiomyopathy
+All cardiomyopathies	I421	ICD10	Obstructive hypertrophic cardiomyopathy
+All cardiomyopathies	I422	ICD10	Other hypertrophic cardiomyopathy
+All cardiomyopathies	I425	ICD10	Other restrictive cardiomyopathy
+All cardiomyopathies	I426	ICD10	Alcoholic cardiomyopathy
+All cardiomyopathies	I427	ICD10	Cardiomyopathy due to drug and external agent
+All cardiomyopathies	I428	ICD10	Other cardiomyopathies
+All cardiomyopathies	I429	ICD10	Cardiomyopathy, unspecified
+All cardiomyopathies	I43	ICD10	Cardiomyopathy in diseases classified elsewhere
+All cardiomyopathies	O903	ICD10	Peripartum cardiomyopathy

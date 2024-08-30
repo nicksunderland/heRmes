@@ -30,7 +30,8 @@ tabs <- list(DCM_IsA                         = "DCM_IsA",
              Percutaneous_coronary_intervent = "Percutaneous_coronary_intervent",
              Thrombolysis_coronary           = "Thrombolysis_coronary",
              Congenital_heart_disease        = "Congenital_heart_disease", 
-             Congenital_heart_procedure      = "Congenital_heart_procedure")
+             Congenital_heart_procedure      = "Congenital_heart_procedure", 
+             CMP_IsA                         = "CMP_IsA")
 
 meta <- lapply(tabs, function(x) {
   r <- read_xlsx(file, x, n_max=5, col_names=FALSE)

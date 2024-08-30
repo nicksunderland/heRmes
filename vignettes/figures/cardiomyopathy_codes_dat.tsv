@@ -465,3 +465,16 @@ Congenital_heart_procedure	93595	CPT4	Left heart catheterization for congenital 
 Congenital_heart_procedure	93596	CPT4	Right and left heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone(s); normal native connections | [Diagnostic Procedure] - [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
 Congenital_heart_procedure	93597	CPT4	Right and left heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone(s); abnormal native connections | [Diagnostic Procedure] - [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
 Congenital_heart_procedure	93598	CPT4	Cardiac output measurement(s), thermodilution or other indicator dilution method, performed during cardiac catheterization for the evaluation of congenital heart defects (List separately in addition to code for primary procedure) | [Diagnostic Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+CMP_IsA	A3681	ICD10	Diphtheritic cardiomyopathy	1	1	1	0	3	1		0.75	All cardiomyopathies
+CMP_IsA	B3324	ICD10	Viral cardiomyopathy	1	1	1	1	4	1		1	All cardiomyopathies
+CMP_IsA	I42	ICD10	Cardiomyopathy	1	1	1	1	4	1		1	All cardiomyopathies
+CMP_IsA	I420	ICD10	Dilated cardiomyopathy	1	1	1	1	4	1		1	All cardiomyopathies
+CMP_IsA	I421	ICD10	Obstructive hypertrophic cardiomyopathy	1	1	1	1	4	1		1	All cardiomyopathies
+CMP_IsA	I422	ICD10	Other hypertrophic cardiomyopathy	1	1	1	1	4	1		1	All cardiomyopathies
+CMP_IsA	I425	ICD10	Other restrictive cardiomyopathy	1	1	1	1	4	1		1	All cardiomyopathies
+CMP_IsA	I426	ICD10	Alcoholic cardiomyopathy	1	1	1	1	4	1		1	All cardiomyopathies
+CMP_IsA	I427	ICD10	Cardiomyopathy due to drug and external agent	1	1	1	1	4	1		1	All cardiomyopathies
+CMP_IsA	I428	ICD10	Other cardiomyopathies	1	1	1	1	4	1		1	All cardiomyopathies
+CMP_IsA	I429	ICD10	Cardiomyopathy, unspecified	1	1	1	1	4	1		1	All cardiomyopathies
+CMP_IsA	I43	ICD10	Cardiomyopathy in diseases classified elsewhere	1	1	1	1	4	1		1	All cardiomyopathies
+CMP_IsA	O903	ICD10	Peripartum cardiomyopathy	1	1	1	1	4	1		1	All cardiomyopathies

@@ -83,6 +83,7 @@ for (con in unique(dat$concept)) {
 }
 ```
 
+---
 
 ## Download codes 
 
@@ -114,7 +115,9 @@ for (con in unique(dat$concept)) {
   m0 <- meta[concept==con]
   d0 <- dat[concept==con]
   
-  str <- glue("## {m0$Title} \n
+  str <- glue("---
+  
+  ## {m0$Title} \n
     **Definition:**          {m0$Definition}. \n
     **Reference:**           {m0$Reference}. \n
     **Terminologies:**      `{m0$Terminologies}`. \n
@@ -134,6 +137,7 @@ for (con in unique(dat$concept)) {
   
   # the table 
   print(kable(d0[Source != "SNOMED", .(Code, Source, Description)]))
+  
   
 }
 

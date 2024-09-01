@@ -1,6 +1,5 @@
 ---
 title: "HERMES 3.0 sex-stratified analysis"
-author: Dr. Clara Jiang
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{HERMES 3.0 sex-stratified analysis}
@@ -18,13 +17,96 @@ knitr::opts_chunk$set(
 )
 ```
 
-<style>
-body {
-text-align: justify}
-</style>
+```{r setup, echo=FALSE, include=FALSE, eval=FALSE}
+library(heRmes)
+library(readxl)
+library(data.table)
+library(glue)
+library(irr)
+
+file <- "/Users/xx20081/Library/CloudStorage/OneDrive-SharedLibraries-VUMC/Shaffer, Lauren L - Phenotype Workstream/phenotyping_code_consensus/nih_cardiomyopathy_phenotyping_combined.xlsx"
+
+tabs <- list(HF_IsA                          = "HF_IsA",
+             Myocardial_infarction           = "Myocardial_infarction",
+             Coronary_artery_bypass_grafting = "Coronary_artery_bypass_grafting",
+             Percutaneous_coronary_intervent = "Percutaneous_coronary_intervent",
+             Thrombolysis_coronary           = "Thrombolysis_coronary",
+             Congenital_heart_disease        = "Congenital_heart_disease", 
+             Congenital_heart_procedure      = "Congenital_heart_procedure")
+
+meta <- lapply(tabs, function(x) {
+  r <- read_xlsx(file, x, n_max=5, col_names=FALSE)
+  d <- data.table()
+  d[, r$...1 := lapply(r$...2, function(x) x[[1]])]
+}) |> rbindlist(idcol="concept")
+
+dat <- lapply(tabs, function(x) read_xlsx(file, x, skip=13)) |> rbindlist(idcol="concept")
+cols <- c("QW","RTL","NS","LL","Concensus")
+dat[, (cols) := lapply(.SD, function(x) as.numeric(!is.na(x))), .SDcols = cols]
+dat <- dat[Concensus==1 & Source != "SNOMED"]
+dat[, agreement := rowSums(.SD)/4, .SDcols = c("QW","RTL","NS","LL")]
+dat[meta, Concept := i.Title, on="concept"]
+
+fwrite(dat, "/Users/xx20081/git/heRmes/vignettes/figures/hermes_3_codes_dat.tsv", sep="\t")
+fwrite(meta, "/Users/xx20081/git/heRmes/vignettes/figures/hermes_3_metadata_dat.tsv", sep="\t")
+
+fwrite(dat[, .(Concept, Code, Source, Description)], "/Users/xx20081/git/heRmes/inst/extdata/hermes_3_codes/hermes_3_codes.tsv", sep="\t")
+
+fwrite(meta[, .(Concept=Title, Definition, Reference, Terminologies, `Search expressions`)], "/Users/xx20081/git/heRmes/inst/extdata/hermes_3_codes/hermes_3_metadata.tsv", sep="\t")
+
+```
+
+```{r heatmaps, echo=FALSE, include=FALSE, eval=FALSE}
+library(data.table)
+library(ggplot2)
+library(hfphenotyping)
+
+counts <- rbindlist(list("UK Biobank"  = ukbb_counts[, c("code", "code_type", "count")], 
+                         "NHS England" = nhs_counts[, c("code", "code_type", "count")], 
+                         "BioVU"       = biovu_counts[, c("code", "code_type", "count")]), idcol = "cohort")
+counts <- counts[, .(count=sum(count)), by=c("cohort","code","code_type")]
+heat_dat <- lapply(split(counts, by="cohort"), function(x) { dat[x, .(concept, Concept, Code, Source, Count = i.count), on = c("Code"="code", "Source"="code_type"), nomatch = NULL] 
+})|> rbindlist(idcol="cohort")
+
+heat_dat <- heat_dat[order(cohort, Count)][, Code := factor(Code, levels = unique(Code))]
+heat_dat[, Source := factor(Source, levels=unique(Source))]
+heat_dat[, cohort := factor(cohort, levels=unique(cohort))]
+
+for (con in unique(dat$concept)) {
+  p <- ggplot(heat_dat[concept==con & Count>10], aes(x=Count, y=Code, fill=log(Count))) +
+    geom_col(position = position_dodge(width=1)) +
+    theme_bw(base_size=14) +
+    theme(legend.position = "none", 
+          axis.text.y = element_text(size=8)) +
+    facet_wrap(Source~cohort, scales = "free")
+    
+  png(paste0("/Users/xx20081/git/heRmes/vignettes/figures/counts_", con, ".png"), height=700, width=700)
+  print(p)
+  dev.off()
+}
+```
+
 
 ## Aim  
-To perform a multi-ancestry sex-stratified genome-wide association study (GWAS) meta-analysis of HF, ischaemic HF and non-ischaemic HF.  
+To perform a multi-ancestry sex-stratified genome-wide association study (GWAS) meta-analysis of HF, ischaemic HF and non-ischaemic HF. 
+
+## Download codes 
+
+To download the codes and search strategies clink the links:
+
+<a href="https://github.com/nicksunderland/heRmes/tree/main/inst/extdata/hermes_3_codes/hermes_3_codes.tsv" download>
+  <button style="background-color: #002855; color: white; padding: 10px 20px; border: none; border-radius: 5px; text-align: center; text-decoration: none; display: inline-block; font-size: 12px;">
+    Download hermes_3_codes.tsv
+  </button>
+</a>
+
+<a href="https://github.com/nicksunderland/heRmes/tree/main/inst/extdata/hermes_3_codes/hermes_3_metadata.tsv" download>
+  <button style="background-color: #002855; color: white; padding: 10px 20px; border: none; border-radius: 5px; text-align: center; text-decoration: none; display: inline-block; font-size: 12px;">
+    Download hermes_3_metadata.tsv
+  </button>
+</a>
+
+
 
 ## Rationale  
 Heart failure (HF) has shown substantial sex differences in its clinical presentations and risk profiles, but much remains unclear about HF in women.[@groenewegenEpidemiologyHeartFailure2020; @heidenreich2022AHAACC2022; @kenchaiahHeartFailureWomen2015] Sex-stratified genome-wide association studies (GWAS) have provided mechanistic insights into diseases with known phenotypic sex differences.[@cardiogramplusc4dconsortiumLargescaleAssociationAnalysis2013; @boerDecipheringOsteoarthritisGenetics2021] This project aims to identify sex-specific HF risk loci, by performing a sex-stratified GWAS of all-cause HF and subtypes stratified by ischaemic aetiology, including an analysis of the X chromosome (ChrX). This research, particularly the analysis of non-ischaemic HF, is envisioned to build new knowledge on the sex-specific genetic basis of HF and identify non-traditional risk factors.  
@@ -50,7 +132,7 @@ Chronic respiratory disease, predominantly COPD, is a common comorbidity amongst
 
 
 ## Return of results  
-The Cardiovascular Knowledge Portal team are developing a private data repository for HERMES3 with functionality to validate file formats and run QC on cohort-level GWAS summary data. If our initial pilot study is successful, we will switch to this platform. In the meantime, please, return results for your study to the analysis team at UQ via the UQRDM. To get access to UQRDM, please provide your analyst email address to Clara Jiang at j.jiang@uq.edu.au.
+The Cardiovascular Knowledge Portal team have developed a private data repository for HERMES3 with functionality to validate file formats and run QC on cohort-level GWAS summary data. Please also return results for your study to the analysis team at UQ via the UQRDM. To get access to UQRDM, please provide your analyst email address to Clara Jiang at j.jiang@uq.edu.au.
 
 
 ## Phenotype definition
@@ -88,44 +170,48 @@ For each participant, classify the status (case/control/exclude) for target GWAS
 
 *Figure 1. Phenotyping algorithm*  
 
-<img src="figures/phenotyping_algorithm.png" align="centre" width="80%"/>
+<img src="figures/phenotyping_algorithm.png" align="centre" width="100%"/>
 
 
+```{r gen, echo=FALSE, results='asis', message=FALSE, warning=FALSE}
+library(data.table)
+library(glue)
+library(knitr)
+library(here)
 
+dat <- fread(here("vignettes/figures/hermes_3_codes_dat.tsv"))
+meta <- fread(here("vignettes/figures/hermes_3_metadata_dat.tsv"))
 
-## Obtaining concept codes  
-Load the `heRmes` R package.  
-```{r setup, message=FALSE, warning=FALSE}
-library(heRmes)
+for (con in unique(dat$concept)) {
+  m0 <- meta[concept==con]
+  d0 <- dat[concept==con]
+  
+  str <- glue("---
+  
+  ## {m0$Title} \n
+    **Definition:**          {m0$Definition}. \n
+    **Reference:**           {m0$Reference}. \n
+    **Terminologies:**      `{m0$Terminologies}`. \n
+    **Search expressions:** `{m0$`Search expressions`}`. \n
+
+    <center>
+    
+    ![](figures/counts_{con}.png)
+    
+    </center>
+    
+
+")
+  
+  # the text
+  cat(str)
+  
+  # the table 
+  print(kable(d0[Source != "SNOMED", .(Code, Source, Description)]))
+  
+  
+}
+
 ```
-Obtain the codes with the `get_codes` function. The codes are available within the package structure at: 
-`inst/extdata/ukhdr_phenotypes` and from the [UKHDR Phenotype Library](https://phenotypes.healthdatagateway.org) website.
-
-### UKHDR phenoptype codes
-```{r ids}
-hermes3_pheno_ids <- list(congenital_heart_disease = "PH1645", 
-                          heart_failure            = "PH1645", 
-                          coronary_artery_disease  = "PH1645")
-```
-
-### Congenital heart disease
-```{r chd_codes}
-chd <- get_codes(pheno_id = hermes3_pheno_ids[["congenital_heart_disease"]])[1:5, c("phenotype_id", "phenotype_name", "coding_system.name", "code")]
-chd[]
-```
-
-### Heart failure
-```{r hf_codes}
-hf <- get_codes(pheno_id = hermes3_pheno_ids[["heart_failure"]])[1:5, c("phenotype_id", "phenotype_name", "coding_system.name", "code")]
-hf[]
-```
-
-### Coronary artery disease
-```{r cad_codes}
-cad <- get_codes(pheno_id = hermes3_pheno_ids[["coronary_artery_disease"]])[1:5, c("phenotype_id", "phenotype_name", "coding_system.name", "code")]
-cad[]
-```
-
 
 ## References  
-

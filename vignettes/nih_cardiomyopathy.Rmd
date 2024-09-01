@@ -24,6 +24,7 @@ library(irr)
 file <- "/Users/xx20081/Library/CloudStorage/OneDrive-SharedLibraries-VUMC/Shaffer, Lauren L - Phenotype Workstream/phenotyping_code_consensus/nih_cardiomyopathy_phenotyping_combined.xlsx"
 
 tabs <- list(DCM_IsA                         = "DCM_IsA",
+             DCM_AssociatedWith              = "DCM_AssociatedWith",
              LVSD_IsA                        = "LVSD_IsA", 
              Myocardial_infarction           = "Myocardial_infarction",
              Coronary_artery_bypass_grafting = "Coronary_artery_bypass_grafting",
@@ -31,7 +32,8 @@ tabs <- list(DCM_IsA                         = "DCM_IsA",
              Thrombolysis_coronary           = "Thrombolysis_coronary",
              Congenital_heart_disease        = "Congenital_heart_disease", 
              Congenital_heart_procedure      = "Congenital_heart_procedure", 
-             CMP_IsA                         = "CMP_IsA")
+             RCM_IsA                         = "RCM_IsA",
+             HCM_IsA                         = "HCM_IsA")
 
 meta <- lapply(tabs, function(x) {
   r <- read_xlsx(file, x, n_max=5, col_names=FALSE)
@@ -102,6 +104,29 @@ To download the codes and search strategies clink the links:
     Download cardiomyopathy_metadata.tsv
   </button>
 </a>
+
+## Study phenotypes
+
+| Phenotype   | Name             | Brief Description                                       |
+|-------------|------------------|---------------------------------------------------------|
+| Phenotype 1 | DCM              | Dilated cardiomyopathy                                  |
+| Phenotype 2 | NICM             | Non-ischaemic cardiomyopathy (DCM or reduced LVEF <50%) |
+
+## Classifiers
+
+| CongHD | HCM  | RCM   | MI    | CABG   | PCI   | Thrombolysis |  DCM    | DCM_AssW | LVSD    | Phenotype |
+|--------|------|-------|-------|--------|-------|--------------|---------|----------|---------|-----------|
+| TRUE   | ANY  | ANY   | ANY   | ANY    | ANY   | ANY          | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | TRUE | ANY   | ANY   | ANY    | ANY   | ANY          | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | FALSE| TRUE  | ANY   | ANY    | ANY   | ANY          | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | FALSE| FALSE | ANY   | ANY    | ANY   | ANY          | TRUE    | ANY      | ANY     | 1         |
+| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        | ANY     | TRUE     | ANY     | 2         |
+| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        | ANY     | ANY      | TRUE    | 2         |
+| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        | FALSE   | FALSE    | FALSE   | Control   |
+
+*Figure 1. Phenotyping algorithm*  
+
+<img src="figures/nih_phenotyping_algorithm.png" align="centre" width="100%"/>
 
 
 ```{r gen, echo=FALSE, results='asis', message=FALSE, warning=FALSE}

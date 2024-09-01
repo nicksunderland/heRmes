@@ -1,35 +1,74 @@
 Concept	Code	Source	Description
-Dilated cardiomyopathy	I420	ICD10	Dilated cardiomyopathy
-Dilated cardiomyopathy (associated with)	A3681	ICD10	Diphtheritic cardiomyopathy
-Dilated cardiomyopathy (associated with)	B3324	ICD10	Viral cardiomyopathy
-Dilated cardiomyopathy (associated with)	I420	ICD10	Dilated cardiomyopathy
-Dilated cardiomyopathy (associated with)	I426	ICD10	Alcoholic cardiomyopathy
-Dilated cardiomyopathy (associated with)	I427	ICD10	Cardiomyopathy due to drug and external agent
-Dilated cardiomyopathy (associated with)	O903	ICD10	Peripartum cardiomyopathy
-Dilated cardiomyopathy (associated with)	4255	ICD9	Alcoholic cardiomyopathy
-Dilated cardiomyopathy (associated with)	67450	ICD9	Peripartum cardiomyopathy, unspecified as to episode of care or not applicable
-Dilated cardiomyopathy (associated with)	67451	ICD9	Peripartum cardiomyopathy, delivered, with or without mention of antepartum condition
-Dilated cardiomyopathy (associated with)	67452	ICD9	Peripartum cardiomyopathy, delivered, with mention of postpartum condition
-Dilated cardiomyopathy (associated with)	67453	ICD9	Peripartum cardiomyopathy, antepartum condition or complication
-Dilated cardiomyopathy (associated with)	67454	ICD9	Peripartum cardiomyopathy, postpartum condition or complication
-Left ventricular systolic dysfunction	I502	ICD10	Systolic (congestive) heart failure
-Left ventricular systolic dysfunction	I5020	ICD10	Unspecified systolic (congestive) heart failure
-Left ventricular systolic dysfunction	I5021	ICD10	Acute systolic (congestive) heart failure
-Left ventricular systolic dysfunction	I5022	ICD10	Chronic systolic (congestive) heart failure
-Left ventricular systolic dysfunction	I5023	ICD10	Acute on chronic systolic (congestive) heart failure
-Left ventricular systolic dysfunction	I504	ICD10	Combined systolic (congestive) and diastolic (congestive) heart failure
-Left ventricular systolic dysfunction	I5040	ICD10	Unspecified combined systolic (congestive) and diastolic (congestive) heart failure
-Left ventricular systolic dysfunction	I5041	ICD10	Acute combined systolic (congestive) and diastolic (congestive) heart failure
-Left ventricular systolic dysfunction	I5042	ICD10	Chronic combined systolic (congestive) and diastolic (congestive) heart failure
-Left ventricular systolic dysfunction	I5043	ICD10	Acute on chronic combined systolic (congestive) and diastolic (congestive) heart failure
-Left ventricular systolic dysfunction	42821	ICD9	Acute systolic heart failure
-Left ventricular systolic dysfunction	42822	ICD9	Chronic systolic heart failure
-Left ventricular systolic dysfunction	42823	ICD9	Acute on chronic systolic heart failure
-Left ventricular systolic dysfunction	42840	ICD9	Combined systolic and diastolic heart failure, unspecified
-Left ventricular systolic dysfunction	42841	ICD9	Acute combined systolic and diastolic heart failure
-Left ventricular systolic dysfunction	42842	ICD9	Chronic combined systolic and diastolic heart failure
-Left ventricular systolic dysfunction	42843	ICD9	Acute on chronic combined systolic and diastolic heart failure
-Left ventricular systolic dysfunction	42820	ICD9	Systolic heart failure, unspecified
+Heart Failure	I110	ICD10	Hypertensive heart disease with heart failure
+Heart Failure	I130	ICD10	Hypertensive heart and chronic kidney disease with heart failure and stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease
+Heart Failure	I132	ICD10	Hypertensive heart and chronic kidney disease with heart failure and with stage 5 chronic kidney disease, or end stage renal disease
+Heart Failure	I50	ICD10	Heart failure
+Heart Failure	I500	ICD10	Congestive heart failure
+Heart Failure	I501	ICD10	Left ventricular failure, unspecified
+Heart Failure	I502	ICD10	Systolic (congestive) heart failure
+Heart Failure	I5020	ICD10	Unspecified systolic (congestive) heart failure
+Heart Failure	I5021	ICD10	Acute systolic (congestive) heart failure
+Heart Failure	I5022	ICD10	Chronic systolic (congestive) heart failure
+Heart Failure	I5023	ICD10	Acute on chronic systolic (congestive) heart failure
+Heart Failure	I503	ICD10	Diastolic (congestive) heart failure
+Heart Failure	I5030	ICD10	Unspecified diastolic (congestive) heart failure
+Heart Failure	I5031	ICD10	Acute diastolic (congestive) heart failure
+Heart Failure	I5032	ICD10	Chronic diastolic (congestive) heart failure
+Heart Failure	I5033	ICD10	Acute on chronic diastolic (congestive) heart failure
+Heart Failure	I504	ICD10	Combined systolic (congestive) and diastolic (congestive) heart failure
+Heart Failure	I5040	ICD10	Unspecified combined systolic (congestive) and diastolic (congestive) heart failure
+Heart Failure	I5041	ICD10	Acute combined systolic (congestive) and diastolic (congestive) heart failure
+Heart Failure	I5042	ICD10	Chronic combined systolic (congestive) and diastolic (congestive) heart failure
+Heart Failure	I5043	ICD10	Acute on chronic combined systolic (congestive) and diastolic (congestive) heart failure
+Heart Failure	I508	ICD10	Other heart failure
+Heart Failure	I5081	ICD10	Right heart failure
+Heart Failure	I50810	ICD10	Right heart failure, unspecified
+Heart Failure	I50811	ICD10	Acute right heart failure
+Heart Failure	I50812	ICD10	Chronic right heart failure
+Heart Failure	I50813	ICD10	Acute on chronic right heart failure
+Heart Failure	I50814	ICD10	Right heart failure due to left heart failure
+Heart Failure	I5082	ICD10	Biventricular heart failure
+Heart Failure	I5083	ICD10	High output heart failure
+Heart Failure	I5084	ICD10	End stage heart failure
+Heart Failure	I5089	ICD10	Other heart failure
+Heart Failure	I509	ICD10	Heart failure, unspecified
+Heart Failure	I9711	ICD10	Postprocedural cardiac insufficiency
+Heart Failure	I97110	ICD10	Postprocedural cardiac insufficiency following cardiac surgery
+Heart Failure	I97111	ICD10	Postprocedural cardiac insufficiency following other surgery
+Heart Failure	I9713	ICD10	Postprocedural heart failure
+Heart Failure	I97130	ICD10	Postprocedural heart failure following cardiac surgery
+Heart Failure	I97131	ICD10	Postprocedural heart failure following other surgery
+Heart Failure	O2912	ICD10	Cardiac failure due to anesthesia during pregnancy
+Heart Failure	O29121	ICD10	Cardiac failure due to anesthesia during pregnancy, first trimester
+Heart Failure	O29122	ICD10	Cardiac failure due to anesthesia during pregnancy, second trimester
+Heart Failure	O29123	ICD10	Cardiac failure due to anesthesia during pregnancy, third trimester
+Heart Failure	O29129	ICD10	Cardiac failure due to anesthesia during pregnancy, unspecified trimester
+Heart Failure	P290	ICD10	Neonatal cardiac failure
+Heart Failure	39891	ICD9	Rheumatic heart failure (congestive)
+Heart Failure	40201	ICD9	Malignant hypertensive heart disease with heart failure
+Heart Failure	40211	ICD9	Benign hypertensive heart disease with heart failure
+Heart Failure	40291	ICD9	Unspecified hypertensive heart disease with heart failure
+Heart Failure	40401	ICD9	Hypertensive heart and chronic kidney disease, malignant, with heart failure and with chronic kidney disease stage I through stage IV, or unspecified
+Heart Failure	40403	ICD9	Hypertensive heart and chronic kidney disease, malignant, with heart failure and with chronic kidney disease stage V or end stage renal disease
+Heart Failure	40411	ICD9	Hypertensive heart and chronic kidney disease, benign, with heart failure and with chronic kidney disease stage I through stage IV, or unspecified
+Heart Failure	40413	ICD9	Hypertensive heart and chronic kidney disease, benign, with heart failure and chronic kidney disease stage V or end stage renal disease
+Heart Failure	40491	ICD9	Hypertensive heart and chronic kidney disease, unspecified, with heart failure and with chronic kidney disease stage I through stage IV, or unspecified
+Heart Failure	40493	ICD9	Hypertensive heart and chronic kidney disease, unspecified, with heart failure and chronic kidney disease stage V or end stage renal disease
+Heart Failure	4280	ICD9	Congestive heart failure, unspecified
+Heart Failure	4281	ICD9	Left heart failure
+Heart Failure	42820	ICD9	Systolic heart failure, unspecified
+Heart Failure	42821	ICD9	Acute systolic heart failure
+Heart Failure	42822	ICD9	Chronic systolic heart failure
+Heart Failure	42823	ICD9	Acute on chronic systolic heart failure
+Heart Failure	42830	ICD9	Diastolic heart failure, unspecified
+Heart Failure	42831	ICD9	Acute diastolic heart failure
+Heart Failure	42832	ICD9	Chronic diastolic heart failure
+Heart Failure	42833	ICD9	Acute on chronic diastolic heart failure
+Heart Failure	42840	ICD9	Combined systolic and diastolic heart failure, unspecified
+Heart Failure	42841	ICD9	Acute combined systolic and diastolic heart failure
+Heart Failure	42842	ICD9	Chronic combined systolic and diastolic heart failure
+Heart Failure	42843	ICD9	Acute on chronic combined systolic and diastolic heart failure
+Heart Failure	4289	ICD9	Heart failure, unspecified
 Myocardial infarction	I21	ICD10	Acute myocardial infarction
 Myocardial infarction	I210	ICD10	ST elevation (STEMI) myocardial infarction of anterior wall
 Myocardial infarction	I2101	ICD10	ST elevation (STEMI) myocardial infarction involving left main coronary artery
@@ -477,8 +516,3 @@ Congenital heart disease procedure	93595	CPT4	Left heart catheterization for con
 Congenital heart disease procedure	93596	CPT4	Right and left heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone(s); normal native connections | [Diagnostic Procedure] - [Therapeutic or Preventive Procedure]
 Congenital heart disease procedure	93597	CPT4	Right and left heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone(s); abnormal native connections | [Diagnostic Procedure] - [Therapeutic or Preventive Procedure]
 Congenital heart disease procedure	93598	CPT4	Cardiac output measurement(s), thermodilution or other indicator dilution method, performed during cardiac catheterization for the evaluation of congenital heart defects (List separately in addition to code for primary procedure) | [Diagnostic Procedure]
-Restrictive cardiomyopathy	I425	ICD10	Other restrictive cardiomyopathy
-Hypertrophic cardiomyopathy	I421	ICD10	Obstructive hypertrophic cardiomyopathy
-Hypertrophic cardiomyopathy	I422	ICD10	Other hypertrophic cardiomyopathy
-Hypertrophic cardiomyopathy	42511	ICD9	Hypertrophic obstructive cardiomyopathy
-Hypertrophic cardiomyopathy	42518	ICD9	Other hypertrophic cardiomyopathy

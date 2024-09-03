@@ -79,8 +79,10 @@ for (con in unique(dat$concept)) {
     theme(legend.position = "none", 
           axis.text.y = element_text(size=8)) +
     facet_wrap(Source~cohort, scales = "free")
+  
+  fig_height <- round( nrow(heat_dat[concept==con & Count>10]) / 10) + 2 
     
-  png(paste0("/Users/xx20081/git/heRmes/vignettes/figures/counts_", con, ".png"), height=700, width=700)
+  png(paste0("/Users/xx20081/git/heRmes/vignettes/figures/counts_", con, ".png"), height=fig_height*100, width=700)
   print(p)
   dev.off()
 }

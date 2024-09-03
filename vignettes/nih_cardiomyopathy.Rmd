@@ -80,8 +80,10 @@ for (con in unique(dat$concept)) {
     theme(legend.position = "none", 
           axis.text.y = element_text(size=8)) +
     facet_wrap(Source~cohort, scales = "free")
-    
-  png(paste0("/Users/xx20081/git/heRmes/vignettes/figures/counts_", con, ".png"), height=700, width=700)
+  
+  fig_height <- round( nrow(heat_dat[concept==con & Count>10]) / 10) + 2 
+  
+  png(paste0("/Users/xx20081/git/heRmes/vignettes/figures/counts_", con, ".png"), height=fig_height*100, width=700)
   print(p)
   dev.off()
 }
@@ -119,7 +121,11 @@ To download the codes and search strategies clink the links:
 | TRUE   | ANY  | ANY   | ANY   | ANY    | ANY   | ANY          | ANY     | ANY      | ANY     | Exclude   |
 | FALSE  | TRUE | ANY   | ANY   | ANY    | ANY   | ANY          | ANY     | ANY      | ANY     | Exclude   |
 | FALSE  | FALSE| TRUE  | ANY   | ANY    | ANY   | ANY          | ANY     | ANY      | ANY     | Exclude   |
-| FALSE  | FALSE| FALSE | ANY   | ANY    | ANY   | ANY          | TRUE    | ANY      | ANY     | 1         |
+| FALSE  | FALSE| FALSE | TRUE  | ANY    | ANY   | ANY          | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | FALSE| FALSE | FALSE | TRUE   | ANY   | ANY          | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | FALSE| FALSE | FALSE | FALSE  | TRUE  | ANY          | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | TRUE         | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        | TRUE    | ANY      | ANY     | 1         |
 | FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        | ANY     | TRUE     | ANY     | 2         |
 | FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        | ANY     | ANY      | TRUE    | 2         |
 | FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        | FALSE   | FALSE    | FALSE   | Control   |

@@ -12,6 +12,7 @@ DCM_AssociatedWith	67451	ICD9	Peripartum cardiomyopathy, delivered, with or with
 DCM_AssociatedWith	67452	ICD9	Peripartum cardiomyopathy, delivered, with mention of postpartum condition	0	1	1	1	3	1		0.75	Dilated cardiomyopathy (associated with)
 DCM_AssociatedWith	67453	ICD9	Peripartum cardiomyopathy, antepartum condition or complication	0	1	1	1	3	1		0.75	Dilated cardiomyopathy (associated with)
 DCM_AssociatedWith	67454	ICD9	Peripartum cardiomyopathy, postpartum condition or complication	0	1	1	1	3	1		0.75	Dilated cardiomyopathy (associated with)
+LVSD_IsA	I501	ICD10	Left ventricular failure, unspecified	0	0	1	0	1	1		0.25	Left ventricular systolic dysfunction
 LVSD_IsA	I502	ICD10	Systolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
 LVSD_IsA	I5020	ICD10	Unspecified systolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
 LVSD_IsA	I5021	ICD10	Acute systolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction

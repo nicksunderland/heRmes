@@ -204,6 +204,14 @@ Coronary artery bypass grafting	33521	CPT4	Coronary artery bypass using vein or 
 Coronary artery bypass grafting	33519	CPT4	Coronary artery bypass using vein or artery graft, 3 grafts
 Coronary artery bypass grafting	33518	CPT4	Coronary artery bypass using vein or artery graft, 2 grafts
 Coronary artery bypass grafting	33517	CPT4	Coronary artery bypass using vein or artery graft, 1 graft
+Coronary artery bypass grafting	3617	ICD9_procedures	Abdominal-coronary artery bypass
+Coronary artery bypass grafting	3616	ICD9_procedures	Double internal mammary-coronary artery bypass
+Coronary artery bypass grafting	3615	ICD9_procedures	Single internal mammary-coronary artery bypass
+Coronary artery bypass grafting	3614	ICD9_procedures	(Aorto)coronary bypass of four or more coronary arteries
+Coronary artery bypass grafting	3613	ICD9_procedures	(Aorto)coronary bypass of three coronary arteries
+Coronary artery bypass grafting	3612	ICD9_procedures	(Aorto)coronary bypass of two coronary arteries
+Coronary artery bypass grafting	3611	ICD9_procedures	(Aorto)coronary bypass of one coronary artery
+Coronary artery bypass grafting	3610	ICD9_procedures	Aortocoronary bypass for heart revascularization, not otherwise specified
 Percutaneous coronary intervention	K49	OPCS4	Transluminal balloon angioplasty of coronary artery
 Percutaneous coronary intervention	K491	OPCS4	Percutaneous transluminal balloon angioplasty of one coronary artery
 Percutaneous coronary intervention	K492	OPCS4	Percutaneous transluminal balloon angioplasty of multiple coronary arteries
@@ -249,6 +257,8 @@ Percutaneous coronary intervention	1021164	CPT4	Percutaneous transluminal corona
 Percutaneous coronary intervention	1021163	CPT4	Percutaneous transluminal coronary angioplasty | [Therapeutic or Preventive Procedure]
 Percutaneous coronary intervention	0715T	CPT4	Percutaneous transluminal coronary lithotripsy (List separately in addition to code for primary procedure) | [Therapeutic or Preventive Procedure]
 Percutaneous coronary intervention	0659T	CPT4	Transcatheter intracoronary infusion of supersaturated oxygen in conjunction with percutaneous coronary revascularization during acute myocardial infarction, including catheter placement, imaging guidance (eg, fluoroscopy), angiography, and radiologic... | [Therapeutic or Preventive Procedure]
+Percutaneous coronary intervention	0066	ICD9_procedures	Percutaneous transluminal coronary angioplasty [PTCA]
+Percutaneous coronary intervention	1755	ICD9_procedures	Transluminal coronary atherectomy
 Thrombolysis (coronary)	K502	OPCS4	Percutaneous transluminal coronary thrombolysis using streptokinase
 Thrombolysis (coronary)	92977	CPT4	Removal of heart artery blood clot by dissolving
 Thrombolysis (coronary)	92975	CPT4	Removal of heart artery blood clot by dissolving using imaging guidance
@@ -516,3 +526,55 @@ Congenital heart disease procedure	93595	CPT4	Left heart catheterization for con
 Congenital heart disease procedure	93596	CPT4	Right and left heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone(s); normal native connections | [Diagnostic Procedure] - [Therapeutic or Preventive Procedure]
 Congenital heart disease procedure	93597	CPT4	Right and left heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone(s); abnormal native connections | [Diagnostic Procedure] - [Therapeutic or Preventive Procedure]
 Congenital heart disease procedure	93598	CPT4	Cardiac output measurement(s), thermodilution or other indicator dilution method, performed during cardiac catheterization for the evaluation of congenital heart defects (List separately in addition to code for primary procedure) | [Diagnostic Procedure]
+Congenital heart disease procedure	K201	OPCS4	Correction of persistent sinus venosus
+Congenital heart disease procedure	K202	OPCS4	Correction of partial anomalous pulmonary venous drainage
+Congenital heart disease procedure	K331	OPCS4	Aortic root replacement using pulmonary valve autograft with right ventricle to pulmonary artery valved conduit
+Congenital heart disease procedure	K332	OPCS4	Aortic root replacement using pulmonary valve autograft with right ventricle to pulmonary artery valved conduit and aortoventriculoplasty
+Congenital heart disease procedure	L013	OPCS4	Repair of anomalous pulmonary artery origin from ascending aorta
+Congenital heart disease procedure	L014	OPCS4	Closure of aortopulmonary window
+Congenital heart disease procedure	L018	OPCS4	Other specified open operations for combined abnormality of great vessels
+Congenital heart disease procedure	L019	OPCS4	Unspecified open operations for combined abnormality of great vessels
+Congenital heart disease procedure	L021	OPCS4	Division of patent ductus arteriosus
+Congenital heart disease procedure	L022	OPCS4	Ligature of patent ductus arteriosus
+Congenital heart disease procedure	L023	OPCS4	Closure of patent ductus arteriosus NEC
+Congenital heart disease procedure	L024	OPCS4	Revision of correction of patent ductus arteriosus
+Congenital heart disease procedure	L028	OPCS4	Other specified open correction of patent ductus arteriosus
+Congenital heart disease procedure	L029	OPCS4	Unspecified open correction of patent ductus arteriosus
+Congenital heart disease procedure	L031	OPCS4	Percutaneous transluminal prosthetic occlusion of patent ductus arteriosus
+Congenital heart disease procedure	L051	OPCS4	Creation of shunt to main pulmonary artery from ascending aorta using interposition tube prosthesis
+Congenital heart disease procedure	L052	OPCS4	Creation of shunt to right pulmonary artery from ascending aorta using interposition tube prosthesis
+Congenital heart disease procedure	L053	OPCS4	Creation of shunt to left pulmonary artery from ascending aorta using interposition tube prosthesis
+Congenital heart disease procedure	L054	OPCS4	Percutaneous transluminal balloon dilation of interposition tube prosthesis between pulmonary artery and aorta
+Congenital heart disease procedure	L058	OPCS4	Other specified creation of shunt to pulmonary artery from aorta using interposition tube prosthesis
+Congenital heart disease procedure	L059	OPCS4	Unspecified creation of shunt to pulmonary artery from aorta using interposition tube prosthesis
+Congenital heart disease procedure	L061	OPCS4	Creation of aortopulmonary window
+Congenital heart disease procedure	L062	OPCS4	Creation of anastomosis to main pulmonary artery from ascending aorta NEC
+Congenital heart disease procedure	L063	OPCS4	Creation of anastomosis to right pulmonary artery from ascending aorta NEC
+Congenital heart disease procedure	L064	OPCS4	Creation of anastomosis to left pulmonary artery from descending aorta NEC
+Congenital heart disease procedure	L065	OPCS4	Creation of anastomosis to pulmonary artery from aorta NEC
+Congenital heart disease procedure	L066	OPCS4	Revision of anastomosis to pulmonary artery from aorta
+Congenital heart disease procedure	L067	OPCS4	Takedown of anastomosis to pulmonary artery from aorta
+Congenital heart disease procedure	L068	OPCS4	Other specified other connection to pulmonary artery from aorta
+Congenital heart disease procedure	L069	OPCS4	Unspecified other connection to pulmonary artery from aorta
+Congenital heart disease procedure	L071	OPCS4	Creation of shunt to right pulmonary artery from right subclavian artery using interposition tube prosthesis
+Congenital heart disease procedure	L072	OPCS4	Creation of shunt to left pulmonary artery from left subclavian artery using interposition tube prosthesis
+Congenital heart disease procedure	L073	OPCS4	Closure of prosthetic shunt to pulmonary artery from subclavian artery
+Congenital heart disease procedure	L074	OPCS4	Percutaneous transluminal balloon dilation of interposition tube prosthesis between pulmonary artery and subclavian artery
+Congenital heart disease procedure	L075	OPCS4	Percutaneous transluminal occlusion of interposition tube prosthesis between pulmonary artery and subclavian artery
+Congenital heart disease procedure	L078	OPCS4	Other specified creation of shunt to pulmonary artery from subclavian artery using interposition tube prosthesis
+Congenital heart disease procedure	L079	OPCS4	Unspecified creation of shunt to pulmonary artery from subclavian artery using interposition tube prosthesis
+Congenital heart disease procedure	L081	OPCS4	Creation of anastomosis to right pulmonary artery from right subclavian artery NEC
+Congenital heart disease procedure	L082	OPCS4	Creation of anastomosis to left pulmonary artery from left subclavian artery NEC
+Congenital heart disease procedure	L083	OPCS4	Creation of anastomosis to pulmonary artery from subclavian artery NEC
+Congenital heart disease procedure	L084	OPCS4	Revision of anastomosis to pulmonary artery from subclavian artery
+Congenital heart disease procedure	L086	OPCS4	Percutaneous transluminal balloon dilation of anastomosis between pulmonary artery and subclavian artery
+Congenital heart disease procedure	L087	OPCS4	Percutaneous transluminal occlusion of anastomosis between pulmonary artery and subclavian artery
+Congenital heart disease procedure	L088	OPCS4	Other specified other connection to pulmonary artery from subclavian artery
+Congenital heart disease procedure	L089	OPCS4	Unspecified other connection to pulmonary artery from subclavian artery
+Congenital heart disease procedure	L091	OPCS4	Creation of anastomosis to pulmonary artery from vena cava
+Congenital heart disease procedure	L092	OPCS4	Removal of anastomosis between pulmonary artery and vena cava
+Congenital heart disease procedure	L098	OPCS4	Other specified other connection to pulmonary artery
+Congenital heart disease procedure	L099	OPCS4	Unspecified other connection to pulmonary artery
+Congenital heart disease procedure	3541	ICD9_procedures	Enlargement of existing atrial septal defect
+Congenital heart disease procedure	3581	ICD9_procedures	Total repair of tetralogy of fallot
+Congenital heart disease procedure	3583	ICD9_procedures	Total repair of truncus arteriosus

@@ -1,11 +1,11 @@
 pandoc: 3.1.11
-pkgdown: 2.1.0
+pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   hermes_3: hermes_3.html
   nih_cardiomyopathy: nih_cardiomyopathy.html
   ukbb_phenotyping: ukbb_phenotyping.html
-last_built: 2024-09-12T14:56Z
+last_built: 2024-10-01T13:26Z
 urls:
   reference: https://nicksunderland.github.io/heRmes/reference
   article: https://nicksunderland.github.io/heRmes/articles

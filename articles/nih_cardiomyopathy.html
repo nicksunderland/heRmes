@@ -108,6 +108,10 @@ Download cardiomyopathy_metadata.tsv </button> </a></p>
 <div class="section level2">
 <h2 id="classifiers">Classifiers<a class="anchor" aria-label="anchor" href="#classifiers"></a>
 </h2>
+<p>* myocardial infarction and revascularisation exclusion should be
+made based on codes appearing prior to the DCM / NICM inclusion codes -
+i.e. exclusion antecedent ischaemic events but allowing ischaemic events
+that happen after the DCM / NICM diagnosis.</p>
 <table class="table">
 <colgroup>
 <col width="8%">
@@ -126,10 +130,10 @@ Download cardiomyopathy_metadata.tsv </button> </a></p>
 <th>CongHD</th>
 <th>HCM</th>
 <th>RCM</th>
-<th>MI</th>
-<th>CABG</th>
-<th>PCI</th>
-<th>Thrombolysis</th>
+<th>MI*</th>
+<th>CABG*</th>
+<th>PCI*</th>
+<th>Thrombolysis*</th>
 <th>DCM</th>
 <th>DCM_AssW</th>
 <th>LVSD</th>
@@ -282,7 +286,7 @@ Download cardiomyopathy_metadata.tsv </button> </a></p>
 </tbody>
 </table>
 <p><em>Figure 1. Phenotyping algorithm</em></p>
-<p><img src="figures/nih_phenotyping_algorithm.png" align="centre" width="100%"></p>
+<p><img src="figures%2Fnih_phenotyping_algorithm.png" align="centre" width="100%"></p>
 <hr>
 </div>
 <div class="section level2">
@@ -297,7 +301,7 @@ or coronary artery disease. (ESC, 2023).</p>
 <p><strong>Search expressions:</strong>
 <code>(399020009) | ((?i)cardiomyopath(y|ies))</code>.</p>
 <center>
-<p><img src="figures/counts_DCM_IsA.png"></p>
+<p><img src="figures%2Fcounts_DCM_IsA.png"></p>
 </center>
 <table class="table">
 <thead><tr class="header">
@@ -325,7 +329,7 @@ or coronary artery disease. (ESC, 2023).</p>
 <p><strong>Search expressions:</strong>
 <code>(399020009) | ((?i)cardiomyopath(y|ies))</code>.</p>
 <center>
-<p><img src="figures/counts_DCM_AssociatedWith.png"></p>
+<p><img src="figures%2Fcounts_DCM_AssociatedWith.png"></p>
 </center>
 <table class="table">
 <colgroup>
@@ -421,7 +425,7 @@ ejection fraction with LVEF 40-49%..</p>
 <p><strong>Search expressions:</strong>
 <code>(systolic .*(dys-?function|failure|insufficiency)) | (134401001)</code>.</p>
 <center>
-<p><img src="figures/counts_LVSD_IsA.png"></p>
+<p><img src="figures%2Fcounts_LVSD_IsA.png"></p>
 </center>
 <table class="table">
 <colgroup>
@@ -557,7 +561,7 @@ thrombosis on angiography or aithopsy)..</p>
 <p><strong>Search expressions:</strong>
 <code>(22298006) | ((?i)myocardial infarction) | ((?i)acute ischa?emic heart disease) | ((?i)acute .*coronary .*(disease|dysfunction)) | ((?i)dressler)</code>.</p>
 <center>
-<p><img src="figures/counts_Myocardial_infarction.png"></p>
+<p><img src="figures%2Fcounts_Myocardial_infarction.png"></p>
 </center>
 <table class="table">
 <colgroup>
@@ -952,7 +956,7 @@ and connected to the aorta..</p>
 <p><strong>Search expressions:</strong>
 <code>(K4[0-9][0-9]?) | (K50[0-9]?|K75[0-9]?) | ((?i)coronary (artery )?bypass) | ((?i)aortocoronary bypass) | (CABG) | ((?i)(graft|replacement|connection|anastomosis|implantation|bypass|repair|operations?|open angioplasty) .*coronary arter(y|ies)) | (232717009)</code>.</p>
 <center>
-<p><img src="figures/counts_Coronary_artery_bypass_grafting.png"></p>
+<p><img src="figures%2Fcounts_Coronary_artery_bypass_grafting.png"></p>
 </center>
 <table class="table">
 <colgroup>
@@ -1447,7 +1451,7 @@ considered a PCI procedure..</p>
 <p><strong>Search expressions:</strong>
 <code>(K49[0-9]+?|K50[0-9]+|K75[0-9]+) | ((?i)percutaneous coronary intervention) | ((?i)(percutaneous|transluminal) .*(angioplasty|stent|thrombolysis|thrombectomy|therapeutic|atherectomy|operations|lithotripsy).*coronar(y|ies)) | ((?i)(percutaneous|transluminal) .*coronar(y|ies) .*(angioplasty|stent|thrombolysis|thrombectomy|therapeutic|atherectomy|operations|lithotripsy)) | (415070008)</code>.</p>
 <center>
-<p><img src="figures/counts_Percutaneous_coronary_intervent.png"></p>
+<p><img src="figures%2Fcounts_Percutaneous_coronary_intervent.png"></p>
 </center>
 <table class="table">
 <colgroup>
@@ -1808,7 +1812,7 @@ thrombosis..</p>
 <p><strong>Search expressions:</strong>
 <code>(K502) | (coronary thrombolysis) | ((?i)thrombolytic) | (thrombolysis) | (32912007)</code>.</p>
 <center>
-<p><img src="figures/counts_Thrombolysis_coronary.png"></p>
+<p><img src="figures%2Fcounts_Thrombolysis_coronary.png"></p>
 </center>
 <table class="table">
 <colgroup>
@@ -1860,7 +1864,7 @@ They are fault or problems that are present from birth..</p>
 <p><strong>Search expressions:</strong>
 <code>(13213009) | (Q2[0-6][0-9]?) | ((?i)congenital.*(heart|cardiac)) | ((?i)(heart|cardiac).*congenital) | ((?i)congenital .*(pulmonary|tricuspid|aortic|mitral) .*valves?) | ((?i)(congenital|transposition) .*great (arter[y|ies]|veins?)) | ((?i)fontan|fallot) | ((?i)(double outlet|single) .*ventricle) | ((?i)(atrial|ventric[ulare]+|aortopulmonary) septal defect) | ((?i)cor triatriatum|truncus arteriosus)</code>.</p>
 <center>
-<p><img src="figures/counts_Congenital_heart_disease.png"></p>
+<p><img src="figures%2Fcounts_Congenital_heart_disease.png"></p>
 </center>
 <table class="table">
 <colgroup>
@@ -2411,7 +2415,7 @@ defines procedures for congenital heart disease..</p>
 <p><strong>Search expressions:</strong>
 <code>(K[0-3].*) | (K(29[67]|305|336|34[56]|35[467]|36[12]|37[1-6]|38[56]|482|577)) | (K76.*) | (L0.*) | (L1[0-3][0-9]?) | ((?i)congenital.*(heart|cardiac)) | ((?i)(heart|cardiac).*congenital) | ((?i)congenital .*(pulmonary|tricuspid|aortic|mitral) .*valves?) | ((?i)(congenital|transposition) .*great (arter[y|ies]|veins?)) | ((?i)fontan|norwood|fallot|blalock|mustard|senning|nikaidoh|jatene|rastelli) | ((?i)(double outlet|single) .*ventricle) | ((?i)(atrial|ventric[ulare]+|aortopulmonary) septal defect) | ((?i)cor triatriatum|truncus arteriosus) | (9359[3-7]) | (93594)</code>.</p>
 <center>
-<p><img src="figures/counts_Congenital_heart_procedure.png"></p>
+<p><img src="figures%2Fcounts_Congenital_heart_procedure.png"></p>
 </center>
 <table class="table">
 <colgroup>
@@ -3733,7 +3737,7 @@ or reduced systolic volumes, and normal ventricular wall thickness.
 <p><strong>Search expressions:</strong>
 <code>(415295002) | ((?i)(restrictive|constrictive) (cardiomyopath.*|heart failure)) | ((?i)(cardiomyopath.*|heart failure).*(restrictive|constrictive))</code>.</p>
 <center>
-<p><img src="figures/counts_RCM_IsA.png"></p>
+<p><img src="figures%2Fcounts_RCM_IsA.png"></p>
 </center>
 <table class="table">
 <thead><tr class="header">
@@ -3761,7 +3765,7 @@ conditions. (ESC, 2023).</p>
 <p><strong>Search expressions:</strong>
 <code>(233873004) | ((?i)cardiomyopath(y|ies))</code>.</p>
 <center>
-<p><img src="figures/counts_HCM_IsA.png"></p>
+<p><img src="figures%2Fcounts_HCM_IsA.png"></p>
 </center>
 <table class="table">
 <thead><tr class="header">
@@ -3804,7 +3808,7 @@ conditions. (ESC, 2023).</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
 </div>
 
     </footer>

@@ -116,7 +116,10 @@ To download the codes and search strategies clink the links:
 
 ## Classifiers
 
-| CongHD | HCM  | RCM   | MI    | CABG   | PCI   | Thrombolysis |  DCM    | DCM_AssW | LVSD    | Phenotype |
+\* myocardial infarction and revascularisation exclusion should be made based on codes appearing prior to the DCM / NICM inclusion codes - i.e.
+exclusion antecedent ischaemic events but allowing ischaemic events that happen after the DCM / NICM diagnosis.
+
+| CongHD | HCM  | RCM   | MI*   | CABG*  | PCI*  | Thrombolysis*|  DCM    | DCM_AssW | LVSD    | Phenotype |
 |--------|------|-------|-------|--------|-------|--------------|---------|----------|---------|-----------|
 | TRUE   | ANY  | ANY   | ANY   | ANY    | ANY   | ANY          | ANY     | ANY      | ANY     | Exclude   |
 | FALSE  | TRUE | ANY   | ANY   | ANY    | ANY   | ANY          | ANY     | ANY      | ANY     | Exclude   |

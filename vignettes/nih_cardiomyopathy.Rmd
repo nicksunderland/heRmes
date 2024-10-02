@@ -44,7 +44,7 @@ meta <- lapply(tabs, function(x) {
 dat <- lapply(tabs, function(x) read_xlsx(file, x, skip=13)) |> rbindlist(idcol="concept")
 cols <- c("QW","RTL","NS","LL","Concensus")
 dat[, (cols) := lapply(.SD, function(x) as.numeric(!is.na(x))), .SDcols = cols]
-dat <- dat[Concensus==1 & Source != "SNOMED"]
+dat <- dat[Concensus==1] # & Source != "SNOMED"]
 dat[, agreement := rowSums(.SD)/4, .SDcols = c("QW","RTL","NS","LL")]
 dat[meta, Concept := i.Title, on="concept"]
 

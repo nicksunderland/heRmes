@@ -941,19 +941,6 @@ Thrombolysis_coronary	K502	OPCS4	Percutaneous transluminal coronary thrombolysis
 Thrombolysis_coronary	92977	CPT4	Removal of heart artery blood clot by dissolving	1	1	1	0	3	1		0.75	Thrombolysis (coronary)
 Thrombolysis_coronary	92975	CPT4	Removal of heart artery blood clot by dissolving using imaging guidance	1	1	1	0	3	1		0.75	Thrombolysis (coronary)
 Thrombolysis_coronary	1012986	CPT4	Thrombolysis, coronary | [Therapeutic or Preventive Procedure]	1	1	1	0	3	1		0.75	Thrombolysis (coronary)
-Congenital_heart_disease	V1365	ICD9	Personal history of (corrected) congenital malformations of heart and circulatory system	1	0	1	0	2	1		0.5	Congenital heart disease
-Congenital_heart_disease	7469	ICD9	Unspecified congenital anomaly of heart	1	0	1	0	2	1		0.5	Congenital heart disease
-Congenital_heart_disease	74689	ICD9	Other specified congenital anomalies of heart	1	0	1	0	2	1		0.5	Congenital heart disease
-Congenital_heart_disease	74686	ICD9	Congenital heart block	1	0	1	0	2	1		0.5	Congenital heart disease
-Congenital_heart_disease	74682	ICD9	Cor triatriatum	1	0	1	0	2	1		0.5	Congenital heart disease
-Congenital_heart_disease	7464	ICD9	Congenital insufficiency of aortic valve	1	0	1	0	2	1		0.5	Congenital heart disease
-Congenital_heart_disease	74600	ICD9	Congenital pulmonary valve anomaly, unspecified	1	0	1	0	2	1		0.5	Congenital heart disease
-Congenital_heart_disease	7463	ICD9	Congenital stenosis of aortic valve	1	0	1	0	2	1		0.5	Congenital heart disease
-Congenital_heart_disease	74609	ICD9	Other congenital anomalies of pulmonary valve	1	0	1	0	2	1		0.5	Congenital heart disease
-Congenital_heart_disease	7455	ICD9	Ostium secundum type atrial septal defect	1	0	1	0	2	1		0.5	Congenital heart disease
-Congenital_heart_disease	7454	ICD9	Ventricular septal defect	1	0	0	0	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	7452	ICD9	Tetralogy of fallot	1	0	1	0	2	1		0.5	Congenital heart disease
-Congenital_heart_disease	74511	ICD9	Double outlet right ventricle	1	0	1	0	2	1		0.5	Congenital heart disease
 Congenital_heart_disease	Z8774	ICD10	Personal history of (corrected) congenital malformations of heart and circulatory system	1	0	1	0	2	1		0.5	Congenital heart disease
 Congenital_heart_disease	Z877	ICD10	Personal history of (corrected) congenital malformations	1	0	1	0	2	1		0.5	Congenital heart disease
 Congenital_heart_disease	Q269	ICD10	Congenital malformation of great vein, unspecified	1	0	1	0	2	1		0.5	Congenital heart disease
@@ -1042,6 +1029,40 @@ Congenital_heart_disease	Q202	ICD10	Double outlet left ventricle	1	0	1	0	2	1		0.
 Congenital_heart_disease	Q201	ICD10	Double outlet right ventricle	1	0	1	0	2	1		0.5	Congenital heart disease
 Congenital_heart_disease	Q200	ICD10	Common arterial trunk	1	0	1	0	2	1		0.5	Congenital heart disease
 Congenital_heart_disease	Q20	ICD10	Congenital malformations of cardiac chambers and connections	1	0	1	0	2	1		0.5	Congenital heart disease
+Congenital_heart_disease	I2783	ICD10	Eisenmenger's syndrome	0	0	0	1	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	V1365	ICD9	Personal history of (corrected) congenital malformations of heart and circulatory system	1	0	1	0	2	1		0.5	Congenital heart disease
+Congenital_heart_disease	7469	ICD9	Unspecified congenital anomaly of heart	1	0	1	0	2	1		0.5	Congenital heart disease
+Congenital_heart_disease	74689	ICD9	Other specified congenital anomalies of heart	1	0	1	0	2	1		0.5	Congenital heart disease
+Congenital_heart_disease	74686	ICD9	Congenital heart block	1	0	1	0	2	1		0.5	Congenital heart disease
+Congenital_heart_disease	74682	ICD9	Cor triatriatum	1	0	1	0	2	1		0.5	Congenital heart disease
+Congenital_heart_disease	7464	ICD9	Congenital insufficiency of aortic valve	1	0	1	0	2	1		0.5	Congenital heart disease
+Congenital_heart_disease	74600	ICD9	Congenital pulmonary valve anomaly, unspecified	1	0	1	0	2	1		0.5	Congenital heart disease
+Congenital_heart_disease	7463	ICD9	Congenital stenosis of aortic valve	1	0	1	0	2	1		0.5	Congenital heart disease
+Congenital_heart_disease	74609	ICD9	Other congenital anomalies of pulmonary valve	1	0	1	0	2	1		0.5	Congenital heart disease
+Congenital_heart_disease	7455	ICD9	Ostium secundum type atrial septal defect	1	0	1	0	2	1		0.5	Congenital heart disease
+Congenital_heart_disease	7454	ICD9	Ventricular septal defect	1	0	0	0	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	7452	ICD9	Tetralogy of fallot	1	0	1	0	2	1		0.5	Congenital heart disease
+Congenital_heart_disease	74511	ICD9	Double outlet right ventricle	1	0	1	0	2	1		0.5	Congenital heart disease
+Congenital_heart_disease	74510	ICD9	Complete transposition of great vessels	0	0	0	1	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	74512	ICD9	Corrected transposition of great vessels	0	0	0	1	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	74519	ICD9	Other transposition of great vessels	0	0	0	1	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	74560	ICD9	Endocardial cushion defect, unspecified type	0	0	0	1	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	74569	ICD9	Other endocardial cushion defects	0	0	0	1	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	7458	ICD9	Other bulbus cordis anomalies and anomalies of cardiac septal closure	0	0	0	1	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	74601	ICD9	Atresia of pulmonary valve, congenital	0	0	0	1	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	74602	ICD9	Stenosis of pulmonary valve, congenital	0	0	0	1	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	7461	ICD9	Tricuspid atresia and stenosis, congenital	0	0	0	1	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	7462	ICD9	Ebstein's anomaly	0	0	0	1	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	7465	ICD9	Congenital mitral stenosis	0	0	0	1	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	7466	ICD9	Congenital mitral insufficiency	0	0	0	1	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	74681	ICD9	Subaortic stenosis	0	0	0	1	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	74683	ICD9	Infundibular pulmonic stenosis	0	0	0	1	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	74710	ICD9	Coarctation of aorta (preductal) (postductal)	0	0	0	1	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	74731	ICD9	Pulmonary artery coarctation and atresia	0	0	0	1	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	74739	ICD9	Other anomalies of pulmonary artery and pulmonary circulation	0	0	0	1	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	74741	ICD9	Total anomalous pulmonary venous connection	0	0	0	1	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	74742	ICD9	Partial anomalous pulmonary venous connection	0	0	0	1	1	1		0.25	Congenital heart disease
+Congenital_heart_disease	74749	ICD9	Other anomalies of great veins	0	0	0	1	1	1		0.25	Congenital heart disease
 Congenital_heart_disease	463141000000100	SNOMED	[X]Other specified congenital malformations of the heart (disorder)	0	0	1	0	1	1		0.25	Congenital heart disease
 Congenital_heart_disease	205878006	SNOMED	[X]Other specified congenital malformations of the heart (disorder)	0	0	1	0	1	1		0.25	Congenital heart disease
 Congenital_heart_disease	440211000000107	SNOMED	[X]Other congenital malformations of tricuspid valve (disorder)	0	0	1	0	1	1		0.25	Congenital heart disease
@@ -1865,7 +1886,6 @@ Congenital_heart_disease	218728005	SNOMED	Interrupted aortic arch	0	0	0	1	1	1		0
 Congenital_heart_disease	21981000	SNOMED	Single coronary artery	0	0	0	1	1	1		0.25	Congenital heart disease
 Congenital_heart_disease	2213002	SNOMED	Congenital anomaly of vena cava	0	0	0	1	1	1		0.25	Congenital heart disease
 Congenital_heart_disease	233858000	SNOMED	Familial mitral valve prolapse	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	236529001	SNOMED	Prune belly syndrome with pulmonic stenosis, mental retardation and deafness	0	0	0	1	1	1		0.25	Congenital heart disease
 Congenital_heart_disease	236530006	SNOMED	Pulmonic stenosis and congenital nephrosis	0	0	0	1	1	1		0.25	Congenital heart disease
 Congenital_heart_disease	250941001	SNOMED	Right ventricular fibromuscular infundibular stenosis	0	0	0	1	1	1		0.25	Congenital heart disease
 Congenital_heart_disease	250942008	SNOMED	Right ventricular muscular infundibular stenosis	0	0	0	1	1	1		0.25	Congenital heart disease
@@ -2953,34 +2973,244 @@ Congenital_heart_disease	205879003	SNOMED	[X]Other congenital malformations of a
 Congenital_heart_disease	451021000000103	SNOMED	[X]Other congenital malformations of aorta (disorder)	0	0	0	1	1	1		0.25	Congenital heart disease
 Congenital_heart_disease	205880000	SNOMED	[X]Other congenital malformations of pulmonary artery (disorder)	0	0	0	1	1	1		0.25	Congenital heart disease
 Congenital_heart_disease	425961000000106	SNOMED	[X]Other congenital malformations of pulmonary artery (disorder)	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	I2783	ICD10	Eisenmenger's syndrome	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	Q794	ICD10	Prune belly syndrome	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	4267	ICD9	Anomalous atrioventricular excitation	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	74510	ICD9	Complete transposition of great vessels	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	74512	ICD9	Corrected transposition of great vessels	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	74519	ICD9	Other transposition of great vessels	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	74560	ICD9	Endocardial cushion defect, unspecified type	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	74569	ICD9	Other endocardial cushion defects	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	7458	ICD9	Other bulbus cordis anomalies and anomalies of cardiac septal closure	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	74601	ICD9	Atresia of pulmonary valve, congenital	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	74602	ICD9	Stenosis of pulmonary valve, congenital	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	7461	ICD9	Tricuspid atresia and stenosis, congenital	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	7462	ICD9	Ebstein's anomaly	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	7465	ICD9	Congenital mitral stenosis	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	7466	ICD9	Congenital mitral insufficiency	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	74681	ICD9	Subaortic stenosis	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	74683	ICD9	Infundibular pulmonic stenosis	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	74684	ICD9	Obstructive anomalies of heart, not elsewhere classified	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	74710	ICD9	Coarctation of aorta (preductal) (postductal)	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	74721	ICD9	Anomalies of aortic arch	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	74722	ICD9	Atresia and stenosis of aorta	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	74729	ICD9	Other anomalies of aorta	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	74731	ICD9	Pulmonary artery coarctation and atresia	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	74739	ICD9	Other anomalies of pulmonary artery and pulmonary circulation	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	74741	ICD9	Total anomalous pulmonary venous connection	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	74742	ICD9	Partial anomalous pulmonary venous connection	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	74749	ICD9	Other anomalies of great veins	0	0	0	1	1	1		0.25	Congenital heart disease
-Congenital_heart_disease	75671	ICD9	Prune belly syndrome	0	0	0	1	1	1		0.25	Congenital heart disease
+Congenital_heart_procedure	1006227	CPT4	Repair Procedures for Single Ventricle and Other Complex Cardiac Anomalies | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	1006274	CPT4	Repair of transposition of the great arteries with ventricular septal defect and subpulmonary stenosis | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	1006292	CPT4	Obliteration of aortopulmonary septal defect | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	1006285	CPT4	Repair Procedures for Truncus Arteriosus | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	1014132	CPT4	Repair of double outlet right ventricle with intraventricular tunnel repair | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	1014133	CPT4	Closure of single ventricular septal defect, with or without patch | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	1014135	CPT4	Complete repair tetralogy of Fallot without pulmonary atresia | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	1014614	CPT4	Repair of transposition of the great arteries, atrial baffle procedure (eg, Mustard or Senning type) with cardiopulmonary bypass | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	1014617	CPT4	Repair of transposition of the great arteries, aortic pulmonary artery reconstruction (eg, Jatene type) | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	1014755	CPT4	Closure of multiple ventricular septal defects | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	1020205	CPT4	Aortic root translocation with ventricular septal defect and pulmonary stenosis repair (ie, Nikaidoh procedure) | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	1036220	CPT4	Transcatheter intracardiac shunt (TIS) creation by stent placement for congenital cardiac anomalies to establish effective intracardiac flow, including all imaging guidance by the proceduralist, when performed, left and right heart diagnostic cardiac catheterization for congenital cardiac anomalies, and target zone angioplasty, when performed (eg, atrial septum, Fontan fenestration, right ventricular outflow tract, Mustard/Senning/Warden baffles)	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	1036712	CPT4	Endovascular Repair of Congenital Heart and Vascular Defects | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	1036826	CPT4	Cardiac Catheterization for Congenital Heart Defects | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	1036827	CPT4	Right heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	1036831	CPT4	Right and left heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone(s) | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33610	CPT4	Repair of congenital defect in wall between lower heart chambers	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33608	CPT4	Repair of complex cardiac anomaly other than pulmonary atresia with ventricular septal defect by construction or replacement of conduit from right or left ventricle to pulmonary artery | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33611	CPT4	Repair of double outlet right ventricle with intraventricular tunnel repair | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33615	CPT4	Repair of congenital defect in wall between upper heart chambers and connection of atria to pulmonary artery (Simple Fontan procedure)	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33617	CPT4	Repair of complex congenital defect in wall between upper heart chambers and connection of atria to pulmonary artery (Modified Fontan procedure)	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33619	CPT4	Repair to improve congenital blood flow defect from lower heart chamber	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33622	CPT4	Reconstruction of complex cardiac anomaly (eg, single ventricle or hypoplastic left heart) with palliation of single ventricle with aortic outflow obstruction and aortic arch hypoplasia, creation of cavopulmonary anastomosis, and removal of right and l... | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33641	CPT4	Repair of congenital defect between upper heart chambers on heart-lung machine	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33647	CPT4	Repair of atrial septal defect and ventricular septal defect, with direct or patch closure | [Therapeutic or Preventive Procedure]	1	0	0	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	33660	CPT4	Repair of partial congenital defect between both upper and lower heart chambers	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33665	CPT4	Repair of intermediate congenital defect between both upper and lower heart chambers	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33670	CPT4	Repair of complete congenital defect between both upper and lower heart chambers	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33675	CPT4	Closure of multiple congenital defects between lower heart chambers	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33676	CPT4	Closure of multiple congenital defects between lower heart chambers with valve tissue release	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33677	CPT4	Closure of multiple congenital defects between lower heart chambers with removal of band	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33681	CPT4	Closure of congenital defect between lower heart chambers	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33684	CPT4	Closure of congenital defect between lower heart chambers with valve tissue release	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33688	CPT4	Closure of congenital defect between lower heart chambers with removal of band	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33692	CPT4	Repair and correction of 4 congenital heart defects	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33694	CPT4	Repair and correction of 4 congenital heart defects with patch	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33697	CPT4	Repair and correction of 4 congenital heart defects including closure between lower heart chambers	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33710	CPT4	Repair sinus of Valsalva fistula, with cardiopulmonary bypass; with repair of ventricular septal defect | [Therapeutic or Preventive Procedure]	1	0	0	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	33741	CPT4	Transcatheter atrial septostomy (TAS) for congenital cardiac anomalies to create effective atrial flow	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33745	CPT4	Transcatheter intracardiac shunt (TIS) creation by stent placement for congenital cardiac anomalies to establish effective intracardiac flow, including all imaging guidance by the proceduralist, when performed, left and right heart diagnostic cardiac catheterization for congenital cardiac anomalies, and target zone angioplasty, when performed (eg, atrial septum, Fontan fenestration, right ventricular outflow tract, Mustard/Senning/Warden baffles); initial intracardiac shunt	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33746	CPT4	Transcatheter intracardiac shunt (TIS) creation by stent placement for congenital cardiac anomalies to establish effective intracardiac flow, including all imaging guidance by the proceduralist, when performed, left and right heart diagnostic cardiac catheterization for congenital cardiac anomalies, and target zone angioplasty, when performed (eg, atrial septum, Fontan fenestration, right ventricular outflow tract, Mustard/Senning/Warden baffles); each additional intracardiac shunt location (List separately in addition to code for primary procedure)	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33770	CPT4	Repair of group of congenital heart defects with reversal of blood flow	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33771	CPT4	Repair of group of congenital heart defects with reversal of blood flow and enlargement of hole in wall between lower heart chambers	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33774	CPT4	Repair of group of congenital heart defects with reversal of blood flow on heart-lung machine	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33775	CPT4	Repair of group of congenital heart defects with reversal of blood flow and band removal on heart-lung machine	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33776	CPT4	Repair of group of congenital heart defects with reversal of blood flow and closure of hole in wall between lower heart chambers on heart-lung machine	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33777	CPT4	Repair of group of congenital heart defects and obstruction with reversal of blood flow on heart-lung machine	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33778	CPT4	Repair of group of congenital heart defects with redirection of blood flow	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33779	CPT4	Repair of group of congenital heart defects with redirection of blood flow and band removal	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33780	CPT4	Repair of a group of congenital heart defects with redirection of blood flow and closure of hole in wall between lower heart chambers	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33781	CPT4	Repair of a group of congenital heart defects and obstruction with redirection of blood flow	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33782	CPT4	Aortic root translocation with ventricular septal defect and pulmonary stenosis repair (ie, Nikaidoh procedure); without coronary ostium reimplantation | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33783	CPT4	Aortic root translocation with ventricular septal defect and pulmonary stenosis repair (ie, Nikaidoh procedure); with reimplantation of 1 or both coronary ostia | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33786	CPT4	Total repair of group of congenital heart defects with redirection of blood flow	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33820	CPT4	Tying of congenital heart defect from pulmonary artery to aorta	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33822	CPT4	Repair of congenital heart defect from pulmonary artery to aorta, younger than 18 years	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33824	CPT4	Repair of congenital heart defect from pulmonary artery to aorta, 18 years or older	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	93580	CPT4	Repair of congenital abnormality in wall between upper heart chambers with implant	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	93581	CPT4	Repair of congenital abnormality in wall between lower heart chambers with implant	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	93593	CPT4	Right heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone; normal native connections | [Diagnostic Procedure] - [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	93594	CPT4	Right heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone; abnormal native connections | [Diagnostic Procedure] - [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	93595	CPT4	Left heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone, normal or abnormal native connections | [Diagnostic Procedure] - [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	93596	CPT4	Right and left heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone(s); normal native connections | [Diagnostic Procedure] - [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	93597	CPT4	Right and left heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone(s); abnormal native connections | [Diagnostic Procedure] - [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	93598	CPT4	Cardiac output measurement(s), thermodilution or other indicator dilution method, performed during cardiac catheterization for the evaluation of congenital heart defects (List separately in addition to code for primary procedure) | [Diagnostic Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	33897	CPT4	Percutaneous transluminal angioplasty of native or recurrent coarctation of the aorta | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	33895	CPT4	Endovascular stent repair of coarctation of the ascending, transverse, or descending thoracic or abdominal aorta, involving stent placement; not crossing major side branches | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	33894	CPT4	Endovascular stent repair of coarctation of the ascending, transverse, or descending thoracic or abdominal aorta, involving stent placement; across major side branches | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	33853	CPT4	Repair of hypoplastic or interrupted aortic arch using autogenous or prosthetic material; with cardiopulmonary bypass | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	33852	CPT4	Repair of hypoplastic or interrupted aortic arch using autogenous or prosthetic material; without cardiopulmonary bypass | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	33845	CPT4	Repair of congenital narrowed aorta with graft	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	33851	CPT4	Repair of congenital narrowed aorta using left chest artery or artificial material	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	33840	CPT4	Repair of congenital narrowed aorta	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	33507	CPT4	Repair of anomalous (eg, intramural) aortic origin of coronary artery by unroofing or translocation | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	33506	CPT4	Repair of anomalous coronary artery from pulmonary artery origin; by translocation from pulmonary artery to aorta | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	33505	CPT4	Repair of anomalous coronary artery from pulmonary artery origin; with construction of intrapulmonary artery tunnel (Takeuchi procedure) | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	33502	CPT4	Repair of anomalous coronary artery from pulmonary artery origin; by ligation | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	33416	CPT4	Ventriculomyotomy (-myectomy) for idiopathic hypertrophic subaortic stenosis (eg, asymmetric septal hypertrophy) | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	1036713	CPT4	Endovascular stent repair of coarctation of the ascending, transverse, or descending thoracic or abdominal aorta, involving stent placement | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	1006303	CPT4	Repair of hypoplastic or interrupted aortic arch using autogenous or prosthetic material | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	1006299	CPT4	Excision of coarctation of aorta, with or without associated patent ductus arteriosus | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	1006273	CPT4	Repair Procedures for Transposition of the Great Vessels | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	1006190	CPT4	Repair of anomalous coronary artery from pulmonary artery origin | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	3541	ICD9_procedures	Enlargement of existing atrial septal defect	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	3581	ICD9_procedures	Total repair of tetralogy of fallot	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	3583	ICD9_procedures	Total repair of truncus arteriosus	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	3554	ICD9_procedures	Repair of endocardial cushion defect with prosthesis	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	3591	ICD9_procedures	Interatrial transposition of venous return	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	3584	ICD9_procedures	Total correction of transposition of great vessels, not elsewhere classified	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	3582	ICD9_procedures	Total repair of total anomalous pulmonary venous connection	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	3573	ICD9_procedures	Other and unspecified repair of endocardial cushion defect	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	3563	ICD9_procedures	Repair of endocardial cushion defect with tissue graft	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	K041	OPCS4	Repair of tetralogy of Fallot using valved right ventricular outflow conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K042	OPCS4	Repair of tetralogy of Fallot using right ventricular outflow conduit NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K043	OPCS4	Repair of tetralogy of Fallot using transannular patch	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K044	OPCS4	Revision of repair of tetralogy of Fallot	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K045	OPCS4	Repair of tetralogy of Fallot with absent pulmonary valve	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K046	OPCS4	Repair of Fallot-type pulmonary atresia with aortopulmonary collaterals	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K048	OPCS4	Other specified repair of tetralogy of Fallot	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K049	OPCS4	Unspecified repair of tetralogy of Fallot	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K051	OPCS4	Reconstruction of atrium using atrial patch for transposition of great arteries	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K052	OPCS4	Reconstruction of atrium using atrial wall for transposition of great arteries	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K058	OPCS4	Other specified atrial inversion operations for transposition of great arteries	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K059	OPCS4	Unspecified atrial inversion operations for transposition of great arteries	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K061	OPCS4	Repositioning of transposed great arteries	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K062	OPCS4	Left ventricle to aorta tunnel with right ventricle to pulmonary trunk direct anastomosis	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K063	OPCS4	Left ventricle to aorta tunnel with right ventricle to pulmonary artery valved conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K064	OPCS4	Atrial inversion and repositioning of transposed great artery	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K068	OPCS4	Other specified other repair of transposition of great arteries	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K069	OPCS4	Unspecified other repair of transposition of great arteries	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K071	OPCS4	Correction of total anomalous pulmonary venous connection to supracardiac vessel	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K072	OPCS4	Correction of total anomalous pulmonary venous connection to coronary sinus	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K073	OPCS4	Correction of total anomalous pulmonary venous connection to infradiaphragmatic vessel	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K078	OPCS4	Other specified correction of total anomalous pulmonary venous connection	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K079	OPCS4	Unspecified correction of total anomalous pulmonary venous connection	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K081	OPCS4	Repair of double outlet right ventricle with intraventricular tunnel	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K082	OPCS4	Repair of Fallot-type double outlet right ventricle	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K083	OPCS4	Repair of double outlet right ventricle	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K084	OPCS4	Repair of double outlet left ventricle	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K088	OPCS4	Other specified repair of double outlet ventricle	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K089	OPCS4	Unspecified repair of double outlet ventricle	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K091	OPCS4	Repair of defect of atrioventricular septum using dual prosthetic patches	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K092	OPCS4	Repair of defect of atrioventricular septum using prosthetic patch NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K093	OPCS4	Repair of defect of atrioventricular septum using tissue graft	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K094	OPCS4	Repair of persistent ostium primum	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K095	OPCS4	Primary repair of defect of atrioventricular septum NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K096	OPCS4	Revision of repair of defect of atrioventricular septum	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K098	OPCS4	Other specified repair of defect of atrioventricular septum	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K099	OPCS4	Unspecified repair of defect of atrioventricular septum	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K116	OPCS4	Repair of multiple interventricular septal defects	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K117	OPCS4	Repair of interventricular septal defect using intraoperative transluminal prosthesis	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K141	OPCS4	Open enlargement of defect of atrial septum	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K142	OPCS4	Open atrial septostomy	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K143	OPCS4	Atrial septectomy	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K144	OPCS4	Surgical atrial septation	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K145	OPCS4	Open enlargement of defect of interventricular septum	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K151	OPCS4	Closed enlargement of defect of atrial septum	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K152	OPCS4	Closed atrial septostomy	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K161	OPCS4	Percutaneous transluminal balloon atrial septostomy	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K162	OPCS4	Percutaneous transluminal atrial septostomy NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K163	OPCS4	Percutaneous transluminal atrial septum fenestration closure with prosthesis	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K164	OPCS4	Percutaneous transluminal atrial septum fenestration	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K171	OPCS4	Total cavopulmonary connection with extracardiac inferior caval vein to pulmonary artery conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K172	OPCS4	Total cavopulmonary connection with lateral atrial tunnel	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K173	OPCS4	Aortopulmonary reconstruction with systemic to pulmonary arterial shunt	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K174	OPCS4	Aortopulmonary reconstruction with right ventricle to pulmonary arterial valveless conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K175	OPCS4	Biventricular repair of hypoplastic left heart syndrome	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K176	OPCS4	Takedown of total cavopulmonary connection	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K177	OPCS4	Conversion of atrial pulmonary anastomosis to total pulmonary connection	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K178	OPCS4	Other specified repair of univentricular heart	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K179	OPCS4	Unspecified repair of univentricular heart	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K181	OPCS4	Creation of valved conduit between atrium and ventricle of heart	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K182	OPCS4	Creation of valved conduit between right atrium and pulmonary artery	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K183	OPCS4	Creation of valved conduit between right ventricle of heart and pulmonary artery	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K184	OPCS4	Creation of valved conduit between left ventricle of heart and aorta	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K185	OPCS4	Revision of valved cardiac conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K186	OPCS4	Creation of valved conduit between left ventricle of heart and pulmonary artery	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K187	OPCS4	Replacement of valved cardiac conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K188	OPCS4	Other specified creation of valved cardiac conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K189	OPCS4	Unspecified creation of valved cardiac conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K191	OPCS4	Creation of conduit between atrium and ventricle of heart NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K192	OPCS4	Creation of conduit between right atrium and pulmonary artery NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K193	OPCS4	Creation of conduit between right ventricle of heart and pulmonary artery NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K194	OPCS4	Creation of conduit between right ventricle of heart and vena cava	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K195	OPCS4	Creation of conduit between left ventricle of heart and aorta NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K196	OPCS4	Revision of cardiac conduit NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K198	OPCS4	Other specified creation of other cardiac conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K199	OPCS4	Unspecified creation of other cardiac conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K203	OPCS4	Repair of cor triatriatum	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K241	OPCS4	Relief of right ventricular outflow tract obstruction	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K242	OPCS4	Repair of double chambered right ventricle	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K275	OPCS4	Repositioning of tricuspid valve	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K296	OPCS4	Truncal valve repair	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	K297	OPCS4	Replacement of truncal valve	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	K577	OPCS4	Percutaneous transluminal ablation for congenital heart malformation	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K761	OPCS4	Percutaneous transluminal balloon dilation of cardiac conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K768	OPCS4	Other specified transluminal operations on cardiac conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K769	OPCS4	Unspecified transluminal operations on cardiac conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	L011	OPCS4	Correction of persistent truncus arteriosus	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	L012	OPCS4	Application of band to persistent truncus arteriosus	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	L103	OPCS4	Repair of anomalous pulmonary artery NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	L104	OPCS4	Repair of pulmonary arterial sling	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	L121	OPCS4	Application of band to pulmonary artery	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	L122	OPCS4	Adjustment of band to pulmonary artery	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	L123	OPCS4	Removal of band from pulmonary artery	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	L126	OPCS4	Pulmonary artery ligation	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	L134	OPCS4	Percutaneous transluminal cutting balloon angioplasty of pulmonary artery	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	L135	OPCS4	Percutaneous transluminal balloon angioplasty of pulmonary artery NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	L136	OPCS4	Percutaneous transluminal insertion of stent into pulmonary artery	1	0	1	0	2	1		0.5	Congenital heart disease procedure
+Congenital_heart_procedure	K201	OPCS4	Correction of persistent sinus venosus	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	K202	OPCS4	Correction of partial anomalous pulmonary venous drainage	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	K331	OPCS4	Aortic root replacement using pulmonary valve autograft with right ventricle to pulmonary artery valved conduit	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	K332	OPCS4	Aortic root replacement using pulmonary valve autograft with right ventricle to pulmonary artery valved conduit and aortoventriculoplasty	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L013	OPCS4	Repair of anomalous pulmonary artery origin from ascending aorta	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L014	OPCS4	Closure of aortopulmonary window	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L018	OPCS4	Other specified open operations for combined abnormality of great vessels	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L019	OPCS4	Unspecified open operations for combined abnormality of great vessels	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L021	OPCS4	Division of patent ductus arteriosus	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L022	OPCS4	Ligature of patent ductus arteriosus	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L023	OPCS4	Closure of patent ductus arteriosus NEC	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L024	OPCS4	Revision of correction of patent ductus arteriosus	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L028	OPCS4	Other specified open correction of patent ductus arteriosus	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L029	OPCS4	Unspecified open correction of patent ductus arteriosus	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L031	OPCS4	Percutaneous transluminal prosthetic occlusion of patent ductus arteriosus	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L051	OPCS4	Creation of shunt to main pulmonary artery from ascending aorta using interposition tube prosthesis	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L052	OPCS4	Creation of shunt to right pulmonary artery from ascending aorta using interposition tube prosthesis	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L053	OPCS4	Creation of shunt to left pulmonary artery from ascending aorta using interposition tube prosthesis	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L054	OPCS4	Percutaneous transluminal balloon dilation of interposition tube prosthesis between pulmonary artery and aorta	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L058	OPCS4	Other specified creation of shunt to pulmonary artery from aorta using interposition tube prosthesis	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L059	OPCS4	Unspecified creation of shunt to pulmonary artery from aorta using interposition tube prosthesis	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L061	OPCS4	Creation of aortopulmonary window	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L062	OPCS4	Creation of anastomosis to main pulmonary artery from ascending aorta NEC	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L063	OPCS4	Creation of anastomosis to right pulmonary artery from ascending aorta NEC	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L064	OPCS4	Creation of anastomosis to left pulmonary artery from descending aorta NEC	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L065	OPCS4	Creation of anastomosis to pulmonary artery from aorta NEC	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L066	OPCS4	Revision of anastomosis to pulmonary artery from aorta	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L067	OPCS4	Takedown of anastomosis to pulmonary artery from aorta	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L068	OPCS4	Other specified other connection to pulmonary artery from aorta	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L069	OPCS4	Unspecified other connection to pulmonary artery from aorta	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L071	OPCS4	Creation of shunt to right pulmonary artery from right subclavian artery using interposition tube prosthesis	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L072	OPCS4	Creation of shunt to left pulmonary artery from left subclavian artery using interposition tube prosthesis	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L073	OPCS4	Closure of prosthetic shunt to pulmonary artery from subclavian artery	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L074	OPCS4	Percutaneous transluminal balloon dilation of interposition tube prosthesis between pulmonary artery and subclavian artery	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L075	OPCS4	Percutaneous transluminal occlusion of interposition tube prosthesis between pulmonary artery and subclavian artery	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L078	OPCS4	Other specified creation of shunt to pulmonary artery from subclavian artery using interposition tube prosthesis	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L079	OPCS4	Unspecified creation of shunt to pulmonary artery from subclavian artery using interposition tube prosthesis	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L081	OPCS4	Creation of anastomosis to right pulmonary artery from right subclavian artery NEC	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L082	OPCS4	Creation of anastomosis to left pulmonary artery from left subclavian artery NEC	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L083	OPCS4	Creation of anastomosis to pulmonary artery from subclavian artery NEC	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L084	OPCS4	Revision of anastomosis to pulmonary artery from subclavian artery	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L086	OPCS4	Percutaneous transluminal balloon dilation of anastomosis between pulmonary artery and subclavian artery	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L087	OPCS4	Percutaneous transluminal occlusion of anastomosis between pulmonary artery and subclavian artery	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L088	OPCS4	Other specified other connection to pulmonary artery from subclavian artery	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L089	OPCS4	Unspecified other connection to pulmonary artery from subclavian artery	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L091	OPCS4	Creation of anastomosis to pulmonary artery from vena cava	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L092	OPCS4	Removal of anastomosis between pulmonary artery and vena cava	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L098	OPCS4	Other specified other connection to pulmonary artery	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+Congenital_heart_procedure	L099	OPCS4	Unspecified other connection to pulmonary artery	0	0	1	0	1	1		0.25	Congenital heart disease procedure
 Congenital_heart_procedure	13662000	SNOMED	Anastomosis of pulmonary-subclavian artery by Blalock-Taussig operation (procedure)	0	0	1	0	1	1		0.25	Congenital heart disease procedure
 Congenital_heart_procedure	233227005	SNOMED	Modified Blalock-Taussig shunt (procedure)	0	0	1	0	1	1		0.25	Congenital heart disease procedure
 Congenital_heart_procedure	175236000	SNOMED	Creation of shunt from subclavian artery to pulmonary artery using interposition tube prosthesis (procedure)	0	0	1	0	1	1		0.25	Congenital heart disease procedure
@@ -3155,245 +3385,6 @@ Congenital_heart_procedure	427886002	SNOMED	Total cavopulmonary connection with 
 Congenital_heart_procedure	5346004	SNOMED	Total repair of truncus arteriosus (procedure)	0	0	1	0	1	1		0.25	Congenital heart disease procedure
 Congenital_heart_procedure	852871000000105	SNOMED	Transluminal occlusion of Fontan fenestration using fluoroscopic guidance (procedure)	0	0	1	0	1	1		0.25	Congenital heart disease procedure
 Congenital_heart_procedure	55698005	SNOMED	Valvulotomy of pulmonary valve in total repair of tetralogy of Fallot (procedure)	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	K041	OPCS4	Repair of tetralogy of Fallot using valved right ventricular outflow conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K042	OPCS4	Repair of tetralogy of Fallot using right ventricular outflow conduit NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K043	OPCS4	Repair of tetralogy of Fallot using transannular patch	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K044	OPCS4	Revision of repair of tetralogy of Fallot	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K045	OPCS4	Repair of tetralogy of Fallot with absent pulmonary valve	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K046	OPCS4	Repair of Fallot-type pulmonary atresia with aortopulmonary collaterals	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K048	OPCS4	Other specified repair of tetralogy of Fallot	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K049	OPCS4	Unspecified repair of tetralogy of Fallot	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K051	OPCS4	Reconstruction of atrium using atrial patch for transposition of great arteries	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K052	OPCS4	Reconstruction of atrium using atrial wall for transposition of great arteries	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K058	OPCS4	Other specified atrial inversion operations for transposition of great arteries	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K059	OPCS4	Unspecified atrial inversion operations for transposition of great arteries	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K061	OPCS4	Repositioning of transposed great arteries	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K062	OPCS4	Left ventricle to aorta tunnel with right ventricle to pulmonary trunk direct anastomosis	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K063	OPCS4	Left ventricle to aorta tunnel with right ventricle to pulmonary artery valved conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K064	OPCS4	Atrial inversion and repositioning of transposed great artery	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K068	OPCS4	Other specified other repair of transposition of great arteries	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K069	OPCS4	Unspecified other repair of transposition of great arteries	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K071	OPCS4	Correction of total anomalous pulmonary venous connection to supracardiac vessel	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K072	OPCS4	Correction of total anomalous pulmonary venous connection to coronary sinus	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K073	OPCS4	Correction of total anomalous pulmonary venous connection to infradiaphragmatic vessel	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K078	OPCS4	Other specified correction of total anomalous pulmonary venous connection	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K079	OPCS4	Unspecified correction of total anomalous pulmonary venous connection	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K081	OPCS4	Repair of double outlet right ventricle with intraventricular tunnel	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K082	OPCS4	Repair of Fallot-type double outlet right ventricle	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K083	OPCS4	Repair of double outlet right ventricle	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K084	OPCS4	Repair of double outlet left ventricle	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K088	OPCS4	Other specified repair of double outlet ventricle	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K089	OPCS4	Unspecified repair of double outlet ventricle	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K091	OPCS4	Repair of defect of atrioventricular septum using dual prosthetic patches	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K092	OPCS4	Repair of defect of atrioventricular septum using prosthetic patch NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K093	OPCS4	Repair of defect of atrioventricular septum using tissue graft	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K094	OPCS4	Repair of persistent ostium primum	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K095	OPCS4	Primary repair of defect of atrioventricular septum NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K096	OPCS4	Revision of repair of defect of atrioventricular septum	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K098	OPCS4	Other specified repair of defect of atrioventricular septum	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K099	OPCS4	Unspecified repair of defect of atrioventricular septum	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K116	OPCS4	Repair of multiple interventricular septal defects	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K117	OPCS4	Repair of interventricular septal defect using intraoperative transluminal prosthesis	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K141	OPCS4	Open enlargement of defect of atrial septum	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K142	OPCS4	Open atrial septostomy	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K143	OPCS4	Atrial septectomy	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K144	OPCS4	Surgical atrial septation	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K145	OPCS4	Open enlargement of defect of interventricular septum	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K151	OPCS4	Closed enlargement of defect of atrial septum	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K152	OPCS4	Closed atrial septostomy	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K161	OPCS4	Percutaneous transluminal balloon atrial septostomy	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K162	OPCS4	Percutaneous transluminal atrial septostomy NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K163	OPCS4	Percutaneous transluminal atrial septum fenestration closure with prosthesis	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K164	OPCS4	Percutaneous transluminal atrial septum fenestration	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K171	OPCS4	Total cavopulmonary connection with extracardiac inferior caval vein to pulmonary artery conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K172	OPCS4	Total cavopulmonary connection with lateral atrial tunnel	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K173	OPCS4	Aortopulmonary reconstruction with systemic to pulmonary arterial shunt	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K174	OPCS4	Aortopulmonary reconstruction with right ventricle to pulmonary arterial valveless conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K175	OPCS4	Biventricular repair of hypoplastic left heart syndrome	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K176	OPCS4	Takedown of total cavopulmonary connection	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K177	OPCS4	Conversion of atrial pulmonary anastomosis to total pulmonary connection	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K178	OPCS4	Other specified repair of univentricular heart	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K179	OPCS4	Unspecified repair of univentricular heart	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K181	OPCS4	Creation of valved conduit between atrium and ventricle of heart	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K182	OPCS4	Creation of valved conduit between right atrium and pulmonary artery	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K183	OPCS4	Creation of valved conduit between right ventricle of heart and pulmonary artery	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K184	OPCS4	Creation of valved conduit between left ventricle of heart and aorta	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K185	OPCS4	Revision of valved cardiac conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K186	OPCS4	Creation of valved conduit between left ventricle of heart and pulmonary artery	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K187	OPCS4	Replacement of valved cardiac conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K188	OPCS4	Other specified creation of valved cardiac conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K189	OPCS4	Unspecified creation of valved cardiac conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K191	OPCS4	Creation of conduit between atrium and ventricle of heart NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K192	OPCS4	Creation of conduit between right atrium and pulmonary artery NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K193	OPCS4	Creation of conduit between right ventricle of heart and pulmonary artery NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K194	OPCS4	Creation of conduit between right ventricle of heart and vena cava	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K195	OPCS4	Creation of conduit between left ventricle of heart and aorta NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K196	OPCS4	Revision of cardiac conduit NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K198	OPCS4	Other specified creation of other cardiac conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K199	OPCS4	Unspecified creation of other cardiac conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K203	OPCS4	Repair of cor triatriatum	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K241	OPCS4	Relief of right ventricular outflow tract obstruction	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K242	OPCS4	Repair of double chambered right ventricle	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K275	OPCS4	Repositioning of tricuspid valve	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K296	OPCS4	Truncal valve repair	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	K297	OPCS4	Replacement of truncal valve	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	K577	OPCS4	Percutaneous transluminal ablation for congenital heart malformation	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K761	OPCS4	Percutaneous transluminal balloon dilation of cardiac conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K768	OPCS4	Other specified transluminal operations on cardiac conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K769	OPCS4	Unspecified transluminal operations on cardiac conduit	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	L011	OPCS4	Correction of persistent truncus arteriosus	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	L012	OPCS4	Application of band to persistent truncus arteriosus	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	L103	OPCS4	Repair of anomalous pulmonary artery NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	L104	OPCS4	Repair of pulmonary arterial sling	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	L121	OPCS4	Application of band to pulmonary artery	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	L122	OPCS4	Adjustment of band to pulmonary artery	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	L123	OPCS4	Removal of band from pulmonary artery	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	L126	OPCS4	Pulmonary artery ligation	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	L134	OPCS4	Percutaneous transluminal cutting balloon angioplasty of pulmonary artery	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	L135	OPCS4	Percutaneous transluminal balloon angioplasty of pulmonary artery NEC	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	L136	OPCS4	Percutaneous transluminal insertion of stent into pulmonary artery	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	1006227	CPT4	Repair Procedures for Single Ventricle and Other Complex Cardiac Anomalies | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	1006274	CPT4	Repair of transposition of the great arteries with ventricular septal defect and subpulmonary stenosis | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	1006292	CPT4	Obliteration of aortopulmonary septal defect | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	1006285	CPT4	Repair Procedures for Truncus Arteriosus | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	1014132	CPT4	Repair of double outlet right ventricle with intraventricular tunnel repair | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	1014133	CPT4	Closure of single ventricular septal defect, with or without patch | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	1014135	CPT4	Complete repair tetralogy of Fallot without pulmonary atresia | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	1014614	CPT4	Repair of transposition of the great arteries, atrial baffle procedure (eg, Mustard or Senning type) with cardiopulmonary bypass | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	1014617	CPT4	Repair of transposition of the great arteries, aortic pulmonary artery reconstruction (eg, Jatene type) | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	1014755	CPT4	Closure of multiple ventricular septal defects | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	1020205	CPT4	Aortic root translocation with ventricular septal defect and pulmonary stenosis repair (ie, Nikaidoh procedure) | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	1036220	CPT4	Transcatheter intracardiac shunt (TIS) creation by stent placement for congenital cardiac anomalies to establish effective intracardiac flow, including all imaging guidance by the proceduralist, when performed, left and right heart diagnostic cardiac catheterization for congenital cardiac anomalies, and target zone angioplasty, when performed (eg, atrial septum, Fontan fenestration, right ventricular outflow tract, Mustard/Senning/Warden baffles)	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	1036712	CPT4	Endovascular Repair of Congenital Heart and Vascular Defects | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	1036826	CPT4	Cardiac Catheterization for Congenital Heart Defects | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	1036827	CPT4	Right heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	1036831	CPT4	Right and left heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone(s) | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33610	CPT4	Repair of congenital defect in wall between lower heart chambers	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33608	CPT4	Repair of complex cardiac anomaly other than pulmonary atresia with ventricular septal defect by construction or replacement of conduit from right or left ventricle to pulmonary artery | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33611	CPT4	Repair of double outlet right ventricle with intraventricular tunnel repair | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33615	CPT4	Repair of congenital defect in wall between upper heart chambers and connection of atria to pulmonary artery (Simple Fontan procedure)	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33617	CPT4	Repair of complex congenital defect in wall between upper heart chambers and connection of atria to pulmonary artery (Modified Fontan procedure)	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33619	CPT4	Repair to improve congenital blood flow defect from lower heart chamber	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33622	CPT4	Reconstruction of complex cardiac anomaly (eg, single ventricle or hypoplastic left heart) with palliation of single ventricle with aortic outflow obstruction and aortic arch hypoplasia, creation of cavopulmonary anastomosis, and removal of right and l... | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33641	CPT4	Repair of congenital defect between upper heart chambers on heart-lung machine	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33647	CPT4	Repair of atrial septal defect and ventricular septal defect, with direct or patch closure | [Therapeutic or Preventive Procedure]	1	0	0	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	33660	CPT4	Repair of partial congenital defect between both upper and lower heart chambers	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33665	CPT4	Repair of intermediate congenital defect between both upper and lower heart chambers	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33670	CPT4	Repair of complete congenital defect between both upper and lower heart chambers	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33675	CPT4	Closure of multiple congenital defects between lower heart chambers	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33676	CPT4	Closure of multiple congenital defects between lower heart chambers with valve tissue release	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33677	CPT4	Closure of multiple congenital defects between lower heart chambers with removal of band	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33681	CPT4	Closure of congenital defect between lower heart chambers	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33684	CPT4	Closure of congenital defect between lower heart chambers with valve tissue release	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33688	CPT4	Closure of congenital defect between lower heart chambers with removal of band	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33692	CPT4	Repair and correction of 4 congenital heart defects	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33694	CPT4	Repair and correction of 4 congenital heart defects with patch	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33697	CPT4	Repair and correction of 4 congenital heart defects including closure between lower heart chambers	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33710	CPT4	Repair sinus of Valsalva fistula, with cardiopulmonary bypass; with repair of ventricular septal defect | [Therapeutic or Preventive Procedure]	1	0	0	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	33741	CPT4	Transcatheter atrial septostomy (TAS) for congenital cardiac anomalies to create effective atrial flow	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33745	CPT4	Transcatheter intracardiac shunt (TIS) creation by stent placement for congenital cardiac anomalies to establish effective intracardiac flow, including all imaging guidance by the proceduralist, when performed, left and right heart diagnostic cardiac catheterization for congenital cardiac anomalies, and target zone angioplasty, when performed (eg, atrial septum, Fontan fenestration, right ventricular outflow tract, Mustard/Senning/Warden baffles); initial intracardiac shunt	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33746	CPT4	Transcatheter intracardiac shunt (TIS) creation by stent placement for congenital cardiac anomalies to establish effective intracardiac flow, including all imaging guidance by the proceduralist, when performed, left and right heart diagnostic cardiac catheterization for congenital cardiac anomalies, and target zone angioplasty, when performed (eg, atrial septum, Fontan fenestration, right ventricular outflow tract, Mustard/Senning/Warden baffles); each additional intracardiac shunt location (List separately in addition to code for primary procedure)	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33770	CPT4	Repair of group of congenital heart defects with reversal of blood flow	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33771	CPT4	Repair of group of congenital heart defects with reversal of blood flow and enlargement of hole in wall between lower heart chambers	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33774	CPT4	Repair of group of congenital heart defects with reversal of blood flow on heart-lung machine	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33775	CPT4	Repair of group of congenital heart defects with reversal of blood flow and band removal on heart-lung machine	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33776	CPT4	Repair of group of congenital heart defects with reversal of blood flow and closure of hole in wall between lower heart chambers on heart-lung machine	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33777	CPT4	Repair of group of congenital heart defects and obstruction with reversal of blood flow on heart-lung machine	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33778	CPT4	Repair of group of congenital heart defects with redirection of blood flow	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33779	CPT4	Repair of group of congenital heart defects with redirection of blood flow and band removal	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33780	CPT4	Repair of a group of congenital heart defects with redirection of blood flow and closure of hole in wall between lower heart chambers	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33781	CPT4	Repair of a group of congenital heart defects and obstruction with redirection of blood flow	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33782	CPT4	Aortic root translocation with ventricular septal defect and pulmonary stenosis repair (ie, Nikaidoh procedure); without coronary ostium reimplantation | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33783	CPT4	Aortic root translocation with ventricular septal defect and pulmonary stenosis repair (ie, Nikaidoh procedure); with reimplantation of 1 or both coronary ostia | [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33786	CPT4	Total repair of group of congenital heart defects with redirection of blood flow	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33820	CPT4	Tying of congenital heart defect from pulmonary artery to aorta	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33822	CPT4	Repair of congenital heart defect from pulmonary artery to aorta, younger than 18 years	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	33824	CPT4	Repair of congenital heart defect from pulmonary artery to aorta, 18 years or older	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	93580	CPT4	Repair of congenital abnormality in wall between upper heart chambers with implant	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	93581	CPT4	Repair of congenital abnormality in wall between lower heart chambers with implant	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	93593	CPT4	Right heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone; normal native connections | [Diagnostic Procedure] - [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	93594	CPT4	Right heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone; abnormal native connections | [Diagnostic Procedure] - [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	93595	CPT4	Left heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone, normal or abnormal native connections | [Diagnostic Procedure] - [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	93596	CPT4	Right and left heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone(s); normal native connections | [Diagnostic Procedure] - [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	93597	CPT4	Right and left heart catheterization for congenital heart defect(s) including imaging guidance by the proceduralist to advance the catheter to the target zone(s); abnormal native connections | [Diagnostic Procedure] - [Therapeutic or Preventive Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	93598	CPT4	Cardiac output measurement(s), thermodilution or other indicator dilution method, performed during cardiac catheterization for the evaluation of congenital heart defects (List separately in addition to code for primary procedure) | [Diagnostic Procedure]	1	0	1	0	2	1		0.5	Congenital heart disease procedure
-Congenital_heart_procedure	K201	OPCS4	Correction of persistent sinus venosus	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	K202	OPCS4	Correction of partial anomalous pulmonary venous drainage	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	K331	OPCS4	Aortic root replacement using pulmonary valve autograft with right ventricle to pulmonary artery valved conduit	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	K332	OPCS4	Aortic root replacement using pulmonary valve autograft with right ventricle to pulmonary artery valved conduit and aortoventriculoplasty	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L013	OPCS4	Repair of anomalous pulmonary artery origin from ascending aorta	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L014	OPCS4	Closure of aortopulmonary window	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L018	OPCS4	Other specified open operations for combined abnormality of great vessels	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L019	OPCS4	Unspecified open operations for combined abnormality of great vessels	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L021	OPCS4	Division of patent ductus arteriosus	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L022	OPCS4	Ligature of patent ductus arteriosus	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L023	OPCS4	Closure of patent ductus arteriosus NEC	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L024	OPCS4	Revision of correction of patent ductus arteriosus	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L028	OPCS4	Other specified open correction of patent ductus arteriosus	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L029	OPCS4	Unspecified open correction of patent ductus arteriosus	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L031	OPCS4	Percutaneous transluminal prosthetic occlusion of patent ductus arteriosus	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L051	OPCS4	Creation of shunt to main pulmonary artery from ascending aorta using interposition tube prosthesis	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L052	OPCS4	Creation of shunt to right pulmonary artery from ascending aorta using interposition tube prosthesis	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L053	OPCS4	Creation of shunt to left pulmonary artery from ascending aorta using interposition tube prosthesis	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L054	OPCS4	Percutaneous transluminal balloon dilation of interposition tube prosthesis between pulmonary artery and aorta	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L058	OPCS4	Other specified creation of shunt to pulmonary artery from aorta using interposition tube prosthesis	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L059	OPCS4	Unspecified creation of shunt to pulmonary artery from aorta using interposition tube prosthesis	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L061	OPCS4	Creation of aortopulmonary window	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L062	OPCS4	Creation of anastomosis to main pulmonary artery from ascending aorta NEC	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L063	OPCS4	Creation of anastomosis to right pulmonary artery from ascending aorta NEC	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L064	OPCS4	Creation of anastomosis to left pulmonary artery from descending aorta NEC	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L065	OPCS4	Creation of anastomosis to pulmonary artery from aorta NEC	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L066	OPCS4	Revision of anastomosis to pulmonary artery from aorta	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L067	OPCS4	Takedown of anastomosis to pulmonary artery from aorta	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L068	OPCS4	Other specified other connection to pulmonary artery from aorta	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L069	OPCS4	Unspecified other connection to pulmonary artery from aorta	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L071	OPCS4	Creation of shunt to right pulmonary artery from right subclavian artery using interposition tube prosthesis	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L072	OPCS4	Creation of shunt to left pulmonary artery from left subclavian artery using interposition tube prosthesis	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L073	OPCS4	Closure of prosthetic shunt to pulmonary artery from subclavian artery	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L074	OPCS4	Percutaneous transluminal balloon dilation of interposition tube prosthesis between pulmonary artery and subclavian artery	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L075	OPCS4	Percutaneous transluminal occlusion of interposition tube prosthesis between pulmonary artery and subclavian artery	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L078	OPCS4	Other specified creation of shunt to pulmonary artery from subclavian artery using interposition tube prosthesis	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L079	OPCS4	Unspecified creation of shunt to pulmonary artery from subclavian artery using interposition tube prosthesis	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L081	OPCS4	Creation of anastomosis to right pulmonary artery from right subclavian artery NEC	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L082	OPCS4	Creation of anastomosis to left pulmonary artery from left subclavian artery NEC	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L083	OPCS4	Creation of anastomosis to pulmonary artery from subclavian artery NEC	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L084	OPCS4	Revision of anastomosis to pulmonary artery from subclavian artery	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L086	OPCS4	Percutaneous transluminal balloon dilation of anastomosis between pulmonary artery and subclavian artery	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L087	OPCS4	Percutaneous transluminal occlusion of anastomosis between pulmonary artery and subclavian artery	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L088	OPCS4	Other specified other connection to pulmonary artery from subclavian artery	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L089	OPCS4	Unspecified other connection to pulmonary artery from subclavian artery	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L091	OPCS4	Creation of anastomosis to pulmonary artery from vena cava	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L092	OPCS4	Removal of anastomosis between pulmonary artery and vena cava	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L098	OPCS4	Other specified other connection to pulmonary artery	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L099	OPCS4	Unspecified other connection to pulmonary artery	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	3541	ICD9_procedures	Enlargement of existing atrial septal defect	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	3581	ICD9_procedures	Total repair of tetralogy of fallot	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	3583	ICD9_procedures	Total repair of truncus arteriosus	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	3554	ICD9_procedures	Repair of endocardial cushion defect with prosthesis	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	3591	ICD9_procedures	Interatrial transposition of venous return	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	3584	ICD9_procedures	Total correction of transposition of great vessels, not elsewhere classified	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	3582	ICD9_procedures	Total repair of total anomalous pulmonary venous connection	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	3573	ICD9_procedures	Other and unspecified repair of endocardial cushion defect	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	3563	ICD9_procedures	Repair of endocardial cushion defect with tissue graft	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	33897	CPT4	Percutaneous transluminal angioplasty of native or recurrent coarctation of the aorta | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	33895	CPT4	Endovascular stent repair of coarctation of the ascending, transverse, or descending thoracic or abdominal aorta, involving stent placement; not crossing major side branches | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	33894	CPT4	Endovascular stent repair of coarctation of the ascending, transverse, or descending thoracic or abdominal aorta, involving stent placement; across major side branches | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	33853	CPT4	Repair of hypoplastic or interrupted aortic arch using autogenous or prosthetic material; with cardiopulmonary bypass | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	33852	CPT4	Repair of hypoplastic or interrupted aortic arch using autogenous or prosthetic material; without cardiopulmonary bypass | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	33845	CPT4	Repair of congenital narrowed aorta with graft	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	33851	CPT4	Repair of congenital narrowed aorta using left chest artery or artificial material	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	33840	CPT4	Repair of congenital narrowed aorta	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	33507	CPT4	Repair of anomalous (eg, intramural) aortic origin of coronary artery by unroofing or translocation | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	33506	CPT4	Repair of anomalous coronary artery from pulmonary artery origin; by translocation from pulmonary artery to aorta | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	33505	CPT4	Repair of anomalous coronary artery from pulmonary artery origin; with construction of intrapulmonary artery tunnel (Takeuchi procedure) | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	33502	CPT4	Repair of anomalous coronary artery from pulmonary artery origin; by ligation | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	33416	CPT4	Ventriculomyotomy (-myectomy) for idiopathic hypertrophic subaortic stenosis (eg, asymmetric septal hypertrophy) | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	1036713	CPT4	Endovascular stent repair of coarctation of the ascending, transverse, or descending thoracic or abdominal aorta, involving stent placement | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	1006303	CPT4	Repair of hypoplastic or interrupted aortic arch using autogenous or prosthetic material | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	1006299	CPT4	Excision of coarctation of aorta, with or without associated patent ductus arteriosus | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	1006273	CPT4	Repair Procedures for Transposition of the Great Vessels | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	1006190	CPT4	Repair of anomalous coronary artery from pulmonary artery origin | [Therapeutic or Preventive Procedure]	0	0	1	0	1	1		0.25	Congenital heart disease procedure
-Congenital_heart_procedure	L237	OPCS4	Repair of interrupted aortic arch	0	0	1	0	1	1		0.25	Congenital heart disease procedure
 Congenital_heart_procedure	562871000000103	SNOMED	Transposition of coronary artery NEC (procedure)	0	0	1	0	1	1		0.25	Congenital heart disease procedure
 Congenital_heart_procedure	175062004	SNOMED	Transposition of coronary artery NEC (procedure)	0	0	1	0	1	1		0.25	Congenital heart disease procedure
 Congenital_heart_procedure	384678000	SNOMED	Transposition of coronary artery (procedure)	0	0	1	0	1	1		0.25	Congenital heart disease procedure

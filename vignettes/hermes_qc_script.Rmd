@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(heRmes)
+library(argparse)
 script_path <- here::here("scripts", "gwas_qc.R")
 Sys.setenv(QC_SCRIPT = script_path)
 ```

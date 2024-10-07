@@ -4,7 +4,7 @@
 #
 #  GWAS QC script
 #
-#  Command line options: run this script with the -h/--help flag to see options
+#  Command line options= run this script with the -h/--help flag to see options
 #
 
 
@@ -14,12 +14,14 @@
 suppressPackageStartupMessages(library(argparse))
 suppressPackageStartupMessages(library(cli))
 suppressPackageStartupMessages(library(data.table))
+suppressPackageStartupMessages(library(ggplot2))
+suppressPackageStartupMessages(library(viridis))
 
 
 #=============================================================================
 # parse cli arguments
 #=============================================================================
-cli_h2("Parsing arguments")
+cli_h1("QC script - active arguments")
 
 parser <- ArgumentParser()
 # basic controls
@@ -28,8 +30,7 @@ parser$add_argument("-q", "--quietly",    action="store_false", dest="verbose", 
 # file paths and file handling
 parser$add_argument("-g", "--gwas",       action="store",       type="character", help="GWAS file path")
 parser$add_argument("-r", "--ref",        action="store",       type="character", help="Reference file path")
-parser$add_argument("-o", "--output",     action="store",       type="character", help="Output file path")
-parser$add_argument("-ow", "--overwrite", action="store_true",  default=FALSE,    help="Overwrite output file if present")
+parser$add_argument("-o", "--output",     action="store",       type="character", help="Output directory path")
 # GWAS file columns
 parser$add_argument("-chr", "--gwas_chr",  action="store", type="character", help="Chromosome column name in the GWAS file", default = "chr")
 parser$add_argument("-bp",  "--gwas_bp",   action="store", type="character", help="Base position column name in the GWAS file", default = "bp")
@@ -48,14 +49,15 @@ parser$add_argument("-r_ea",  "--ref_ea",  action="store", type="character", hel
 parser$add_argument("-r_oa",  "--ref_oa",  action="store", type="character", help="Reference other allele column name in the GWAS file", default = "oa")
 parser$add_argument("-r_eaf", "--ref_eaf", action="store", type="character", help="Reference effect allele frequency column name in the GWAS file", default = "eaf")
 # QC parameters
-parser$add_argument("-gc", "--genomic_control", action="store_true", default=FALSE, help="Apply genomic control for adjusting study results [default=FALSE]")
-parser$add_argument("-indel", "--indel_alleles", action="store_true", default=TRUE, help="Reatin indel alleles [default=TRUE]")
+parser$add_argument("-gc",    "--genomic_control", action="store_true", default=FALSE, help="Apply genomic control for adjusting study results [default=FALSE]")
+parser$add_argument("-indel", "--indel_alleles", action="store_true", default=TRUE, help="Retain indel alleles [default=TRUE]")
+parser$add_argument("-fd",    "--freq_diff", action="store", type="numeric", default=0.2, help="Retain variants with GWAS:REF allele frequency different less than ... [default=0.2]")
 # parse CLI arguments
 args <- parser$parse_args()
 
-# print the arguments requested to the console
+# print out the arguments used to the console
 for (i in seq_along(args)) {
-  cli_text("{.strong {names(args)[i]}}:          {.val {args[[i]]}}")
+  cli_text("{.strong {names(args)[i]}} = {.val {args[[i]]}}")
 }
 
 
@@ -64,13 +66,15 @@ for (i in seq_along(args)) {
 #=============================================================================
 cli_h1("Running GWAS quality control")
 
+# summary table to be iteratively filled
+summary <- data.table()
 
 #=============================================================================
 # basic check files
 #=============================================================================
 cli_progress_step("checking file paths and columns names")
 
-# Check GWAS file path provided and that we can read from in
+# Check GWAS file path provided and that we can read from it
 if (is.null(args$gwas) || !file.exists(args$gwas) || file.access(args$gwas, 4) != 0) {
   cli_abort("GWAS file path `{.file {args$gwas}}` does not exist or is not readable")
 }
@@ -81,9 +85,9 @@ gwas_cols <- sapply(args[c("gwas_chr","gwas_bp","gwas_ea","gwas_oa","gwas_eaf","
 if (!all(gwas_cols)) {
   for (i in seq_along(gwas_cols)) {
     if (gwas_cols[[i]]) {
-      cli_alert_success("{names(gwas_cols)[i]}: {args[names(gwas_cols)[i]]}")
+      cli_alert_success("{names(gwas_cols)[i]} = {args[names(gwas_cols)[i]]}")
     } else {
-      cli_alert_danger("{names(gwas_cols)[i]}: {args[names(gwas_cols)[i]]}")
+      cli_alert_danger("{names(gwas_cols)[i]} = {args[names(gwas_cols)[i]]}")
     }
   }
   cli_abort("Columns not all found in GWAS file columns [{names(gwas_header)}]")
@@ -100,92 +104,277 @@ ref_cols <- sapply(args[c("ref_chr","ref_bp","ref_ea","ref_oa","ref_eaf")], func
 if (!all(ref_cols)) {
   for (i in seq_along(ref_cols)) {
     if (ref_cols[[i]]) {
-      cli_alert_success("{names(ref_cols)[i]}: {args[names(ref_cols)[i]]}")
+      cli_alert_success("{names(ref_cols)[i]} = {args[names(ref_cols)[i]]}")
     } else {
-      cli_alert_danger("{names(ref_cols)[i]}: {args[names(ref_cols)[i]]}")
+      cli_alert_danger("{names(ref_cols)[i]} = {args[names(ref_cols)[i]]}")
     }
   }
   cli_abort("Columns not all found in reference file columns [{names(ref_header)}]")
 }
 
-# Check output file path provided and that we can write to it / overwrite it
-if (is.null(args$output) || (file.access(args$output, 2) != 0 && args$overwrite)) {
-  cli_abort("Output file path `{.file {args$output}}` not provided or does not have write permission")
-} else if (file.exists(args$output) && !args$overwrite) {
-  cli_abort("Output file path `{.file {args$output}}` already exists but overwrite flag is {.val {args$overwrite}}")
+# Check output directory exists
+if (is.null(args$output) || !dir.exists(args$output)) {
+  cli_abort("Output directory path `{.file {args$output}}` not provided or does not exist")
 }
 
 
 #=============================================================================
-# read data
+# read GWAS and reference data
 #=============================================================================
-cli_progress_step("Reading GWAS")
-Sys.sleep(1)
-cli_progress_step("Reading reference")
-Sys.sleep(1)
+cli_progress_step("reading GWAS")
+gwas <- fread(args$gwas)
+cli_progress_step("reading reference")
+ref <- fread(args$ref)
+cli_process_done()
+
+#=============================================================================
+# check column data missingness
+#=============================================================================
+cli_h1("Checking column data")
+cli_progress_step("checking column data")
+gwas_cols <- unlist(args[ names(args)[grepl("^gwas_", names(args))] ])
+ref_cols  <- unlist(args[ names(args)[grepl("^ref_", names(args))] ])
+
+# total and NA counts
+num_na_summary <- gwas[, lapply(.SD, function(col) c(num = .N, num_na = sum(is.na(col)), pct_na = 100 * (sum(is.na(col)) / .N))), .SDcols = gwas_cols]
+
+# add to summary table
+summary <- rbind(summary,
+                 data.table(column   = gwas_cols,
+                            std_name = names(gwas_cols),
+                            type     = sapply(gwas[, mget(gwas_cols)], typeof),
+                            num      = as.integer(sapply(num_na_summary, `[[`, 1)),
+                            num_na   = as.integer(sapply(num_na_summary, `[[`, 2)),
+                            pct_na   = sapply(num_na_summary, `[[`, 3)))
+
+# report to console
+cli_process_done()
+print(summary)
 
 
 #=============================================================================
-# check column data
+# check input data validity
 #=============================================================================
-cli_progress_step("Pre-QC summary")
-Sys.sleep(1)
+cli_h1("Checking data validity")
+cli_progress_step("checking data validity")
+
+# per column functions that return true if that row is valid
+col_fn_list <- list(
+  gwas_chr  = function(x) x %in% 1:26,
+  gwas_bp   = function(x) is.integer(x) & x > 0,
+  gwas_ea   = function(x) grepl("^[ACTG]+$|^[DI]$", x),
+  gwas_oa   = function(x) grepl("^[ACTG]+$|^[DI]$", x),
+  gwas_eaf  = function(x) is.numeric(x) & x >= 0 & x <= 1,
+  gwas_beta = function(x) is.numeric(x) & is.finite(x),
+  gwas_se   = function(x) is.numeric(x) & x > 0 & is.finite(x),
+  gwas_p    = function(x) is.numeric(x) & x >= 0 & x <=1,
+  gwas_n    = function(x) is.integer(x) & x > 0,
+  gwas_info = function(x) is.numeric(x) & x >= 0 & x <=1,
+  ref_chr   = function(x) x %in% 1:26,
+  ref_bp    = function(x) is.integer(x) & x > 0,
+  ref_ea    = function(x) grepl("^[ACTG]+$|^[DI]$", x),
+  ref_oa    = function(x) grepl("^[ACTG]+$|^[DI]$", x),
+  ref_eaf   = function(x) is.numeric(x) & x >= 0 & x <= 1
+)
+
+# apply the functions to the corresponding columns and create summary table
+valid_summary <- gwas[, Map(function(fn, col) {
+  valid <- sum(fn(col), na.rm = TRUE)
+  valid_pct <- valid / .N
+  c(valid = valid, valid_pct = valid_pct)
+}, col_fn_list[names(gwas_cols)], .SD), .SDcols = gwas_cols]
+
+# add to main summary table
+summary <- cbind(summary,
+                 data.table(valid     = as.integer(sapply(valid_summary, `[[`, 1)),
+                            valid_pct = sapply(valid_summary, `[[`, 2)))
+
+# print summary to console as well as the validity functions used
+cli_process_done()
+print(summary)
+cli_div(theme = list(span.var = list(color = "gray"), span.code = list(color = "gray")))
+cli_h2("Column validation functions:")
+for (i in seq_along(gwas_cols)) {
+  cli_text("{.field {gwas_cols[i]}:} {.code {deparse(col_fn_list[[names(gwas_cols)[i]]])[2]}}")
+}
 
 
 #=============================================================================
-# data fixes
+# attempt recoding / data fixes
 #=============================================================================
-cli_progress_step("Data standardisation")
-Sys.sleep(1)
+cli_h1("Formatting data")
+cli_progress_step("formatting data")
+
+# (re)code chromsome column as integer
+gwas[, (args$gwas_chr) := fcase(as.integer(get(args$gwas_chr)) %in% 1:26, as.integer(get(args$gwas_chr)),
+                                grepl("(?i)^X$",   get(args$gwas_chr)), 23L,
+                                grepl("(?i)^Y$",   get(args$gwas_chr)), 24L,
+                                grepl("(?i)^PAR$", get(args$gwas_chr)), 25L,
+                                grepl("(?i)^MT$",  get(args$gwas_chr)), 26L,
+                                default = NA_integer_)]
+
+# parse base position and n-sample columns to integer
+integer_cols <- c(args$gwas_bp, args$gwas_n)
+gwas[, (integer_cols) := lapply(.SD, as.integer), .SDcols = integer_cols]
+
+# parse frequency, beta, se, p, info columns to numeric
+numeric_cols <- c(args$gwas_eaf, args$gwas_beta, args$gwas_se, args$gwas_p, args$gwas_info)
+gwas[, (numeric_cols) := lapply(.SD, as.numeric), .SDcols = numeric_cols]
+
+# remove allele frequencies <0 or >1
+gwas[get(args$gwas_eaf) < 0 | get(args$gwas_eaf) > 1, (args$gwas_eaf) := NA_real_]
+
+# remove infinite betas
+gwas[is.infinite(get(args$gwas_beta)), (args$gwas_beta) := NA_real_]
+
+# remove infinite, zero, or negative standard errors
+gwas[is.infinite(get(args$gwas_se)) | get(args$gwas_se) <= 0, (args$gwas_se) := NA_real_]
+
+# recode pvalue=0 to minimum machine precision and remove p>1 or p<0
+gwas[, (args$gwas_p) := fcase(get(args$gwas_p) == 0, .Machine$double.xmin,
+                              get(args$gwas_p) > 0 & get(args$gwas_p) <= 1, get(args$gwas_p),
+                              default = NA_real_)]
+
+# remove info scores >1 or <0
+gwas[get(args$gwas_info) < 0 | get(args$gwas_info) > 1, (args$gwas_info) := NA_real_]
+
+# alleles must be characters
+gwas[, c(args$gwas_ea, args$gwas_oa) := lapply(.SD, as.character), .SDcols = c(args$gwas_ea, args$gwas_oa)]
+
+# ensure alleles are upper case ACTG or D/I
+gwas[, (args$gwas_ea) := ifelse(grepl("^[ACTG]+$|^[DI]$", get(args$gwas_ea)), toupper(get(args$gwas_ea)), NA_character_)]
+gwas[, (args$gwas_oa) := ifelse(grepl("^[ACTG]+$|^[DI]$", get(args$gwas_oa)), toupper(get(args$gwas_oa)), NA_character_)]
+
+# summarise the counts during this recoding process
+postfix_na_summary <- gwas[, lapply(.SD, function(col) c(postfix_valid = sum(!is.na(col)), pct_na = 100 * (sum(!is.na(col)) / .N))), .SDcols = gwas_cols]
+
+# add to overall summary table
+summary <- cbind(summary,
+                 data.table(postfix_valid     = as.integer(sapply(postfix_na_summary, `[[`, 1)),
+                            postfix_valid_pct = sapply(postfix_na_summary, `[[`, 2)))
+
+# print updated summary to console
+cli_process_done()
+print(summary)
+
+# remove invalid rows (those containing NAs)
+gwas <- gwas[ stats::complete.cases(gwas[, mget(gwas_cols)]) ]
 
 
 #=============================================================================
-# apply filter
+# formatting reference
 #=============================================================================
-cli_progress_step("Cleaning data")
-Sys.sleep(1)
+col_fn_list <- list(
+  ref_chr   = as.character,
+  ref_bp    = as.integer,
+  ref_ea    = as.character,
+  ref_oa    = as.character,
+  ref_eaf   = as.numeric
+)
+ref[ , (ref_cols)  := Map(function(fn, col) fn(col), col_fn_list[names(ref_cols) ], .SD), .SDcols = ref_cols ]
 
 
 #=============================================================================
 # harmonise alleles
 #=============================================================================
-cli_progress_step("Reference harmonisation")
-Sys.sleep(1)
+cli_h1("Harmonising to reference")
+cli_progress_step("harmonising data")
+
+# currently the harmonising function is in my package, but probably best to supply as a stand alone script
+h <- genepi.utils::harmonise_gwas(gwas, ref, join = "chr:bp", action = 2,
+                                  gmap = c(chr = args$gwas_chr, bp = args$gwas_bp, ea = args$gwas_ea, oa = args$gwas_oa, eaf = args$gwas_eaf, beta = args$gwas_beta),
+                                  rmap = c(chr = args$ref_chr, bp = args$ref_bp, ea = args$ref_ea, oa = args$ref_oa, eaf = args$ref_eaf))
+
+# harmonisation summary, add to main summary
+summary[, `:=`(harmonised = nrow(h), harmonised_pct = 100*(nrow(h)/num[1]))]
+
+# print updated summary to console
+cli_process_done()
+print(summary)
 
 
 #=============================================================================
 # allele frequency analysis
 #=============================================================================
-cli_progress_step("Analysing allele frequency")
-Sys.sleep(1)
+cli_h1("Anaylsing GWAS:REF allele frequency")
+cli_progress_step("analysing allele frequency difference")
+
+# absolute frequency difference cohort vs reference
+h[, freq_diff := abs(eaf - eaf_ref)]
+
+# add frequency difference counts to summary table
+diff_col <- paste0("freq_diff_lt", args$freq_diff)
+summary[, c(diff_col, paste0(diff_col, "_pct")) := .(sum(h$freq_diff < args$freq_diff), 100*(sum(h$freq_diff < args$freq_diff)/num[1]))]
+
+# print summary to console
+cli_process_done()
+print(summary)
+
+# plot the frequency differences
+eaf_plot <- ggplot(h[freq_diff > args$freq_diff], aes(x = eaf_ref, y = eaf, color = freq_diff)) +
+  geom_point(size = 3) +
+  geom_point(data = h[freq_diff > args$freq_diff & strand_flip == TRUE], shape = 17, color = "red", size = 3) +
+  geom_abline(slope = 1, intercept =  args$freq_diff, linetype = "dashed", color = "red") +
+  geom_abline(slope = 1, intercept = -1 * args$freq_diff, linetype = "dashed", color = "red") +
+  viridis::scale_colour_viridis(option = "mako") +
+  labs(x = "Reference allele frequency", y = "Cohort allele frequency",
+       caption = "*red triangles strand flip") +
+  theme_minimal(base_size = 18) +
+  theme(legend.position = "none")
+
+# save plot
+cli_progress_step("plotting allele frequency difference")
+grDevices::png(file.path(args$output, "eaf_plot.png"), width = 600, height = 600)
+print(eaf_plot)
+grDevices::dev.off()
+cli_process_done()
+
+# filter out the frequency differences over the provided threshold
+h <- h[freq_diff < args$freq_diff]
+
+# extract the data from the harmonisation table (don't need the reference columns now)
+gwas <- h[, .SD, .SDcols = gwas_cols]
 
 
 #=============================================================================
 # PZ plot
 #=============================================================================
-cli_progress_step("Creating PZ plot")
+cli_h1("Assessing for analytical issues")
+cli_progress_step("plotting PZ plot")
+
+# TBC
 Sys.sleep(1)
 
 
 #=============================================================================
 # population stratification analysis 1
 #=============================================================================
-cli_progress_step("Calculating lambda-GC")
+cli_h1("Assessing for population stratification issues")
+cli_progress_step("calculating lambda-GC")
+
+# TBC
 Sys.sleep(1)
 
 
 #=============================================================================
 # population stratification analysis 2
 #=============================================================================
-cli_progress_step("Running LDSC")
+cli_progress_step("running LDSC")
+
+# TBC
 Sys.sleep(1)
 
 
 #=============================================================================
-# save
+# save clean GWAS and summary table
 #=============================================================================
-cli_progress_step("File saved to {.file {args$output}}")
-Sys.sleep(1)
+out_path <- file.path(args$output, paste0(basename(args$gwas), '_clean.tsv.gz'))
+cli_progress_step("saving clean GWAS file to {.file {out_path}}")
+fwrite(gwas, out_path, sep = "\t")
+
+log_path <- file.path(args$output, paste0(basename(args$gwas), '_log.tsv'))
+cli_progress_step("saving log file to {.file {log_path}}")
+fwrite(summary, log_path, sep = "\t")
 
 
 #=============================================================================
@@ -193,3 +382,37 @@ Sys.sleep(1)
 #=============================================================================
 cli_process_done()
 
+
+
+
+
+
+
+#=============================================================================
+# testing
+#=============================================================================
+if (FALSE) {
+  args = list()
+  args$gwas = '/Users/xx20081/Desktop/meta.all.allcause_death.autosomes.tsv'
+  args$ref ='/Users/xx20081/Documents/local_data/genome_reference/hrc_37/HRC.r1-1.GRCh37.wgs.mac5.sites.tab.gz'
+  args$gwas_beta= "beta"
+  args$gwas_bp= "bp"
+  args$gwas_chr= "chr"
+  args$gwas_ea= "ea"
+  args$gwas_eaf= "eaf"
+  args$gwas_info= "info"
+  args$gwas_n= "n"
+  args$gwas_oa= "oa"
+  args$gwas_p= "p"
+  args$gwas_se= "se"
+  args$indel_alleles= TRUE
+  args$output= "/Users/xx20081/Desktop/qc_tests"
+  args$overwrite= TRUE
+  args$ref_bp= "POS"
+  args$ref_chr= "#CHROM"
+  args$ref_ea= "ALT"
+  args$ref_eaf= "AF"
+  args$ref_oa= "REF"
+  args$verbose= TRUE
+  args$freq_diff= 0.2
+}

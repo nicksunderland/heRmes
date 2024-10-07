@@ -1,0 +1,36 @@
+---
+title: "HERMES QUALITY CONTROL"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{HERMES QUALITY CONTROL}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(heRmes)
+script_path <- here::here("scripts", "gwas_qc.R")
+Sys.setenv(QC_SCRIPT = script_path)
+```
+
+## QC script inputs  
+The QC script input parameters can be seen by calling the script with the `--help` flag.
+
+```{bash call, echo=TRUE, eval = TRUE}
+Rscript $QC_SCRIPT --help
+```
+
+## QC script  
+The quality control procedure code is presented below.
+
+```{r file = here::here("scripts", "gwas_qc.R"), eval=F}
+
+```
+

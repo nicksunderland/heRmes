@@ -16,14 +16,19 @@ Imports:
     eulerr,
     ggpubr,
     S7,
-    yaml
+    yaml,
+    argparse
 Remotes:
     nicksunderland/BibTexLibraries,
     SwanseaUniversityMedical/ConceptLibraryClient
 Suggests: 
     knitr,
     rmarkdown, 
-    here
+    here,
+    argparse,
+    cli,
+    viridis,
+    ggplot2
 VignetteBuilder: knitr
 URL: https://nicksunderland.github.io/heRmes/
 Depends: 

@@ -1,3 +1,5 @@
+# Rscript /Users/xx20081/git/heRmes/scripts/gwas_qc.R -h
+
 Rscript /Users/xx20081/git/heRmes/scripts/gwas_qc.R \
   --gwas '/Users/xx20081/Desktop/meta.all.allcause_death.autosomes.tsv' \
   --gwas_chr 'chr' \
@@ -17,5 +19,6 @@ Rscript /Users/xx20081/git/heRmes/scripts/gwas_qc.R \
   --ref_oa 'REF' \
   --ref_eaf 'AF' \
   --freq_diff 0.2 \
-  --out '/Users/xx20081/Desktop/qc_tests'
+  --out '/Users/xx20081/Desktop/qc_tests' \
+  --no_indel_alleles
 

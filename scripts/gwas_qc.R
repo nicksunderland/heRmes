@@ -50,7 +50,7 @@ parser$add_argument("-r_oa",  "--ref_oa",  action="store", type="character", hel
 parser$add_argument("-r_eaf", "--ref_eaf", action="store", type="character", help="Reference effect allele frequency column name in the GWAS file", default = "eaf")
 # QC parameters
 parser$add_argument("-gc",    "--genomic_control", action="store_true", default=FALSE, help="Apply genomic control for adjusting study results [default=FALSE]")
-parser$add_argument("-indel", "--indel_alleles", action="store_true", default=TRUE, help="Retain indel alleles [default=TRUE]")
+parser$add_argument("-noind", "--no_indel_alleles", action="store_true", default=FALSE, help="Remove indel alleles [default=FALSE]")
 parser$add_argument("-fd",    "--freq_diff", action="store", type="numeric", default=0.2, help="Retain variants with GWAS:REF allele frequency different less than ... [default=0.2]")
 # parse CLI arguments
 args <- parser$parse_args()
@@ -241,9 +241,16 @@ gwas[get(args$gwas_info) < 0 | get(args$gwas_info) > 1, (args$gwas_info) := NA_r
 # alleles must be characters
 gwas[, c(args$gwas_ea, args$gwas_oa) := lapply(.SD, as.character), .SDcols = c(args$gwas_ea, args$gwas_oa)]
 
+# find indels and and number to summary, remove indels if flag specified
+indel_idx <- which(gwas[, .(nchar(get(args$gwas_ea)) > 1 | nchar(get(args$gwas_oa)) > 1 | grepl("(?i)^[DI]$", get(args$gwas_ea)) | grepl("(?i)^[DI]$", get(args$gwas_oa)))]$V1)
+if (args$no_indel_alleles) {
+  gwas[indel_idx, c(args$gwas_ea, args$gwas_oa) := NA_character_]
+  cli_alert_warning("removing {length(indel_idx)} indel alleles")
+}
+summary[grep("^gwas_(ea|oa)$", std_name), indels := length(indel_idx)]
+
 # ensure alleles are upper case ACTG or D/I
-gwas[, (args$gwas_ea) := ifelse(grepl("^[ACTG]+$|^[DI]$", get(args$gwas_ea)), toupper(get(args$gwas_ea)), NA_character_)]
-gwas[, (args$gwas_oa) := ifelse(grepl("^[ACTG]+$|^[DI]$", get(args$gwas_oa)), toupper(get(args$gwas_oa)), NA_character_)]
+gwas[, c(args$gwas_ea, args$gwas_oa) := lapply(.SD, function(x) ifelse(grepl("(?i)^[ACTG]+$|^[DI]$", x), toupper(x), NA_character_)), .SDcols = c(args$gwas_ea, args$gwas_oa)]
 
 # summarise the counts during this recoding process
 postfix_na_summary <- gwas[, lapply(.SD, function(col) c(postfix_valid = sum(!is.na(col)), pct_na = 100 * (sum(!is.na(col)) / .N))), .SDcols = gwas_cols]
@@ -253,13 +260,18 @@ summary <- cbind(summary,
                  data.table(postfix_valid     = as.integer(sapply(postfix_na_summary, `[[`, 1)),
                             postfix_valid_pct = sapply(postfix_na_summary, `[[`, 2)))
 
-# print updated summary to console
-cli_process_done()
-print(summary)
-
 # remove invalid rows (those containing NAs)
 gwas <- gwas[ stats::complete.cases(gwas[, mget(gwas_cols)]) ]
 
+# print updated summary to console
+print(summary)
+
+# exit if no variants remain
+if (nrow(gwas) == 0) {
+  cli_abort("no variants remain after data validation filters - check data and summary above")
+} else {
+  cli_process_done()
+}
 
 #=============================================================================
 # formatting reference
@@ -289,8 +301,14 @@ h <- genepi.utils::harmonise_gwas(gwas, ref, join = "chr:bp", action = 2,
 summary[, `:=`(harmonised = nrow(h), harmonised_pct = 100*(nrow(h)/num[1]))]
 
 # print updated summary to console
-cli_process_done()
 print(summary)
+
+# exit if no variants remain
+if (nrow(h) == 0) {
+  cli_abort("no variants remain after harmonisation - check data and summary above")
+} else {
+  cli_process_done()
+}
 
 
 #=============================================================================
@@ -326,7 +344,7 @@ eaf_plot <- ggplot(h[freq_diff > args$freq_diff], aes(x = eaf_ref, y = eaf, colo
 cli_progress_step("plotting allele frequency difference")
 grDevices::png(file.path(args$output, "eaf_plot.png"), width = 600, height = 600)
 print(eaf_plot)
-grDevices::dev.off()
+invisible(dev.off())
 cli_process_done()
 
 # filter out the frequency differences over the provided threshold

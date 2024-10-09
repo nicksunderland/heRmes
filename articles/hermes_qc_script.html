@@ -66,12 +66,22 @@
 
     
     
+<div class="section level2">
+<h2 id="required-r-libraries">Required R libraries<a class="anchor" aria-label="anchor" href="#required-r-libraries"></a>
+</h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://nicksunderland.github.io/heRmes/">heRmes</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; Warning: no DISPLAY variable so Tk is not available</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/trevorld/r-argparse" class="external-link">argparse</a></span><span class="op">)</span></span>
-<span><span class="va">script_path</span> <span class="op">&lt;-</span> <span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org//reference/here.html" class="external-link">here</a></span><span class="op">(</span><span class="st">"scripts"</span>, <span class="st">"gwas_qc.R"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html" class="external-link">Sys.setenv</a></span><span class="op">(</span>QC_SCRIPT <span class="op">=</span> <span class="va">script_path</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/trevorld/r-argparse" class="external-link">argparse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://cli.r-lib.org" class="external-link">cli</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-datatable.com" class="external-link">data.table</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://sjmgarnier.github.io/viridis/" class="external-link">viridis</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; Loading required package: viridisLite</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="script-location">Script location<a class="anchor" aria-label="anchor" href="#script-location"></a>
+</h2>
+<p><a href="https://github.com/nicksunderland/heRmes/blob/main/scripts/gwas_qc.R" class="external-link uri">https://github.com/nicksunderland/heRmes/blob/main/scripts/gwas_qc.R</a></p>
+</div>
 <div class="section level2">
 <h2 id="qc-script-inputs">QC script inputs<a class="anchor" aria-label="anchor" href="#qc-script-inputs"></a>
 </h2>
@@ -100,61 +110,168 @@ the <code>--help</code> flag.</p>
 <span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a><span class="co">#&gt;                                                          [-r_eaf REF_EAF]</span></span>
 <span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a><span class="co">#&gt;                                                          [-gc] [-noind]</span></span>
 <span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a><span class="co">#&gt;                                                          [-fd FREQ_DIFF]</span></span>
-<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a><span class="co">#&gt; options:</span></span>
-<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a><span class="co">#&gt;   -h, --help            show this help message and exit</span></span>
-<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a><span class="co">#&gt;   -v, --verbose         Print extra output [default]</span></span>
-<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a><span class="co">#&gt;   -q, --quietly         Print little output</span></span>
-<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a><span class="co">#&gt;   -g GWAS, --gwas GWAS  GWAS file path</span></span>
-<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a><span class="co">#&gt;   -r REF, --ref REF     Reference file path</span></span>
-<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a><span class="co">#&gt;   -o OUTPUT, --output OUTPUT</span></span>
-<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a><span class="co">#&gt;                         Output directory path</span></span>
-<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a><span class="co">#&gt;   -chr GWAS_CHR, --gwas_chr GWAS_CHR</span></span>
-<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a><span class="co">#&gt;                         Chromosome column name in the GWAS file</span></span>
-<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a><span class="co">#&gt;   -bp GWAS_BP, --gwas_bp GWAS_BP</span></span>
-<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a><span class="co">#&gt;                         Base position column name in the GWAS file</span></span>
-<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a><span class="co">#&gt;   -ea GWAS_EA, --gwas_ea GWAS_EA</span></span>
-<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a><span class="co">#&gt;                         Effect allele column name in the GWAS file</span></span>
-<span id="cb2-39"><a href="#cb2-39" tabindex="-1"></a><span class="co">#&gt;   -oa GWAS_OA, --gwas_oa GWAS_OA</span></span>
-<span id="cb2-40"><a href="#cb2-40" tabindex="-1"></a><span class="co">#&gt;                         Other allele column name in the GWAS file</span></span>
-<span id="cb2-41"><a href="#cb2-41" tabindex="-1"></a><span class="co">#&gt;   -eaf GWAS_EAF, --gwas_eaf GWAS_EAF</span></span>
-<span id="cb2-42"><a href="#cb2-42" tabindex="-1"></a><span class="co">#&gt;                         Effect allele frequency column name in the GWAS file</span></span>
-<span id="cb2-43"><a href="#cb2-43" tabindex="-1"></a><span class="co">#&gt;   -beta GWAS_BETA, --gwas_beta GWAS_BETA</span></span>
-<span id="cb2-44"><a href="#cb2-44" tabindex="-1"></a><span class="co">#&gt;                         Beta column name in the GWAS file</span></span>
-<span id="cb2-45"><a href="#cb2-45" tabindex="-1"></a><span class="co">#&gt;   -se GWAS_SE, --gwas_se GWAS_SE</span></span>
-<span id="cb2-46"><a href="#cb2-46" tabindex="-1"></a><span class="co">#&gt;                         Standard error column name in the GWAS file</span></span>
-<span id="cb2-47"><a href="#cb2-47" tabindex="-1"></a><span class="co">#&gt;   -p GWAS_P, --gwas_p GWAS_P</span></span>
-<span id="cb2-48"><a href="#cb2-48" tabindex="-1"></a><span class="co">#&gt;                         P-value column name in the GWAS file</span></span>
-<span id="cb2-49"><a href="#cb2-49" tabindex="-1"></a><span class="co">#&gt;   -n GWAS_N, --gwas_n GWAS_N</span></span>
-<span id="cb2-50"><a href="#cb2-50" tabindex="-1"></a><span class="co">#&gt;                         Sample size column name in the GWAS file</span></span>
-<span id="cb2-51"><a href="#cb2-51" tabindex="-1"></a><span class="co">#&gt;   -info GWAS_INFO, --gwas_info GWAS_INFO</span></span>
-<span id="cb2-52"><a href="#cb2-52" tabindex="-1"></a><span class="co">#&gt;                         Imputation information score column name in the GWAS</span></span>
-<span id="cb2-53"><a href="#cb2-53" tabindex="-1"></a><span class="co">#&gt;                         file</span></span>
-<span id="cb2-54"><a href="#cb2-54" tabindex="-1"></a><span class="co">#&gt;   -r_chr REF_CHR, --ref_chr REF_CHR</span></span>
-<span id="cb2-55"><a href="#cb2-55" tabindex="-1"></a><span class="co">#&gt;                         Reference chromosome column name in the GWAS file</span></span>
-<span id="cb2-56"><a href="#cb2-56" tabindex="-1"></a><span class="co">#&gt;   -r_bp REF_BP, --ref_bp REF_BP</span></span>
-<span id="cb2-57"><a href="#cb2-57" tabindex="-1"></a><span class="co">#&gt;                         Reference base position column name in the GWAS file</span></span>
-<span id="cb2-58"><a href="#cb2-58" tabindex="-1"></a><span class="co">#&gt;   -r_ea REF_EA, --ref_ea REF_EA</span></span>
-<span id="cb2-59"><a href="#cb2-59" tabindex="-1"></a><span class="co">#&gt;                         Reference effect allele column name in the GWAS file</span></span>
-<span id="cb2-60"><a href="#cb2-60" tabindex="-1"></a><span class="co">#&gt;   -r_oa REF_OA, --ref_oa REF_OA</span></span>
-<span id="cb2-61"><a href="#cb2-61" tabindex="-1"></a><span class="co">#&gt;                         Reference other allele column name in the GWAS file</span></span>
-<span id="cb2-62"><a href="#cb2-62" tabindex="-1"></a><span class="co">#&gt;   -r_eaf REF_EAF, --ref_eaf REF_EAF</span></span>
-<span id="cb2-63"><a href="#cb2-63" tabindex="-1"></a><span class="co">#&gt;                         Reference effect allele frequency column name in the</span></span>
-<span id="cb2-64"><a href="#cb2-64" tabindex="-1"></a><span class="co">#&gt;                         GWAS file</span></span>
-<span id="cb2-65"><a href="#cb2-65" tabindex="-1"></a><span class="co">#&gt;   -gc, --genomic_control</span></span>
-<span id="cb2-66"><a href="#cb2-66" tabindex="-1"></a><span class="co">#&gt;                         Apply genomic control for adjusting study results</span></span>
-<span id="cb2-67"><a href="#cb2-67" tabindex="-1"></a><span class="co">#&gt;                         [default=FALSE]</span></span>
-<span id="cb2-68"><a href="#cb2-68" tabindex="-1"></a><span class="co">#&gt;   -noind, --no_indel_alleles</span></span>
-<span id="cb2-69"><a href="#cb2-69" tabindex="-1"></a><span class="co">#&gt;                         Remove indel alleles [default=FALSE]</span></span>
-<span id="cb2-70"><a href="#cb2-70" tabindex="-1"></a><span class="co">#&gt;   -fd FREQ_DIFF, --freq_diff FREQ_DIFF</span></span>
-<span id="cb2-71"><a href="#cb2-71" tabindex="-1"></a><span class="co">#&gt;                         Retain variants with GWAS:REF allele frequency</span></span>
-<span id="cb2-72"><a href="#cb2-72" tabindex="-1"></a><span class="co">#&gt;                         different less than ... [default=0.2]</span></span></code></pre></div>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a><span class="co">#&gt;                                                          [-it INFO_THRESH]</span></span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a><span class="co">#&gt; options:</span></span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a><span class="co">#&gt;   -h, --help            show this help message and exit</span></span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a><span class="co">#&gt;   -v, --verbose         Print extra output [default]</span></span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a><span class="co">#&gt;   -q, --quietly         Print little output</span></span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a><span class="co">#&gt;   -g GWAS, --gwas GWAS  GWAS file path</span></span>
+<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a><span class="co">#&gt;   -r REF, --ref REF     Reference file path</span></span>
+<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a><span class="co">#&gt;   -o OUTPUT, --output OUTPUT</span></span>
+<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a><span class="co">#&gt;                         Output directory path</span></span>
+<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a><span class="co">#&gt;   -chr GWAS_CHR, --gwas_chr GWAS_CHR</span></span>
+<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a><span class="co">#&gt;                         Chromosome column name in the GWAS file</span></span>
+<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a><span class="co">#&gt;   -bp GWAS_BP, --gwas_bp GWAS_BP</span></span>
+<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a><span class="co">#&gt;                         Base position column name in the GWAS file</span></span>
+<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a><span class="co">#&gt;   -ea GWAS_EA, --gwas_ea GWAS_EA</span></span>
+<span id="cb2-39"><a href="#cb2-39" tabindex="-1"></a><span class="co">#&gt;                         Effect allele column name in the GWAS file</span></span>
+<span id="cb2-40"><a href="#cb2-40" tabindex="-1"></a><span class="co">#&gt;   -oa GWAS_OA, --gwas_oa GWAS_OA</span></span>
+<span id="cb2-41"><a href="#cb2-41" tabindex="-1"></a><span class="co">#&gt;                         Other allele column name in the GWAS file</span></span>
+<span id="cb2-42"><a href="#cb2-42" tabindex="-1"></a><span class="co">#&gt;   -eaf GWAS_EAF, --gwas_eaf GWAS_EAF</span></span>
+<span id="cb2-43"><a href="#cb2-43" tabindex="-1"></a><span class="co">#&gt;                         Effect allele frequency column name in the GWAS file</span></span>
+<span id="cb2-44"><a href="#cb2-44" tabindex="-1"></a><span class="co">#&gt;   -beta GWAS_BETA, --gwas_beta GWAS_BETA</span></span>
+<span id="cb2-45"><a href="#cb2-45" tabindex="-1"></a><span class="co">#&gt;                         Beta column name in the GWAS file</span></span>
+<span id="cb2-46"><a href="#cb2-46" tabindex="-1"></a><span class="co">#&gt;   -se GWAS_SE, --gwas_se GWAS_SE</span></span>
+<span id="cb2-47"><a href="#cb2-47" tabindex="-1"></a><span class="co">#&gt;                         Standard error column name in the GWAS file</span></span>
+<span id="cb2-48"><a href="#cb2-48" tabindex="-1"></a><span class="co">#&gt;   -p GWAS_P, --gwas_p GWAS_P</span></span>
+<span id="cb2-49"><a href="#cb2-49" tabindex="-1"></a><span class="co">#&gt;                         P-value column name in the GWAS file</span></span>
+<span id="cb2-50"><a href="#cb2-50" tabindex="-1"></a><span class="co">#&gt;   -n GWAS_N, --gwas_n GWAS_N</span></span>
+<span id="cb2-51"><a href="#cb2-51" tabindex="-1"></a><span class="co">#&gt;                         Sample size column name in the GWAS file</span></span>
+<span id="cb2-52"><a href="#cb2-52" tabindex="-1"></a><span class="co">#&gt;   -info GWAS_INFO, --gwas_info GWAS_INFO</span></span>
+<span id="cb2-53"><a href="#cb2-53" tabindex="-1"></a><span class="co">#&gt;                         Imputation information score column name in the GWAS</span></span>
+<span id="cb2-54"><a href="#cb2-54" tabindex="-1"></a><span class="co">#&gt;                         file</span></span>
+<span id="cb2-55"><a href="#cb2-55" tabindex="-1"></a><span class="co">#&gt;   -r_chr REF_CHR, --ref_chr REF_CHR</span></span>
+<span id="cb2-56"><a href="#cb2-56" tabindex="-1"></a><span class="co">#&gt;                         Reference chromosome column name in the GWAS file</span></span>
+<span id="cb2-57"><a href="#cb2-57" tabindex="-1"></a><span class="co">#&gt;   -r_bp REF_BP, --ref_bp REF_BP</span></span>
+<span id="cb2-58"><a href="#cb2-58" tabindex="-1"></a><span class="co">#&gt;                         Reference base position column name in the GWAS file</span></span>
+<span id="cb2-59"><a href="#cb2-59" tabindex="-1"></a><span class="co">#&gt;   -r_ea REF_EA, --ref_ea REF_EA</span></span>
+<span id="cb2-60"><a href="#cb2-60" tabindex="-1"></a><span class="co">#&gt;                         Reference effect allele column name in the GWAS file</span></span>
+<span id="cb2-61"><a href="#cb2-61" tabindex="-1"></a><span class="co">#&gt;   -r_oa REF_OA, --ref_oa REF_OA</span></span>
+<span id="cb2-62"><a href="#cb2-62" tabindex="-1"></a><span class="co">#&gt;                         Reference other allele column name in the GWAS file</span></span>
+<span id="cb2-63"><a href="#cb2-63" tabindex="-1"></a><span class="co">#&gt;   -r_eaf REF_EAF, --ref_eaf REF_EAF</span></span>
+<span id="cb2-64"><a href="#cb2-64" tabindex="-1"></a><span class="co">#&gt;                         Reference effect allele frequency column name in the</span></span>
+<span id="cb2-65"><a href="#cb2-65" tabindex="-1"></a><span class="co">#&gt;                         GWAS file</span></span>
+<span id="cb2-66"><a href="#cb2-66" tabindex="-1"></a><span class="co">#&gt;   -gc, --genomic_control</span></span>
+<span id="cb2-67"><a href="#cb2-67" tabindex="-1"></a><span class="co">#&gt;                         Apply genomic control for adjusting study results</span></span>
+<span id="cb2-68"><a href="#cb2-68" tabindex="-1"></a><span class="co">#&gt;                         [default=FALSE]</span></span>
+<span id="cb2-69"><a href="#cb2-69" tabindex="-1"></a><span class="co">#&gt;   -noind, --no_indel_alleles</span></span>
+<span id="cb2-70"><a href="#cb2-70" tabindex="-1"></a><span class="co">#&gt;                         Remove indel alleles [default=FALSE]</span></span>
+<span id="cb2-71"><a href="#cb2-71" tabindex="-1"></a><span class="co">#&gt;   -fd FREQ_DIFF, --freq_diff FREQ_DIFF</span></span>
+<span id="cb2-72"><a href="#cb2-72" tabindex="-1"></a><span class="co">#&gt;                         Retain variants with GWAS:REF allele frequency</span></span>
+<span id="cb2-73"><a href="#cb2-73" tabindex="-1"></a><span class="co">#&gt;                         different less than ... [default=0.2]</span></span>
+<span id="cb2-74"><a href="#cb2-74" tabindex="-1"></a><span class="co">#&gt;   -it INFO_THRESH, --info_thresh INFO_THRESH</span></span>
+<span id="cb2-75"><a href="#cb2-75" tabindex="-1"></a><span class="co">#&gt;                         Retain variants with info score greater than ...</span></span>
+<span id="cb2-76"><a href="#cb2-76" tabindex="-1"></a><span class="co">#&gt;                         [default=0.95]</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="reviewer-qc-input-controls">Reviewer QC input controls<a class="anchor" aria-label="anchor" href="#reviewer-qc-input-controls"></a>
+</h2>
+<p>The main required inputs required are in the table below, we likely
+will need to add more.</p>
+<table class="table">
+<colgroup>
+<col width="24%">
+<col width="9%">
+<col width="49%">
+<col width="16%">
+</colgroup>
+<thead><tr class="header">
+<th>Arg</th>
+<th>Type</th>
+<th>Source</th>
+<th>Expose to UI</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>–gwas</td>
+<td>string</td>
+<td>uploaded gwas file</td>
+<td>NA</td>
+</tr>
+<tr class="even">
+<td>–ref</td>
+<td>string</td>
+<td>static ancestry-specific reference file</td>
+<td>NA</td>
+</tr>
+<tr class="odd">
+<td>–out</td>
+<td>string</td>
+<td>output directory to write file and .pngs</td>
+<td>NA</td>
+</tr>
+<tr class="even">
+<td>–gwas_[colname]</td>
+<td>string</td>
+<td>standard column names from mapping</td>
+<td>NA</td>
+</tr>
+<tr class="odd">
+<td>–ref_[colname]</td>
+<td>string</td>
+<td>standard column names from reference file</td>
+<td>NA</td>
+</tr>
+<tr class="even">
+<td>–no_indel_alleles</td>
+<td>bool</td>
+<td>reviewer QC user interface</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>–freq_diff</td>
+<td>num</td>
+<td>reviewer QC user interface</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>–genomic_control</td>
+<td>bool</td>
+<td>reviewer QC user interface</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>–info_thresh</td>
+<td>num</td>
+<td>reviewer QC user interface</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section level2">
+<h2 id="example-qc-script-call">Example QC script call<a class="anchor" aria-label="anchor" href="#example-qc-script-call"></a>
+</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Rscript /Users/xx20081/git/heRmes/scripts/gwas_qc.R -h</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="ex">Rscript</span> /Users/xx20081/git/heRmes/scripts/gwas_qc.R <span class="dt">\</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>  <span class="at">--gwas</span> <span class="st">'/Users/xx20081/Desktop/meta.all.allcause_death.autosomes.tsv'</span> <span class="dt">\</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>  <span class="at">--gwas_chr</span> <span class="st">'chr'</span> <span class="dt">\</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>  <span class="at">--gwas_bp</span> <span class="st">'bp'</span> <span class="dt">\</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>  <span class="at">--gwas_ea</span> <span class="st">'ea'</span> <span class="dt">\</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>  <span class="at">--gwas_oa</span> <span class="st">'oa'</span> <span class="dt">\</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>  <span class="at">--gwas_eaf</span> <span class="st">'eaf'</span> <span class="dt">\</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>  <span class="at">--gwas_beta</span> <span class="st">'beta'</span> <span class="dt">\</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>  <span class="at">--gwas_se</span> <span class="st">'se'</span> <span class="dt">\</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>  <span class="at">--gwas_p</span> <span class="st">'p'</span> <span class="dt">\</span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>  <span class="at">--gwas_n</span> <span class="st">'n'</span> <span class="dt">\</span></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>  <span class="at">--gwas_info</span> <span class="st">'info'</span> <span class="dt">\</span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>  <span class="at">--ref</span> <span class="st">'/Users/xx20081/Documents/local_data/genome_reference/hrc_37/HRC.r1-1.GRCh37.wgs.mac5.sites.tab.gz'</span> <span class="dt">\</span></span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>  <span class="at">--ref_chr</span> <span class="st">'#CHROM'</span> <span class="dt">\</span></span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>  <span class="at">--ref_bp</span> <span class="st">'POS'</span> <span class="dt">\</span></span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>  <span class="at">--ref_ea</span> <span class="st">'ALT'</span> <span class="dt">\</span></span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a>  <span class="at">--ref_oa</span> <span class="st">'REF'</span> <span class="dt">\</span></span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a>  <span class="at">--ref_eaf</span> <span class="st">'AF'</span> <span class="dt">\</span></span>
+<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a>  <span class="at">--freq_diff</span> 0.2 <span class="dt">\</span></span>
+<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a>  <span class="at">--out</span> <span class="st">'/Users/xx20081/Desktop/qc_tests'</span> <span class="dt">\</span></span>
+<span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a>  <span class="at">--no_indel_alleles</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="qc-script">QC script<a class="anchor" aria-label="anchor" href="#qc-script"></a>
 </h2>
 <p>The quality control procedure code is presented below.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#!/usr/bin/env Rscript</span></span>
 <span><span class="co">#</span></span>
 <span><span class="co">#  Nick Sunderland &lt;nicholas.sunderland@bristol.ac.uk&gt;</span></span>
@@ -209,6 +326,8 @@ the <code>--help</code> flag.</p>
 <span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-gc"</span>,    <span class="st">"--genomic_control"</span>, action<span class="op">=</span><span class="st">"store_true"</span>, default<span class="op">=</span><span class="cn">FALSE</span>, help<span class="op">=</span><span class="st">"Apply genomic control for adjusting study results [default=FALSE]"</span><span class="op">)</span></span>
 <span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-noind"</span>, <span class="st">"--no_indel_alleles"</span>, action<span class="op">=</span><span class="st">"store_true"</span>, default<span class="op">=</span><span class="cn">FALSE</span>, help<span class="op">=</span><span class="st">"Remove indel alleles [default=FALSE]"</span><span class="op">)</span></span>
 <span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-fd"</span>,    <span class="st">"--freq_diff"</span>, action<span class="op">=</span><span class="st">"store"</span>, type<span class="op">=</span><span class="st">"numeric"</span>, default<span class="op">=</span><span class="fl">0.2</span>, help<span class="op">=</span><span class="st">"Retain variants with GWAS:REF allele frequency different less than ... [default=0.2]"</span><span class="op">)</span></span>
+<span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-it"</span>,    <span class="st">"--info_thresh"</span>, action<span class="op">=</span><span class="st">"store"</span>, type<span class="op">=</span><span class="st">"numeric"</span>, default<span class="op">=</span><span class="fl">0.95</span>, help<span class="op">=</span><span class="st">"Retain variants with info score greater than ... [default=0.95]"</span><span class="op">)</span></span>
+<span></span>
 <span><span class="co"># parse CLI arguments</span></span>
 <span><span class="va">args</span> <span class="op">&lt;-</span> <span class="va">parser</span><span class="op">$</span><span class="fu">parse_args</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>

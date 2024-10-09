@@ -52,6 +52,8 @@ parser$add_argument("-r_eaf", "--ref_eaf", action="store", type="character", hel
 parser$add_argument("-gc",    "--genomic_control", action="store_true", default=FALSE, help="Apply genomic control for adjusting study results [default=FALSE]")
 parser$add_argument("-noind", "--no_indel_alleles", action="store_true", default=FALSE, help="Remove indel alleles [default=FALSE]")
 parser$add_argument("-fd",    "--freq_diff", action="store", type="numeric", default=0.2, help="Retain variants with GWAS:REF allele frequency different less than ... [default=0.2]")
+parser$add_argument("-it",    "--info_thresh", action="store", type="numeric", default=0.95, help="Retain variants with info score greater than ... [default=0.95]")
+
 # parse CLI arguments
 args <- parser$parse_args()
 

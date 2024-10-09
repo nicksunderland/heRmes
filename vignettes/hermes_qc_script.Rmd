@@ -14,18 +14,48 @@ knitr::opts_chunk$set(
 )
 ```
 
+## Required R libraries
 ```{r setup}
-library(heRmes)
 library(argparse)
+library(cli)
+library(data.table)
+library(ggplot2)
+library(viridis)
+```
+
+```{r setup2, include=FALSE}
 script_path <- here::here("scripts", "gwas_qc.R")
 Sys.setenv(QC_SCRIPT = script_path)
 ```
+
+## Script location
+https://github.com/nicksunderland/heRmes/blob/main/scripts/gwas_qc.R
 
 ## QC script inputs  
 The QC script input parameters can be seen by calling the script with the `--help` flag.
 
 ```{bash call, echo=TRUE, eval = TRUE}
 Rscript $QC_SCRIPT --help
+```
+
+## Reviewer QC input controls
+The main required inputs required are in the table below, we likely will need to add more.
+
+| Arg                 | Type   | Source                                   | Expose to UI |
+|---------------------|--------|------------------------------------------|--------------|
+| --gwas              | string | uploaded gwas file                       | NA           |
+| --ref               | string | static ancestry-specific reference file  | NA           |
+| --out               | string | output directory to write file and .pngs | NA           |
+| --gwas_[colname]    | string | standard column names from mapping       | NA           |
+| --ref_[colname]     | string | standard column names from reference file| NA           |
+| --no_indel_alleles  | bool   | reviewer QC user interface               | Yes          |
+| --freq_diff         | num    | reviewer QC user interface               | Yes          |
+| --genomic_control   | bool   | reviewer QC user interface               | Yes          |
+| --info_thresh       | num    | reviewer QC user interface               | Yes          |
+
+## Example QC script call
+```{bash file = here::here("scripts", "qc_test.sh"), eval=F}
+
 ```
 
 ## QC script  

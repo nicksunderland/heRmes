@@ -31,6 +31,7 @@ DCM_IsA	91604001	SNOMED	Dilated cardiomyopathy due to polyarteritis nodosa (diso
 DCM_IsA	21430002	SNOMED	Dilated cardiomyopathy due to rheumatoid arthritis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
 DCM_IsA	6022005	SNOMED	Dilated cardiomyopathy due to sarcoidosis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
 DCM_IsA	871639003	SNOMED	Dilated cardiomyopathy due to mitochondrial disease (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	399020009	SNOMED	Congestive cardiomyopathy (disorder)	0	0	1	1	2	1	duplicate row	0.5	Dilated cardiomyopathy
 DCM_IsA	702424003	SNOMED	Dilated cardiomyopathy 3B (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
 DCM_IsA	64749001	SNOMED	Dilated cardiomyopathy due to infiltration (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
 DCM_IsA	719451006	SNOMED	Dilated cardiomyopathy with hypergonadotropic hypogonadism syndrome (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
@@ -50,6 +51,8 @@ DCM_IsA	719835006	SNOMED	Wooly hair and palmoplantar keratoderma with dilated ca
 DCM_IsA	72972005	SNOMED	Dilated cardiomyopathy caused by drug (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
 DCM_IsA	880042006	SNOMED	Dilated cardiomyopathy caused by anthracycline (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
 DCM_IsA	1234750000	SNOMED	Dilated cardiomyopathy caused by ethanol (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	74368002	SNOMED	Congestive cardiomyopathy (disorder)	0	0	1	1	2	1		0.5	Dilated cardiomyopathy
+DCM_IsA	389995008	SNOMED	Congestive cardiomyopathy (disorder)	0	0	1	1	2	1		0.5	Dilated cardiomyopathy
 DCM_IsA	83521008	SNOMED	Dilated cardiomyopathy caused by alcohol (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
 DCM_IsA	2180001	SNOMED	Dilated cardiomyopathy secondary to connective tissue disorder (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
 DCM_IsA	34342000	SNOMED	Dilated cardiomyopathy secondary to deficiency (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy

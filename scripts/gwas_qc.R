@@ -5,6 +5,7 @@
 #  GWAS QC script
 #
 #  Command line options= run this script with the -h/--help flag to see options
+#  Some good resources here: https://github.com/swvanderlaan/MetaGWASToolKit/tree/master/SCRIPTS
 #
 
 
@@ -209,10 +210,10 @@ cli_progress_step("formatting data")
 
 # (re)code chromsome column as integer
 gwas[, (args$gwas_chr) := fcase(as.integer(get(args$gwas_chr)) %in% 1:26, as.integer(get(args$gwas_chr)),
-                                grepl("(?i)^X$",   get(args$gwas_chr)), 23L,
-                                grepl("(?i)^Y$",   get(args$gwas_chr)), 24L,
-                                grepl("(?i)^PAR$", get(args$gwas_chr)), 25L,
-                                grepl("(?i)^MT$",  get(args$gwas_chr)), 26L,
+                                grepl("(?i)^X$",   get(args$gwas_chr)),         23L,
+                                grepl("(?i)^Y$",   get(args$gwas_chr)),         24L,
+                                grepl("(?i)^(PAR|XY|YX)$", get(args$gwas_chr)), 25L,
+                                grepl("(?i)^MT$",  get(args$gwas_chr)),         26L,
                                 default = NA_integer_)]
 
 # parse base position and n-sample columns to integer

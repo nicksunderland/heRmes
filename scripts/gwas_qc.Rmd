@@ -1,0 +1,31 @@
+---
+title: "GWAS QC"
+author: "Nick Sunderland"
+date: "2024-10-23"
+output: html_document
+params:
+  fig_dir: "/path-to-be-passed-at-runtime/gwas_qc_output_dir"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(data.table)
+```
+  
+## R Markdown
+
+This is an R Markdown document.
+
+```{r table, echo=FALSE}
+log_file <- list.files(params$fig_dir, pattern = "log.tsv$", full.names = TRUE)
+summary <- fread(log_file[1])
+knitr::kable(summary)
+```
+
+## Including Plots
+
+EAF frequency differences:
+
+```{r plot, echo=FALSE}
+knitr::include_graphics(paste0(params$fig_dir, "/eaf_plot.png"))
+```

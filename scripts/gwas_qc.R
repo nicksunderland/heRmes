@@ -44,16 +44,17 @@ parser$add_argument("-p",   "--gwas_p",    action="store", type="character", hel
 parser$add_argument("-n",   "--gwas_n",    action="store", type="character", help="Sample size column name in the GWAS file", default = "n")
 parser$add_argument("-info","--gwas_info", action="store", type="character", help="Imputation information score column name in the GWAS file", default = "info")
 # Reference file columns
-parser$add_argument("-r_chr", "--ref_chr", action="store", type="character", help="Reference chromosome column name in the GWAS file", default = "chr")
-parser$add_argument("-r_bp",  "--ref_bp",  action="store", type="character", help="Reference base position column name in the GWAS file", default = "bp")
-parser$add_argument("-r_ea",  "--ref_ea",  action="store", type="character", help="Reference effect allele column name in the GWAS file", default = "ea")
-parser$add_argument("-r_oa",  "--ref_oa",  action="store", type="character", help="Reference other allele column name in the GWAS file", default = "oa")
-parser$add_argument("-r_eaf", "--ref_eaf", action="store", type="character", help="Reference effect allele frequency column name in the GWAS file", default = "eaf")
+parser$add_argument("-r_id",  "--ref_id",  action="store", type="character", help="Reference rsid column name in the REF file", default = "chr")
+parser$add_argument("-r_chr", "--ref_chr", action="store", type="character", help="Reference chromosome column name in the REF file", default = "chr")
+parser$add_argument("-r_bp",  "--ref_bp",  action="store", type="character", help="Reference base position column name in the REF file", default = "bp")
+parser$add_argument("-r_ea",  "--ref_ea",  action="store", type="character", help="Reference effect allele column name in the REF file", default = "ea")
+parser$add_argument("-r_oa",  "--ref_oa",  action="store", type="character", help="Reference other allele column name in the REF file", default = "oa")
+parser$add_argument("-r_eaf", "--ref_eaf", action="store", type="character", help="Reference effect allele frequency column name in the REF file", default = "eaf")
 # QC parameters
 parser$add_argument("-gc",    "--genomic_control", action="store_true", default=FALSE, help="Apply genomic control for adjusting study results [default=FALSE]")
 parser$add_argument("-noind", "--no_indel_alleles", action="store_true", default=FALSE, help="Remove indel alleles [default=FALSE]")
 parser$add_argument("-fd",    "--freq_diff", action="store", type="numeric", default=0.2, help="Retain variants with GWAS:REF allele frequency different less than ... [default=0.2]")
-parser$add_argument("-it",    "--info_thresh", action="store", type="numeric", default=0.95, help="Retain variants with info score greater than ... [default=0.95]")
+parser$add_argument("-it",    "--info_thresh", action="store", type="numeric", default=NULL, help="Retain variants with info score greater than ... [default=NULL (off)]")
 
 # parse CLI arguments
 args <- parser$parse_args()
@@ -103,7 +104,7 @@ if (is.null(args$ref) || !file.exists(args$ref) || file.access(args$ref, 4) != 0
 
 # Check GWAS file column names all present
 ref_header <- fread(args$ref, nrows = 0)
-ref_cols <- sapply(args[c("ref_chr","ref_bp","ref_ea","ref_oa","ref_eaf")], function(x) x %in% names(ref_header))
+ref_cols <- sapply(args[c("ref_id", "ref_chr","ref_bp","ref_ea","ref_oa","ref_eaf")], function(x) x %in% names(ref_header))
 if (!all(ref_cols)) {
   for (i in seq_along(ref_cols)) {
     if (ref_cols[[i]]) {
@@ -208,7 +209,7 @@ for (i in seq_along(gwas_cols)) {
 cli_h1("Formatting data")
 cli_progress_step("formatting data")
 
-# (re)code chromsome column as integer
+# (re)code chromosome column as integer
 gwas[, (args$gwas_chr) := fcase(as.integer(get(args$gwas_chr)) %in% 1:26, as.integer(get(args$gwas_chr)),
                                 grepl("(?i)^X$",   get(args$gwas_chr)),         23L,
                                 grepl("(?i)^Y$",   get(args$gwas_chr)),         24L,
@@ -239,7 +240,12 @@ gwas[, (args$gwas_p) := fcase(get(args$gwas_p) == 0, .Machine$double.xmin,
                               default = NA_real_)]
 
 # remove info scores >1 or <0
-gwas[get(args$gwas_info) < 0 | get(args$gwas_info) > 1, (args$gwas_info) := NA_real_]
+if (!is.null(args$info_thresh)) {
+  gwas[get(args$gwas_info) < 0 | get(args$gwas_info) > 1 | get(args$gwas_info) < args$info_thresh, (args$gwas_info) := NA_real_]
+} else {
+  cli_alert_info("info_thresh not provided, skipping info score filtering and setting info score to 1 for all variants")
+  gwas[, (args$gwas_info) := 1]
+}
 
 # alleles must be characters
 gwas[, c(args$gwas_ea, args$gwas_oa) := lapply(.SD, as.character), .SDcols = c(args$gwas_ea, args$gwas_oa)]
@@ -280,6 +286,7 @@ if (nrow(gwas) == 0) {
 # formatting reference
 #=============================================================================
 col_fn_list <- list(
+  ref_id    = as.character,
   ref_chr   = as.character,
   ref_bp    = as.integer,
   ref_ea    = as.character,
@@ -353,8 +360,20 @@ cli_process_done()
 # filter out the frequency differences over the provided threshold
 h <- h[freq_diff < args$freq_diff]
 
-# extract the data from the harmonisation table (don't need the reference columns now)
-gwas <- h[, .SD, .SDcols = gwas_cols]
+# extract the data from the harmonisation table (don't need the reference columns now, except for the rsid)
+setnames(h,
+         old = c(paste0(ref_cols[["ref_id"]], "_ref"), "chr","bp","ea","oa","eaf","beta","se","p","n"),
+         new = c(ref_cols[["ref_id"]],
+                 gwas_cols[["gwas_chr"]],
+                 gwas_cols[["gwas_bp"]],
+                 gwas_cols[["gwas_ea"]],
+                 gwas_cols[["gwas_oa"]],
+                 gwas_cols[["gwas_eaf"]],
+                 gwas_cols[["gwas_beta"]],
+                 gwas_cols[["gwas_se"]],
+                 gwas_cols[["gwas_p"]],
+                 gwas_cols[["gwas_n"]]))
+gwas <- h[, .SD, .SDcols = c(ref_cols[["ref_id"]], gwas_cols)]
 
 
 #=============================================================================
@@ -414,21 +433,21 @@ cli_process_done()
 #=============================================================================
 if (FALSE) {
   args = list()
-  args$gwas = '/Users/xx20081/Desktop/meta.all.allcause_death.autosomes.tsv'
+  args$gwas = '/Users/xx20081/Desktop/first_10_rows_meta_all_composite_2_autosomes.tsv'
   args$ref ='/Users/xx20081/Documents/local_data/genome_reference/hrc_37/HRC.r1-1.GRCh37.wgs.mac5.sites.tab.gz'
   args$gwas_beta= "beta"
-  args$gwas_bp= "bp"
-  args$gwas_chr= "chr"
-  args$gwas_ea= "ea"
-  args$gwas_eaf= "eaf"
+  args$gwas_bp= "position"
+  args$gwas_chr= "chromosome"
+  args$gwas_ea= "alt"
+  args$gwas_eaf= "freq"
   args$gwas_info= "info"
   args$gwas_n= "n"
-  args$gwas_oa= "oa"
+  args$gwas_oa= "reference"
   args$gwas_p= "p"
   args$gwas_se= "se"
-  args$indel_alleles= TRUE
   args$output= "/Users/xx20081/Desktop/qc_tests"
   args$overwrite= TRUE
+  args$ref_id= "ID"
   args$ref_bp= "POS"
   args$ref_chr= "#CHROM"
   args$ref_ea= "ALT"
@@ -436,4 +455,6 @@ if (FALSE) {
   args$ref_oa= "REF"
   args$verbose= TRUE
   args$freq_diff= 0.2
+  args$no_indel_alleles= FALSE
+  args$info_thresh= NULL
 }

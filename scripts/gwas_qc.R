@@ -42,7 +42,7 @@ parser$add_argument("-beta","--gwas_beta", action="store", type="character", hel
 parser$add_argument("-se",  "--gwas_se",   action="store", type="character", help="Standard error column name in the GWAS file", default = "se")
 parser$add_argument("-p",   "--gwas_p",    action="store", type="character", help="P-value column name in the GWAS file", default = "p")
 parser$add_argument("-n",   "--gwas_n",    action="store", type="character", help="Sample size column name in the GWAS file", default = "n")
-parser$add_argument("-info","--gwas_info", action="store", type="character", help="Imputation information score column name in the GWAS file", default = "info")
+parser$add_argument("-info","--gwas_info", action="store", type="character", help="Imputation information score column name in the GWAS file", default = NULL)
 # Reference file columns
 parser$add_argument("-r_id",  "--ref_id",  action="store", type="character", help="Reference rsid column name in the REF file", default = "chr")
 parser$add_argument("-r_chr", "--ref_chr", action="store", type="character", help="Reference chromosome column name in the REF file", default = "chr")
@@ -240,9 +240,9 @@ gwas[, (args$gwas_p) := fcase(get(args$gwas_p) == 0, .Machine$double.xmin,
                               default = NA_real_)]
 
 # remove info scores >1 or <0
-if (!is.null(args$info_thresh)) {
+if (!is.null(args$info_thresh) & !is.null(args$gwas_info)) {
   gwas[get(args$gwas_info) < 0 | get(args$gwas_info) > 1 | get(args$gwas_info) < args$info_thresh, (args$gwas_info) := NA_real_]
-} else {
+} else if (is.null(args$info_thresh) & !is.null(args$gwas_info)) {
   cli_alert_info("info_thresh not provided, skipping info score filtering and setting info score to 1 for all variants")
   gwas[, (args$gwas_info) := 1]
 }
@@ -362,7 +362,7 @@ h <- h[freq_diff < args$freq_diff]
 
 # extract the data from the harmonisation table (don't need the reference columns now, except for the rsid)
 setnames(h,
-         old = c(paste0(ref_cols[["ref_id"]], "_ref"), "chr","bp","ea","oa","eaf","beta","se","p","n"),
+         old = c(paste0(ref_cols[["ref_id"]], "_ref"), "chr","bp","ea","oa","eaf","beta", gwas_cols[["gwas_se"]], gwas_cols[["gwas_p"]], gwas_cols[["gwas_n"]]),
          new = c(ref_cols[["ref_id"]],
                  gwas_cols[["gwas_chr"]],
                  gwas_cols[["gwas_bp"]],
@@ -433,18 +433,18 @@ cli_process_done()
 #=============================================================================
 if (FALSE) {
   args = list()
-  args$gwas = '/Users/xx20081/Desktop/first_10_rows_meta_all_composite_2_autosomes.tsv'
+  args$gwas = '/Users/xx20081/Downloads/bmi_knowledge_portal_subset.tsv'
   args$ref ='/Users/xx20081/Documents/local_data/genome_reference/hrc_37/HRC.r1-1.GRCh37.wgs.mac5.sites.tab.gz'
   args$gwas_beta= "beta"
   args$gwas_bp= "position"
   args$gwas_chr= "chromosome"
   args$gwas_ea= "alt"
   args$gwas_eaf= "freq"
-  args$gwas_info= "info"
+  args$gwas_info= NULL
   args$gwas_n= "n"
   args$gwas_oa= "reference"
-  args$gwas_p= "p"
-  args$gwas_se= "se"
+  args$gwas_p= "pValue"
+  args$gwas_se= "stdErr"
   args$output= "/Users/xx20081/Desktop/qc_tests"
   args$overwrite= TRUE
   args$ref_id= "ID"

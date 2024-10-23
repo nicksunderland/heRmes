@@ -1,15 +1,15 @@
 # Rscript /Users/xx20081/git/heRmes/scripts/gwas_qc.R -h
 
 Rscript /Users/xx20081/git/heRmes/scripts/gwas_qc.R \
-  --gwas '/Users/xx20081/Desktop/first_10_rows_meta_all_composite_2_autosomes.tsv' \
+  --gwas '/Users/xx20081/Downloads/bmi_knowledge_portal_subset.tsv' \
   --gwas_chr 'chromosome' \
   --gwas_bp 'position' \
   --gwas_ea 'alt' \
   --gwas_oa 'reference' \
   --gwas_eaf 'freq' \
   --gwas_beta 'beta' \
-  --gwas_se 'se' \
-  --gwas_p 'p' \
+  --gwas_se 'stdErr' \
+  --gwas_p 'pValue' \
   --gwas_n 'n' \
   --ref '/Users/xx20081/Documents/local_data/genome_reference/hrc_37/HRC.r1-1.GRCh37.wgs.mac5.sites.tab.gz' \
   --ref_id 'ID' \

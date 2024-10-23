@@ -103,66 +103,69 @@ the <code>--help</code> flag.</p>
 <span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">#&gt;                                                          [-p GWAS_P]</span></span>
 <span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="co">#&gt;                                                          [-n GWAS_N]</span></span>
 <span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co">#&gt;                                                          [-info GWAS_INFO]</span></span>
-<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="co">#&gt;                                                          [-r_chr REF_CHR]</span></span>
-<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="co">#&gt;                                                          [-r_bp REF_BP]</span></span>
-<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a><span class="co">#&gt;                                                          [-r_ea REF_EA]</span></span>
-<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a><span class="co">#&gt;                                                          [-r_oa REF_OA]</span></span>
-<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a><span class="co">#&gt;                                                          [-r_eaf REF_EAF]</span></span>
-<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a><span class="co">#&gt;                                                          [-gc] [-noind]</span></span>
-<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a><span class="co">#&gt;                                                          [-fd FREQ_DIFF]</span></span>
-<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a><span class="co">#&gt;                                                          [-it INFO_THRESH]</span></span>
-<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a><span class="co">#&gt; options:</span></span>
-<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a><span class="co">#&gt;   -h, --help            show this help message and exit</span></span>
-<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a><span class="co">#&gt;   -v, --verbose         Print extra output [default]</span></span>
-<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a><span class="co">#&gt;   -q, --quietly         Print little output</span></span>
-<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a><span class="co">#&gt;   -g GWAS, --gwas GWAS  GWAS file path</span></span>
-<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a><span class="co">#&gt;   -r REF, --ref REF     Reference file path</span></span>
-<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a><span class="co">#&gt;   -o OUTPUT, --output OUTPUT</span></span>
-<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a><span class="co">#&gt;                         Output directory path</span></span>
-<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a><span class="co">#&gt;   -chr GWAS_CHR, --gwas_chr GWAS_CHR</span></span>
-<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a><span class="co">#&gt;                         Chromosome column name in the GWAS file</span></span>
-<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a><span class="co">#&gt;   -bp GWAS_BP, --gwas_bp GWAS_BP</span></span>
-<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a><span class="co">#&gt;                         Base position column name in the GWAS file</span></span>
-<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a><span class="co">#&gt;   -ea GWAS_EA, --gwas_ea GWAS_EA</span></span>
-<span id="cb2-39"><a href="#cb2-39" tabindex="-1"></a><span class="co">#&gt;                         Effect allele column name in the GWAS file</span></span>
-<span id="cb2-40"><a href="#cb2-40" tabindex="-1"></a><span class="co">#&gt;   -oa GWAS_OA, --gwas_oa GWAS_OA</span></span>
-<span id="cb2-41"><a href="#cb2-41" tabindex="-1"></a><span class="co">#&gt;                         Other allele column name in the GWAS file</span></span>
-<span id="cb2-42"><a href="#cb2-42" tabindex="-1"></a><span class="co">#&gt;   -eaf GWAS_EAF, --gwas_eaf GWAS_EAF</span></span>
-<span id="cb2-43"><a href="#cb2-43" tabindex="-1"></a><span class="co">#&gt;                         Effect allele frequency column name in the GWAS file</span></span>
-<span id="cb2-44"><a href="#cb2-44" tabindex="-1"></a><span class="co">#&gt;   -beta GWAS_BETA, --gwas_beta GWAS_BETA</span></span>
-<span id="cb2-45"><a href="#cb2-45" tabindex="-1"></a><span class="co">#&gt;                         Beta column name in the GWAS file</span></span>
-<span id="cb2-46"><a href="#cb2-46" tabindex="-1"></a><span class="co">#&gt;   -se GWAS_SE, --gwas_se GWAS_SE</span></span>
-<span id="cb2-47"><a href="#cb2-47" tabindex="-1"></a><span class="co">#&gt;                         Standard error column name in the GWAS file</span></span>
-<span id="cb2-48"><a href="#cb2-48" tabindex="-1"></a><span class="co">#&gt;   -p GWAS_P, --gwas_p GWAS_P</span></span>
-<span id="cb2-49"><a href="#cb2-49" tabindex="-1"></a><span class="co">#&gt;                         P-value column name in the GWAS file</span></span>
-<span id="cb2-50"><a href="#cb2-50" tabindex="-1"></a><span class="co">#&gt;   -n GWAS_N, --gwas_n GWAS_N</span></span>
-<span id="cb2-51"><a href="#cb2-51" tabindex="-1"></a><span class="co">#&gt;                         Sample size column name in the GWAS file</span></span>
-<span id="cb2-52"><a href="#cb2-52" tabindex="-1"></a><span class="co">#&gt;   -info GWAS_INFO, --gwas_info GWAS_INFO</span></span>
-<span id="cb2-53"><a href="#cb2-53" tabindex="-1"></a><span class="co">#&gt;                         Imputation information score column name in the GWAS</span></span>
-<span id="cb2-54"><a href="#cb2-54" tabindex="-1"></a><span class="co">#&gt;                         file</span></span>
-<span id="cb2-55"><a href="#cb2-55" tabindex="-1"></a><span class="co">#&gt;   -r_chr REF_CHR, --ref_chr REF_CHR</span></span>
-<span id="cb2-56"><a href="#cb2-56" tabindex="-1"></a><span class="co">#&gt;                         Reference chromosome column name in the GWAS file</span></span>
-<span id="cb2-57"><a href="#cb2-57" tabindex="-1"></a><span class="co">#&gt;   -r_bp REF_BP, --ref_bp REF_BP</span></span>
-<span id="cb2-58"><a href="#cb2-58" tabindex="-1"></a><span class="co">#&gt;                         Reference base position column name in the GWAS file</span></span>
-<span id="cb2-59"><a href="#cb2-59" tabindex="-1"></a><span class="co">#&gt;   -r_ea REF_EA, --ref_ea REF_EA</span></span>
-<span id="cb2-60"><a href="#cb2-60" tabindex="-1"></a><span class="co">#&gt;                         Reference effect allele column name in the GWAS file</span></span>
-<span id="cb2-61"><a href="#cb2-61" tabindex="-1"></a><span class="co">#&gt;   -r_oa REF_OA, --ref_oa REF_OA</span></span>
-<span id="cb2-62"><a href="#cb2-62" tabindex="-1"></a><span class="co">#&gt;                         Reference other allele column name in the GWAS file</span></span>
-<span id="cb2-63"><a href="#cb2-63" tabindex="-1"></a><span class="co">#&gt;   -r_eaf REF_EAF, --ref_eaf REF_EAF</span></span>
-<span id="cb2-64"><a href="#cb2-64" tabindex="-1"></a><span class="co">#&gt;                         Reference effect allele frequency column name in the</span></span>
-<span id="cb2-65"><a href="#cb2-65" tabindex="-1"></a><span class="co">#&gt;                         GWAS file</span></span>
-<span id="cb2-66"><a href="#cb2-66" tabindex="-1"></a><span class="co">#&gt;   -gc, --genomic_control</span></span>
-<span id="cb2-67"><a href="#cb2-67" tabindex="-1"></a><span class="co">#&gt;                         Apply genomic control for adjusting study results</span></span>
-<span id="cb2-68"><a href="#cb2-68" tabindex="-1"></a><span class="co">#&gt;                         [default=FALSE]</span></span>
-<span id="cb2-69"><a href="#cb2-69" tabindex="-1"></a><span class="co">#&gt;   -noind, --no_indel_alleles</span></span>
-<span id="cb2-70"><a href="#cb2-70" tabindex="-1"></a><span class="co">#&gt;                         Remove indel alleles [default=FALSE]</span></span>
-<span id="cb2-71"><a href="#cb2-71" tabindex="-1"></a><span class="co">#&gt;   -fd FREQ_DIFF, --freq_diff FREQ_DIFF</span></span>
-<span id="cb2-72"><a href="#cb2-72" tabindex="-1"></a><span class="co">#&gt;                         Retain variants with GWAS:REF allele frequency</span></span>
-<span id="cb2-73"><a href="#cb2-73" tabindex="-1"></a><span class="co">#&gt;                         different less than ... [default=0.2]</span></span>
-<span id="cb2-74"><a href="#cb2-74" tabindex="-1"></a><span class="co">#&gt;   -it INFO_THRESH, --info_thresh INFO_THRESH</span></span>
-<span id="cb2-75"><a href="#cb2-75" tabindex="-1"></a><span class="co">#&gt;                         Retain variants with info score greater than ...</span></span>
-<span id="cb2-76"><a href="#cb2-76" tabindex="-1"></a><span class="co">#&gt;                         [default=0.95]</span></span></code></pre></div>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="co">#&gt;                                                          [-r_id REF_ID]</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="co">#&gt;                                                          [-r_chr REF_CHR]</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a><span class="co">#&gt;                                                          [-r_bp REF_BP]</span></span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a><span class="co">#&gt;                                                          [-r_ea REF_EA]</span></span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a><span class="co">#&gt;                                                          [-r_oa REF_OA]</span></span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a><span class="co">#&gt;                                                          [-r_eaf REF_EAF]</span></span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a><span class="co">#&gt;                                                          [-gc] [-noind]</span></span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a><span class="co">#&gt;                                                          [-fd FREQ_DIFF]</span></span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a><span class="co">#&gt;                                                          [-it INFO_THRESH]</span></span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a><span class="co">#&gt; options:</span></span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a><span class="co">#&gt;   -h, --help            show this help message and exit</span></span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a><span class="co">#&gt;   -v, --verbose         Print extra output [default]</span></span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a><span class="co">#&gt;   -q, --quietly         Print little output</span></span>
+<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a><span class="co">#&gt;   -g GWAS, --gwas GWAS  GWAS file path</span></span>
+<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a><span class="co">#&gt;   -r REF, --ref REF     Reference file path</span></span>
+<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a><span class="co">#&gt;   -o OUTPUT, --output OUTPUT</span></span>
+<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a><span class="co">#&gt;                         Output directory path</span></span>
+<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a><span class="co">#&gt;   -chr GWAS_CHR, --gwas_chr GWAS_CHR</span></span>
+<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a><span class="co">#&gt;                         Chromosome column name in the GWAS file</span></span>
+<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a><span class="co">#&gt;   -bp GWAS_BP, --gwas_bp GWAS_BP</span></span>
+<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a><span class="co">#&gt;                         Base position column name in the GWAS file</span></span>
+<span id="cb2-39"><a href="#cb2-39" tabindex="-1"></a><span class="co">#&gt;   -ea GWAS_EA, --gwas_ea GWAS_EA</span></span>
+<span id="cb2-40"><a href="#cb2-40" tabindex="-1"></a><span class="co">#&gt;                         Effect allele column name in the GWAS file</span></span>
+<span id="cb2-41"><a href="#cb2-41" tabindex="-1"></a><span class="co">#&gt;   -oa GWAS_OA, --gwas_oa GWAS_OA</span></span>
+<span id="cb2-42"><a href="#cb2-42" tabindex="-1"></a><span class="co">#&gt;                         Other allele column name in the GWAS file</span></span>
+<span id="cb2-43"><a href="#cb2-43" tabindex="-1"></a><span class="co">#&gt;   -eaf GWAS_EAF, --gwas_eaf GWAS_EAF</span></span>
+<span id="cb2-44"><a href="#cb2-44" tabindex="-1"></a><span class="co">#&gt;                         Effect allele frequency column name in the GWAS file</span></span>
+<span id="cb2-45"><a href="#cb2-45" tabindex="-1"></a><span class="co">#&gt;   -beta GWAS_BETA, --gwas_beta GWAS_BETA</span></span>
+<span id="cb2-46"><a href="#cb2-46" tabindex="-1"></a><span class="co">#&gt;                         Beta column name in the GWAS file</span></span>
+<span id="cb2-47"><a href="#cb2-47" tabindex="-1"></a><span class="co">#&gt;   -se GWAS_SE, --gwas_se GWAS_SE</span></span>
+<span id="cb2-48"><a href="#cb2-48" tabindex="-1"></a><span class="co">#&gt;                         Standard error column name in the GWAS file</span></span>
+<span id="cb2-49"><a href="#cb2-49" tabindex="-1"></a><span class="co">#&gt;   -p GWAS_P, --gwas_p GWAS_P</span></span>
+<span id="cb2-50"><a href="#cb2-50" tabindex="-1"></a><span class="co">#&gt;                         P-value column name in the GWAS file</span></span>
+<span id="cb2-51"><a href="#cb2-51" tabindex="-1"></a><span class="co">#&gt;   -n GWAS_N, --gwas_n GWAS_N</span></span>
+<span id="cb2-52"><a href="#cb2-52" tabindex="-1"></a><span class="co">#&gt;                         Sample size column name in the GWAS file</span></span>
+<span id="cb2-53"><a href="#cb2-53" tabindex="-1"></a><span class="co">#&gt;   -info GWAS_INFO, --gwas_info GWAS_INFO</span></span>
+<span id="cb2-54"><a href="#cb2-54" tabindex="-1"></a><span class="co">#&gt;                         Imputation information score column name in the GWAS</span></span>
+<span id="cb2-55"><a href="#cb2-55" tabindex="-1"></a><span class="co">#&gt;                         file</span></span>
+<span id="cb2-56"><a href="#cb2-56" tabindex="-1"></a><span class="co">#&gt;   -r_id REF_ID, --ref_id REF_ID</span></span>
+<span id="cb2-57"><a href="#cb2-57" tabindex="-1"></a><span class="co">#&gt;                         Reference rsid column name in the REF file</span></span>
+<span id="cb2-58"><a href="#cb2-58" tabindex="-1"></a><span class="co">#&gt;   -r_chr REF_CHR, --ref_chr REF_CHR</span></span>
+<span id="cb2-59"><a href="#cb2-59" tabindex="-1"></a><span class="co">#&gt;                         Reference chromosome column name in the REF file</span></span>
+<span id="cb2-60"><a href="#cb2-60" tabindex="-1"></a><span class="co">#&gt;   -r_bp REF_BP, --ref_bp REF_BP</span></span>
+<span id="cb2-61"><a href="#cb2-61" tabindex="-1"></a><span class="co">#&gt;                         Reference base position column name in the REF file</span></span>
+<span id="cb2-62"><a href="#cb2-62" tabindex="-1"></a><span class="co">#&gt;   -r_ea REF_EA, --ref_ea REF_EA</span></span>
+<span id="cb2-63"><a href="#cb2-63" tabindex="-1"></a><span class="co">#&gt;                         Reference effect allele column name in the REF file</span></span>
+<span id="cb2-64"><a href="#cb2-64" tabindex="-1"></a><span class="co">#&gt;   -r_oa REF_OA, --ref_oa REF_OA</span></span>
+<span id="cb2-65"><a href="#cb2-65" tabindex="-1"></a><span class="co">#&gt;                         Reference other allele column name in the REF file</span></span>
+<span id="cb2-66"><a href="#cb2-66" tabindex="-1"></a><span class="co">#&gt;   -r_eaf REF_EAF, --ref_eaf REF_EAF</span></span>
+<span id="cb2-67"><a href="#cb2-67" tabindex="-1"></a><span class="co">#&gt;                         Reference effect allele frequency column name in the</span></span>
+<span id="cb2-68"><a href="#cb2-68" tabindex="-1"></a><span class="co">#&gt;                         REF file</span></span>
+<span id="cb2-69"><a href="#cb2-69" tabindex="-1"></a><span class="co">#&gt;   -gc, --genomic_control</span></span>
+<span id="cb2-70"><a href="#cb2-70" tabindex="-1"></a><span class="co">#&gt;                         Apply genomic control for adjusting study results</span></span>
+<span id="cb2-71"><a href="#cb2-71" tabindex="-1"></a><span class="co">#&gt;                         [default=FALSE]</span></span>
+<span id="cb2-72"><a href="#cb2-72" tabindex="-1"></a><span class="co">#&gt;   -noind, --no_indel_alleles</span></span>
+<span id="cb2-73"><a href="#cb2-73" tabindex="-1"></a><span class="co">#&gt;                         Remove indel alleles [default=FALSE]</span></span>
+<span id="cb2-74"><a href="#cb2-74" tabindex="-1"></a><span class="co">#&gt;   -fd FREQ_DIFF, --freq_diff FREQ_DIFF</span></span>
+<span id="cb2-75"><a href="#cb2-75" tabindex="-1"></a><span class="co">#&gt;                         Retain variants with GWAS:REF allele frequency</span></span>
+<span id="cb2-76"><a href="#cb2-76" tabindex="-1"></a><span class="co">#&gt;                         different less than ... [default=0.2]</span></span>
+<span id="cb2-77"><a href="#cb2-77" tabindex="-1"></a><span class="co">#&gt;   -it INFO_THRESH, --info_thresh INFO_THRESH</span></span>
+<span id="cb2-78"><a href="#cb2-78" tabindex="-1"></a><span class="co">#&gt;                         Retain variants with info score greater than ...</span></span>
+<span id="cb2-79"><a href="#cb2-79" tabindex="-1"></a><span class="co">#&gt;                         [default=NULL (off)]</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="reviewer-qc-input-controls">Reviewer QC input controls<a class="anchor" aria-label="anchor" href="#reviewer-qc-input-controls"></a>
@@ -246,18 +249,18 @@ will need to add more.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Rscript /Users/xx20081/git/heRmes/scripts/gwas_qc.R -h</span></span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="ex">Rscript</span> /Users/xx20081/git/heRmes/scripts/gwas_qc.R <span class="dt">\</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>  <span class="at">--gwas</span> <span class="st">'/Users/xx20081/Desktop/meta.all.allcause_death.autosomes.tsv'</span> <span class="dt">\</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>  <span class="at">--gwas_chr</span> <span class="st">'chr'</span> <span class="dt">\</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>  <span class="at">--gwas_bp</span> <span class="st">'bp'</span> <span class="dt">\</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>  <span class="at">--gwas_ea</span> <span class="st">'ea'</span> <span class="dt">\</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>  <span class="at">--gwas_oa</span> <span class="st">'oa'</span> <span class="dt">\</span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>  <span class="at">--gwas_eaf</span> <span class="st">'eaf'</span> <span class="dt">\</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>  <span class="at">--gwas</span> <span class="st">'/Users/xx20081/Desktop/first_10_rows_meta_all_composite_2_autosomes.tsv'</span> <span class="dt">\</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>  <span class="at">--gwas_chr</span> <span class="st">'chromosome'</span> <span class="dt">\</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>  <span class="at">--gwas_bp</span> <span class="st">'position'</span> <span class="dt">\</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>  <span class="at">--gwas_ea</span> <span class="st">'alt'</span> <span class="dt">\</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>  <span class="at">--gwas_oa</span> <span class="st">'reference'</span> <span class="dt">\</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>  <span class="at">--gwas_eaf</span> <span class="st">'freq'</span> <span class="dt">\</span></span>
 <span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>  <span class="at">--gwas_beta</span> <span class="st">'beta'</span> <span class="dt">\</span></span>
 <span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>  <span class="at">--gwas_se</span> <span class="st">'se'</span> <span class="dt">\</span></span>
 <span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>  <span class="at">--gwas_p</span> <span class="st">'p'</span> <span class="dt">\</span></span>
 <span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>  <span class="at">--gwas_n</span> <span class="st">'n'</span> <span class="dt">\</span></span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>  <span class="at">--gwas_info</span> <span class="st">'info'</span> <span class="dt">\</span></span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>  <span class="at">--ref</span> <span class="st">'/Users/xx20081/Documents/local_data/genome_reference/hrc_37/HRC.r1-1.GRCh37.wgs.mac5.sites.tab.gz'</span> <span class="dt">\</span></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>  <span class="at">--ref</span> <span class="st">'/Users/xx20081/Documents/local_data/genome_reference/hrc_37/HRC.r1-1.GRCh37.wgs.mac5.sites.tab.gz'</span> <span class="dt">\</span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>  <span class="at">--ref_id</span> <span class="st">'ID'</span> <span class="dt">\</span></span>
 <span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>  <span class="at">--ref_chr</span> <span class="st">'#CHROM'</span> <span class="dt">\</span></span>
 <span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>  <span class="at">--ref_bp</span> <span class="st">'POS'</span> <span class="dt">\</span></span>
 <span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>  <span class="at">--ref_ea</span> <span class="st">'ALT'</span> <span class="dt">\</span></span>
@@ -318,16 +321,17 @@ will need to add more.</p>
 <span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-n"</span>,   <span class="st">"--gwas_n"</span>,    action<span class="op">=</span><span class="st">"store"</span>, type<span class="op">=</span><span class="st">"character"</span>, help<span class="op">=</span><span class="st">"Sample size column name in the GWAS file"</span>, default <span class="op">=</span> <span class="st">"n"</span><span class="op">)</span></span>
 <span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-info"</span>,<span class="st">"--gwas_info"</span>, action<span class="op">=</span><span class="st">"store"</span>, type<span class="op">=</span><span class="st">"character"</span>, help<span class="op">=</span><span class="st">"Imputation information score column name in the GWAS file"</span>, default <span class="op">=</span> <span class="st">"info"</span><span class="op">)</span></span>
 <span><span class="co"># Reference file columns</span></span>
-<span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-r_chr"</span>, <span class="st">"--ref_chr"</span>, action<span class="op">=</span><span class="st">"store"</span>, type<span class="op">=</span><span class="st">"character"</span>, help<span class="op">=</span><span class="st">"Reference chromosome column name in the GWAS file"</span>, default <span class="op">=</span> <span class="st">"chr"</span><span class="op">)</span></span>
-<span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-r_bp"</span>,  <span class="st">"--ref_bp"</span>,  action<span class="op">=</span><span class="st">"store"</span>, type<span class="op">=</span><span class="st">"character"</span>, help<span class="op">=</span><span class="st">"Reference base position column name in the GWAS file"</span>, default <span class="op">=</span> <span class="st">"bp"</span><span class="op">)</span></span>
-<span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-r_ea"</span>,  <span class="st">"--ref_ea"</span>,  action<span class="op">=</span><span class="st">"store"</span>, type<span class="op">=</span><span class="st">"character"</span>, help<span class="op">=</span><span class="st">"Reference effect allele column name in the GWAS file"</span>, default <span class="op">=</span> <span class="st">"ea"</span><span class="op">)</span></span>
-<span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-r_oa"</span>,  <span class="st">"--ref_oa"</span>,  action<span class="op">=</span><span class="st">"store"</span>, type<span class="op">=</span><span class="st">"character"</span>, help<span class="op">=</span><span class="st">"Reference other allele column name in the GWAS file"</span>, default <span class="op">=</span> <span class="st">"oa"</span><span class="op">)</span></span>
-<span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-r_eaf"</span>, <span class="st">"--ref_eaf"</span>, action<span class="op">=</span><span class="st">"store"</span>, type<span class="op">=</span><span class="st">"character"</span>, help<span class="op">=</span><span class="st">"Reference effect allele frequency column name in the GWAS file"</span>, default <span class="op">=</span> <span class="st">"eaf"</span><span class="op">)</span></span>
+<span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-r_id"</span>,  <span class="st">"--ref_id"</span>,  action<span class="op">=</span><span class="st">"store"</span>, type<span class="op">=</span><span class="st">"character"</span>, help<span class="op">=</span><span class="st">"Reference rsid column name in the REF file"</span>, default <span class="op">=</span> <span class="st">"chr"</span><span class="op">)</span></span>
+<span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-r_chr"</span>, <span class="st">"--ref_chr"</span>, action<span class="op">=</span><span class="st">"store"</span>, type<span class="op">=</span><span class="st">"character"</span>, help<span class="op">=</span><span class="st">"Reference chromosome column name in the REF file"</span>, default <span class="op">=</span> <span class="st">"chr"</span><span class="op">)</span></span>
+<span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-r_bp"</span>,  <span class="st">"--ref_bp"</span>,  action<span class="op">=</span><span class="st">"store"</span>, type<span class="op">=</span><span class="st">"character"</span>, help<span class="op">=</span><span class="st">"Reference base position column name in the REF file"</span>, default <span class="op">=</span> <span class="st">"bp"</span><span class="op">)</span></span>
+<span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-r_ea"</span>,  <span class="st">"--ref_ea"</span>,  action<span class="op">=</span><span class="st">"store"</span>, type<span class="op">=</span><span class="st">"character"</span>, help<span class="op">=</span><span class="st">"Reference effect allele column name in the REF file"</span>, default <span class="op">=</span> <span class="st">"ea"</span><span class="op">)</span></span>
+<span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-r_oa"</span>,  <span class="st">"--ref_oa"</span>,  action<span class="op">=</span><span class="st">"store"</span>, type<span class="op">=</span><span class="st">"character"</span>, help<span class="op">=</span><span class="st">"Reference other allele column name in the REF file"</span>, default <span class="op">=</span> <span class="st">"oa"</span><span class="op">)</span></span>
+<span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-r_eaf"</span>, <span class="st">"--ref_eaf"</span>, action<span class="op">=</span><span class="st">"store"</span>, type<span class="op">=</span><span class="st">"character"</span>, help<span class="op">=</span><span class="st">"Reference effect allele frequency column name in the REF file"</span>, default <span class="op">=</span> <span class="st">"eaf"</span><span class="op">)</span></span>
 <span><span class="co"># QC parameters</span></span>
 <span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-gc"</span>,    <span class="st">"--genomic_control"</span>, action<span class="op">=</span><span class="st">"store_true"</span>, default<span class="op">=</span><span class="cn">FALSE</span>, help<span class="op">=</span><span class="st">"Apply genomic control for adjusting study results [default=FALSE]"</span><span class="op">)</span></span>
 <span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-noind"</span>, <span class="st">"--no_indel_alleles"</span>, action<span class="op">=</span><span class="st">"store_true"</span>, default<span class="op">=</span><span class="cn">FALSE</span>, help<span class="op">=</span><span class="st">"Remove indel alleles [default=FALSE]"</span><span class="op">)</span></span>
 <span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-fd"</span>,    <span class="st">"--freq_diff"</span>, action<span class="op">=</span><span class="st">"store"</span>, type<span class="op">=</span><span class="st">"numeric"</span>, default<span class="op">=</span><span class="fl">0.2</span>, help<span class="op">=</span><span class="st">"Retain variants with GWAS:REF allele frequency different less than ... [default=0.2]"</span><span class="op">)</span></span>
-<span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-it"</span>,    <span class="st">"--info_thresh"</span>, action<span class="op">=</span><span class="st">"store"</span>, type<span class="op">=</span><span class="st">"numeric"</span>, default<span class="op">=</span><span class="fl">0.95</span>, help<span class="op">=</span><span class="st">"Retain variants with info score greater than ... [default=0.95]"</span><span class="op">)</span></span>
+<span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-it"</span>,    <span class="st">"--info_thresh"</span>, action<span class="op">=</span><span class="st">"store"</span>, type<span class="op">=</span><span class="st">"numeric"</span>, default<span class="op">=</span><span class="cn">NULL</span>, help<span class="op">=</span><span class="st">"Retain variants with info score greater than ... [default=NULL (off)]"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># parse CLI arguments</span></span>
 <span><span class="va">args</span> <span class="op">&lt;-</span> <span class="va">parser</span><span class="op">$</span><span class="fu">parse_args</span><span class="op">(</span><span class="op">)</span></span>
@@ -377,7 +381,7 @@ will need to add more.</p>
 <span></span>
 <span><span class="co"># Check GWAS file column names all present</span></span>
 <span><span class="va">ref_header</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/fread.html" class="external-link">fread</a></span><span class="op">(</span><span class="va">args</span><span class="op">$</span><span class="va">ref</span>, nrows <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span>
-<span><span class="va">ref_cols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="va">args</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ref_chr"</span>,<span class="st">"ref_bp"</span>,<span class="st">"ref_ea"</span>,<span class="st">"ref_oa"</span>,<span class="st">"ref_eaf"</span><span class="op">)</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="va">x</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">ref_header</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">ref_cols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="va">args</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ref_id"</span>, <span class="st">"ref_chr"</span>,<span class="st">"ref_bp"</span>,<span class="st">"ref_ea"</span>,<span class="st">"ref_oa"</span>,<span class="st">"ref_eaf"</span><span class="op">)</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="va">x</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">ref_header</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/all.html" class="external-link">all</a></span><span class="op">(</span><span class="va">ref_cols</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq_along</a></span><span class="op">(</span><span class="va">ref_cols</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span>    <span class="kw">if</span> <span class="op">(</span><span class="va">ref_cols</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span><span class="op">)</span> <span class="op">{</span></span>
@@ -482,7 +486,7 @@ will need to add more.</p>
 <span><span class="fu"><a href="https://cli.r-lib.org/reference/cli_h1.html" class="external-link">cli_h1</a></span><span class="op">(</span><span class="st">"Formatting data"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://cli.r-lib.org/reference/cli_progress_step.html" class="external-link">cli_progress_step</a></span><span class="op">(</span><span class="st">"formatting data"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># (re)code chromsome column as integer</span></span>
+<span><span class="co"># (re)code chromosome column as integer</span></span>
 <span><span class="va">gwas</span><span class="op">[</span>, <span class="op">(</span><span class="va">args</span><span class="op">$</span><span class="va">gwas_chr</span><span class="op">)</span> <span class="op">:=</span> <span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/fcase.html" class="external-link">fcase</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/integer.html" class="external-link">as.integer</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/get.html" class="external-link">get</a></span><span class="op">(</span><span class="va">args</span><span class="op">$</span><span class="va">gwas_chr</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fl">1</span><span class="op">:</span><span class="fl">26</span>, <span class="fu"><a href="https://rdrr.io/r/base/integer.html" class="external-link">as.integer</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/get.html" class="external-link">get</a></span><span class="op">(</span><span class="va">args</span><span class="op">$</span><span class="va">gwas_chr</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>                                <span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">grepl</a></span><span class="op">(</span><span class="st">"(?i)^X$"</span>,   <span class="fu"><a href="https://rdrr.io/r/base/get.html" class="external-link">get</a></span><span class="op">(</span><span class="va">args</span><span class="op">$</span><span class="va">gwas_chr</span><span class="op">)</span><span class="op">)</span>,         <span class="fl">23L</span>,</span>
 <span>                                <span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">grepl</a></span><span class="op">(</span><span class="st">"(?i)^Y$"</span>,   <span class="fu"><a href="https://rdrr.io/r/base/get.html" class="external-link">get</a></span><span class="op">(</span><span class="va">args</span><span class="op">$</span><span class="va">gwas_chr</span><span class="op">)</span><span class="op">)</span>,         <span class="fl">24L</span>,</span>
@@ -513,7 +517,12 @@ will need to add more.</p>
 <span>                              default <span class="op">=</span> <span class="cn">NA_real_</span><span class="op">)</span><span class="op">]</span></span>
 <span></span>
 <span><span class="co"># remove info scores &gt;1 or &lt;0</span></span>
-<span><span class="va">gwas</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/get.html" class="external-link">get</a></span><span class="op">(</span><span class="va">args</span><span class="op">$</span><span class="va">gwas_info</span><span class="op">)</span> <span class="op">&lt;</span> <span class="fl">0</span> <span class="op">|</span> <span class="fu"><a href="https://rdrr.io/r/base/get.html" class="external-link">get</a></span><span class="op">(</span><span class="va">args</span><span class="op">$</span><span class="va">gwas_info</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">1</span>, <span class="op">(</span><span class="va">args</span><span class="op">$</span><span class="va">gwas_info</span><span class="op">)</span> <span class="op">:=</span> <span class="cn">NA_real_</span><span class="op">]</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html" class="external-link">is.null</a></span><span class="op">(</span><span class="va">args</span><span class="op">$</span><span class="va">info_thresh</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">gwas</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/get.html" class="external-link">get</a></span><span class="op">(</span><span class="va">args</span><span class="op">$</span><span class="va">gwas_info</span><span class="op">)</span> <span class="op">&lt;</span> <span class="fl">0</span> <span class="op">|</span> <span class="fu"><a href="https://rdrr.io/r/base/get.html" class="external-link">get</a></span><span class="op">(</span><span class="va">args</span><span class="op">$</span><span class="va">gwas_info</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">1</span> <span class="op">|</span> <span class="fu"><a href="https://rdrr.io/r/base/get.html" class="external-link">get</a></span><span class="op">(</span><span class="va">args</span><span class="op">$</span><span class="va">gwas_info</span><span class="op">)</span> <span class="op">&lt;</span> <span class="va">args</span><span class="op">$</span><span class="va">info_thresh</span>, <span class="op">(</span><span class="va">args</span><span class="op">$</span><span class="va">gwas_info</span><span class="op">)</span> <span class="op">:=</span> <span class="cn">NA_real_</span><span class="op">]</span></span>
+<span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://cli.r-lib.org/reference/cli_alert.html" class="external-link">cli_alert_info</a></span><span class="op">(</span><span class="st">"info_thresh not provided, skipping info score filtering and setting info score to 1 for all variants"</span><span class="op">)</span></span>
+<span>  <span class="va">gwas</span><span class="op">[</span>, <span class="op">(</span><span class="va">args</span><span class="op">$</span><span class="va">gwas_info</span><span class="op">)</span> <span class="op">:=</span> <span class="fl">1</span><span class="op">]</span></span>
+<span><span class="op">}</span></span>
 <span></span>
 <span><span class="co"># alleles must be characters</span></span>
 <span><span class="va">gwas</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">args</span><span class="op">$</span><span class="va">gwas_ea</span>, <span class="va">args</span><span class="op">$</span><span class="va">gwas_oa</span><span class="op">)</span> <span class="op">:=</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">.SD</span>, <span class="va">as.character</span><span class="op">)</span>, .SDcols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">args</span><span class="op">$</span><span class="va">gwas_ea</span>, <span class="va">args</span><span class="op">$</span><span class="va">gwas_oa</span><span class="op">)</span><span class="op">]</span></span>
@@ -554,6 +563,7 @@ will need to add more.</p>
 <span><span class="co"># formatting reference</span></span>
 <span><span class="co">#=============================================================================</span></span>
 <span><span class="va">col_fn_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
+<span>  ref_id    <span class="op">=</span> <span class="va">as.character</span>,</span>
 <span>  ref_chr   <span class="op">=</span> <span class="va">as.character</span>,</span>
 <span>  ref_bp    <span class="op">=</span> <span class="va">as.integer</span>,</span>
 <span>  ref_ea    <span class="op">=</span> <span class="va">as.character</span>,</span>
@@ -627,8 +637,20 @@ will need to add more.</p>
 <span><span class="co"># filter out the frequency differences over the provided threshold</span></span>
 <span><span class="va">h</span> <span class="op">&lt;-</span> <span class="va">h</span><span class="op">[</span><span class="va">freq_diff</span> <span class="op">&lt;</span> <span class="va">args</span><span class="op">$</span><span class="va">freq_diff</span><span class="op">]</span></span>
 <span></span>
-<span><span class="co"># extract the data from the harmonisation table (don't need the reference columns now)</span></span>
-<span><span class="va">gwas</span> <span class="op">&lt;-</span> <span class="va">h</span><span class="op">[</span>, <span class="va">.SD</span>, .SDcols <span class="op">=</span> <span class="va">gwas_cols</span><span class="op">]</span></span>
+<span><span class="co"># extract the data from the harmonisation table (don't need the reference columns now, except for the rsid)</span></span>
+<span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/setattr.html" class="external-link">setnames</a></span><span class="op">(</span><span class="va">h</span>,</span>
+<span>         old <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">ref_cols</span><span class="op">[[</span><span class="st">"ref_id"</span><span class="op">]</span><span class="op">]</span>, <span class="st">"_ref"</span><span class="op">)</span>, <span class="st">"chr"</span>,<span class="st">"bp"</span>,<span class="st">"ea"</span>,<span class="st">"oa"</span>,<span class="st">"eaf"</span>,<span class="st">"beta"</span>,<span class="st">"se"</span>,<span class="st">"p"</span>,<span class="st">"n"</span><span class="op">)</span>,</span>
+<span>         new <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">ref_cols</span><span class="op">[[</span><span class="st">"ref_id"</span><span class="op">]</span><span class="op">]</span>,</span>
+<span>                 <span class="va">gwas_cols</span><span class="op">[[</span><span class="st">"gwas_chr"</span><span class="op">]</span><span class="op">]</span>,</span>
+<span>                 <span class="va">gwas_cols</span><span class="op">[[</span><span class="st">"gwas_bp"</span><span class="op">]</span><span class="op">]</span>,</span>
+<span>                 <span class="va">gwas_cols</span><span class="op">[[</span><span class="st">"gwas_ea"</span><span class="op">]</span><span class="op">]</span>,</span>
+<span>                 <span class="va">gwas_cols</span><span class="op">[[</span><span class="st">"gwas_oa"</span><span class="op">]</span><span class="op">]</span>,</span>
+<span>                 <span class="va">gwas_cols</span><span class="op">[[</span><span class="st">"gwas_eaf"</span><span class="op">]</span><span class="op">]</span>,</span>
+<span>                 <span class="va">gwas_cols</span><span class="op">[[</span><span class="st">"gwas_beta"</span><span class="op">]</span><span class="op">]</span>,</span>
+<span>                 <span class="va">gwas_cols</span><span class="op">[[</span><span class="st">"gwas_se"</span><span class="op">]</span><span class="op">]</span>,</span>
+<span>                 <span class="va">gwas_cols</span><span class="op">[[</span><span class="st">"gwas_p"</span><span class="op">]</span><span class="op">]</span>,</span>
+<span>                 <span class="va">gwas_cols</span><span class="op">[[</span><span class="st">"gwas_n"</span><span class="op">]</span><span class="op">]</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">gwas</span> <span class="op">&lt;-</span> <span class="va">h</span><span class="op">[</span>, <span class="va">.SD</span>, .SDcols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">ref_cols</span><span class="op">[[</span><span class="st">"ref_id"</span><span class="op">]</span><span class="op">]</span>, <span class="va">gwas_cols</span><span class="op">)</span><span class="op">]</span></span>
 <span></span>
 <span></span>
 <span><span class="co">#=============================================================================</span></span>
@@ -688,21 +710,21 @@ will need to add more.</p>
 <span><span class="co">#=============================================================================</span></span>
 <span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="va">args</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="va">args</span><span class="op">$</span><span class="va">gwas</span> <span class="op">=</span> <span class="st">'/Users/xx20081/Desktop/meta.all.allcause_death.autosomes.tsv'</span></span>
+<span>  <span class="va">args</span><span class="op">$</span><span class="va">gwas</span> <span class="op">=</span> <span class="st">'/Users/xx20081/Desktop/first_10_rows_meta_all_composite_2_autosomes.tsv'</span></span>
 <span>  <span class="va">args</span><span class="op">$</span><span class="va">ref</span> <span class="op">=</span><span class="st">'/Users/xx20081/Documents/local_data/genome_reference/hrc_37/HRC.r1-1.GRCh37.wgs.mac5.sites.tab.gz'</span></span>
 <span>  <span class="va">args</span><span class="op">$</span><span class="va">gwas_beta</span><span class="op">=</span> <span class="st">"beta"</span></span>
-<span>  <span class="va">args</span><span class="op">$</span><span class="va">gwas_bp</span><span class="op">=</span> <span class="st">"bp"</span></span>
-<span>  <span class="va">args</span><span class="op">$</span><span class="va">gwas_chr</span><span class="op">=</span> <span class="st">"chr"</span></span>
-<span>  <span class="va">args</span><span class="op">$</span><span class="va">gwas_ea</span><span class="op">=</span> <span class="st">"ea"</span></span>
-<span>  <span class="va">args</span><span class="op">$</span><span class="va">gwas_eaf</span><span class="op">=</span> <span class="st">"eaf"</span></span>
+<span>  <span class="va">args</span><span class="op">$</span><span class="va">gwas_bp</span><span class="op">=</span> <span class="st">"position"</span></span>
+<span>  <span class="va">args</span><span class="op">$</span><span class="va">gwas_chr</span><span class="op">=</span> <span class="st">"chromosome"</span></span>
+<span>  <span class="va">args</span><span class="op">$</span><span class="va">gwas_ea</span><span class="op">=</span> <span class="st">"alt"</span></span>
+<span>  <span class="va">args</span><span class="op">$</span><span class="va">gwas_eaf</span><span class="op">=</span> <span class="st">"freq"</span></span>
 <span>  <span class="va">args</span><span class="op">$</span><span class="va">gwas_info</span><span class="op">=</span> <span class="st">"info"</span></span>
 <span>  <span class="va">args</span><span class="op">$</span><span class="va">gwas_n</span><span class="op">=</span> <span class="st">"n"</span></span>
-<span>  <span class="va">args</span><span class="op">$</span><span class="va">gwas_oa</span><span class="op">=</span> <span class="st">"oa"</span></span>
+<span>  <span class="va">args</span><span class="op">$</span><span class="va">gwas_oa</span><span class="op">=</span> <span class="st">"reference"</span></span>
 <span>  <span class="va">args</span><span class="op">$</span><span class="va">gwas_p</span><span class="op">=</span> <span class="st">"p"</span></span>
 <span>  <span class="va">args</span><span class="op">$</span><span class="va">gwas_se</span><span class="op">=</span> <span class="st">"se"</span></span>
-<span>  <span class="va">args</span><span class="op">$</span><span class="va">indel_alleles</span><span class="op">=</span> <span class="cn">TRUE</span></span>
 <span>  <span class="va">args</span><span class="op">$</span><span class="va">output</span><span class="op">=</span> <span class="st">"/Users/xx20081/Desktop/qc_tests"</span></span>
 <span>  <span class="va">args</span><span class="op">$</span><span class="va">overwrite</span><span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  <span class="va">args</span><span class="op">$</span><span class="va">ref_id</span><span class="op">=</span> <span class="st">"ID"</span></span>
 <span>  <span class="va">args</span><span class="op">$</span><span class="va">ref_bp</span><span class="op">=</span> <span class="st">"POS"</span></span>
 <span>  <span class="va">args</span><span class="op">$</span><span class="va">ref_chr</span><span class="op">=</span> <span class="st">"#CHROM"</span></span>
 <span>  <span class="va">args</span><span class="op">$</span><span class="va">ref_ea</span><span class="op">=</span> <span class="st">"ALT"</span></span>
@@ -710,6 +732,8 @@ will need to add more.</p>
 <span>  <span class="va">args</span><span class="op">$</span><span class="va">ref_oa</span><span class="op">=</span> <span class="st">"REF"</span></span>
 <span>  <span class="va">args</span><span class="op">$</span><span class="va">verbose</span><span class="op">=</span> <span class="cn">TRUE</span></span>
 <span>  <span class="va">args</span><span class="op">$</span><span class="va">freq_diff</span><span class="op">=</span> <span class="fl">0.2</span></span>
+<span>  <span class="va">args</span><span class="op">$</span><span class="va">no_indel_alleles</span><span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>  <span class="va">args</span><span class="op">$</span><span class="va">info_thresh</span><span class="op">=</span> <span class="cn">NULL</span></span>
 <span><span class="op">}</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

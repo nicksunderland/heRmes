@@ -222,6 +222,215 @@ HF_IsA	42841	ICD9	Acute combined systolic and diastolic heart failure	1	1	1	1	4	
 HF_IsA	42842	ICD9	Chronic combined systolic and diastolic heart failure	1	1	1	1	4	1		1	Heart Failure
 HF_IsA	42843	ICD9	Acute on chronic combined systolic and diastolic heart failure	1	1	1	1	4	1		1	Heart Failure
 HF_IsA	4289	ICD9	Heart failure, unspecified	1	1	1	1	4	1		1	Heart Failure
+DCM_IsA	1264404009	SNOMED	Dilated cardiomyopathy due to scleroderma (disorder)	1	1	0	1	3	1		0.75	Dilated cardiomyopathy
+DCM_IsA	35719004	SNOMED	Dilated cardiomyopathy due to systemic sclerosis (disorder)	1	1	0	1	3	1		0.75	Dilated cardiomyopathy
+DCM_IsA	36471000	SNOMED	Dilated cardiomyopathy due to systemic lupus erythematosus (disorder)	1	1	0	1	3	1		0.75	Dilated cardiomyopathy
+DCM_IsA	60514000	SNOMED	Dilated cardiomyopathy due to familial storage disease (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	58911001	SNOMED	Dilated cardiomyopathy due to glycogen storage disease (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	880038008	SNOMED	Dilated cardiomyopathy due to lysosomal storage disease (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	11104006	SNOMED	Dilated cardiomyopathy due to phytanic acid storage disease (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	30496006	SNOMED	Dilated cardiomyopathy due to viral myocarditis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	50270004	SNOMED	Dilated cardiomyopathy due to Friedreich's ataxia (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	2816000	SNOMED	Dilated cardiomyopathy due to myotonic dystrophy (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	58629009	SNOMED	Dilated cardiomyopathy due to amyloidosis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	880014009	SNOMED	Dilated cardiomyopathy due to carnitine deficiency (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	46696008	SNOMED	Dilated cardiomyopathy due to dermatomyositis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	39693003	SNOMED	Dilated cardiomyopathy due to granuloma (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	86194008	SNOMED	Dilated cardiomyopathy due to infectious disease (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	54830008	SNOMED	Dilated cardiomyopathy due to bacterial myocarditis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	44630002	SNOMED	Dilated cardiomyopathy due to fungal myocarditis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	1153452008	SNOMED	Dilated cardiomyopathy due to parasitic myocarditis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	40532006	SNOMED	Dilated cardiomyopathy due to protozoan myocarditis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	74249003	SNOMED	Dilated cardiomyopathy due to malignancy (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	111285003	SNOMED	Dilated cardiomyopathy due to metabolic disorder (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	1149109001	SNOMED	Dilated cardiomyopathy due to electrolyte imbalance (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	8209004	SNOMED	Dilated cardiomyopathy due to hemochromatosis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	86995005	SNOMED	Dilated cardiomyopathy due to mucopolysaccharidosis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	413995009	SNOMED	Dilated cardiomyopathy due to taurine deficiency (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	28869005	SNOMED	Dilated cardiomyopathy due to muscular dystrophy (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	79152002	SNOMED	Dilated cardiomyopathy due to neuromuscular disorder (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	84733009	SNOMED	Dilated cardiomyopathy due to nutritional deficiency (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	91604001	SNOMED	Dilated cardiomyopathy due to polyarteritis nodosa (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	21430002	SNOMED	Dilated cardiomyopathy due to rheumatoid arthritis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	6022005	SNOMED	Dilated cardiomyopathy due to sarcoidosis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	871639003	SNOMED	Dilated cardiomyopathy due to mitochondrial disease (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	399020009	SNOMED	Congestive cardiomyopathy (disorder)	0	0	1	1	2	1	duplicate row	0.5	Dilated cardiomyopathy
+DCM_IsA	702424003	SNOMED	Dilated cardiomyopathy 3B (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	64749001	SNOMED	Dilated cardiomyopathy due to infiltration (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	719451006	SNOMED	Dilated cardiomyopathy with hypergonadotropic hypogonadism syndrome (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	766883006	SNOMED	Familial dilated cardiomyopathy with conduction defect due to lamin A/C mutation (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	472327008	SNOMED	Fetal dilated cardiomyopathy (disorder)	1	1	1	0	3	1		0.75	Dilated cardiomyopathy
+DCM_IsA	413994008	SNOMED	Dilated cardiomyopathy with connective tissue disorder (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	12563008	SNOMED	Dilated cardiomyopathy caused by radiation (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	16253001	SNOMED	Dilated peripartum cardiomyopathy (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	195021004	SNOMED	Primary dilated cardiomyopathy (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	52029003	SNOMED	Primary familial dilated cardiomyopathy (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	53043001	SNOMED	Primary idiopathic dilated cardiomyopathy (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	471890009	SNOMED	Dilated cardiomyopathy with genetic marker (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	20529002	SNOMED	Secondary dilated cardiomyopathy (disorder)	0	1	1	1	3	1	"Is ""secondary"" too vague to exclude ischemia/loading?"	0.75	Dilated cardiomyopathy
+DCM_IsA	1.6546898100011901E+17	SNOMED	Toxic dilated cardiomyopathy (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	723993005	SNOMED	Sensorineural deafness with dilated cardiomyopathy syndrome (disorder)	1	1	1	0	3	1		0.75	Dilated cardiomyopathy
+DCM_IsA	719835006	SNOMED	Wooly hair and palmoplantar keratoderma with dilated cardiomyopathy syndrome (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	72972005	SNOMED	Dilated cardiomyopathy caused by drug (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	880042006	SNOMED	Dilated cardiomyopathy caused by anthracycline (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	1234750000	SNOMED	Dilated cardiomyopathy caused by ethanol (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	74368002	SNOMED	Congestive cardiomyopathy (disorder)	0	0	1	1	2	1		0.5	Dilated cardiomyopathy
+DCM_IsA	389995008	SNOMED	Congestive cardiomyopathy (disorder)	0	0	1	1	2	1		0.5	Dilated cardiomyopathy
+DCM_IsA	83521008	SNOMED	Dilated cardiomyopathy caused by alcohol (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	2180001	SNOMED	Dilated cardiomyopathy secondary to connective tissue disorder (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	34342000	SNOMED	Dilated cardiomyopathy secondary to deficiency (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	90202001	SNOMED	Dilated cardiomyopathy secondary to electrolyte deficiency (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	2024009	SNOMED	Dilated cardiomyopathy secondary to metazoal myocarditis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	29201009	SNOMED	Dilated cardiomyopathy secondary to sensitivity (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	1954004	SNOMED	Dilated cardiomyopathy secondary to toxic reaction (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	233874005	SNOMED	Secondary dilated cardiomyopathy (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_IsA	I420	ICD10	Dilated cardiomyopathy	1	1	1	1	4	1		1	Dilated cardiomyopathy
+DCM_AssociatedWith	1264404009	SNOMED	Dilated cardiomyopathy due to scleroderma (disorder)	1	0	0	1	2	1		0.5	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	35719004	SNOMED	Dilated cardiomyopathy due to systemic sclerosis (disorder)	1	0	0	1	2	1		0.5	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	36471000	SNOMED	Dilated cardiomyopathy due to systemic lupus erythematosus (disorder)	1	0	0	1	2	1		0.5	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	60514000	SNOMED	Dilated cardiomyopathy due to familial storage disease (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	58911001	SNOMED	Dilated cardiomyopathy due to glycogen storage disease (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	880038008	SNOMED	Dilated cardiomyopathy due to lysosomal storage disease (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	11104006	SNOMED	Dilated cardiomyopathy due to phytanic acid storage disease (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	1137377003	SNOMED	Cardiomyopathy due to thyrotoxicosis (disorder)	1	1	0	0	2	1		0.5	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	204981000119101	SNOMED	Cardiomyopathy due to viral infection (disorder)	1	1	0	1	3	1		0.75	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	30496006	SNOMED	Dilated cardiomyopathy due to viral myocarditis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	315608004	SNOMED	Cardiomyopathy in Duchenne muscular dystrophy (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	50270004	SNOMED	Dilated cardiomyopathy due to Friedreich's ataxia (disorder)	0	1	1	1	3	1		0.75	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	195031006	SNOMED	Cardiomyopathy in myotonic dystrophy (disorder)	0	1	0	0	1	1		0.25	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	2816000	SNOMED	Dilated cardiomyopathy due to myotonic dystrophy (disorder)	0	1	1	1	3	1		0.75	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	50275009	SNOMED	Cobalt cardiomyopathy (disorder)	1	1	0	0	2	1	beer brewers cardiomyopathy	0.5	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	58629009	SNOMED	Dilated cardiomyopathy due to amyloidosis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	880014009	SNOMED	Dilated cardiomyopathy due to carnitine deficiency (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	46696008	SNOMED	Dilated cardiomyopathy due to dermatomyositis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	39693003	SNOMED	Dilated cardiomyopathy due to granuloma (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	86194008	SNOMED	Dilated cardiomyopathy due to infectious disease (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	54830008	SNOMED	Dilated cardiomyopathy due to bacterial myocarditis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	44630002	SNOMED	Dilated cardiomyopathy due to fungal myocarditis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	1153452008	SNOMED	Dilated cardiomyopathy due to parasitic myocarditis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	40532006	SNOMED	Dilated cardiomyopathy due to protozoan myocarditis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	74249003	SNOMED	Dilated cardiomyopathy due to malignancy (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	111285003	SNOMED	Dilated cardiomyopathy due to metabolic disorder (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	1149109001	SNOMED	Dilated cardiomyopathy due to electrolyte imbalance (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	8209004	SNOMED	Dilated cardiomyopathy due to hemochromatosis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	86995005	SNOMED	Dilated cardiomyopathy due to mucopolysaccharidosis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	413995009	SNOMED	Dilated cardiomyopathy due to taurine deficiency (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	28869005	SNOMED	Dilated cardiomyopathy due to muscular dystrophy (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	79152002	SNOMED	Dilated cardiomyopathy due to neuromuscular disorder (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	84733009	SNOMED	Dilated cardiomyopathy due to nutritional deficiency (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	91604001	SNOMED	Dilated cardiomyopathy due to polyarteritis nodosa (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	21430002	SNOMED	Dilated cardiomyopathy due to rheumatoid arthritis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	6022005	SNOMED	Dilated cardiomyopathy due to sarcoidosis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	46939000	SNOMED	Keshan disease (disorder)	0	1	0	0	1	1		0.25	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	871639003	SNOMED	Dilated cardiomyopathy due to mitochondrial disease (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	233875006	SNOMED	Post-myocarditic cardiomyopathy (disorder)	1	1	0	1	3	1		0.75	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	789037005	SNOMED	Rheumatic cardiomyopathy (disorder)	0	1	0	0	1	1		0.25	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	399020009	SNOMED	Congestive cardiomyopathy (disorder)	0	1	1	0	2	1	duplicate row	0.5	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	702424003	SNOMED	Dilated cardiomyopathy 3B (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	64749001	SNOMED	Dilated cardiomyopathy due to infiltration (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	719451006	SNOMED	Dilated cardiomyopathy with hypergonadotropic hypogonadism syndrome (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	766883006	SNOMED	Familial dilated cardiomyopathy with conduction defect due to lamin A/C mutation (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	472327008	SNOMED	Fetal dilated cardiomyopathy (disorder)	1	1	1	0	3	1		0.75	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	111000119104	SNOMED	Nonischemic congestive cardiomyopathy (disorder)	1	1	1	0	3	1		0.75	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	413994008	SNOMED	Dilated cardiomyopathy with connective tissue disorder (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	699668009	SNOMED	Secondary nonischemic congestive cardiomyopathy (disorder)	0	1	1	0	2	1		0.5	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	12563008	SNOMED	Dilated cardiomyopathy caused by radiation (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	16253001	SNOMED	Dilated peripartum cardiomyopathy (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	195021004	SNOMED	Primary dilated cardiomyopathy (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	52029003	SNOMED	Primary familial dilated cardiomyopathy (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	53043001	SNOMED	Primary idiopathic dilated cardiomyopathy (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	471890009	SNOMED	Dilated cardiomyopathy with genetic marker (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	20529002	SNOMED	Secondary dilated cardiomyopathy (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	1.6546898100011901E+17	SNOMED	Toxic dilated cardiomyopathy (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	723993005	SNOMED	Sensorineural deafness with dilated cardiomyopathy syndrome (disorder)	1	1	1	0	3	1		0.75	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	719835006	SNOMED	Wooly hair and palmoplantar keratoderma with dilated cardiomyopathy syndrome (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	471870000	SNOMED	Pacing-induced cardiomyopathy (disorder)	1	1	1	0	3	1		0.75	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	774148007	SNOMED	Polyglucosan body myopathy type 1 (disorder)	0	1	0	0	1	1	Review evidence TL: https://www.ncbi.nlm.nih.gov/medgen/863042 INCLUDE	0.25	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	62377009	SNOMED	Postpartum cardiomyopathy (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	240077004	SNOMED	Severe scapuloperoneal muscular dystrophy with cardiomyopathy (disorder)	0	1	0	0	1	1		0.25	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	426300009	SNOMED	Tachycardia-induced cardiomyopathy (disorder)	1	1	1	0	3	1		0.75	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	103331000119103	SNOMED	Toxic cardiomyopathy (disorder)	0	1	1	1	3	1		0.75	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	1.62289310001191E+16	SNOMED	Cardiomyopathy caused by drug (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	72972005	SNOMED	Dilated cardiomyopathy caused by drug (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	880042006	SNOMED	Dilated cardiomyopathy caused by anthracycline (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	1234750000	SNOMED	Dilated cardiomyopathy caused by ethanol (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	195036001	SNOMED	Cardiomyopathy due to drugs and other external agents (disorder)	0	1	0	1	2	1		0.5	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	639641000000102	SNOMED	Cardiomyopathy due to drugs and other external agents (disorder)	0	1	0	1	2	1		0.5	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	193234005	SNOMED	Cardiomyopathy in Duchenne muscular dystrophy (disorder)	1	1	0	1	3	1		0.75	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	199277001	SNOMED	Cardiomyopathy in the puerperium (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	186812009	SNOMED	Chagas' disease cardiomyopathy (disorder)	0	1	0	1	2	1		0.5	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	74368002	SNOMED	Congestive cardiomyopathy (disorder)	0	1	1	0	2	1		0.5	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	389995008	SNOMED	Congestive cardiomyopathy (disorder)	0	1	1	0	2	1		0.5	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	83521008	SNOMED	Dilated cardiomyopathy caused by alcohol (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	2180001	SNOMED	Dilated cardiomyopathy secondary to connective tissue disorder (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	34342000	SNOMED	Dilated cardiomyopathy secondary to deficiency (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	90202001	SNOMED	Dilated cardiomyopathy secondary to electrolyte deficiency (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	2024009	SNOMED	Dilated cardiomyopathy secondary to metazoal myocarditis (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	29201009	SNOMED	Dilated cardiomyopathy secondary to sensitivity (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	1954004	SNOMED	Dilated cardiomyopathy secondary to toxic reaction (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	702343002	SNOMED	Early onset myopathy with fatal cardiomyopathy (disorder)	0	1	0	0	1	1		0.25	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	703275009	SNOMED	Heart failure with reduced ejection fraction due to cardiomyopathy (disorder)	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	233874005	SNOMED	Secondary dilated cardiomyopathy (disorder)	0	1	1	1	3	1		0.75	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	765651000000100	SNOMED	Tachycardiomyopathy (disorder)	1	1	1	0	3	1		0.75	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	195579007	SNOMED	[X]Cardiomyopathy in nutritional diseases classified elsewhere (disorder)	1	0	0	0	1	1		0.25	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	442521000000100	SNOMED	[X]Cardiomyopathy in nutritional diseases classified elsewhere (disorder)	1	0	0	0	1	1		0.25	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	A3681	ICD10	Diphtheritic cardiomyopathy	0	1	0	0	1	1	Burch, G. E., Sun, S. C., Sohal, R. S., Chu, K. C., & Colcolough, H. L. (1968). Diphtheritic myocarditis. A histochemical and electron microscopic study. The American Journal of Cardiology, 21(2), 261–268.	0.25	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	B3324	ICD10	Viral cardiomyopathy	0	1	1	1	3	1		0.75	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	I420	ICD10	Dilated cardiomyopathy	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	I426	ICD10	Alcoholic cardiomyopathy	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	I427	ICD10	Cardiomyopathy due to drug and external agent	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	O903	ICD10	Peripartum cardiomyopathy	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	4255	ICD9	Alcoholic cardiomyopathy	1	1	1	1	4	1		1	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	67450	ICD9	Peripartum cardiomyopathy, unspecified as to episode of care or not applicable	0	1	1	1	3	1		0.75	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	67451	ICD9	Peripartum cardiomyopathy, delivered, with or without mention of antepartum condition	0	1	1	1	3	1		0.75	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	67452	ICD9	Peripartum cardiomyopathy, delivered, with mention of postpartum condition	0	1	1	1	3	1		0.75	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	67453	ICD9	Peripartum cardiomyopathy, antepartum condition or complication	0	1	1	1	3	1		0.75	Dilated cardiomyopathy (associated with)
+DCM_AssociatedWith	67454	ICD9	Peripartum cardiomyopathy, postpartum condition or complication	0	1	1	1	3	1		0.75	Dilated cardiomyopathy (associated with)
+LVSD_IsA	443254009	SNOMED	Acute systolic heart failure (disorder)	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	153931000119109	SNOMED	Acute combined systolic and diastolic heart failure (disorder)	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	153951000119103	SNOMED	Acute on chronic combined systolic and diastolic heart failure (disorder)	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	443253003	SNOMED	Acute on chronic systolic heart failure (disorder)	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	441481004	SNOMED	Chronic systolic heart failure (disorder)	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	153941000119100	SNOMED	Chronic combined systolic and diastolic heart failure (disorder)	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	442304009	SNOMED	Combined systolic and diastolic dysfunction (finding)	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	426263006	SNOMED	Congestive heart failure due to left ventricular systolic dysfunction (disorder)	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	407596008	SNOMED	Echocardiogram shows left ventricular systolic dysfunction (finding)	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	134401001	SNOMED	Left ventricular systolic dysfunction (disorder)	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	698592004	SNOMED	Asymptomatic left ventricular systolic dysfunction (disorder)	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	430396006	SNOMED	Chronic systolic dysfunction of left ventricle (disorder)	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	366829001	SNOMED	Left ventricular systolic dysfunction (disorder)	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	366910008	SNOMED	Left ventricular systolic dysfunction (disorder)	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	697925001	SNOMED	Pulmonary hypertension due to systolic systemic ventricular dysfunction (disorder)	0	1	1	1	3	1		0.75	Left ventricular systolic dysfunction
+LVSD_IsA	120851000119104	SNOMED	Systolic heart failure stage D (disorder)	1	1	1	0	3	1		0.75	Left ventricular systolic dysfunction
+LVSD_IsA	15629741000119102	SNOMED	Systolic heart failure stage C due to ischemic cardiomyopathy (disorder)	1	1	1	0	3	1		0.75	Left ventricular systolic dysfunction
+LVSD_IsA	120861000119102	SNOMED	Systolic heart failure stage C (disorder)	1	1	1	0	3	1		0.75	Left ventricular systolic dysfunction
+LVSD_IsA	417996009	SNOMED	Systolic heart failure (disorder)	1	1	1	0	3	1		0.75	Left ventricular systolic dysfunction
+LVSD_IsA	1064941000000106	SNOMED	Heart failure with reduced ejection fraction (disorder)	1	1	1	0	3	1		0.75	Left ventricular systolic dysfunction
+LVSD_IsA	703274008	SNOMED	Heart failure with reduced ejection fraction due to myocarditis (disorder)	1	1	1	0	3	1		0.75	Left ventricular systolic dysfunction
+LVSD_IsA	703276005	SNOMED	Heart failure with reduced ejection fraction due to heart valve disease (disorder)	1	1	1	0	3	1		0.75	Left ventricular systolic dysfunction
+LVSD_IsA	703273002	SNOMED	Heart failure with reduced ejection fraction due to coronary artery disease (disorder)	1	1	1	0	3	1		0.75	Left ventricular systolic dysfunction
+LVSD_IsA	703275009	SNOMED	Heart failure with reduced ejection fraction due to cardiomyopathy (disorder)	1	1	1	0	3	1		0.75	Left ventricular systolic dysfunction
+LVSD_IsA	703272007	SNOMED	Heart failure with reduced ejection fraction (disorder)	1	1	1	0	3	1		0.75	Left ventricular systolic dysfunction
+LVSD_IsA	788950000	SNOMED	Heart failure with mid range ejection fraction (disorder)	1	1	1	0	3	1		0.75	Left ventricular systolic dysfunction
+LVSD_IsA	I501	ICD10	Left ventricular failure, unspecified	0	0	1	0	1	1		0.25	Left ventricular systolic dysfunction
+LVSD_IsA	I502	ICD10	Systolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	I5020	ICD10	Unspecified systolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	I5021	ICD10	Acute systolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	I5022	ICD10	Chronic systolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	I5023	ICD10	Acute on chronic systolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	I504	ICD10	Combined systolic (congestive) and diastolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	I5040	ICD10	Unspecified combined systolic (congestive) and diastolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	I5041	ICD10	Acute combined systolic (congestive) and diastolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	I5042	ICD10	Chronic combined systolic (congestive) and diastolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	I5043	ICD10	Acute on chronic combined systolic (congestive) and diastolic (congestive) heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	42821	ICD9	Acute systolic heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	42822	ICD9	Chronic systolic heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	42823	ICD9	Acute on chronic systolic heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	42840	ICD9	Combined systolic and diastolic heart failure, unspecified	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	42841	ICD9	Acute combined systolic and diastolic heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	42842	ICD9	Chronic combined systolic and diastolic heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	42843	ICD9	Acute on chronic combined systolic and diastolic heart failure	1	1	1	1	4	1		1	Left ventricular systolic dysfunction
+LVSD_IsA	42820	ICD9	Systolic heart failure, unspecified	1	1	1	0	3	1		0.75	Left ventricular systolic dysfunction
 Myocardial_infarction	194796000	SNOMED	(Myocardial infarction (& [acute] or [silent] or [cardiac rupture following])) or (coronary thrombosis) (disorder)	1	1	1	1	4	1		1	Myocardial infarction
 Myocardial_infarction	155319007	SNOMED	Acute Q wave myocardial infarction (disorder)	1	1	1	1	4	1		1	Myocardial infarction
 Myocardial_infarction	194805001	SNOMED	Acute Q wave myocardial infarction (disorder)	1	1	1	1	4	1		1	Myocardial infarction
@@ -3509,3 +3718,76 @@ Congenital_heart_procedure	308696000	SNOMED	Coarctation angioplasty (procedure)	
 Congenital_heart_procedure	698643003	SNOMED	Balloon dilation of coarctation of aorta (procedure)	0	0	1	0	1	1		0.25	Congenital heart disease procedure
 Congenital_heart_procedure	449403001	SNOMED	Balloon dilation of recoarctation of aorta (procedure)	0	0	1	0	1	1		0.25	Congenital heart disease procedure
 Congenital_heart_procedure	871661008	SNOMED	Aneurysm of aorta at coarctation site following procedure (disorder)	0	0	1	0	1	1		0.25	Congenital heart disease procedure
+RCM_IsA	I425	ICD10	Other restrictive cardiomyopathy	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	419231000000102	SNOMED	[X]Other restrictive cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	195575001	SNOMED	[X]Other restrictive cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	195015003	SNOMED	Restrictive cardiomyopathy with endomyocardial fibrosis (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	715626008	SNOMED	Tropical endomyocardial fibrosis (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	39041004	SNOMED	Restrictive cardiomyopathy secondary to sarcoidosis (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	24584003	SNOMED	Restrictive cardiomyopathy secondary to malignancy (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	15544002	SNOMED	Restrictive cardiomyopathy secondary to infiltrations (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	56941009	SNOMED	Restrictive cardiomyopathy secondary to hemochromatosis (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	76931005	SNOMED	Restrictive cardiomyopathy secondary to granulomas (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	64615000	SNOMED	Restrictive cardiomyopathy secondary to glycogen storage disease (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	33006007	SNOMED	Restrictive cardiomyopathy secondary to endocardial fibroelastosis (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	79754008	SNOMED	Restrictive cardiomyopathy secondary to amyloidosis (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	84725008	SNOMED	Restrictive cardiomyopathy due to mucopolysaccharidosis (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	415509000	SNOMED	Secondary restrictive cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	398754006	SNOMED	Restrictive cardiomyopathy with endomyocardial fibrosis (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	233877003	SNOMED	Restrictive cardiomyopathy without endomyocardial fibrosis (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	64041007	SNOMED	Primary idiopathic restrictive cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	33258008	SNOMED	Primary eosinophilic endomyocardial restrictive cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	42099002	SNOMED	Primary endomyocardial fibrosis restrictive cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	90828009	SNOMED	Primary restrictive cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	715655000	SNOMED	Transthyretin related familial amyloid cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	30884007	SNOMED	Restrictive cardiomyopathy secondary to familial storage disease (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	233878008	SNOMED	Familial restrictive cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	415295002	SNOMED	Restrictive cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	389996009	SNOMED	Restrictive cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	93456007	SNOMED	Feline restrictive cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	123264005	SNOMED	Endomyocardial fibrosis (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	92521004	SNOMED	Canine restrictive cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+RCM_IsA	111507009	SNOMED	Becker muscular dystrophy (disorder)	0	0	1	0	1	1		0.25	Restrictive cardiomyopathy
+HCM_IsA	1204192000	SNOMED	Aneurysm of apex of heart due to apical hypertrophic cardiomyopathy (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	704241002	SNOMED	Fetal hypertrophic cardiomyopathy due to maternal diabetes mellitus (disorder)	1	1	1	0	3	1		0.75	Hypertrophic cardiomyopathy
+HCM_IsA	871638006	SNOMED	Hypertrophic cardiomyopathy due to glycogen storage disease (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	1230303001	SNOMED	Fatal congenital hypertrophic cardiomyopathy due to glycogen storage disease (disorder)	1	1	1	0	3	1		0.75	Hypertrophic cardiomyopathy
+HCM_IsA	890119003	SNOMED	Hypertrophic cardiomyopathy due to Friedreich ataxia (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	472326004	SNOMED	Fetal hypertrophic cardiomyopathy associated with renal disease (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	890122001	SNOMED	Hypertrophic cardiomyopathy due to disorder (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	472325000	SNOMED	Fetal hypertrophic cardiomyopathy due to twin to twin transfusion syndrome (disorder)	1	1	1	0	3	1		0.75	Hypertrophic cardiomyopathy
+HCM_IsA	890121008	SNOMED	Hypertrophic cardiomyopathy due to hyperthyroidism (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	871649000	SNOMED	Hypertrophic cardiomyopathy due to lysosomal disease (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	890120009	SNOMED	Hypertrophic cardiomyopathy due to neuromuscular disorder (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	472316006	SNOMED	Hypertrophic mitochondrial cardiomyopathy (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	717812000	SNOMED	Congenital cataract, hypertrophic cardiomyopathy, mitochondrial myopathy syndrome (disorder)	1	1	1	0	3	1		0.75	Hypertrophic cardiomyopathy
+HCM_IsA	763280005	SNOMED	Encephalopathy, hypertrophic cardiomyopathy, renal tubular disease syndrome (disorder)	1	1	1	0	3	1		0.75	Hypertrophic cardiomyopathy
+HCM_IsA	771509001	SNOMED	Hypertrophic cardiomyopathy and renal tubular disease due to mitochondrial deoxyribonucleic acid mutation (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	718713000	SNOMED	Hypertrophic cardiomyopathy with hypotonia and lactic acidosis syndrome (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	472318007	SNOMED	Hypertrophic mitochondrial cardiomyopathy associated with cataracts and lactic acidosis (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	771513008	SNOMED	Infantile hypertrophic cardiomyopathy due to mitochondrial ribosomal protein L44 deficiency (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	771478008	SNOMED	Mitochondrial hypertrophic cardiomyopathy with lactic acidosis due to mitochondrial transfer ribonucleic acid translation optimization 1 deficiency (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	233871002	SNOMED	Congestive obstructive cardiomyopathy (disorder)	1	1	0	0	2	1		0.5	Hypertrophic cardiomyopathy
+HCM_IsA	83978005	SNOMED	Primary familial hypertrophic cardiomyopathy (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	472324001	SNOMED	Fetal hypertrophic cardiomyopathy (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	233873004	SNOMED	Hypertrophic cardiomyopathy (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	1204194004	SNOMED	Hypertrophic cardiomyopathy of apex of heart (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	471885006	SNOMED	Hypertrophic cardiomyopathy with genetic marker (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	195020003	SNOMED	Hypertrophic cardiomyopathy without obstruction (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	45227007	SNOMED	Hypertrophic obstructive cardiomyopathy (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	700065003	SNOMED	Primary hypertrophic cardiomyopathy (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	63183009	SNOMED	Primary idiopathic hypertrophic cardiomyopathy (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	719272007	SNOMED	Progressive sensorineural hearing loss and hypertrophic cardiomyopathy syndrome (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	389998005	SNOMED	Hypertrophic cardiomyopathy (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	445336009	SNOMED	Hypertrophic cardiomyopathy associated with another disorder (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	53322007	SNOMED	Hypertrophic cardiomyopathy secondary to Friedreich's ataxia (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	93558006	SNOMED	Hypertrophic cardiomyopathy secondary to hyperthyroidism (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	41964001	SNOMED	Hypertrophic cardiomyopathy secondary to neuromuscular disorder (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	389999002	SNOMED	Hypertrophic obstructive cardiomyopathy (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	15471000	SNOMED	Primary hypertrophic cardiomyopathy (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	195574002	SNOMED	[X]Other hypertrophic cardiomyopathy (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	443751000000108	SNOMED	[X]Other hypertrophic cardiomyopathy (disorder)	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	I421	ICD10	Obstructive hypertrophic cardiomyopathy	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	I422	ICD10	Other hypertrophic cardiomyopathy	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	42511	ICD9	Hypertrophic obstructive cardiomyopathy	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy
+HCM_IsA	42518	ICD9	Other hypertrophic cardiomyopathy	1	1	1	1	4	1		1	Hypertrophic cardiomyopathy

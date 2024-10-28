@@ -1,8 +1,8 @@
 ---
-title: "HERMES 3.0 sex-stratified analysis"
+title: "HERMES 3.0"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{HERMES 3.0 sex-stratified analysis}
+  %\VignetteIndexEntry{HERMES 3.0}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 bibliography: "`r BibTexLibraries::get_bib_path('hermes3')`"
@@ -27,12 +27,17 @@ library(irr)
 file <- "/Users/xx20081/Library/CloudStorage/OneDrive-SharedLibraries-VUMC/Shaffer, Lauren L - Phenotype Workstream/phenotyping_code_consensus/nih_cardiomyopathy_phenotyping_combined.xlsx"
 
 tabs <- list(HF_IsA                          = "HF_IsA",
+             DCM_IsA                         = "DCM_IsA",
+             DCM_AssociatedWith              = "DCM_AssociatedWith",
+             LVSD_IsA                        = "LVSD_IsA",
              Myocardial_infarction           = "Myocardial_infarction",
              Coronary_artery_bypass_grafting = "Coronary_artery_bypass_grafting",
              Percutaneous_coronary_intervent = "Percutaneous_coronary_intervent",
              Thrombolysis_coronary           = "Thrombolysis_coronary",
              Congenital_heart_disease        = "Congenital_heart_disease", 
-             Congenital_heart_procedure      = "Congenital_heart_procedure")
+             Congenital_heart_procedure      = "Congenital_heart_procedure",
+             RCM_IsA                         = "RCM_IsA",
+             HCM_IsA                         = "HCM_IsA")
 
 meta <- lapply(tabs, function(x) {
   r <- read_xlsx(file, x, n_max=5, col_names=FALSE)
@@ -90,7 +95,7 @@ for (con in unique(dat$concept)) {
 
 
 ## Aim  
-To perform a multi-ancestry sex-stratified genome-wide association study (GWAS) meta-analysis of HF, ischaemic HF and non-ischaemic HF. 
+To perform a multi-ancestry sex-stratified genome-wide association study (GWAS) meta-analysis of HF, ischaemic HF, non-ischaemic HF, DCM, and NICM.  
 
 ## Download codes 
 
@@ -122,8 +127,10 @@ Chronic respiratory disease, predominantly COPD, is a common comorbidity amongst
 | Phenotype   | Name             | Brief Description                                       |
 |-------------|------------------|---------------------------------------------------------|
 | Phenotype 1 | All HF           | Clinical syndrome of HF, any cause or manifestation     |
-| Phenotype 2 | Ischaemic HF     | HF comorbid with antecedent CAD                         |
-| Phenotype 3 | Non-ischaemic HF | HF without CAD                                          |
+| Phenotype 2 | Ischaemic HF     | HF comorbid with antecedent MI/revascularisation        |
+| Phenotype 3 | Non-ischaemic HF | HF without MI/revascularisation                         |
+| Phenotype 4 | DCM              | Dilated cardiomyopathy                                  |
+| Phenotype 5 | NICM             | Non-ischaemic cardiomyopathy (DCM or reduced LVEF <50%) |
 
 ## Methods  
 *Subjects:* Individuals of European, South Asian, East Asian, African, Hispanic, and Indigenous American ancestries who are free of congenital heart disease, and with or without prevalent HF.  
@@ -134,7 +141,7 @@ Chronic respiratory disease, predominantly COPD, is a common comorbidity amongst
 
 
 ## Return of results  
-The Cardiovascular Knowledge Portal team have developed a private data repository for HERMES3 with functionality to validate file formats and run QC on cohort-level GWAS summary data. Please also return results for your study to the analysis team at UQ via the UQRDM. To get access to UQRDM, please provide your analyst email address to Clara Jiang at j.jiang@uq.edu.au.
+The Cardiovascular Knowledge Portal team have developed a private data repository for HERMES3 with functionality to validate file formats and run QC on cohort-level GWAS summary data. If you have issues with the data upload on the Portal, please contact Nick (nicholas.sunderland@bristol.ac.uk) and Clara (j.jiang@uq.edu.au) for login details and assistance.  
 
 
 ## Phenotype definition
@@ -146,33 +153,79 @@ For each participant, define the status (TRUE / FALSE) for the following phenoty
 | Classifier              | Classifier ID | Description                                                                 |
 |-------------------------|---------------|-----------------------------------------------------------------------------|
 |Congenital heart disease | CongHD        | Any congenital malformation of the heart or great vessels defined by a diagnosis, or relevant surgical or percutaneous procedure |
-|Heart failure            | HF            | Diagnosis of heart failure of any cause                                     |
-|Coronary artery disease  | CAD           | Diagnosis of myocardial infarction, history of coronary thrombolysis procedure and surgical or percutaneous procedure for coronary artery revascularization |
+|Heart failure            | HF            | The clinical syndrome consisting of symptoms (e.g. breathlessness, ankle swelling, and fatigue) that may be accompanied by signs (e.g. elevated jugular venous pressure, pulmonary crackles, and peripheral oedema). It is due to a structural and/or functional abnormality of the heart that results in elevated intracardiac pressures and/or inadequate cardiac output at rest and/or during exercise (ESC, 2021).    |
+|Hypertrophic cardiomyopathy | HCM        | Hypertrophic cardiomyopathy (HCM) is defined as the presence of increased LV wall thickness (with or without RV hypertrophy) or mass that is not solely explained by abnormal loading conditions. |
+|Restrictive cardiomyopathy | RCM        | Restrictive cardiomyopathy (RCM) is defined as restrictive left and/or RV pathophysiology in the presence of normal or reduced diastolic volumes (of one or both ventricles), normal or reduced systolic volumes, and normal ventricular wall thickness. |
+|Myocardial infarction    | MI            | The clinical definition of myocardial denotes the presence of acute myocardial injury detected by abnormal cardiac biomarkers in the setting of evidence of myocardial injury (new ischaemic ECG changes loss of viable myocardium on imaging, coronary thrombosis on angiography or autopsy). |
+|Coronary artery bypass grafting | CABG  | Coronary artery bypass graft surgery is a procedure that involves sternotomy to bypass diseased segment(s) of the coronary tree using blood vessels derived other parts of the body, or synthetic grafts, and connected to the aorta. |
+|Percutaneous coronary intervention | PCI | Percutaneous coronary intervention (PCI) is defined as the placement of an angioplasty guidewire, balloon, or other device (e.g. stent, atherectomy, brachytherapy, or thrombectomy catheter) into a native coronary artery or a graft for the purpose of mechanical coronary revascularisation. The assessment of coronary lesion severity by fluoroscopy, intracoronary imaging (e.g. intravascular ultrasonography) or physiology (e.g. fractional flow reserve) is not considered a PCI procedure. |
+|Coronary thrombolysis procedure | Thrombolysis | The delivery of thrombolytic therapy, either intravenously or intracoronary, for the treatment of coronary thrombosis. |    
+|Dilated cardiomyopathy  | DCM           | The presence of LV dilatation and systolic dysfunction (LVEF < 50%) unexplained solely by abnormal loading conditions (e.g. hypertension or valve disease) or other pathology (e.g. previous myocardial infarction). |
+|Dilated cardiomyopathy (associated with) | DCM_AssociatedWith | As for DCM, but including conditions associated with DCM such as peripartum or alcohol-related cardiomyopathy, which are increasingly understood to have underlying genetic propensities. |
+|Left ventricular systolic dysfunction | LVSD | Left ventricular systolic dysfunction is defined here as any code indicating impaired LV ejection fraction (LVEF < 50%), heart failure with reduced ejection fraction (LVEF < 40%), or heart failure with mid-range ejection fraction (LVEF 40-49%).  |
 
 Where available, manually adjudicated clinical definitions made by trained physicians are preferred.  
 
-For de novo adjudication using electronic health records, please define these classifiers as the presence of at least 1 relevant diagnosis/procedure code listed in Appendix Ia-c. Where appropriate, please also include other code systems (e.g. READ and CPT) by mapping the recommended codes.  
+For de novo adjudication using electronic health records, please define these classifiers as the presence of at least 1 relevant diagnosis/procedure code, which can be accessed via the “heRmes” GitHub: https://nicksunderland.github.io/heRmes/articles/hermes_3.html
 
-If self-reported data are available, individuals who lack a HF or CAD diagnosis/procedure code, but self-report to have had these conditions, should be excluded from the study.   
+Please keep a record of the commit ID when downloading the codes, in case of code updates. Please note that some code dictionaries have the “.” separator within the disease codes (e.g. I50.0 versus I500), so please adjust accordingly. Where appropriate, please also include other code systems (e.g. READ) by mapping the recommended codes. Please contact the central analyst team for cohort-specific adjudication not mentioned here.  
 
-Please contact the central analyst team for cohort-specific adjudication not mentioned here.  
+**Notes on the definition of controls**:  
 
-### Step 2   
-For each participant, classify the status (case/control/exclude) for target GWAS phenotypes by combining classifier status from Step 1 using the logic described below.  
+1.	Please note that two different sets of super controls will be used: one for phenotype 1-3 (see Table 1 and Figure 1), and the other one for phenotype 4 – 5 (see Table 2 and Figure 2),  
+
+2.	If self-reported data are available, individuals who self-reported to have had the diseases (e.g. HF or MI/CABG/PCI/thrombolysis) but lack the corresponding disease diagnosis/procedure code should be excluded from the controls. In some cohorts, the self-reported data are readily available. For example, in UK Biobank, there is a data field that contains self-reported diseases. If the self-reported data are more complex in your cohort, please get in contact with Clara (j.jiang@uq.edu.au) to discuss.
+
+
+### Step 2a (phenotypes 1-3)   
+For each participant, classify the status (case/control/exclude) for target GWAS cases and controls by combining the classifier status from Step 1 using the logic described in Table 1 and illustrated in Figure 1: 
 
 *Table 1. GWAS Phenotype classifiers for all-cause HF, ischaemic HF, and non-ischaemic HF (phenotypes 1-3)*  
 
-| CongHD | HF   | CAD   | Category                | Phenotype |
-|--------|------|-------|-------------------------|-----------|
-| TRUE   | ANY  | ANY   | Exclude                 |           |
-| FALSE  | TRUE | TRUE  | Ischaemic HF case       |1 & 2      |
-| FALSE  | TRUE | FALSE | Non-ischaemic HF case   |1 & 3      |
-| FALSE  | FALSE| TRUE  | Exclude                 |           |
-| FALSE  | FALSE| FALSE | CONTROL                 |           |
+| CongHD | HF   | MI    | CABG   | PCI   | Thrombolysis | Category                | Phenotype |
+|--------|------|-------|--------|-------|--------------|-------------------------|-----------|
+| TRUE   | ANY  | ANY   | ANY    | ANY   | ANY          | Exclude                 |           |
+| FALSE  | TRUE | TRUE  | ANY    | ANY   | ANY          | (Ischaemic) HF case     |1 & 2      |
+| FALSE  | TRUE | FALSE | TRUE   | ANY   | ANY          | (Ischaemic) HF case     |1 & 2      |
+| FALSE  | TRUE | FALSE | FALSE  | TRUE  | ANY          | (Ischaemic) HF case     |1 & 2      |
+| FALSE  | TRUE | FALSE | FALSE  | FALSE | TRUE         | (Ischaemic) HF case     |1 & 2      |
+| FALSE  | TRUE | FALSE | FALSE  | FALSE | FALSE        | (Non-ischaemic) HF case |1 & 3      |
+| FALSE  | FALSE| TRUE  | ANY    | ANY   | ANY          | Exclude                 |           |
+| FALSE  | FALSE| FALSE | TRUE   | ANY   | ANY          | Exclude                 |           |
+| FALSE  | FALSE| FALSE | FALSE  | TRUE  | ANY          | Exclude                 |           |
+| FALSE  | FALSE| FALSE | FALSE  | FALSE | TRUE         | Exclude                 |           |
+| FALSE  | FALSE| FALSE | FALSE  | FALSE | FALSE        | CONTROL                 |           |
 
-*Figure 1. Phenotyping algorithm*  
+*Figure 1. Phenotyping algorithm for phenotype 1 - 3*  
 
-<img src="figures/phenotyping_algorithm.png" align="centre" width="100%"/>
+<img src="figures/phenotyping_algorithm_hermes3a.png" align="centre" width="100%"/>
+
+
+### Step 2b (phenotypes 4-5)   
+Step 2b (phenotype 4 – 5). For each participant, classify the status (case/control/exclude) for target GWAS cases and controls by combining the classifier status from Step 1 using the logic described in Table 2 and Figure 2:
+
+*Table 2. GWAS Phenotype classifiers for DCM and NICM (phenotypes 4-5)*
+
+| CongHD | HCM  | RCM   | MI*   | CABG*  | PCI*  | Thrombolysis*|  DCM    | DCM_AssW | LVSD    | Phenotype |
+|--------|------|-------|-------|--------|-------|--------------|---------|----------|---------|-----------|
+| TRUE   | ANY  | ANY   | ANY   | ANY    | ANY   | ANY          | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | TRUE | ANY   | ANY   | ANY    | ANY   | ANY          | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | FALSE| TRUE  | ANY   | ANY    | ANY   | ANY          | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | FALSE| FALSE | TRUE  | ANY    | ANY   | ANY          | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | FALSE| FALSE | FALSE | TRUE   | ANY   | ANY          | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | FALSE| FALSE | FALSE | FALSE  | TRUE  | ANY          | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | TRUE         | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        | TRUE    | ANY      | ANY     | 1         |
+| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        | ANY     | TRUE     | ANY     | 2         |
+| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        | ANY     | ANY      | TRUE    | 2         |
+| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        | FALSE   | FALSE    | FALSE   | Control   |
+
+\* Myocardial infarction and revascularisation exclusion should be made based on codes appearing prior to the DCM / NICM inclusion codes - i.e. excluding antecedent ischaemic events but allowing ischaemic events that happen after the DCM / NICM diagnosis.  
+
+*Figure 2. Phenotyping algorithm for phenotype 4 - 5    *  
+
+<img src="figures/phenotyping_algorithm_hermes3b.png" align="centre" width="100%"/>
+
 
 
 ```{r gen, echo=FALSE, results='asis', message=FALSE, warning=FALSE}

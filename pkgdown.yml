@@ -4,9 +4,9 @@ pkgdown_sha: ~
 articles:
   hermes_3: hermes_3.html
   hermes_qc_script: hermes_qc_script.html
-  nih_cardiomyopathy: nih_cardiomyopathy.html
+  old/nih_cardiomyopathy: old/nih_cardiomyopathy.html
   ukbb_phenotyping: ukbb_phenotyping.html
-last_built: 2024-10-23T23:08Z
+last_built: 2024-10-28T07:35Z
 urls:
   reference: https://nicksunderland.github.io/heRmes/reference
   article: https://nicksunderland.github.io/heRmes/articles

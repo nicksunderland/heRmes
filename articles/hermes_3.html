@@ -146,7 +146,7 @@ diagnostic code.</p>
 <tr class="even">
 <td>Phenotype 2</td>
 <td>Ischaemic HF</td>
-<td>HF comorbid with antecedent MI/revascularisation</td>
+<td>HF comorbid with antecedent MI/revascularisation/ICM</td>
 </tr>
 <tr class="odd">
 <td>Phenotype 3</td>
@@ -242,6 +242,14 @@ volumes (of one or both ventricles), normal or reduced systolic volumes,
 and normal ventricular wall thickness.</td>
 </tr>
 <tr class="odd">
+<td>Ischaemic cardiomyopathy</td>
+<td>ICM</td>
+<td>Ischaemic cardiomyopathy is defined as left ventricular dysfunction
+caused by coronary artery disease (CAD). Specifically, there must be the
+implication of cardiomyopathy or LV dysfunction, not simply coronary
+artery disease or ‘ischaemic heart disease’.</td>
+</tr>
+<tr class="even">
 <td>Myocardial infarction</td>
 <td>MI</td>
 <td>The clinical definition of myocardial denotes the presence of acute
@@ -250,7 +258,7 @@ of evidence of myocardial injury (new ischaemic ECG changes loss of
 viable myocardium on imaging, coronary thrombosis on angiography or
 autopsy).</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Coronary artery bypass grafting</td>
 <td>CABG</td>
 <td>Coronary artery bypass graft surgery is a procedure that involves
@@ -258,7 +266,7 @@ sternotomy to bypass diseased segment(s) of the coronary tree using
 blood vessels derived other parts of the body, or synthetic grafts, and
 connected to the aorta.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Percutaneous coronary intervention</td>
 <td>PCI</td>
 <td>Percutaneous coronary intervention (PCI) is defined as the placement
@@ -270,13 +278,13 @@ fluoroscopy, intracoronary imaging (e.g. intravascular ultrasonography)
 or physiology (e.g. fractional flow reserve) is not considered a PCI
 procedure.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Coronary thrombolysis procedure</td>
 <td>Thrombolysis</td>
 <td>The delivery of thrombolytic therapy, either intravenously or
 intracoronary, for the treatment of coronary thrombosis.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Dilated cardiomyopathy</td>
 <td>DCM</td>
 <td>The presence of LV dilatation and systolic dysfunction (LVEF &lt;
@@ -284,14 +292,14 @@ intracoronary, for the treatment of coronary thrombosis.</td>
 (e.g. hypertension or valve disease) or other pathology (e.g. previous
 myocardial infarction).</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Dilated cardiomyopathy (associated with)</td>
 <td>DCM_AssociatedWith</td>
 <td>As for DCM, but including conditions associated with DCM such as
 peripartum or alcohol-related cardiomyopathy, which are increasingly
 understood to have underlying genetic propensities.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Left ventricular systolic dysfunction</td>
 <td>LVSD</td>
 <td>Left ventricular systolic dysfunction is defined here as any code
@@ -338,16 +346,17 @@ Step 1 using the logic described in Table 1 and illustrated in Figure
 1:</p>
 <p><em>Table 1. GWAS Phenotype classifiers for all-cause HF, ischaemic
 HF, and non-ischaemic HF (phenotypes 1-3)</em></p>
-<table style="width:100%;" class="table">
+<table class="table">
 <colgroup>
-<col width="9%">
+<col width="8%">
 <col width="6%">
+<col width="7%">
 <col width="8%">
-<col width="9%">
-<col width="8%">
-<col width="16%">
-<col width="29%">
-<col width="12%">
+<col width="7%">
+<col width="15%">
+<col width="7%">
+<col width="26%">
+<col width="11%">
 </colgroup>
 <thead><tr class="header">
 <th>CongHD</th>
@@ -356,6 +365,7 @@ HF, and non-ischaemic HF (phenotypes 1-3)</em></p>
 <th>CABG</th>
 <th>PCI</th>
 <th>Thrombolysis</th>
+<th>ICM</th>
 <th>Category</th>
 <th>Phenotype</th>
 </tr></thead>
@@ -367,6 +377,7 @@ HF, and non-ischaemic HF (phenotypes 1-3)</em></p>
 <td>ANY</td>
 <td>ANY</td>
 <td>ANY</td>
+<td>ANY</td>
 <td>Exclude</td>
 <td></td>
 </tr>
@@ -377,6 +388,7 @@ HF, and non-ischaemic HF (phenotypes 1-3)</em></p>
 <td>ANY</td>
 <td>ANY</td>
 <td>ANY</td>
+<td>ANY</td>
 <td>(Ischaemic) HF case</td>
 <td>1 &amp; 2</td>
 </tr>
@@ -385,6 +397,7 @@ HF, and non-ischaemic HF (phenotypes 1-3)</em></p>
 <td>TRUE</td>
 <td>FALSE</td>
 <td>TRUE</td>
+<td>ANY</td>
 <td>ANY</td>
 <td>ANY</td>
 <td>(Ischaemic) HF case</td>
@@ -397,6 +410,7 @@ HF, and non-ischaemic HF (phenotypes 1-3)</em></p>
 <td>FALSE</td>
 <td>TRUE</td>
 <td>ANY</td>
+<td>ANY</td>
 <td>(Ischaemic) HF case</td>
 <td>1 &amp; 2</td>
 </tr>
@@ -407,12 +421,25 @@ HF, and non-ischaemic HF (phenotypes 1-3)</em></p>
 <td>FALSE</td>
 <td>FALSE</td>
 <td>TRUE</td>
+<td>ANY</td>
 <td>(Ischaemic) HF case</td>
 <td>1 &amp; 2</td>
 </tr>
 <tr class="even">
 <td>FALSE</td>
 <td>TRUE</td>
+<td>FALSE</td>
+<td>FALSE</td>
+<td>FALSE</td>
+<td>FALSE</td>
+<td>TRUE</td>
+<td>(Ischaemic) HF case</td>
+<td>1 &amp; 2</td>
+</tr>
+<tr class="odd">
+<td>FALSE</td>
+<td>TRUE</td>
+<td>FALSE</td>
 <td>FALSE</td>
 <td>FALSE</td>
 <td>FALSE</td>
@@ -420,7 +447,19 @@ HF, and non-ischaemic HF (phenotypes 1-3)</em></p>
 <td>(Non-ischaemic) HF case</td>
 <td>1 &amp; 3</td>
 </tr>
+<tr class="even">
+<td>FALSE</td>
+<td>FALSE</td>
+<td>TRUE</td>
+<td>ANY</td>
+<td>ANY</td>
+<td>ANY</td>
+<td>ANY</td>
+<td>Exclude</td>
+<td></td>
+</tr>
 <tr class="odd">
+<td>FALSE</td>
 <td>FALSE</td>
 <td>FALSE</td>
 <td>TRUE</td>
@@ -434,6 +473,7 @@ HF, and non-ischaemic HF (phenotypes 1-3)</em></p>
 <td>FALSE</td>
 <td>FALSE</td>
 <td>FALSE</td>
+<td>FALSE</td>
 <td>TRUE</td>
 <td>ANY</td>
 <td>ANY</td>
@@ -441,6 +481,7 @@ HF, and non-ischaemic HF (phenotypes 1-3)</em></p>
 <td></td>
 </tr>
 <tr class="odd">
+<td>FALSE</td>
 <td>FALSE</td>
 <td>FALSE</td>
 <td>FALSE</td>
@@ -456,11 +497,13 @@ HF, and non-ischaemic HF (phenotypes 1-3)</em></p>
 <td>FALSE</td>
 <td>FALSE</td>
 <td>FALSE</td>
+<td>FALSE</td>
 <td>TRUE</td>
 <td>Exclude</td>
 <td></td>
 </tr>
 <tr class="odd">
+<td>FALSE</td>
 <td>FALSE</td>
 <td>FALSE</td>
 <td>FALSE</td>
@@ -506,10 +549,10 @@ and Figure 2:</p>
 <th>CABG*</th>
 <th>PCI*</th>
 <th>Thrombolysis*</th>
+<th>ICM</th>
 <th>DCM</th>
 <th>DCM_AssW</th>
 <th>LVSD</th>
-<th>Phenotype</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -523,7 +566,7 @@ and Figure 2:</p>
 <td>ANY</td>
 <td>ANY</td>
 <td>ANY</td>
-<td>Exclude</td>
+<td>ANY</td>
 </tr>
 <tr class="even">
 <td>FALSE</td>
@@ -536,7 +579,7 @@ and Figure 2:</p>
 <td>ANY</td>
 <td>ANY</td>
 <td>ANY</td>
-<td>Exclude</td>
+<td>ANY</td>
 </tr>
 <tr class="odd">
 <td>FALSE</td>
@@ -549,7 +592,7 @@ and Figure 2:</p>
 <td>ANY</td>
 <td>ANY</td>
 <td>ANY</td>
-<td>Exclude</td>
+<td>ANY</td>
 </tr>
 <tr class="even">
 <td>FALSE</td>
@@ -562,7 +605,7 @@ and Figure 2:</p>
 <td>ANY</td>
 <td>ANY</td>
 <td>ANY</td>
-<td>Exclude</td>
+<td>ANY</td>
 </tr>
 <tr class="odd">
 <td>FALSE</td>
@@ -575,7 +618,7 @@ and Figure 2:</p>
 <td>ANY</td>
 <td>ANY</td>
 <td>ANY</td>
-<td>Exclude</td>
+<td>ANY</td>
 </tr>
 <tr class="even">
 <td>FALSE</td>
@@ -588,7 +631,7 @@ and Figure 2:</p>
 <td>ANY</td>
 <td>ANY</td>
 <td>ANY</td>
-<td>Exclude</td>
+<td>ANY</td>
 </tr>
 <tr class="odd">
 <td>FALSE</td>
@@ -601,7 +644,7 @@ and Figure 2:</p>
 <td>ANY</td>
 <td>ANY</td>
 <td>ANY</td>
-<td>Exclude</td>
+<td>ANY</td>
 </tr>
 <tr class="even">
 <td>FALSE</td>
@@ -614,7 +657,7 @@ and Figure 2:</p>
 <td>TRUE</td>
 <td>ANY</td>
 <td>ANY</td>
-<td>1</td>
+<td>ANY</td>
 </tr>
 <tr class="odd">
 <td>FALSE</td>
@@ -624,10 +667,10 @@ and Figure 2:</p>
 <td>FALSE</td>
 <td>FALSE</td>
 <td>FALSE</td>
-<td>ANY</td>
+<td>FALSE</td>
 <td>TRUE</td>
 <td>ANY</td>
-<td>2</td>
+<td>ANY</td>
 </tr>
 <tr class="even">
 <td>FALSE</td>
@@ -637,10 +680,10 @@ and Figure 2:</p>
 <td>FALSE</td>
 <td>FALSE</td>
 <td>FALSE</td>
-<td>ANY</td>
+<td>FALSE</td>
 <td>ANY</td>
 <td>TRUE</td>
-<td>2</td>
+<td>ANY</td>
 </tr>
 <tr class="odd">
 <td>FALSE</td>
@@ -651,16 +694,29 @@ and Figure 2:</p>
 <td>FALSE</td>
 <td>FALSE</td>
 <td>FALSE</td>
+<td>ANY</td>
+<td>ANY</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
 <td>FALSE</td>
 <td>FALSE</td>
-<td>Control</td>
+<td>FALSE</td>
+<td>FALSE</td>
+<td>FALSE</td>
+<td>FALSE</td>
+<td>FALSE</td>
+<td>FALSE</td>
+<td>FALSE</td>
+<td>FALSE</td>
+<td>FALSE</td>
 </tr>
 </tbody>
 </table>
-<p>* Myocardial infarction and revascularisation exclusion should be
-made based on codes appearing prior to the DCM / NICM inclusion codes -
-i.e. excluding antecedent ischaemic events but allowing ischaemic events
-that happen after the DCM / NICM diagnosis.</p>
+<p>* Myocardial infarction, ICM, and revascularisation exclusion should
+be made based on codes appearing prior to the DCM / NICM inclusion codes
+- i.e. excluding antecedent ischaemic events but allowing ischaemic
+events that happen after the DCM / NICM diagnosis.</p>
 <p><em>Figure 2. Phenotyping algorithm for phenotype 4 - 5 </em></p>
 <p><img src="figures%2Fphenotyping_algorithm_hermes3b.png" align="centre" width="100%"></p>
 <hr>
@@ -2649,6 +2705,34 @@ imaging guidance</td>
 Procedure]</td>
 </tr>
 </tbody>
+</table>
+<hr>
+</div>
+<div class="section level2">
+<h2 id="ischaemic-cardiomyopathy">Ischaemic cardiomyopathy<a class="anchor" aria-label="anchor" href="#ischaemic-cardiomyopathy"></a>
+</h2>
+<p><strong>Definition:</strong> Ischemic cardiomyopathy was defined as
+left ventricular dysfunction caused by coronary artery disease (CAD).
+Specifically, there must be the implication of cardiomyopathy or LV
+dysfunction, not simply coronary artery disease..</p>
+<p><strong>Reference:</strong> <a href="https://www.ncbi.nlm.nih.gov/books/NBK209964/" class="external-link uri">https://www.ncbi.nlm.nih.gov/books/NBK209964/</a>.</p>
+<p><strong>Terminologies:</strong> <code>SNOMED, ICD10, ICD9</code>.</p>
+<p><strong>Search expressions:</strong>
+<code>(?i)ischa?emic heart disease|(?i)ischa?emic cardiomyopath(y|ies)|(?i)cardiomyopath(y|ies) ischa?emic</code>.</p>
+<center>
+<p><img src="figures%2Fcounts_ICM_IsA.png"></p>
+</center>
+<table class="table">
+<thead><tr class="header">
+<th align="left">Code</th>
+<th align="left">Source</th>
+<th align="left">Description</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td align="left">I255</td>
+<td align="left">ICD10</td>
+<td align="left">Ischemic cardiomyopathy</td>
+</tr></tbody>
 </table>
 <hr>
 </div>

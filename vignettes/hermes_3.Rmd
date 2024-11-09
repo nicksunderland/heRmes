@@ -34,6 +34,7 @@ tabs <- list(HF_IsA                          = "HF_IsA",
              Coronary_artery_bypass_grafting = "Coronary_artery_bypass_grafting",
              Percutaneous_coronary_intervent = "Percutaneous_coronary_intervent",
              Thrombolysis_coronary           = "Thrombolysis_coronary",
+             ICM_IsA                         = "ICM_IsA",
              Congenital_heart_disease        = "Congenital_heart_disease", 
              Congenital_heart_procedure      = "Congenital_heart_procedure",
              RCM_IsA                         = "RCM_IsA",
@@ -127,7 +128,7 @@ Chronic respiratory disease, predominantly COPD, is a common comorbidity amongst
 | Phenotype   | Name             | Brief Description                                       |
 |-------------|------------------|---------------------------------------------------------|
 | Phenotype 1 | All HF           | Clinical syndrome of HF, any cause or manifestation     |
-| Phenotype 2 | Ischaemic HF     | HF comorbid with antecedent MI/revascularisation        |
+| Phenotype 2 | Ischaemic HF     | HF comorbid with antecedent MI/revascularisation/ICM    |
 | Phenotype 3 | Non-ischaemic HF | HF without MI/revascularisation                         |
 | Phenotype 4 | DCM              | Dilated cardiomyopathy                                  |
 | Phenotype 5 | NICM             | Non-ischaemic cardiomyopathy (DCM or reduced LVEF <50%) |
@@ -156,6 +157,7 @@ For each participant, define the status (TRUE / FALSE) for the following phenoty
 |Heart failure            | HF            | The clinical syndrome consisting of symptoms (e.g. breathlessness, ankle swelling, and fatigue) that may be accompanied by signs (e.g. elevated jugular venous pressure, pulmonary crackles, and peripheral oedema). It is due to a structural and/or functional abnormality of the heart that results in elevated intracardiac pressures and/or inadequate cardiac output at rest and/or during exercise (ESC, 2021).    |
 |Hypertrophic cardiomyopathy | HCM        | Hypertrophic cardiomyopathy (HCM) is defined as the presence of increased LV wall thickness (with or without RV hypertrophy) or mass that is not solely explained by abnormal loading conditions. |
 |Restrictive cardiomyopathy | RCM        | Restrictive cardiomyopathy (RCM) is defined as restrictive left and/or RV pathophysiology in the presence of normal or reduced diastolic volumes (of one or both ventricles), normal or reduced systolic volumes, and normal ventricular wall thickness. |
+|Ischaemic cardiomyopathy| ICM           | Ischaemic cardiomyopathy is defined as left ventricular dysfunction caused by coronary artery disease (CAD). Specifically, there must be the implication of cardiomyopathy or LV dysfunction, not simply coronary artery disease or ‘ischaemic heart disease’. |
 |Myocardial infarction    | MI            | The clinical definition of myocardial denotes the presence of acute myocardial injury detected by abnormal cardiac biomarkers in the setting of evidence of myocardial injury (new ischaemic ECG changes loss of viable myocardium on imaging, coronary thrombosis on angiography or autopsy). |
 |Coronary artery bypass grafting | CABG  | Coronary artery bypass graft surgery is a procedure that involves sternotomy to bypass diseased segment(s) of the coronary tree using blood vessels derived other parts of the body, or synthetic grafts, and connected to the aorta. |
 |Percutaneous coronary intervention | PCI | Percutaneous coronary intervention (PCI) is defined as the placement of an angioplasty guidewire, balloon, or other device (e.g. stent, atherectomy, brachytherapy, or thrombectomy catheter) into a native coronary artery or a graft for the purpose of mechanical coronary revascularisation. The assessment of coronary lesion severity by fluoroscopy, intracoronary imaging (e.g. intravascular ultrasonography) or physiology (e.g. fractional flow reserve) is not considered a PCI procedure. |
@@ -182,19 +184,21 @@ For each participant, classify the status (case/control/exclude) for target GWAS
 
 *Table 1. GWAS Phenotype classifiers for all-cause HF, ischaemic HF, and non-ischaemic HF (phenotypes 1-3)*  
 
-| CongHD | HF   | MI    | CABG   | PCI   | Thrombolysis | Category                | Phenotype |
-|--------|------|-------|--------|-------|--------------|-------------------------|-----------|
-| TRUE   | ANY  | ANY   | ANY    | ANY   | ANY          | Exclude                 |           |
-| FALSE  | TRUE | TRUE  | ANY    | ANY   | ANY          | (Ischaemic) HF case     |1 & 2      |
-| FALSE  | TRUE | FALSE | TRUE   | ANY   | ANY          | (Ischaemic) HF case     |1 & 2      |
-| FALSE  | TRUE | FALSE | FALSE  | TRUE  | ANY          | (Ischaemic) HF case     |1 & 2      |
-| FALSE  | TRUE | FALSE | FALSE  | FALSE | TRUE         | (Ischaemic) HF case     |1 & 2      |
-| FALSE  | TRUE | FALSE | FALSE  | FALSE | FALSE        | (Non-ischaemic) HF case |1 & 3      |
-| FALSE  | FALSE| TRUE  | ANY    | ANY   | ANY          | Exclude                 |           |
-| FALSE  | FALSE| FALSE | TRUE   | ANY   | ANY          | Exclude                 |           |
-| FALSE  | FALSE| FALSE | FALSE  | TRUE  | ANY          | Exclude                 |           |
-| FALSE  | FALSE| FALSE | FALSE  | FALSE | TRUE         | Exclude                 |           |
-| FALSE  | FALSE| FALSE | FALSE  | FALSE | FALSE        | CONTROL                 |           |
+| CongHD | HF   | MI    | CABG   | PCI   | Thrombolysis | ICM   | Category                | Phenotype |
+|--------|------|-------|--------|-------|--------------|-------|-------------------------|-----------|
+| TRUE   | ANY  | ANY   | ANY    | ANY   | ANY          | ANY   | Exclude                 |           |
+| FALSE  | TRUE | TRUE  | ANY    | ANY   | ANY          | ANY   | (Ischaemic) HF case     |1 & 2      |
+| FALSE  | TRUE | FALSE | TRUE   | ANY   | ANY          | ANY   | (Ischaemic) HF case     |1 & 2      |
+| FALSE  | TRUE | FALSE | FALSE  | TRUE  | ANY          | ANY   | (Ischaemic) HF case     |1 & 2      |
+| FALSE  | TRUE | FALSE | FALSE  | FALSE | TRUE         | ANY   | (Ischaemic) HF case     |1 & 2      |
+| FALSE  | TRUE | FALSE | FALSE  | FALSE | FALSE        | TRUE  | (Ischaemic) HF case     |1 & 2      |
+| FALSE  | TRUE | FALSE | FALSE  | FALSE | FALSE        | FALSE | (Non-ischaemic) HF case |1 & 3      |
+| FALSE  | FALSE| TRUE  | ANY    | ANY   | ANY          | ANY   | Exclude                 |           |
+| FALSE  | FALSE| FALSE | TRUE   | ANY   | ANY          | ANY   | Exclude                 |           |
+| FALSE  | FALSE| FALSE | FALSE  | TRUE  | ANY          | ANY   | Exclude                 |           |
+| FALSE  | FALSE| FALSE | FALSE  | FALSE | TRUE         | ANY   | Exclude                 |           |
+| FALSE  | FALSE| FALSE | FALSE  | FALSE | FALSE        | TRUE  | Exclude                 |           |
+| FALSE  | FALSE| FALSE | FALSE  | FALSE | FALSE        | FALSE | CONTROL                 |           |
 
 *Figure 1. Phenotyping algorithm for phenotype 1 - 3*  
 
@@ -206,21 +210,22 @@ Step 2b (phenotype 4 – 5). For each participant, classify the status (case/con
 
 *Table 2. GWAS Phenotype classifiers for DCM and NICM (phenotypes 4-5)*
 
-| CongHD | HCM  | RCM   | MI*   | CABG*  | PCI*  | Thrombolysis*|  DCM    | DCM_AssW | LVSD    | Phenotype |
+| CongHD | HCM  | RCM   | MI*   | CABG*  | PCI*  | Thrombolysis*|  ICM    |  DCM    | DCM_AssW | LVSD    | Phenotype |
 |--------|------|-------|-------|--------|-------|--------------|---------|----------|---------|-----------|
-| TRUE   | ANY  | ANY   | ANY   | ANY    | ANY   | ANY          | ANY     | ANY      | ANY     | Exclude   |
-| FALSE  | TRUE | ANY   | ANY   | ANY    | ANY   | ANY          | ANY     | ANY      | ANY     | Exclude   |
-| FALSE  | FALSE| TRUE  | ANY   | ANY    | ANY   | ANY          | ANY     | ANY      | ANY     | Exclude   |
-| FALSE  | FALSE| FALSE | TRUE  | ANY    | ANY   | ANY          | ANY     | ANY      | ANY     | Exclude   |
-| FALSE  | FALSE| FALSE | FALSE | TRUE   | ANY   | ANY          | ANY     | ANY      | ANY     | Exclude   |
-| FALSE  | FALSE| FALSE | FALSE | FALSE  | TRUE  | ANY          | ANY     | ANY      | ANY     | Exclude   |
-| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | TRUE         | ANY     | ANY      | ANY     | Exclude   |
-| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        | TRUE    | ANY      | ANY     | 1         |
-| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        | ANY     | TRUE     | ANY     | 2         |
-| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        | ANY     | ANY      | TRUE    | 2         |
-| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        | FALSE   | FALSE    | FALSE   | Control   |
+| TRUE   | ANY  | ANY   | ANY   | ANY    | ANY   | ANY          |  ANY    | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | TRUE | ANY   | ANY   | ANY    | ANY   | ANY          |  ANY    | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | FALSE| TRUE  | ANY   | ANY    | ANY   | ANY          |  ANY    | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | FALSE| FALSE | TRUE  | ANY    | ANY   | ANY          |  ANY    | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | FALSE| FALSE | FALSE | TRUE   | ANY   | ANY          |  ANY    | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | FALSE| FALSE | FALSE | FALSE  | TRUE  | ANY          |  ANY    | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | TRUE         |  ANY    | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        |  TRUE   | ANY     | ANY      | ANY     | Exclude   |
+| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        |  FALSE  | TRUE    | ANY      | ANY     | 1         |
+| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        |  FALSE  | ANY     | TRUE     | ANY     | 2         |
+| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        |  FALSE  | ANY     | ANY      | TRUE    | 2         |
+| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        |  FALSE  | FALSE   | FALSE    | FALSE   | Control   |
 
-\* Myocardial infarction and revascularisation exclusion should be made based on codes appearing prior to the DCM / NICM inclusion codes - i.e. excluding antecedent ischaemic events but allowing ischaemic events that happen after the DCM / NICM diagnosis.  
+\* Myocardial infarction, ICM, and revascularisation exclusion should be made based on codes appearing prior to the DCM / NICM inclusion codes - i.e. excluding antecedent ischaemic events but allowing ischaemic events that happen after the DCM / NICM diagnosis.  
 
 *Figure 2. Phenotyping algorithm for phenotype 4 - 5    *  
 

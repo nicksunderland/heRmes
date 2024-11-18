@@ -7,28 +7,32 @@ library(data.table)
 data_dir <- file.path(Sys.getenv("DATA_DIR"), "ukbb_81499_20241114")
 
 # read the data
-demog <- fread(file.path(data_dir, "data_participant.tsv"))
-hesin <- fread(file.path(data_dir, "data_hesin.tsv"))
-diag  <- fread(file.path(data_dir, "data_hesin_diag.tsv"))
-oper  <- fread(file.path(data_dir, "data_hesin_oper.tsv"))
+demog     <- fread(file.path(data_dir, "data_participant.tsv"))
+hesin     <- fread(file.path(data_dir, "data_hesin.tsv"))
+diag      <- fread(file.path(data_dir, "data_hesin_diag.tsv"))
+oper      <- fread(file.path(data_dir, "data_hesin_oper.tsv"))
+self_oper <- fread(file.path(data_dir, "data_self_reported_procedures.tsv"))
 
 # read the codes
 codes <- fread(system.file("extdata", "hermes_3_codes", "hermes_3_codes.tsv", package = "heRmes"))
 self_reported_codes <- list(
-  "Heart Failure"               = "1076",
-  "Myocardial infarction"       = "1075",
-  "Hypertrophic cardiomyopathy" = "1588"
+  list(name = "Heart Failure",                      code = "1076", code_type = "ukbb_self_reported_illness"),
+  list(name = "Myocardial infarction",              code = "1075", code_type = "ukbb_self_reported_illness"),
+  list(name = "Hypertrophic cardiomyopathy",        code = "1588", code_type = "ukbb_self_reported_illness"),
+  list(name = "Coronary artery bypass grafting",    code = "1095", code_type = "ukbb_self_reported_procedure"),
+  list(name = "Percutaneous coronary intervention", code = "1070", code_type = "ukbb_self_reported_procedure")
 )
 codes <- rbind(codes,
-               data.table(Concept = paste0(names(self_reported_codes), " Self Reported"),
-                          Code    = unlist(self_reported_codes),
-                          Source = "ukbb_self_reported_illness",
-                          Description = ""))
+               data.table(Concept     = paste0(sapply(self_reported_codes, function(x) x$name), " Self Reported"),
+                          Code        = sapply(self_reported_codes, function(x) x$code),
+                          Source      = sapply(self_reported_codes, function(x) x$code_type),
+                          Description = sapply(self_reported_codes, function(x) x$name)))
 codes[, `:=`(code      = Code,
              code_type = fcase(Source=="ICD10", "icd10",
                                Source=="ICD9",  "icd9",
                                Source=="OPCS4", "opcs4",
-                               Source=="ukbb_self_reported_illness", "ukbb_self_reported_illness"))]
+                               Source=="ukbb_self_reported_illness", "ukbb_self_reported_illness",
+                               Source=="ukbb_self_reported_procedure", "ukbb_self_reported_procedure"))]
 codes <- codes[!is.na(code_type)]
 
 # ethnicity codes
@@ -55,7 +59,6 @@ ethnicity_codes <- list(
   other_ethnic_group    = 6)
 
 
-
 # long data of codes
 cohort <- demog[, list(eid     = eid,
                        age     = as.integer(`21022-0.0`),
@@ -64,14 +67,14 @@ cohort <- demog[, list(eid     = eid,
                        ethnicity_group = factor(sub("([0-9])00[0-9]", "\\1", `21000-0.0`), levels = unlist(ethnicity_codes), labels = names(ethnicity_codes)),
                        genetic_sex = factor(`22001-0.0`, levels = 0:1, labels = c("female", "male")),
                        genetic_ethnicity = factor(`22006-0.0`, levels = 1, labels = c("caucasian")))]
-cohort[demog, paste0("pc", 1:20) := mget(paste0("i.22009-0.", 1:20)), on = "eid"]
+cohort[demog, paste0("pc", 1:12) := mget(paste0("i.22009-0.", 1:12)), on = "eid"]
 
 
 # check
 stopifnot("Failed to parse some date of births" = all(!is.na(cohort$dob)))
 stopifnot("some ages / dob indicate cohort age <37, is this right?" = all(cohort$dob <= as.Date("1972-01-01")))
 
-# self reported illness code
+# self reported illness codes
 self_rep_code_regex <- "20002-[0-9]+\\.[0-9]+"
 self_rep_year_regex <- "20008-[0-9]+\\.[0-9]+"
 self_rep_code_cols <- grep(self_rep_code_regex, names(demog), value = TRUE)
@@ -90,6 +93,29 @@ self_rep_illness[, `:=`(date      = lubridate::ymd(paste0(as.character(floor(yea
                         element   = NULL,
                         code      = as.character(code),
                         code_type = "ukbb_self_reported_illness")]
+
+# self reported procedure codes
+self_rep_proc_code_regex <- "20004-[0-9]+\\.[0-9]+"
+self_rep_proc_year_regex <- "20010-[0-9]+\\.[0-9]+"
+self_rep_proc_code_cols <- grep(self_rep_proc_code_regex, names(self_oper), value = TRUE)
+self_rep_proc_year_cols <- grep(self_rep_proc_year_regex, names(self_oper), value = TRUE)
+self_oper[, (self_rep_proc_code_cols) := lapply(.SD, as.character), .SDcols = self_rep_proc_code_cols]
+self_oper[, (self_rep_proc_year_cols) := lapply(.SD, as.numeric),   .SDcols = self_rep_proc_year_cols]
+self_rep_oper <- data.table::melt(self_oper,
+                                  id.vars = "eid",
+                                  measure = patterns(self_rep_proc_code_regex, self_rep_proc_year_regex),
+                                  variable.name = "element",
+                                  value.name = c("code", "year"),
+                                  na.rm = TRUE)
+self_rep_oper <- self_rep_oper[year != -1 & year != -3] # unknown / prefer not to answer
+self_rep_oper[, `:=`(date      = lubridate::ymd(paste0(as.character(floor(year)), "-01-01")) + lubridate::days(as.integer(365.25 * (year - floor(year)))),
+                     year      = NULL,
+                     element   = NULL,
+                     code      = as.character(code),
+                     code_type = "ukbb_self_reported_procedure")]
+
+# join self reported diseases and procedures
+self_rep_illness <- rbind(self_rep_illness, self_rep_oper)
 
 # check self report illness table
 stopifnot("unable to parse dates for self-reported illness codes" = all(!is.na(self_rep_illness$date)))
@@ -157,7 +183,7 @@ cohort[, nicm_comb := rowSums(.SD) > 0, .SDcols = nicm_cols]
 cohort[, nicm_comb_first_date := do.call(pmin, c(.SD, na.rm = TRUE)), .SDcols = paste0(nicm_cols, "_first_date")]
 
 # any ischaemic self reported codes
-self_isch_cols <- c("myocardial_infarction_self_reported")
+self_isch_cols <- c("myocardial_infarction_self_reported", "coronary_artery_bypass_grafting_self_reported", "percutaneous_coronary_intervention_self_reported")
 cohort[, self_isch := rowSums(.SD) > 0, .SDcols = self_isch_cols]
 cohort[, self_isch_first_date := do.call(pmin, c(.SD, na.rm = TRUE)), .SDcols = paste0(self_isch_cols, "_first_date")]
 
@@ -208,7 +234,7 @@ cohort[, cm_control := cm_exclude==FALSE & pheno4==FALSE & pheno5==FALSE]
 
 
 # check HF phenotyping
-base_cols <- c("eid", "age", "sex", "ethnicity", "ethnicity_group","genetic_sex", "genetic_ethnicity", paste0("pc",1:20))
+base_cols <- c("eid", "age", "sex", "ethnicity", "ethnicity_group","genetic_sex", "genetic_ethnicity", paste0("pc",1:12))
 sum_cols <- names(cohort)[!names(cohort) %in% base_cols
                           &
                             !grepl("date", names(cohort))]

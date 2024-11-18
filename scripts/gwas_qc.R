@@ -315,10 +315,9 @@ print(summary)
 
 # exit if no variants remain
 if (nrow(h) == 0) {
-  cli_abort("no variants remain after harmonisation - check data and summary above")
-} else {
-  cli_process_done()
+  cli_warn("no variants remain after harmonisation - check data and summary above")
 }
+cli_process_done()
 
 
 #=============================================================================
@@ -408,11 +407,12 @@ Sys.sleep(1)
 #=============================================================================
 # save clean GWAS and summary table
 #=============================================================================
-out_path <- file.path(args$output, paste0(basename(args$gwas), '_clean.tsv.gz'))
+sans_ext <- sub("([^.]+)\\.[[:alnum:]]+$", "\\1", sub("[.](gz|bz2|xz)$", "", basename(args$gwas)))
+out_path <- file.path(args$output, paste0(sans_ext, '_clean.tsv.gz'))
 cli_progress_step("saving clean GWAS file to {.file {out_path}}")
 fwrite(gwas, out_path, sep = "\t")
 
-log_path <- file.path(args$output, paste0(basename(args$gwas), '_log.tsv'))
+log_path <- file.path(args$output, paste0(sans_ext, '_log.tsv'))
 cli_progress_step("saving log file to {.file {log_path}}")
 fwrite(summary, log_path, sep = "\t")
 

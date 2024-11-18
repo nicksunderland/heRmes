@@ -174,8 +174,8 @@ for (g in concepts) {
 
 # any ischaemic ICD codes
 ischaemic_cols <- c("myocardial_infarction", "coronary_artery_bypass_grafting", "percutaneous_coronary_intervention", "thrombolysis_coronary", "ischaemic_cardiomyopathy")
-cohort[, ishaemic := rowSums(.SD) > 0, .SDcols = ischaemic_cols]
-cohort[, ishaemic_first_date := do.call(pmin, c(.SD, na.rm = TRUE)), .SDcols = paste0(ischaemic_cols, "_first_date")]
+cohort[, ischaemic := rowSums(.SD) > 0, .SDcols = ischaemic_cols]
+cohort[, ischaemic_first_date := do.call(pmin, c(.SD, na.rm = TRUE)), .SDcols = paste0(ischaemic_cols, "_first_date")]
 
 # combined NICM ICD codes
 nicm_cols <- c("dilated_cardiomyopathy", "dilated_cardiomyopathy_associated_with", "left_ventricular_systolic_dysfunction")
@@ -199,10 +199,10 @@ cohort[, self_hcm_first_date := do.call(pmin, c(.SD, na.rm = TRUE)), .SDcols = p
 
 # HF exclusions
 cohort[, hf_exclude := congenital_heart_disease==TRUE |  # all congenital heart disease
-                       (heart_failure==FALSE & (self_hf==TRUE | ishaemic==TRUE | self_isch==TRUE)) | # non-HF but with ischaemic ICD history or self reported heart failure or ischaemic history
-                       (heart_failure==TRUE  & (ishaemic==TRUE & ishaemic_first_date > heart_failure_first_date))] # HF but with first ischaemic event after the HF diagnosis
+                       (heart_failure==FALSE & (self_hf==TRUE | ischaemic==TRUE | self_isch==TRUE)) | # non-HF but with ischaemic ICD history or self reported heart failure or ischaemic history
+                       (heart_failure==TRUE  & (ishaemic==TRUE & ischaemic_first_date > heart_failure_first_date))] # HF but with first ischaemic event after the HF diagnosis
 # pheno 1
-cohort[, pheno1 := hf_exclude==FALSE & heart_failure==TRUE]
+cohort[, pheno1 := congenital_heart_disease==FALSE & heart_failure==TRUE]
 
 # pheno 2
 cohort[, pheno2 := hf_exclude==FALSE & heart_failure==TRUE & ishaemic==TRUE]
@@ -219,10 +219,10 @@ cohort[, hf_control := hf_exclude==FALSE & pheno1==FALSE & pheno2==FALSE & pheno
 cohort[, cm_exclude := congenital_heart_disease==TRUE |  # all congenital heart disease
                        hypertrophic_cardiomyopathy==TRUE | self_hcm==TRUE | # all HCM
                        restrictive_cardiomyopathy==TRUE | # all RCM
-                       (dilated_cardiomyopathy==FALSE & (ishaemic==TRUE | self_isch==TRUE)) | # non-DCM but with ischaemic ICD history or self reported ischaemic history
-                       (nicm_comb==FALSE              & (ishaemic==TRUE | self_isch==TRUE)) | # non-NICM but with ischaemic ICD history or self reported ischaemic history
-                       (dilated_cardiomyopathy==TRUE  & (ishaemic==TRUE & ishaemic_first_date <= dilated_cardiomyopathy_first_date)) | # DCM but with first ischaemic event prior to the DCM diagnosis
-                       (nicm_comb==TRUE               & (ishaemic==TRUE & ishaemic_first_date <= nicm_comb_first_date))]  # NICM but with first ischaemic event prior to the NICM diagnosis
+                       (dilated_cardiomyopathy==FALSE & (ischaemic==TRUE | self_isch==TRUE)) | # non-DCM but with ischaemic ICD history or self reported ischaemic history
+                       (nicm_comb==FALSE              & (ischaemic==TRUE | self_isch==TRUE)) | # non-NICM but with ischaemic ICD history or self reported ischaemic history
+                       (dilated_cardiomyopathy==TRUE  & (ischaemic==TRUE & ischaemic_first_date <= dilated_cardiomyopathy_first_date)) | # DCM but with first ischaemic event prior to the DCM diagnosis
+                       (nicm_comb==TRUE               & (ischaemic==TRUE & ischaemic_first_date <= nicm_comb_first_date))]  # NICM but with first ischaemic event prior to the NICM diagnosis
 # pheno 4
 cohort[, pheno4 := cm_exclude==FALSE & dilated_cardiomyopathy==TRUE]
 
@@ -237,7 +237,7 @@ cohort[, cm_control := cm_exclude==FALSE & pheno4==FALSE & pheno5==FALSE]
 base_cols <- c("eid", "age", "sex", "ethnicity", "ethnicity_group","genetic_sex", "genetic_ethnicity", paste0("pc",1:12))
 sum_cols <- names(cohort)[!names(cohort) %in% base_cols
                           &
-                            !grepl("date", names(cohort))]
+                          !grepl("date", names(cohort))]
 summary <- data.table (name = c("total", sum_cols), N = c(nrow(cohort), cohort[, .(sapply(.SD, sum)), .SDcols = sum_cols]$V1))
 summary
 

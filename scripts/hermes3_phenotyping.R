@@ -7,6 +7,7 @@ library(data.table)
 data_dir <- file.path(Sys.getenv("DATA_DIR"), "ukbb_81499_20241114")
 
 # read the data
+withdraw  <- fread(file.path(data_dir, "withdraw81499_55_20230915.txt"))
 demog     <- fread(file.path(data_dir, "data_participant.tsv"))
 hesin     <- fread(file.path(data_dir, "data_hesin.tsv"))
 diag      <- fread(file.path(data_dir, "data_hesin_diag.tsv"))
@@ -170,6 +171,10 @@ for (g in concepts) {
 
 }
 
+# add the withdrawal flags
+cohort[withdraw, withdrawal := TRUE, on = c("eid" = "V1")]
+cohort[is.na(withdrawal), withdrawal := FALSE]
+
 # run phenotyping
 
 # any ischaemic ICD codes
@@ -198,17 +203,18 @@ cohort[, self_hcm := rowSums(.SD) > 0, .SDcols = self_hcm_col]
 cohort[, self_hcm_first_date := do.call(pmin, c(.SD, na.rm = TRUE)), .SDcols = paste0(self_hcm_col, "_first_date")]
 
 # HF exclusions
-cohort[, hf_exclude := congenital_heart_disease==TRUE |  # all congenital heart disease
+cohort[, hf_exclude := withdrawal == TRUE |
+                       congenital_heart_disease==TRUE |  # all congenital heart disease
                        (heart_failure==FALSE & (self_hf==TRUE | ischaemic==TRUE | self_isch==TRUE)) | # non-HF but with ischaemic ICD history or self reported heart failure or ischaemic history
-                       (heart_failure==TRUE  & (ishaemic==TRUE & ischaemic_first_date > heart_failure_first_date))] # HF but with first ischaemic event after the HF diagnosis
+                       (heart_failure==TRUE  & (ischaemic==TRUE & ischaemic_first_date > heart_failure_first_date))] # HF but with first ischaemic event after the HF diagnosis
 # pheno 1
 cohort[, pheno1 := congenital_heart_disease==FALSE & heart_failure==TRUE]
 
 # pheno 2
-cohort[, pheno2 := hf_exclude==FALSE & heart_failure==TRUE & ishaemic==TRUE]
+cohort[, pheno2 := hf_exclude==FALSE & heart_failure==TRUE & ischaemic==TRUE]
 
 # pheno 3
-cohort[, pheno3 := hf_exclude==FALSE & heart_failure==TRUE & ishaemic==FALSE]
+cohort[, pheno3 := hf_exclude==FALSE & heart_failure==TRUE & ischaemic==FALSE]
 
 # HF controls
 cohort[, hf_control := hf_exclude==FALSE & pheno1==FALSE & pheno2==FALSE & pheno3==FALSE]
@@ -216,7 +222,8 @@ cohort[, hf_control := hf_exclude==FALSE & pheno1==FALSE & pheno2==FALSE & pheno
 
 
 # DCM exclusions
-cohort[, cm_exclude := congenital_heart_disease==TRUE |  # all congenital heart disease
+cohort[, cm_exclude := withdrawal == TRUE |
+                       congenital_heart_disease==TRUE |  # all congenital heart disease
                        hypertrophic_cardiomyopathy==TRUE | self_hcm==TRUE | # all HCM
                        restrictive_cardiomyopathy==TRUE | # all RCM
                        (dilated_cardiomyopathy==FALSE & (ischaemic==TRUE | self_isch==TRUE)) | # non-DCM but with ischaemic ICD history or self reported ischaemic history
@@ -241,13 +248,18 @@ sum_cols <- names(cohort)[!names(cohort) %in% base_cols
 summary <- data.table (name = c("total", sum_cols), N = c(nrow(cohort), cohort[, .(sapply(.SD, sum)), .SDcols = sum_cols]$V1))
 summary
 
+# write summary
+fwrite(summary,
+       file = file.path(Sys.getenv("DATA_DIR"), "ukbb_81499_20241114", "hermes3_phenotype_summary.tsv"),
+       sep  = "\t")
+
 
 cat("Total =", summary[name=="total",N], "; Sum (exc/crtl/1) = ", sum(summary[name%in%c("hf_exclude",paste0("pheno1"),"hf_control"), N]), "\n")
 cat("Total =", summary[name=="total",N], "; Sum (exc/crtl/2/3) = ", sum(summary[name%in%c("hf_exclude",paste0("pheno",2:3),"hf_control"), N]), "\n")
 cat("Total =", summary[name=="total",N], "; Sum (exc/crtl/5) = ", sum(summary[name%in%c("cm_exclude",paste0("pheno5"),"cm_control"), N]), "\n")
 
 # write out
-fwrite(cohort[, mget(c(base_cols,
+fwrite(cohort[, mget(c(base_cols[base_cols != "eid"],
                        paste0("pheno", 1:3), "hf_exclude", "hf_control",
                        paste0("pheno", 4:5), "cm_exclude", "cm_control"))],
        file = file.path(Sys.getenv("DATA_DIR"), "ukbb_81499_20241114", "hermes3_phenotypes.tsv.gz"),

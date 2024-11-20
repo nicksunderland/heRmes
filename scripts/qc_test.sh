@@ -1,16 +1,16 @@
 # Rscript /Users/xx20081/git/heRmes/scripts/gwas_qc.R -h
 
 Rscript /Users/xx20081/git/heRmes/scripts/gwas_qc.R \
-  --gwas '/Users/xx20081/Desktop/meta.all.allcause_death.autosomes_test_small.tsv' \
+  --gwas '/Users/xx20081/Documents/local_data/hermes_incidence/raw/Pheno5-DCM_EUR/FORMAT-METAL_Pheno5-DCM_EUR.tsv.gz' \
   --gwas_chr 'chr' \
-  --gwas_bp 'bp' \
-  --gwas_ea 'ea' \
-  --gwas_oa 'oa' \
-  --gwas_eaf 'eaf' \
-  --gwas_beta 'beta' \
+  --gwas_bp 'pos_b37' \
+  --gwas_ea 'A1' \
+  --gwas_oa 'A2' \
+  --gwas_eaf 'A1_freq' \
+  --gwas_beta 'A1_beta' \
   --gwas_se 'se' \
-  --gwas_p 'p' \
-  --gwas_n 'n' \
+  --gwas_p 'pval' \
+  --gwas_n 'N_total' \
   --ref '/Users/xx20081/Documents/local_data/genome_reference/hrc_37/HRC.r1-1.GRCh37.wgs.mac5.sites.tab.gz' \
   --ref_id 'ID' \
   --ref_chr '#CHROM' \
@@ -20,7 +20,7 @@ Rscript /Users/xx20081/git/heRmes/scripts/gwas_qc.R \
   --ref_eaf 'AF' \
   --freq_diff 0.2 \
   --out '/Users/xx20081/Desktop/qc_tests' \
-  --no_indel_alleles
+  --freq_diff 0.2
 
 
 Rscript /Users/xx20081/git/heRmes/scripts/gwas_qc.R \

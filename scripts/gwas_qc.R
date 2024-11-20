@@ -17,6 +17,11 @@ suppressPackageStartupMessages(library(cli))
 suppressPackageStartupMessages(library(data.table))
 suppressPackageStartupMessages(library(ggplot2))
 suppressPackageStartupMessages(library(viridis))
+suppressPackageStartupMessages(library(stats))
+if (!requireNamespace("ldscr", quietly = TRUE)) {
+  devtools::install_github("mglev1n/ldscr")
+}
+suppressPackageStartupMessages(library(ldscr))
 
 
 #=============================================================================
@@ -55,6 +60,7 @@ parser$add_argument("-gc",    "--genomic_control", action="store_true", default=
 parser$add_argument("-noind", "--no_indel_alleles", action="store_true", default=FALSE, help="Remove indel alleles [default=FALSE]")
 parser$add_argument("-fd",    "--freq_diff", action="store", type="numeric", default=0.2, help="Retain variants with GWAS:REF allele frequency different less than ... [default=0.2]")
 parser$add_argument("-it",    "--info_thresh", action="store", type="numeric", default=NULL, help="Retain variants with info score greater than ... [default=NULL (off)]")
+parser$add_argument("-an",    "--ancestry", action="store", type="character", default="EUR", choices = c("AFR", "AMR", "CSA", "EAS", "EUR", "MID"), help="Ancestry code [default=EUR]")
 
 # parse CLI arguments
 args <- parser$parse_args()
@@ -140,7 +146,7 @@ gwas_cols <- unlist(args[ names(args)[grepl("^gwas_", names(args))] ])
 ref_cols  <- unlist(args[ names(args)[grepl("^ref_", names(args))] ])
 
 # total and NA counts
-num_na_summary <- gwas[, lapply(.SD, function(col) c(num = .N, num_na = sum(is.na(col)), pct_na = 100 * (sum(is.na(col)) / .N))), .SDcols = gwas_cols]
+num_na_summary <- gwas[, lapply(.SD, function(col) c(num = .N, num_na = sum(is.na(col)), pct_na = sprintf("%.1f%%", 100 * (sum(is.na(col)) / .N)))), .SDcols = gwas_cols]
 
 # add to summary table
 summary <- rbind(summary,
@@ -184,7 +190,7 @@ col_fn_list <- list(
 # apply the functions to the corresponding columns and create summary table
 valid_summary <- gwas[, Map(function(fn, col) {
   valid <- sum(fn(col), na.rm = TRUE)
-  valid_pct <- valid / .N
+  valid_pct <- sprintf("%.1f%%", 100 * (valid / .N))
   c(valid = valid, valid_pct = valid_pct)
 }, col_fn_list[names(gwas_cols)], .SD), .SDcols = gwas_cols]
 
@@ -262,7 +268,7 @@ summary[grep("^gwas_(ea|oa)$", std_name), indels := length(indel_idx)]
 gwas[, c(args$gwas_ea, args$gwas_oa) := lapply(.SD, function(x) ifelse(grepl("(?i)^[ACTG]+$|^[DI]$", x), toupper(x), NA_character_)), .SDcols = c(args$gwas_ea, args$gwas_oa)]
 
 # summarise the counts during this recoding process
-postfix_na_summary <- gwas[, lapply(.SD, function(col) c(postfix_valid = sum(!is.na(col)), pct_na = 100 * (sum(!is.na(col)) / .N))), .SDcols = gwas_cols]
+postfix_na_summary <- gwas[, lapply(.SD, function(col) c(postfix_valid = sum(!is.na(col)), pct_na = sprintf("%.1f%%", 100 * (sum(!is.na(col)) / .N)))), .SDcols = gwas_cols]
 
 # add to overall summary table
 summary <- cbind(summary,
@@ -308,7 +314,7 @@ h <- genepi.utils::harmonise_gwas(gwas, ref, join = "chr:bp", action = 2,
                                   rmap = c(chr = args$ref_chr, bp = args$ref_bp, ea = args$ref_ea, oa = args$ref_oa, eaf = args$ref_eaf))
 
 # harmonisation summary, add to main summary
-summary[, `:=`(harmonised = nrow(h), harmonised_pct = 100*(nrow(h)/num[1]))]
+summary[, `:=`(harmonised = nrow(h), harmonised_pct = sprintf("%.1f%%", 100*(nrow(h)/num[1])))]
 
 # print updated summary to console
 print(summary)
@@ -331,7 +337,7 @@ h[, freq_diff := abs(eaf - eaf_ref)]
 
 # add frequency difference counts to summary table
 diff_col <- paste0("freq_diff_lt", args$freq_diff)
-summary[, c(diff_col, paste0(diff_col, "_pct")) := .(sum(h$freq_diff < args$freq_diff), 100*(sum(h$freq_diff < args$freq_diff)/num[1]))]
+summary[, c(diff_col, paste0(diff_col, "_pct")) := .(sum(h$freq_diff < args$freq_diff), sprintf("%.1f%%", 100*(sum(h$freq_diff < args$freq_diff)/num[1])))]
 
 # print summary to console
 cli_process_done()
@@ -379,29 +385,99 @@ gwas <- h[, .SD, .SDcols = c(ref_cols[["ref_id"]], gwas_cols)]
 # PZ plot
 #=============================================================================
 cli_h1("Assessing for analytical issues")
-cli_progress_step("plotting PZ plot")
 
-# TBC
-Sys.sleep(1)
+# generate PZ plot
+pz_plot <- h[, `:=`(observed = -log10(get(gwas_cols[["gwas_p"]])),
+                    expected = -log10(2*pnorm(abs(get(gwas_cols[["gwas_beta"]]) / get(gwas_cols[["gwas_se"]])), lower.tail=FALSE)))] |>
+  ggplot(aes(x = expected, y = observed)) +
+  geom_point(size = 0.5, color="darkblue") +
+  geom_abline(slope=1, intercept=0, color="darkred", linetype = "dotted") +
+  labs(x     = "P.ztest (-log10)",
+       y     = "P (-log10)",
+       color = NULL) +
+  theme_minimal(base_size = 18) +
+  theme(aspect.ratio = 1)
+
+# save plot
+cli_progress_step("plotting PZ plot")
+grDevices::png(file.path(args$output, "pz_plot.png"), width = 600, height = 600)
+print(pz_plot)
+invisible(dev.off())
+cli_process_done()
 
 
 #=============================================================================
 # population stratification analysis 1
 #=============================================================================
 cli_h1("Assessing for population stratification issues")
-cli_progress_step("calculating lambda-GC")
+cli_progress_step("running LDSC")
 
-# TBC
-Sys.sleep(1)
+# get Z score and run LDSC
+h[, z := get(gwas_cols[["gwas_beta"]]) / get(gwas_cols[["gwas_se"]])]
+ldsc_res <- ldsc_h2(munged_sumstats = h[, list(SNP = ID, A1=get(gwas_cols[["gwas_ea"]]), A2=get(gwas_cols[["gwas_oa"]]), Z=z, N=get(gwas_cols[["gwas_n"]]))],
+                    ancestry        = args$ancestry)
 
 
 #=============================================================================
 # population stratification analysis 2
 #=============================================================================
-cli_progress_step("running LDSC")
+cli_progress_step("calculating lambda-GC")
 
-# TBC
-Sys.sleep(1)
+# data for the QQ plot
+h[, `:=`(chisq     = qchisq(1 - get(gwas_cols[["gwas_p"]]), 1))]
+h[, `:=`(lambda    = median(chisq) / qchisq(0.5, 1))]
+h[, `:=`(adj_chisq = chisq/lambda)]
+h[, `:=`(adj_P     = pchisq(adj_chisq, 1, lower.tail=FALSE))]
+
+qq_data <- h[, .(lambda       = median(chisq) / qchisq(0.5, 1),
+                 observed     = -log10(sort(get(gwas_cols[["gwas_p"]]), decreasing=FALSE)),
+                 adj_observed = -log10(sort(adj_P, decreasing=FALSE)),
+                 expected     = -log10(ppoints(.N)),
+                 clower       = -log10(qbeta(p = (1 - 0.95) / 2, shape1 = 1:.N, shape2 = .N:1)),
+                 cupper       = -log10(qbeta(p = (1 + 0.95) / 2, shape1 = 1:.N, shape2 = .N:1)))]
+setorder(qq_data, expected)
+
+# generate QQ-plot
+# axis labels
+log10Pe <- expression(paste("Expected -log"[10], plain(P)))
+log10Po <- expression(paste("Observed -log"[10], plain(P)))
+
+# lambda labels
+labels <- qq_data[, list(stat  = c("lambda", "LDSC intercept"),
+                         label = c(sprintf("\u03BB = %.3f", lambda[1]), sprintf("LSDC int. = %.3f (95%%CI %.3f-%.3f)", ldsc_res$intercept, ldsc_res$intercept - 1.96*ldsc_res$intercept_se, ldsc_res$intercept + 1.96*ldsc_res$intercept_se)),
+                         expected = c(3.0, 3.0),
+                         observed = c(0.25, 1.25))]
+
+# plot
+qq_plot <- qq_data |>
+  ggplot(aes(x = expected, y = observed)) +
+  geom_point(size = 0.5, color="darkblue") +
+  geom_ribbon(aes(x = expected, ymin = clower, ymax = cupper), alpha = 0.1, color="transparent") +
+  geom_abline(slope=1, intercept=0, color="darkred", linetype = "dotted") +
+  geom_text(data = labels, aes(x=expected, y=observed, label=label), hjust = 0, color="black", show.legend = FALSE) +
+  labs(x = log10Pe,
+       y = log10Po,
+       color = NULL) +
+  theme_minimal() +
+  theme(aspect.ratio = 1)
+
+# add genomic control if requested
+if(args$genomic_control) {
+  qq_data[, corrected := "Corrected"]
+  qq_plot <- qq_plot +
+    geom_point(data    = qq_data,
+               mapping = aes(x = expected, y = adj_observed, color=corrected), color="pink", size = 0.5, inherit.aes=FALSE) +
+    scale_color_manual(values="pink") +
+    theme(legend.position="top") +
+    guides(colour = guide_legend(override.aes = list(size=3)))
+}
+
+# save plot
+cli_progress_step("plotting QQ plot")
+grDevices::png(file.path(args$output, "qq_plot.png"), width = 600, height = 600)
+print(qq_plot)
+invisible(dev.off())
+cli_process_done()
 
 
 #=============================================================================
@@ -433,18 +509,18 @@ cli_process_done()
 #=============================================================================
 if (FALSE) {
   args = list()
-  args$gwas = '/Users/xx20081/Downloads/bmi_knowledge_portal_subset.tsv'
+  args$gwas = '/Users/xx20081/Documents/local_data/hermes_incidence/raw/Pheno5-DCM_EUR/FORMAT-METAL_Pheno5-DCM_EUR.tsv.gz'
   args$ref ='/Users/xx20081/Documents/local_data/genome_reference/hrc_37/HRC.r1-1.GRCh37.wgs.mac5.sites.tab.gz'
-  args$gwas_beta= "beta"
-  args$gwas_bp= "position"
-  args$gwas_chr= "chromosome"
-  args$gwas_ea= "alt"
-  args$gwas_eaf= "freq"
+  args$gwas_beta= "A1_beta"
+  args$gwas_bp= "pos_b37"
+  args$gwas_chr= "chr"
+  args$gwas_ea= "A1"
+  args$gwas_eaf= "A1_freq"
   args$gwas_info= NULL
-  args$gwas_n= "n"
-  args$gwas_oa= "reference"
-  args$gwas_p= "pValue"
-  args$gwas_se= "stdErr"
+  args$gwas_n= "N_total"
+  args$gwas_oa= "A2"
+  args$gwas_p= "pval"
+  args$gwas_se= "se"
   args$output= "/Users/xx20081/Desktop/qc_tests"
   args$overwrite= TRUE
   args$ref_id= "ID"
@@ -455,6 +531,8 @@ if (FALSE) {
   args$ref_oa= "REF"
   args$verbose= TRUE
   args$freq_diff= 0.2
+  args$genomic_control=TRUE
   args$no_indel_alleles= FALSE
   args$info_thresh= NULL
+  args$ancestry="EUR"
 }

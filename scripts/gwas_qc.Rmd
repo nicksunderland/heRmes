@@ -1,7 +1,5 @@
 ---
 title: "GWAS QC"
-author: "Nick Sunderland"
-date: "2024-10-23"
 output: html_document
 params:
   fig_dir: "/path-to-be-passed-at-runtime/gwas_qc_output_dir"
@@ -11,21 +9,33 @@ params:
 knitr::opts_chunk$set(echo = TRUE)
 library(data.table)
 ```
-  
-## R Markdown
 
-This is an R Markdown document.
+---
 
+## Quality control summary table
 ```{r table, echo=FALSE}
 log_file <- list.files(params$fig_dir, pattern = "log.tsv$", full.names = TRUE)
 summary <- fread(log_file[1])
 knitr::kable(summary)
 ```
 
-## Including Plots
+---
 
-EAF frequency differences:
-
-```{r plot, echo=FALSE}
+## EAF frequency difference plot
+```{r eaf_plot, echo=FALSE, out.width="100%"}
 knitr::include_graphics(paste0(params$fig_dir, "/eaf_plot.png"))
+```
+
+---
+
+## PZ plot
+```{r pz_plot, echo=FALSE, out.width="100%"}
+knitr::include_graphics(paste0(params$fig_dir, "/pz_plot.png"))
+```
+
+---
+
+## QQ plot
+```{r qq_plot, echo=FALSE, out.width="100%"}
+knitr::include_graphics(paste0(params$fig_dir, "/qq_plot.png"))
 ```

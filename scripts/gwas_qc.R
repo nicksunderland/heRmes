@@ -18,9 +18,9 @@ suppressPackageStartupMessages(library(data.table))
 suppressPackageStartupMessages(library(ggplot2))
 suppressPackageStartupMessages(library(viridis))
 suppressPackageStartupMessages(library(stats))
-if (!requireNamespace("ldscr", quietly = TRUE)) {
-  devtools::install_github("mglev1n/ldscr")
-}
+# if (!requireNamespace("ldscr", quietly = TRUE)) {
+#   devtools::install_github("mglev1n/ldscr")
+# }
 suppressPackageStartupMessages(library(ldscr))
 
 

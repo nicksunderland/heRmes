@@ -245,11 +245,13 @@ base_cols <- c("eid", "age", "sex", "ethnicity", "ethnicity_group","genetic_sex"
 sum_cols <- names(cohort)[!names(cohort) %in% base_cols
                           &
                           !grepl("date", names(cohort))]
-summary <- data.table (name = c("total", sum_cols), N = c(nrow(cohort), cohort[, .(sapply(.SD, sum)), .SDcols = sum_cols]$V1))
+summary <- data.table (name = c("total", sum_cols), sex = "all", N = c(nrow(cohort), cohort[, .(sapply(.SD, sum)), .SDcols = sum_cols]$V1))
+summary <- rbind(summary,
+                 data.table(name = rep(sum_cols, 2), cohort[, .(N = sapply(.SD, sum)), .SDcols = sum_cols, by = "sex"]), fill=TRUE)
 summary
 
 # write summary
-fwrite(summary,
+fwrite(dcast(summary, name ~ sex, value.var = "N"),
        file = file.path(Sys.getenv("DATA_DIR"), "ukbb_81499_20241114", "hermes3_phenotype_summary.tsv"),
        sep  = "\t")
 

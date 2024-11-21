@@ -18,9 +18,7 @@ suppressPackageStartupMessages(library(data.table))
 suppressPackageStartupMessages(library(ggplot2))
 suppressPackageStartupMessages(library(viridis))
 suppressPackageStartupMessages(library(stats))
-# if (!requireNamespace("ldscr", quietly = TRUE)) {
 #   devtools::install_github("mglev1n/ldscr")
-# }
 suppressPackageStartupMessages(library(ldscr))
 
 
@@ -56,7 +54,7 @@ parser$add_argument("-r_ea",  "--ref_ea",  action="store", type="character", hel
 parser$add_argument("-r_oa",  "--ref_oa",  action="store", type="character", help="Reference other allele column name in the REF file", default = "oa")
 parser$add_argument("-r_eaf", "--ref_eaf", action="store", type="character", help="Reference effect allele frequency column name in the REF file", default = "eaf")
 # QC parameters
-parser$add_argument("-gc",    "--genomic_control", action="store_true", default=FALSE, help="Apply genomic control for adjusting study results [default=FALSE]")
+parser$add_argument("-adj",   "--adjustment", action="store", type="character", default=NULL, choices = c("lambda", "ldsc"), help="Apply genomic control p-value & standard error adjustment using either the GC lambda ('lambda') or the LD score regression intercept ('ldsc') [default=OFF]")
 parser$add_argument("-noind", "--no_indel_alleles", action="store_true", default=FALSE, help="Remove indel alleles [default=FALSE]")
 parser$add_argument("-fd",    "--freq_diff", action="store", type="numeric", default=0.2, help="Retain variants with GWAS:REF allele frequency different less than ... [default=0.2]")
 parser$add_argument("-it",    "--info_thresh", action="store", type="numeric", default=NULL, help="Retain variants with info score greater than ... [default=NULL (off)]")
@@ -378,7 +376,6 @@ setnames(h,
                  gwas_cols[["gwas_se"]],
                  gwas_cols[["gwas_p"]],
                  gwas_cols[["gwas_n"]]))
-gwas <- h[, .SD, .SDcols = c(ref_cols[["ref_id"]], gwas_cols)]
 
 
 #=============================================================================
@@ -414,8 +411,16 @@ cli_progress_step("running LDSC")
 
 # get Z score and run LDSC
 h[, z := get(gwas_cols[["gwas_beta"]]) / get(gwas_cols[["gwas_se"]])]
-ldsc_res <- ldsc_h2(munged_sumstats = h[, list(SNP = ID, A1=get(gwas_cols[["gwas_ea"]]), A2=get(gwas_cols[["gwas_oa"]]), Z=z, N=get(gwas_cols[["gwas_n"]]))],
-                    ancestry        = args$ancestry)
+
+# try to run LDSC
+tryCatch({
+  ldsc_res <- ldsc_h2(munged_sumstats = h[, list(SNP = get(ref_cols[["ref_id"]]), A1=get(gwas_cols[["gwas_ea"]]), A2=get(gwas_cols[["gwas_oa"]]), Z=z, N=get(gwas_cols[["gwas_n"]]))],
+                      ancestry        = args$ancestry)
+},
+error = function(e) {
+  cli_warn(paste0("LDSC failed: \n", e))
+  ldsc_res <<- list(intercept = NA_real_)
+})
 
 
 #=============================================================================
@@ -424,17 +429,38 @@ ldsc_res <- ldsc_h2(munged_sumstats = h[, list(SNP = ID, A1=get(gwas_cols[["gwas
 cli_progress_step("calculating lambda-GC")
 
 # data for the QQ plot
-h[, `:=`(chisq     = qchisq(1 - get(gwas_cols[["gwas_p"]]), 1))]
-h[, `:=`(lambda    = median(chisq) / qchisq(0.5, 1))]
-h[, `:=`(adj_chisq = chisq/lambda)]
-h[, `:=`(adj_P     = pchisq(adj_chisq, 1, lower.tail=FALSE))]
+h[, `:=`(chisq          = qchisq(log(get(gwas_cols[["gwas_p"]])), df = 1, lower.tail = FALSE, log.p = TRUE))] # https://stackoverflow.com/questions/40144267/calculating-miniscule-numbers-for-chi-squared-distribution-numerical-precisio
+h[, `:=`(lambda         = median(chisq) / qchisq(0.5, 1))]
+h[, `:=`(adj_chisq_gc   = chisq/lambda)]
+h[, `:=`(adj_p_gc       = pchisq(adj_chisq_gc, 1, lower.tail=FALSE))]
+h[, `:=`(adj_se_gc      = get(gwas_cols[["gwas_se"]]) * sqrt(lambda[1]))]
+h[, `:=`(adj_chisq_ldsc = chisq/ldsc_res$intercept)]
+h[, `:=`(adj_p_ldsc     = pchisq(adj_chisq_ldsc, 1, lower.tail=FALSE))]
+h[, `:=`(adj_se_ldsc    = get(gwas_cols[["gwas_se"]]) * sqrt(ldsc_res$intercept))]
 
-qq_data <- h[, .(lambda       = median(chisq) / qchisq(0.5, 1),
-                 observed     = -log10(sort(get(gwas_cols[["gwas_p"]]), decreasing=FALSE)),
-                 adj_observed = -log10(sort(adj_P, decreasing=FALSE)),
-                 expected     = -log10(ppoints(.N)),
-                 clower       = -log10(qbeta(p = (1 - 0.95) / 2, shape1 = 1:.N, shape2 = .N:1)),
-                 cupper       = -log10(qbeta(p = (1 + 0.95) / 2, shape1 = 1:.N, shape2 = .N:1)))]
+qq_data <- rbind(
+  # unadjusted
+  h[, .(stat     = "Unadjusted",
+        value    = NA_real_,
+        observed = -log10(sort(get(gwas_cols[["gwas_p"]]), decreasing=FALSE, na.last=TRUE)),
+        expected = -log10(ppoints(.N)),
+        clower   = -log10(qbeta(p = (1 - 0.95) / 2, shape1 = 1:.N, shape2 = .N:1)),
+        cupper   = -log10(qbeta(p = (1 + 0.95) / 2, shape1 = 1:.N, shape2 = .N:1)))],
+  # GC lambda adjusted
+  h[, .(stat     = "GC lambda",
+        value    = lambda[1],
+        observed = -log10(sort(adj_p_gc, decreasing=FALSE, na.last=TRUE)),
+        expected = -log10(ppoints(.N)),
+        clower   = NA_real_,
+        cupper   = NA_real_)],
+  # LDSC intercept adjusted
+  h[, .(stat     = "LDSC intercept",
+        value    = ldsc_res$intercept,
+        observed = -log10(sort(adj_p_ldsc, decreasing=FALSE, na.last=TRUE)),
+        expected = -log10(ppoints(.N)),
+        clower   = NA_real_,
+        cupper   = NA_real_)]
+)
 setorder(qq_data, expected)
 
 # generate QQ-plot
@@ -443,34 +469,35 @@ log10Pe <- expression(paste("Expected -log"[10], plain(P)))
 log10Po <- expression(paste("Observed -log"[10], plain(P)))
 
 # lambda labels
-labels <- qq_data[, list(stat  = c("lambda", "LDSC intercept"),
-                         label = c(sprintf("\u03BB = %.3f", lambda[1]), sprintf("LSDC int. = %.3f (95%%CI %.3f-%.3f)", ldsc_res$intercept, ldsc_res$intercept - 1.96*ldsc_res$intercept_se, ldsc_res$intercept + 1.96*ldsc_res$intercept_se)),
-                         expected = c(3.0, 3.0),
-                         observed = c(0.25, 1.25))]
+labels <- qq_data[stat != "Unadjusted",
+                  list(value    = value[1],
+                       expected = 3.0,
+                       observed = .GRP-1 + 0.25), by = "stat"]
+labels[, label := sprintf("%s = %.3f", stat, value)]
 
 # plot
+# colors
+point_colors <- if (is.null(args$adjustment)) {
+                  c(Unadjusted = "blue", `GC lambda` = "lightgray", `LDSC intercept` = "darkgray")
+                } else if (args$adjustment=="lambda") {
+                  c(Unadjusted = "lightgray", `GC lambda` = "blue", `LDSC intercept` = "darkgray")
+                } else if (args$adjustment=="ldsc") {
+                  c(Unadjusted = "lightgray", `GC lambda` = "darkgray", `LDSC intercept` = "blue")
+                }
+
 qq_plot <- qq_data |>
-  ggplot(aes(x = expected, y = observed)) +
-  geom_point(size = 0.5, color="darkblue") +
+  ggplot(aes(x = expected, y = observed, color = stat)) +
+  geom_point(size = 0.5) +
   geom_ribbon(aes(x = expected, ymin = clower, ymax = cupper), alpha = 0.1, color="transparent") +
   geom_abline(slope=1, intercept=0, color="darkred", linetype = "dotted") +
   geom_text(data = labels, aes(x=expected, y=observed, label=label), hjust = 0, color="black", show.legend = FALSE) +
+  scale_color_manual(values = point_colors) +
   labs(x = log10Pe,
        y = log10Po,
-       color = NULL) +
+       color = "Adjustment") +
   theme_minimal() +
-  theme(aspect.ratio = 1)
-
-# add genomic control if requested
-if(args$genomic_control) {
-  qq_data[, corrected := "Corrected"]
-  qq_plot <- qq_plot +
-    geom_point(data    = qq_data,
-               mapping = aes(x = expected, y = adj_observed, color=corrected), color="pink", size = 0.5, inherit.aes=FALSE) +
-    scale_color_manual(values="pink") +
-    theme(legend.position="top") +
-    guides(colour = guide_legend(override.aes = list(size=3)))
-}
+  theme(aspect.ratio    = 1,
+        legend.position = "top")
 
 # save plot
 cli_progress_step("plotting QQ plot")
@@ -481,13 +508,26 @@ cli_process_done()
 
 
 #=============================================================================
-# save clean GWAS and summary table
+# extract then save the clean GWAS and summary table
 #=============================================================================
+
+# if using adjustment with lambda GC or LDSC intercept, switch the P and SE columns
+if (args$adjustment=="lambda") {
+  h[, c(gwas_cols[["gwas_se"]], gwas_cols[["gwas_p"]]) := .(adj_se_gc, adj_p_gc)]
+} else if (args$adjustment=="ldsc") {
+  h[, c(gwas_cols[["gwas_se"]], gwas_cols[["gwas_p"]]) := .(adj_se_ldsc, adj_p_ldsc)]
+}
+
+# extract wanted columns
+gwas <- h[, .SD, .SDcols = c(ref_cols[["ref_id"]], gwas_cols)]
+
+# save gwas
 sans_ext <- sub("([^.]+)\\.[[:alnum:]]+$", "\\1", sub("[.](gz|bz2|xz)$", "", basename(args$gwas)))
 out_path <- file.path(args$output, paste0(sans_ext, '_clean.tsv.gz'))
 cli_progress_step("saving clean GWAS file to {.file {out_path}}")
 fwrite(gwas, out_path, sep = "\t")
 
+# save summary
 log_path <- file.path(args$output, paste0(sans_ext, '_log.tsv'))
 cli_progress_step("saving log file to {.file {log_path}}")
 fwrite(summary, log_path, sep = "\t")
@@ -531,7 +571,7 @@ if (FALSE) {
   args$ref_oa= "REF"
   args$verbose= TRUE
   args$freq_diff= 0.2
-  args$genomic_control=TRUE
+  args$adjustment="ldsc"
   args$no_indel_alleles= FALSE
   args$info_thresh= NULL
   args$ancestry="EUR"

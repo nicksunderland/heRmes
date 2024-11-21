@@ -20,13 +20,15 @@ Imports:
     argparse
 Remotes:
     nicksunderland/BibTexLibraries,
-    SwanseaUniversityMedical/ConceptLibraryClient
+    SwanseaUniversityMedical/ConceptLibraryClient, 
+    mglev1n/ldscr
 Suggests: 
     knitr,
     rmarkdown, 
     here,
     argparse,
     cli,
+    ldscr,
     viridis,
     ggplot2
 VignetteBuilder: knitr

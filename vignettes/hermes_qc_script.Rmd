@@ -48,9 +48,10 @@ The main required inputs required are in the table below, we likely will need to
 | --out               | string | output directory to write file and .pngs | NA           |
 | --gwas_[colname]    | string | standard column names from mapping       | NA           |
 | --ref_[colname]     | string | standard column names from reference file| NA           |
+| --ancestry          | string | GWAS meta-data input                     | Meta-data UI |
 | --no_indel_alleles  | bool   | reviewer QC user interface               | Yes          |
 | --freq_diff         | num    | reviewer QC user interface               | Yes          |
-| --genomic_control   | bool   | reviewer QC user interface               | Yes          |
+| --adjustment        | string | reviewer QC user interface               | Yes          |
 | --info_thresh       | num    | reviewer QC user interface               | Yes          |
 
 ## Example QC script call

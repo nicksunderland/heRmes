@@ -6,7 +6,7 @@ articles:
   hermes_qc_script: hermes_qc_script.html
   old/nih_cardiomyopathy: old/nih_cardiomyopathy.html
   ukbb_phenotyping: ukbb_phenotyping.html
-last_built: 2024-11-19T10:44Z
+last_built: 2024-11-21T10:44Z
 urls:
   reference: https://nicksunderland.github.io/heRmes/reference
   article: https://nicksunderland.github.io/heRmes/articles

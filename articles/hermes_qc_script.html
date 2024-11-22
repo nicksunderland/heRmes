@@ -280,8 +280,8 @@ will need to add more.</p>
 <span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a>  <span class="at">--ref_eaf</span> <span class="st">'AF'</span> <span class="dt">\</span></span>
 <span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a>  <span class="at">--freq_diff</span> 0.2 <span class="dt">\</span></span>
 <span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a>  <span class="at">--out</span> <span class="st">'/Users/xx20081/Desktop/qc_tests'</span> <span class="dt">\</span></span>
-<span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a>  <span class="at">--freq_diff</span> 0.2 <span class="dt">\</span></span>
-<span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a>  <span class="at">--adjustment</span> <span class="st">'ldsc'</span></span>
+<span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a>  <span class="at">--freq_diff</span> 0.2 <span class="co">#\</span></span>
+<span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a>  <span class="co">#--adjustment 'ldsc'</span></span>
 <span id="cb3-25"><a href="#cb3-25" tabindex="-1"></a></span>
 <span id="cb3-26"><a href="#cb3-26" tabindex="-1"></a></span>
 <span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a><span class="ex">Rscript</span> /Users/xx20081/git/heRmes/scripts/gwas_qc.R <span class="dt">\</span></span>
@@ -340,7 +340,7 @@ will need to add more.</p>
 <span><span class="co">#=============================================================================</span></span>
 <span><span class="fu"><a href="https://cli.r-lib.org/reference/cli_h1.html" class="external-link">cli_h1</a></span><span class="op">(</span><span class="st">"QC script - active arguments"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">parser</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/argparse/man/ArgumentParser.html" class="external-link">ArgumentParser</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">parser</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://trevorldavis.com/R/argparse/reference/ArgumentParser.html" class="external-link">ArgumentParser</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co"># basic controls</span></span>
 <span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-v"</span>, <span class="st">"--verbose"</span>,    action<span class="op">=</span><span class="st">"store_true"</span>,  default<span class="op">=</span><span class="cn">TRUE</span>,     help<span class="op">=</span><span class="st">"Print extra output [default]"</span><span class="op">)</span></span>
 <span><span class="va">parser</span><span class="op">$</span><span class="fu">add_argument</span><span class="op">(</span><span class="st">"-q"</span>, <span class="st">"--quietly"</span>,    action<span class="op">=</span><span class="st">"store_false"</span>, dest<span class="op">=</span><span class="st">"verbose"</span>,   help<span class="op">=</span><span class="st">"Print little output"</span><span class="op">)</span></span>
@@ -825,9 +825,9 @@ will need to add more.</p>
 <span><span class="co">#=============================================================================</span></span>
 <span></span>
 <span><span class="co"># if using adjustment with lambda GC or LDSC intercept, switch the P and SE columns</span></span>
-<span><span class="kw">if</span> <span class="op">(</span><span class="va">args</span><span class="op">$</span><span class="va">adjustment</span><span class="op">==</span><span class="st">"lambda"</span><span class="op">)</span> <span class="op">{</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html" class="external-link">is.null</a></span><span class="op">(</span><span class="va">args</span><span class="op">$</span><span class="va">adjustment</span><span class="op">)</span> <span class="op">&amp;&amp;</span> <span class="va">args</span><span class="op">$</span><span class="va">adjustment</span><span class="op">==</span><span class="st">"lambda"</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="va">h</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">gwas_cols</span><span class="op">[[</span><span class="st">"gwas_se"</span><span class="op">]</span><span class="op">]</span>, <span class="va">gwas_cols</span><span class="op">[[</span><span class="st">"gwas_p"</span><span class="op">]</span><span class="op">]</span><span class="op">)</span> <span class="op">:=</span> <span class="fu">.</span><span class="op">(</span><span class="va">adj_se_gc</span>, <span class="va">adj_p_gc</span><span class="op">)</span><span class="op">]</span></span>
-<span><span class="op">}</span> <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span><span class="va">args</span><span class="op">$</span><span class="va">adjustment</span><span class="op">==</span><span class="st">"ldsc"</span><span class="op">)</span> <span class="op">{</span></span>
+<span><span class="op">}</span> <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html" class="external-link">is.null</a></span><span class="op">(</span><span class="va">args</span><span class="op">$</span><span class="va">adjustment</span><span class="op">)</span> <span class="op">&amp;&amp;</span> <span class="va">args</span><span class="op">$</span><span class="va">adjustment</span><span class="op">==</span><span class="st">"ldsc"</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="va">h</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">gwas_cols</span><span class="op">[[</span><span class="st">"gwas_se"</span><span class="op">]</span><span class="op">]</span>, <span class="va">gwas_cols</span><span class="op">[[</span><span class="st">"gwas_p"</span><span class="op">]</span><span class="op">]</span><span class="op">)</span> <span class="op">:=</span> <span class="fu">.</span><span class="op">(</span><span class="va">adj_se_ldsc</span>, <span class="va">adj_p_ldsc</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="op">}</span></span>
 <span></span>
@@ -884,7 +884,7 @@ will need to add more.</p>
 <span>  <span class="va">args</span><span class="op">$</span><span class="va">ref_oa</span><span class="op">=</span> <span class="st">"REF"</span></span>
 <span>  <span class="va">args</span><span class="op">$</span><span class="va">verbose</span><span class="op">=</span> <span class="cn">TRUE</span></span>
 <span>  <span class="va">args</span><span class="op">$</span><span class="va">freq_diff</span><span class="op">=</span> <span class="fl">0.2</span></span>
-<span>  <span class="va">args</span><span class="op">$</span><span class="va">adjustment</span><span class="op">=</span><span class="st">"ldsc"</span></span>
+<span>  <span class="va">args</span><span class="op">$</span><span class="va">adjustment</span><span class="op">=</span><span class="cn">NULL</span> <span class="co">#"ldsc"</span></span>
 <span>  <span class="va">args</span><span class="op">$</span><span class="va">no_indel_alleles</span><span class="op">=</span> <span class="cn">FALSE</span></span>
 <span>  <span class="va">args</span><span class="op">$</span><span class="va">info_thresh</span><span class="op">=</span> <span class="cn">NULL</span></span>
 <span>  <span class="va">args</span><span class="op">$</span><span class="va">ancestry</span><span class="op">=</span><span class="st">"EUR"</span></span>

@@ -471,7 +471,7 @@ log10Po <- expression(paste("Observed -log"[10], plain(P)))
 # lambda labels
 labels <- qq_data[stat != "Unadjusted",
                   list(value    = value[1],
-                       expected = 3.0,
+                       expected = 2.0,
                        observed = .GRP-1 + 0.25), by = "stat"]
 labels[, label := sprintf("%s = %.3f", stat, value)]
 

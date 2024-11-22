@@ -512,9 +512,9 @@ cli_process_done()
 #=============================================================================
 
 # if using adjustment with lambda GC or LDSC intercept, switch the P and SE columns
-if (args$adjustment=="lambda") {
+if (!is.null(args$adjustment) && args$adjustment=="lambda") {
   h[, c(gwas_cols[["gwas_se"]], gwas_cols[["gwas_p"]]) := .(adj_se_gc, adj_p_gc)]
-} else if (args$adjustment=="ldsc") {
+} else if (!is.null(args$adjustment) && args$adjustment=="ldsc") {
   h[, c(gwas_cols[["gwas_se"]], gwas_cols[["gwas_p"]]) := .(adj_se_ldsc, adj_p_ldsc)]
 }
 
@@ -571,7 +571,7 @@ if (FALSE) {
   args$ref_oa= "REF"
   args$verbose= TRUE
   args$freq_diff= 0.2
-  args$adjustment="ldsc"
+  args$adjustment=NULL #"ldsc"
   args$no_indel_alleles= FALSE
   args$info_thresh= NULL
   args$ancestry="EUR"

@@ -20,8 +20,8 @@ Rscript /Users/xx20081/git/heRmes/scripts/gwas_qc.R \
   --ref_eaf 'AF' \
   --freq_diff 0.2 \
   --out '/Users/xx20081/Desktop/qc_tests' \
-  --freq_diff 0.2 \
-  --adjustment 'ldsc'
+  --freq_diff 0.2 #\
+  #--adjustment 'ldsc'
 
 
 Rscript /Users/xx20081/git/heRmes/scripts/gwas_qc.R \

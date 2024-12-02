@@ -1167,15 +1167,15 @@ Thrombolysis_coronary	K502	OPCS4	Percutaneous transluminal coronary thrombolysis
 Thrombolysis_coronary	92977	CPT4	Removal of heart artery blood clot by dissolving	1	1	1	0	3	1		0.75	Thrombolysis (coronary)
 Thrombolysis_coronary	92975	CPT4	Removal of heart artery blood clot by dissolving using imaging guidance	1	1	1	0	3	1		0.75	Thrombolysis (coronary)
 Thrombolysis_coronary	1012986	CPT4	Thrombolysis, coronary | [Therapeutic or Preventive Procedure]	1	1	1	0	3	1		0.75	Thrombolysis (coronary)
-ICM_IsA	1.56295910001191E+16	SNOMED	Congestive heart failure stage B due to ischemic cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Ischaemic cardiomyopathy
-ICM_IsA	1.56295410001191E+16	SNOMED	Congestive heart failure stage C due to ischemic cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Ischaemic cardiomyopathy
+ICM_IsA	15629591000119100	SNOMED	Congestive heart failure stage B due to ischemic cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Ischaemic cardiomyopathy
+ICM_IsA	15629541000119100	SNOMED	Congestive heart failure stage C due to ischemic cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Ischaemic cardiomyopathy
 ICM_IsA	194849004	SNOMED	Generalized ischemic myocardial dysfunction (disorder)	0	0	1	0	1	1		0.25	Ischaemic cardiomyopathy
 ICM_IsA	426856002	SNOMED	Ischemic congestive cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Ischaemic cardiomyopathy
 ICM_IsA	472100003	SNOMED	Ischemic dilated cardiomyopathy due to coronary artery disease (disorder)	0	0	1	0	1	1		0.25	Ischaemic cardiomyopathy
 ICM_IsA	39693003	SNOMED	Dilated cardiomyopathy due to granuloma (disorder)	0	0	1	0	1	1		0.25	Ischaemic cardiomyopathy
 ICM_IsA	86194008	SNOMED	Dilated cardiomyopathy due to infectious disease (disorder)	0	0	1	0	1	1		0.25	Ischaemic cardiomyopathy
-ICM_IsA	1.56296410001191E+16	SNOMED	Systolic heart failure stage B due to ischemic cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Ischaemic cardiomyopathy
-ICM_IsA	1.56297410001191E+16	SNOMED	Systolic heart failure stage C due to ischemic cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Ischaemic cardiomyopathy
+ICM_IsA	15629641000119100	SNOMED	Systolic heart failure stage B due to ischemic cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Ischaemic cardiomyopathy
+ICM_IsA	15629741000119100	SNOMED	Systolic heart failure stage C due to ischemic cardiomyopathy (disorder)	0	0	1	0	1	1		0.25	Ischaemic cardiomyopathy
 ICM_IsA	I255	ICD10	Ischemic cardiomyopathy	0	0	1	0	1	1		0.25	Ischaemic cardiomyopathy
 Congenital_heart_disease	Z8774	ICD10	Personal history of (corrected) congenital malformations of heart and circulatory system	1	0	1	0	2	1		0.5	Congenital heart disease
 Congenital_heart_disease	Z877	ICD10	Personal history of (corrected) congenital malformations	1	0	1	0	2	1		0.5	Congenital heart disease

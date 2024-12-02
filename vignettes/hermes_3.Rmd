@@ -210,8 +210,8 @@ Step 2b (phenotype 4 – 5). For each participant, classify the status (case/con
 
 *Table 2. GWAS Phenotype classifiers for DCM and NICM (phenotypes 4-5)*
 
-| CongHD | HCM  | RCM   | MI*   | CABG*  | PCI*  | Thrombolysis*|  ICM    |  DCM    | DCM_AssW | LVSD    | Phenotype |
-|--------|------|-------|-------|--------|-------|--------------|---------|----------|---------|-----------|
+| CongHD | HCM  | RCM   | MI    | CABG   | PCI   | Thrombolysis |  ICM    |  DCM    | DCM_AssW | LVSD    | Phenotype |
+|--------|------|-------|-------|--------|-------|--------------|---------|---------|----------|---------|-----------|
 | TRUE   | ANY  | ANY   | ANY   | ANY    | ANY   | ANY          |  ANY    | ANY     | ANY      | ANY     | Exclude   |
 | FALSE  | TRUE | ANY   | ANY   | ANY    | ANY   | ANY          |  ANY    | ANY     | ANY      | ANY     | Exclude   |
 | FALSE  | FALSE| TRUE  | ANY   | ANY    | ANY   | ANY          |  ANY    | ANY     | ANY      | ANY     | Exclude   |
@@ -220,9 +220,9 @@ Step 2b (phenotype 4 – 5). For each participant, classify the status (case/con
 | FALSE  | FALSE| FALSE | FALSE | FALSE  | TRUE  | ANY          |  ANY    | ANY     | ANY      | ANY     | Exclude   |
 | FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | TRUE         |  ANY    | ANY     | ANY      | ANY     | Exclude   |
 | FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        |  TRUE   | ANY     | ANY      | ANY     | Exclude   |
-| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        |  FALSE  | TRUE    | ANY      | ANY     | 1         |
-| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        |  FALSE  | ANY     | TRUE     | ANY     | 2         |
-| FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        |  FALSE  | ANY     | ANY      | TRUE    | 2         |
+| FALSE  | FALSE| FALSE | FALSE* | FALSE* | FALSE* | FALSE*     |  FALSE  | TRUE    | ANY      | ANY     | 1 & 2     |
+| FALSE  | FALSE| FALSE | FALSE* | FALSE*  | FALSE* | FALSE*    |  FALSE  | ANY     | TRUE     | ANY     | 2         |
+| FALSE  | FALSE| FALSE | FALSE* | FALSE*  | FALSE* | FALSE*    |  FALSE  | ANY     | ANY      | TRUE    | 2         |
 | FALSE  | FALSE| FALSE | FALSE | FALSE  | FALSE | FALSE        |  FALSE  | FALSE   | FALSE    | FALSE   | Control   |
 
 \* Myocardial infarction, ICM, and revascularisation exclusion should be made based on codes appearing prior to the DCM / NICM inclusion codes - i.e. excluding antecedent ischaemic events but allowing ischaemic events that happen after the DCM / NICM diagnosis.  

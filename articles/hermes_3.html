@@ -35,7 +35,6 @@
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
 <li><a class="dropdown-item" href="../articles/hermes_3.html">HERMES 3.0</a></li>
     <li><a class="dropdown-item" href="../articles/hermes_qc_script.html">HERMES QUALITY CONTROL</a></li>
-    <li><a class="dropdown-item" href="../articles/old/nih_cardiomyopathy.html">Cardiomyopathy phenotyping NIH</a></li>
     <li><a class="dropdown-item" href="../articles/ukbb_phenotyping.html">UKBB phenotyping example</a></li>
   </ul>
 </li>
@@ -529,30 +528,32 @@ and Figure 2:</p>
 4-5)</em></p>
 <table class="table">
 <colgroup>
-<col width="8%">
+<col width="7%">
+<col width="5%">
+<col width="6%">
 <col width="6%">
 <col width="7%">
-<col width="7%">
+<col width="6%">
+<col width="13%">
 <col width="8%">
-<col width="7%">
-<col width="14%">
+<col width="8%">
 <col width="9%">
+<col width="8%">
 <col width="10%">
-<col width="9%">
-<col width="11%">
 </colgroup>
 <thead><tr class="header">
 <th>CongHD</th>
 <th>HCM</th>
 <th>RCM</th>
-<th>MI*</th>
-<th>CABG*</th>
-<th>PCI*</th>
-<th>Thrombolysis*</th>
+<th>MI</th>
+<th>CABG</th>
+<th>PCI</th>
+<th>Thrombolysis</th>
 <th>ICM</th>
 <th>DCM</th>
 <th>DCM_AssW</th>
 <th>LVSD</th>
+<th>Phenotype</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -567,6 +568,7 @@ and Figure 2:</p>
 <td>ANY</td>
 <td>ANY</td>
 <td>ANY</td>
+<td>Exclude</td>
 </tr>
 <tr class="even">
 <td>FALSE</td>
@@ -580,6 +582,7 @@ and Figure 2:</p>
 <td>ANY</td>
 <td>ANY</td>
 <td>ANY</td>
+<td>Exclude</td>
 </tr>
 <tr class="odd">
 <td>FALSE</td>
@@ -593,6 +596,7 @@ and Figure 2:</p>
 <td>ANY</td>
 <td>ANY</td>
 <td>ANY</td>
+<td>Exclude</td>
 </tr>
 <tr class="even">
 <td>FALSE</td>
@@ -606,6 +610,7 @@ and Figure 2:</p>
 <td>ANY</td>
 <td>ANY</td>
 <td>ANY</td>
+<td>Exclude</td>
 </tr>
 <tr class="odd">
 <td>FALSE</td>
@@ -619,6 +624,7 @@ and Figure 2:</p>
 <td>ANY</td>
 <td>ANY</td>
 <td>ANY</td>
+<td>Exclude</td>
 </tr>
 <tr class="even">
 <td>FALSE</td>
@@ -632,6 +638,7 @@ and Figure 2:</p>
 <td>ANY</td>
 <td>ANY</td>
 <td>ANY</td>
+<td>Exclude</td>
 </tr>
 <tr class="odd">
 <td>FALSE</td>
@@ -645,6 +652,7 @@ and Figure 2:</p>
 <td>ANY</td>
 <td>ANY</td>
 <td>ANY</td>
+<td>Exclude</td>
 </tr>
 <tr class="even">
 <td>FALSE</td>
@@ -658,45 +666,49 @@ and Figure 2:</p>
 <td>ANY</td>
 <td>ANY</td>
 <td>ANY</td>
+<td>Exclude</td>
 </tr>
 <tr class="odd">
 <td>FALSE</td>
 <td>FALSE</td>
 <td>FALSE</td>
-<td>FALSE</td>
-<td>FALSE</td>
-<td>FALSE</td>
-<td>FALSE</td>
+<td>FALSE*</td>
+<td>FALSE*</td>
+<td>FALSE*</td>
+<td>FALSE*</td>
 <td>FALSE</td>
 <td>TRUE</td>
 <td>ANY</td>
 <td>ANY</td>
+<td>1 &amp; 2</td>
 </tr>
 <tr class="even">
 <td>FALSE</td>
 <td>FALSE</td>
 <td>FALSE</td>
-<td>FALSE</td>
-<td>FALSE</td>
-<td>FALSE</td>
-<td>FALSE</td>
+<td>FALSE*</td>
+<td>FALSE*</td>
+<td>FALSE*</td>
+<td>FALSE*</td>
 <td>FALSE</td>
 <td>ANY</td>
 <td>TRUE</td>
 <td>ANY</td>
+<td>2</td>
 </tr>
 <tr class="odd">
 <td>FALSE</td>
 <td>FALSE</td>
 <td>FALSE</td>
-<td>FALSE</td>
-<td>FALSE</td>
-<td>FALSE</td>
-<td>FALSE</td>
+<td>FALSE*</td>
+<td>FALSE*</td>
+<td>FALSE*</td>
+<td>FALSE*</td>
 <td>FALSE</td>
 <td>ANY</td>
 <td>ANY</td>
 <td>TRUE</td>
+<td>2</td>
 </tr>
 <tr class="even">
 <td>FALSE</td>
@@ -710,6 +722,7 @@ and Figure 2:</p>
 <td>FALSE</td>
 <td>FALSE</td>
 <td>FALSE</td>
+<td>Control</td>
 </tr>
 </tbody>
 </table>

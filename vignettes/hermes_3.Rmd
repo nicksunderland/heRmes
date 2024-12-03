@@ -219,14 +219,13 @@ Step 2b (phenotype 4 – 5). For each participant, classify the status (case/con
 | FALSE  | FALSE| FALSE | FALSE\*| FALSE\*| FALSE\*| FALSE\*      |  FALSE\*| TRUE    | ANY      | ANY     | 1 & 2     |
 | FALSE  | FALSE| FALSE | FALSE\*| FALSE\*| FALSE\*| FALSE\*      |  FALSE\*| ANY     | TRUE     | ANY     | 2         |
 | FALSE  | FALSE| FALSE | FALSE\*| FALSE\*| FALSE\*| FALSE\*      |  FALSE\*| ANY     | ANY      | TRUE    | 2         |
-| FALSE  | FALSE| FALSE | FALSE\*| TRUE   | ANY    | ANY          |  ANY    | ANY     | ANY      | ANY     | Exclude   |
-| FALSE  | FALSE| FALSE | FALSE\*| FALSE\*| TRUE   | ANY          |  ANY    | ANY     | ANY      | ANY     | Exclude   |
-| FALSE  | FALSE| FALSE | FALSE\*| FALSE\*| FALSE\*| TRUE         |  ANY    | ANY     | ANY      | ANY     | Exclude   |
-| FALSE  | FALSE| FALSE | FALSE\*| FALSE\*| FALSE\*| FALSE\*      |  TRUE   | ANY     | ANY      | ANY     | Exclude   |
-| FALSE  | FALSE| FALSE | FALSE^ | FALSE^ | FALSE^ | FALSE^       |  FALSE^ | FALSE   | FALSE    | FALSE   | Control   |
+| FALSE  | FALSE| FALSE | FALSE  | TRUE   | ANY    | ANY          |  ANY    | FALSE   | FALSE    | FALSE   | Exclude   |
+| FALSE  | FALSE| FALSE | FALSE  | FALSE  | TRUE   | ANY          |  ANY    | FALSE   | FALSE    | FALSE   | Exclude   |
+| FALSE  | FALSE| FALSE | FALSE  | FALSE  | FALSE  | TRUE         |  ANY    | FALSE   | FALSE    | FALSE   | Exclude   |
+| FALSE  | FALSE| FALSE | FALSE  | FALSE  | FALSE  | FALSE        |  TRUE   | FALSE   | FALSE    | FALSE   | Exclude   |
+| FALSE  | FALSE| FALSE | FALSE  | FALSE  | FALSE  | FALSE        |  FALSE  | FALSE   | FALSE    | FALSE   | Control   |
 
 \* Myocardial infarction, ICM, and revascularisation exclusion should be made based on codes appearing prior to the DCM / NICM inclusion codes - i.e. excluding antecedent ischaemic events but allowing ischaemic events that happen after the DCM / NICM diagnosis.  
-^ All myocardial infarction, ICM, and revascularisation events should be excluded from the controls.    
 
 *Figure 2. Phenotyping algorithm for phenotype 4 - 5    *  
 

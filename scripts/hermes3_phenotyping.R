@@ -225,19 +225,24 @@ cohort[, hf_control := hf_exclude==FALSE & pheno1==FALSE & pheno2==FALSE & pheno
 cohort[, cm_exclude := withdrawal == TRUE |
                        congenital_heart_disease==TRUE |  # all congenital heart disease
                        hypertrophic_cardiomyopathy==TRUE | self_hcm==TRUE | # all HCM
-                       restrictive_cardiomyopathy==TRUE | # all RCM
-                       (dilated_cardiomyopathy==FALSE & (ischaemic==TRUE | self_isch==TRUE)) | # non-DCM but with ischaemic ICD history or self reported ischaemic history
-                       (nicm_comb==FALSE              & (ischaemic==TRUE | self_isch==TRUE)) | # non-NICM but with ischaemic ICD history or self reported ischaemic history
-                       (dilated_cardiomyopathy==TRUE  & (ischaemic==TRUE & ischaemic_first_date <= dilated_cardiomyopathy_first_date)) | # DCM but with first ischaemic event prior to the DCM diagnosis
-                       (nicm_comb==TRUE               & (ischaemic==TRUE & ischaemic_first_date <= nicm_comb_first_date))]  # NICM but with first ischaemic event prior to the NICM diagnosis
+                       restrictive_cardiomyopathy==TRUE] # all RCM
+
 # pheno 4
-cohort[, pheno4 := cm_exclude==FALSE & dilated_cardiomyopathy==TRUE]
+cohort[, pheno4 := cm_exclude==FALSE &
+                   !(dilated_cardiomyopathy==TRUE  & (ischaemic==TRUE & ischaemic_first_date <= dilated_cardiomyopathy_first_date)) & # DCM but with first ischaemic event prior to the DCM diagnosis
+                   dilated_cardiomyopathy==TRUE]
 
 # pheno 5
-cohort[, pheno5 := cm_exclude==FALSE & nicm_comb==TRUE]
+cohort[, pheno5 := cm_exclude==FALSE &
+         !(nicm_comb==TRUE & (ischaemic==TRUE & ischaemic_first_date <= nicm_comb_first_date)) &  # NICM but with first ischaemic event prior to the NICM diagnosis
+         nicm_comb==TRUE]
 
 # CM controls
-cohort[, cm_control := cm_exclude==FALSE & pheno4==FALSE & pheno5==FALSE]
+cohort[, cm_control := cm_exclude==FALSE &
+                       pheno4==FALSE &
+                       pheno5==FALSE &
+                       ischaemic==FALSE &
+                       self_isch==FALSE]
 
 
 # check HF phenotyping

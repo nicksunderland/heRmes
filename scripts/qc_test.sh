@@ -1,16 +1,16 @@
 # Rscript /Users/xx20081/git/heRmes/scripts/gwas_qc.R -h
 
 Rscript /Users/xx20081/git/heRmes/scripts/gwas_qc.R \
-  --gwas '/Users/xx20081/Documents/local_data/hermes_incidence/raw/Pheno5-DCM_EUR/FORMAT-METAL_Pheno5-DCM_EUR.tsv.gz' \
+  --gwas '/Users/xx20081/Desktop/hermes_cohorts/discovehr_omni/discovehromni_pheno5_hrc_eur_mixed.tsv.gz' \
   --gwas_chr 'chr' \
   --gwas_bp 'pos_b37' \
-  --gwas_ea 'A1' \
-  --gwas_oa 'A2' \
-  --gwas_eaf 'A1_freq' \
-  --gwas_beta 'A1_beta' \
-  --gwas_se 'se' \
+  --gwas_ea 'A_coded' \
+  --gwas_oa 'A_noncoded' \
+  --gwas_eaf 'AFreq_coded' \
+  --gwas_beta 'beta' \
+  --gwas_se 'SE' \
   --gwas_p 'pval' \
-  --gwas_n 'N_total' \
+  --gwas_n 'n_total' \
   --ref '/Users/xx20081/Documents/local_data/genome_reference/hrc_37/HRC.r1-1.GRCh37.wgs.mac5.sites.tab.gz' \
   --ref_id 'ID' \
   --ref_chr '#CHROM' \
@@ -45,4 +45,9 @@ Rscript /Users/xx20081/git/heRmes/scripts/gwas_qc.R \
   --freq_diff 0.2 \
   --out '/Users/xx20081/Desktop/qc_tests' \
   --no_indel_alleles
+
+
+
+
+
 

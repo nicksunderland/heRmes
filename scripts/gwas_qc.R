@@ -350,6 +350,7 @@ eaf_plot <- ggplot(h[freq_diff > args$freq_diff], aes(x = eaf_ref, y = eaf, colo
   viridis::scale_colour_viridis(option = "mako") +
   labs(x = "Reference allele frequency", y = "Cohort allele frequency",
        caption = "*red triangles strand flip") +
+  lims(x = c(0,1), y = c(0,1)) +
   theme_minimal(base_size = 18) +
   theme(legend.position = "none")
 
@@ -512,10 +513,12 @@ cli_process_done()
 #=============================================================================
 
 # if using adjustment with lambda GC or LDSC intercept, switch the P and SE columns
-if (!is.null(args$adjustment) && args$adjustment=="lambda") {
-  h[, c(gwas_cols[["gwas_se"]], gwas_cols[["gwas_p"]]) := .(adj_se_gc, adj_p_gc)]
-} else if (!is.null(args$adjustment) && args$adjustment=="ldsc") {
-  h[, c(gwas_cols[["gwas_se"]], gwas_cols[["gwas_p"]]) := .(adj_se_ldsc, adj_p_ldsc)]
+if (!is.null(args$adjustment)) {
+  if (args$adjustment=="lambda") {
+    h[, c(gwas_cols[["gwas_se"]], gwas_cols[["gwas_p"]]) := .(adj_se_gc, adj_p_gc)]
+  } else if (args$adjustment=="ldsc") {
+    h[, c(gwas_cols[["gwas_se"]], gwas_cols[["gwas_p"]]) := .(adj_se_ldsc, adj_p_ldsc)]
+  }
 }
 
 # extract wanted columns

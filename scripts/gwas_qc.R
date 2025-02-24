@@ -214,6 +214,7 @@ cli_h1("Formatting data")
 cli_progress_step("formatting data")
 
 # (re)code chromosome column as integer
+gwas[, (args$gwas_chr) := sub("(?i)^chr", "", get(args$gwas_chr))]
 gwas[, (args$gwas_chr) := fcase(as.integer(get(args$gwas_chr)) %in% 1:26, as.integer(get(args$gwas_chr)),
                                 grepl("(?i)^X$",   get(args$gwas_chr)),         23L,
                                 grepl("(?i)^Y$",   get(args$gwas_chr)),         24L,

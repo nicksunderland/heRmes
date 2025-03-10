@@ -7,3 +7,4 @@ docs
 .DS_Store
 .Rhistory
 .idea
+.ipynb_checkpoints

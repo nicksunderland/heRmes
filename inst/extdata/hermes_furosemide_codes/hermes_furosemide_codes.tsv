@@ -1,5 +1,5 @@
 concept	code	code_type	description
-Heart Failur	1076'	ukbb_self_reported_illness	heart failure/pulmonary odema
+Heart Failure	'1076'	ukbb_self_reported_illness	heart failure/pulmonary odema
 Heart Failure	'0205052AEAAAAAA'	bnf	Sacubitril/Valsartan_Tab 49mg/51mg
 Heart Failure	'0205052AEAAABAB'	bnf	Sacubitril/Valsartan_Tab 97mg/103mg
 Heart Failure	'0205052AEAAACAC'	bnf	Sacubitril/Valsartan_Tab 24mg/26mg

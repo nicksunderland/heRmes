@@ -1523,3 +1523,9 @@ Loop Diuretic	'b51y.00'	read_med	CO-AMILOFRUSE (amiloride & furosemide) tabs 5mg
 Loop Diuretic	'b91b.'	read_med	BUMETANIDE+POTASSIUM 500micrograms/7.7mmol m/r tablets
 Loop Diuretic	'b91b.00'	read_med	BUMETANIDE+POTASSIUM 500micrograms/7.7mmol m/r tablets
 Loop Diuretic	'b91f.'	read_med	FUROSEMIDE+POTASSIUM 20mg/10mmol m/r tablets
+Loop Diuretic	1140909708	ukbb_self_reported_medication	furosemide
+Loop Diuretic	1141195254	ukbb_self_reported_medication	triamterene+furosemide 50mg/40mg tablet
+Loop Diuretic	1141195258	ukbb_self_reported_medication	furosemide+potassium 20mg/10mmol m/r tablet
+Loop Diuretic	1140866280	ukbb_self_reported_medication	bumetanide
+Loop Diuretic	1140866426	ukbb_self_reported_medication	amiloride hydrochloride+bumetanide 5mg/1mg tablet
+Loop Diuretic	1140866448	ukbb_self_reported_medication	bumetanide+potassium 500micrograms/7.7mmol m/r tablet

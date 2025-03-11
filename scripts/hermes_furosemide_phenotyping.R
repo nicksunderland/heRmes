@@ -1,76 +1,52 @@
 library(data.table)
+library(bit64)
+library(readxl)
 
 # data dir
 data_dir <- file.path(Sys.getenv("DATA_DIR"), "ukbb_81499_20241114")
 
-# read the data
-withdraw  <- fread(file.path(data_dir, "withdraw81499_55_20230915.txt"))
-demog     <- fread(file.path(data_dir, "data_participant.tsv"))
-gp_clinical<-fread(file.path(data_dir, "dummy_gp_clinical.tsv.gz"))
-gp_medication<-fread(file.path(data_dir, "dummy_gp_medication.tsv.gz"))
+# read all of the medication data
+gp_medication <- fread(file.path(data_dir, "dummy_gp_medication.tsv.gz"))
 
-# read the codes
+# filters
+hf_regex       <- "(?i)((heart|cardiac|ventric.*?).*(failure|insuffi.*))|entresto|sacubitril"
+diuretic_regex <- "(?i)furosemide|butmetanide"
+
+# read the code mapping file, combine and filter
+# all_lkps_maps_v4.xlsx << https://biobank.ndph.ox.ac.uk/ukb/refer.cgi?id=592
+mapping_file <- "/Users/xx20081/Downloads/primarycare_codings/all_lkps_maps_v4.xlsx"
 codes <- rbindlist(list(
-  fread(system.file("extdata", "hermes_3_codes", "hermes_3_codes.tsv", package = "heRmes")),
-  fread(system.file("extdata", "hermes_furosemide_codes", "hermes_furosemide_codes.tsv", package = "heRmes"))
-))
-self_reported_codes <- list(
-  list(name = "Heart Failure",                      code = "1076", code_type = "ukbb_self_reported_illness"),
-  list(name = "Myocardial infarction",              code = "1075", code_type = "ukbb_self_reported_illness"),
-  list(name = "Hypertrophic cardiomyopathy",        code = "1588", code_type = "ukbb_self_reported_illness"),
-  list(name = "Coronary artery bypass grafting",    code = "1095", code_type = "ukbb_self_reported_procedure"),
-  list(name = "Percutaneous coronary intervention", code = "1070", code_type = "ukbb_self_reported_procedure")
-)
-codes <- rbind(codes,
-               data.table(Concept     = paste0(sapply(self_reported_codes, function(x) x$name), " Self Reported"),
-                          Code        = sapply(self_reported_codes, function(x) x$code),
-                          Source      = sapply(self_reported_codes, function(x) x$code_type),
-                          Description = sapply(self_reported_codes, function(x) x$name)))
-codes[, `:=`(code      = sub("^'(.*?)'$", "\\1", Code),
-             code_type = fcase(Source=="ICD10", "icd10",
-                               Source=="ICD9",  "icd9",
-                               Source=="OPCS4", "opcs4",
-                               Source=="READ2", "read2",
-                               Source=="CTV3",  "read3",
-                               Source=="BNF",   "bnf",
-                               Source=="DMD",   "dmd",
-                               Source=="ukbb_self_reported_illness", "ukbb_self_reported_illness",
-                               Source=="ukbb_self_reported_procedure", "ukbb_self_reported_procedure"))]
-codes <- codes[!is.na(code_type)]
+  # heart_failure
+  icd9     = as.data.table(read_xlsx(mapping_file, sheet="icd9_lkp",          col_types = "text"))[, .(concept="Heart Failure", code=paste0("'",ICD9,"'"), desc=DESCRIPTION_ICD9)][grepl(hf_regex, desc)],
+  icd10    = as.data.table(read_xlsx(mapping_file, sheet="icd10_lkp",         col_types = "text"))[, .(concept="Heart Failure", code=paste0("'",ALT_CODE,"'"), desc=DESCRIPTION)][grepl(hf_regex, desc)],
+  read2    = as.data.table(read_xlsx(mapping_file, sheet="read_v2_lkp",       col_types = "text"))[, .(concept="Heart Failure", code=paste0("'",read_code,"'"), desc=term_description)][grepl(hf_regex, desc)],
+  read3    = as.data.table(read_xlsx(mapping_file, sheet="read_ctv3_lkp",     col_types = "text"))[, .(concept="Heart Failure", code=paste0("'",read_code,"'"), desc=term_description)][grepl(hf_regex, desc)],
+  read_med = as.data.table(read_xlsx(mapping_file, sheet="read_v2_drugs_lkp", col_types = "text"))[, .(concept="Heart Failure", code=paste0("'",read_code,"'"), desc=term_description)][grepl(hf_regex, desc)],
+  bnf      = as.data.table(read_xlsx(mapping_file, sheet="bnf_lkp",           col_types = "text"))[, .(concept="Heart Failure", code=paste0("'",BNF_Presentation_Code,"'"), desc=BNF_Presentation)][grepl(hf_regex, desc)],
+  dmd      = as.data.table(read_xlsx(mapping_file, sheet="dmd_lkp",           col_types = "text"))[, .(concept="Heart Failure", code=paste0("'",concept_id,"'"), desc=term)][grepl(hf_regex, desc)],
+  read_med = gp_medication[read_2!="",       .(concept="Heart Failure", code=paste0("'",read_2,"'"),   desc=drug_name)][grepl(hf_regex, desc)],
+  bnf      = gp_medication[bnf_code!="",     .(concept="Heart Failure", code=paste0("'",bnf_code,"'"), desc=drug_name)][grepl(hf_regex, desc)],
+  dmd      = gp_medication[!is.na(dmd_code), .(concept="Heart Failure", code=paste0("'",dmd_code,"'"), desc=drug_name)][grepl(hf_regex, desc)],
+  # diruetic
+  read_med = as.data.table(read_xlsx(mapping_file, sheet="read_v2_drugs_lkp", col_types = "text"))[, .(concept="Loop Diuretic", code=paste0("'",read_code,"'"), desc=term_description)][grepl(diuretic_regex, desc)],
+  bnf      = as.data.table(read_xlsx(mapping_file, sheet="bnf_lkp",           col_types = "text"))[, .(concept="Loop Diuretic", code=paste0("'",BNF_Presentation_Code,"'"), desc=BNF_Presentation)][grepl(diuretic_regex, desc)],
+  dmd      = as.data.table(read_xlsx(mapping_file, sheet="dmd_lkp",           col_types = "text"))[, .(concept="Loop Diuretic", code=paste0("'",concept_id,"'"), desc=term)][grepl(diuretic_regex, desc)],
+  read_med = gp_medication[read_2!="",       .(concept="Loop Diuretic", code=paste0("'",read_2,"'"),   desc=drug_name)][grepl(diuretic_regex, desc)],
+  bnf      = gp_medication[bnf_code!="",     .(concept="Loop Diuretic", code=paste0("'",bnf_code,"'"), desc=drug_name)][grepl(diuretic_regex, desc)],
+  dmd      = gp_medication[!is.na(dmd_code), .(concept="Loop Diuretic", code=paste0("'",dmd_code,"'"), desc=drug_name)][grepl(diuretic_regex, desc)]
+), idcol="code_type")
+codes <- unique(codes, by=c("code_type","concept","code"))
 
-# long data of codes
-cohort <- demog[, list(eid     = eid,
-                       age     = as.integer(`21022-0.0`),
-                       sex     = factor(`31-0.0`, levels = 0:1, labels = c("female", "male")))]
+# write out for manual review
+fwrite(codes[,.(concept,code,code_type,desc)], "~/Desktop/furosemide_codes_for_review.tsv", sep="\t")
 
-# gp clinical
-gp_clinical[read_2 == "", read_2 := NA_character_]
-gp_clinical[read_3 == "", read_3 := NA_character_]
-gp_clinical[, date := as.Date(date)]
-gp_clinical <- data.table::melt(gp_clinical,
-                                id.vars = c("eid", "date"),
-                                measure.vars  = c("read_2", "read_3"),
-                                variable.name = "code_type",
-                                value.name = "code",
-                                na.rm = TRUE)
-gp_clinical[, code_type := data.table::fcase(code_type == "read_2", "read2",
-                                             code_type == "read_3", "read3")]
+# do manual review in excel and save codes to /inst/extdata/hermes_furosemide_codes/hermes_furosemide_codes.tsv
 
-# gp medication
-gp_medication[read_2 == "", read_2 := NA_character_]
-gp_medication[bnf_code == "", bnf_code := NA_character_]
-gp_medication[dmd_code == "", dmd_code := NA_character_]
-gp_medication[, date := as.Date(date)]
-code_cols <- c("read_2","bnf_code","dmd_code")
-gp_medication[, (code_cols) := lapply(.SD, as.character), .SDcol = code_cols]
-gp_medication <- data.table::melt(gp_medication,
-                                  id.vars = c("eid", "date"),
-                                  measure.vars  = c("read_2", "bnf_code", "dmd_code"),
-                                  variable.name = "code_type",
-                                  value.name = "code",
-                                  na.rm = TRUE)
-gp_medication[, code_type := data.table::fcase(code_type == "read_2",   "read2",
-                                               code_type == "bnf_code", "bnf",
-                                               code_type == "dmd_code", "dmd")]
+# end code curration
+
+# now run hermes_furosemide_phenotyping_ukbb_rap.ipynb on the RAP
+
+
+
 
 

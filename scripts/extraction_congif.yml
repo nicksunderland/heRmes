@@ -1,0 +1,196 @@
+participant:
+  entity: participant
+  columns:
+    eid:
+      name: eid
+      search: matches
+    reason_lost_fu:
+      name: p190
+      search: matches
+    sex:
+      name: p31
+      search: matches
+    age:
+      name: p21022
+      search: matches
+    sample_colelction_date:
+      name: p21842
+      search: startswith
+    date_sample:
+      name: p21842
+      search: startswith
+    ethnicity:
+      name: p21000
+      search: startswith
+    genetic_sex:
+      name: p22001
+      search: matches
+    genetic_ethnicity:
+      name: p22006
+      search: matches
+    pc1:
+      name: p22009_a1
+      search: matches
+    pc2:
+      name: p22009_a2
+      search: matches
+    pc3:
+      name: p22009_a3
+      search: matches
+    pc4:
+      name: p22009_a4
+      search: matches
+    pc5:
+      name: p22009_a5
+      search: matches
+    self_rep_ill:
+      name: p20002
+      search: startswith
+    self_rep_ill_year:
+      name: p20008
+      search: startswith
+    self_rep_proc:
+      name: p20004
+      search: startswith
+    self_rep_proc_year:
+      name: p20010
+      search: startswith
+    self_rep_med:
+      name: p20003
+      search: startswith
+      
+
+hesin:
+  entity: hesin
+  columns:
+    eid:
+      name: eid
+      search: matches
+    ins_index:
+      name: ins_index
+      search: matches
+    epistart:
+      name: epistart
+      search: matches
+    admidate:
+      name: admidate
+      search: matches
+      
+
+hes_diag:
+  entity: hesin_diag
+  columns:
+    eid:
+      name: eid
+      search: matches
+    ins_index:
+      name: ins_index
+      search: matches
+    diag_icd9:
+      name: diag_icd9
+      search: matches
+    diag_icd10:
+      name: diag_icd10
+      search: matches
+      
+      
+hesin_oper:
+  entity: hesin_oper
+  columns:
+    eid:
+      name: eid
+      search: matches
+    ins_index:
+      name: ins_index
+      search: matches
+    oper3:
+      name: oper3
+      search: matches
+    oper4:
+      name: oper4
+      search: matches
+      
+
+gp_clinical:
+  entity: gp_clinical
+  columns:
+    eid:
+      name: eid
+      search: matches
+    data_provider:
+      name: data_provider
+      search: matches
+    date:
+      name: event_dt
+      search: matches
+    read_2:
+      name: read_2
+      search: matches
+    read_3:
+      name: read_3
+      search: matches
+      
+      
+gp_scripts:
+  entity: gp_scripts
+  columns:
+    eid:
+      name: eid
+      search: matches
+    data_provider:
+      name: data_provider
+      search: matches
+    date:
+      name: issue_date
+      search: matches
+    read_2:
+      name: read_2
+      search: matches
+    bnf_code:
+      name: bnf_code
+      search: matches
+    dmd_code:
+      name: dmd_code
+      search: matches
+    drug_name:
+      name: drug_name
+      search: matches
+    quantity:
+      name: quantity
+      search: matches
+
+
+olink_instance_0:
+  entity: olink_instance_0
+  columns:
+    eid:
+      name: eid
+      search: matches
+    ntprobnp:
+      name: ntprobnp
+      search: matches
+    glp1r:
+      name: glp1r
+      search: matches
+      
+      
+olink_instance_2:
+  entity: olink_instance_2
+  columns:
+    eid:
+      name: eid
+      search: matches
+    ntprobnp:
+      name: ntprobnp
+      search: matches
+      
+
+olink_instance_3:
+  entity: olink_instance_3
+  columns:
+    eid:
+      name: eid
+      search: matches
+    ntprobnp:
+      name: ntprobnp
+      search: matches

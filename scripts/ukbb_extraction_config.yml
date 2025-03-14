@@ -5,6 +5,9 @@ participant:
     eid:
       name: eid
       search: matches
+    assessment_date:
+      name: p53
+      search: matches
     reason_lost_fu:
       name: p190
       search: matches
@@ -71,7 +74,7 @@ participant:
     cystatin_c:
       name: p30720
       search: startswith
-      
+
 
 hesin:
   output: hermes3_data/data_hesin.tsv
@@ -89,7 +92,7 @@ hesin:
     admidate:
       name: admidate
       search: matches
-      
+
 
 hes_diag:
   output: hermes3_data/data_hesin_diag.tsv
@@ -107,8 +110,8 @@ hes_diag:
     diag_icd10:
       name: diag_icd10
       search: matches
-      
-      
+
+
 hes_oper:
   output: hermes3_data/data_hesin_oper.tsv
   entity: hesin_oper
@@ -125,7 +128,7 @@ hes_oper:
     oper4:
       name: oper4
       search: matches
-      
+
 
 gp_clinical:
   output: hermes3_data/data_gp_clinical.tsv
@@ -146,8 +149,8 @@ gp_clinical:
     read_3:
       name: read_3
       search: matches
-      
-      
+
+
 gp_scripts:
   output: hermes3_data/data_gp_scripts.tsv
   entity: gp_scripts
@@ -191,8 +194,8 @@ olink_instance_0:
     glp1r:
       name: glp1r
       search: matches
-      
-      
+
+
 olink_instance_2:
   output: hermes3_data/data_olink_instance_2.tsv
   entity: olink_instance_2
@@ -203,7 +206,7 @@ olink_instance_2:
     ntprobnp:
       name: ntprobnp
       search: matches
-      
+
 
 olink_instance_3:
   output: hermes3_data/data_olink_instance_3.tsv

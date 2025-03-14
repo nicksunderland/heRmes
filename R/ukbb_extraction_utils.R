@@ -99,3 +99,39 @@ extract_ukbb_data <- function(dataset, fields, entity, output, header_style="FIE
     cat(o, sep = "\n")
   }
 }
+
+
+
+
+#' @title rename_ukbb_cols
+#'
+#' @param data, data.table
+#' @param table_config, list, table config from the ukbb_extract_config.yml file. list(std_name: list(name: ..., search: ...), ...)
+#'
+#' @returns data.table
+#'
+#' @import data.table
+#'
+rename_ukbb_cols <- function(data, col_config) {
+    
+    for (i in seq_along(col_config)) {
+        
+        ukb_name <- col_config[[i]][["name"]]
+        std_name <- names(col_config)[i]
+        strategy <- col_config[[i]][["search"]]
+        
+        if (strategy=="matches") {
+            
+            data.table::setnames(data, ukb_name, std_name)
+            
+        } else if (strategy=="startswith") {
+            
+            regex     <- paste0("^", ukb_name)
+            matches   <- names(data)[grepl(regex, names(data))]
+            new_names <- paste0(std_name, "_", 1:length(matches))           
+            data.table::setnames(data, matches, new_names)
+            
+        }
+    }
+    return(data)
+}

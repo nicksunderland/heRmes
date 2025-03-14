@@ -14,10 +14,7 @@ participant:
     age:
       name: p21022
       search: matches
-    sample_colelction_date:
-      name: p21842
-      search: startswith
-    date_sample:
+    sample_collection_date:
       name: p21842
       search: startswith
     ethnicity:
@@ -97,7 +94,7 @@ hes_diag:
       search: matches
       
       
-hesin_oper:
+hes_oper:
   output: hermes3_data/data_hesin_oper.tsv
   entity: hesin_oper
   columns:

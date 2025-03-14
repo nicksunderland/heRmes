@@ -1,23 +1,24 @@
 #' @title filter_data_dict
 #'
 #' @param dict_path, str, path to the dataset.data_dictionary.csv
-#' @param codes_str, list, list of lists representing UKBB column name, table entity, and search strategy list(name=, entity=, search=).
-#'   name must be a valid column name in the data_dictionary, entity a valid entity in the entity dictionary, and search either "matches"
+#' @param entity_name, str, entity name
+#' @param columns_list, list, list of lists representing UKBB column name and search strategy list(name=, search=).
+#'   name must be a valid column name in the data_dictionary and search either "matches"
 #'   for exact matches, or starts with to match cases of multiple instances (repeated measures usually)
 #'
 #' @returns a filtered subset of the data_dictionary
 #'
-filter_data_dict <- function(dict_path, codes_struc) {
+filter_data_dict <- function(dict_path, entity_name, columns_list) {
 
     data_dict <- fread(dict_path)
 
-    d <- lapply(codes_struc, function(x) {
+    d <- lapply(columns_list, function(x) {
 
         d0 <- data.table()
         if (x$search=="matches") {
-            d0 <- data_dict[entity==x$entity & name==x$name]
+            d0 <- data_dict[entity==entity_name & name==x$name]
         } else if (x$search=="startswith") {
-            d0 <- data_dict[entity==x$entity & grepl(paste0("^", x$name), name)]
+            d0 <- data_dict[entity==entity_name & grepl(paste0("^", x$name), name)]
         }
 
         if (nrow(d0)==0) {
@@ -57,10 +58,8 @@ extract_data <- function(dataset, fields, entity, output, header_style="FIELD-NA
 
   # flag is gzip requested
   if (grepl("\\.gz$", output)) {
-    gz <- TRUE
+    warning("Compressed file output not available, removing .gz")
     output <- sub("\\.gz", "", output)
-  } else {
-    gz <- FALSE
   }
 
   # validate the extension

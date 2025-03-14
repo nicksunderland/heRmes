@@ -1,4 +1,5 @@
 participant:
+  output: hermes3_data/data_participant.tsv
   entity: participant
   columns:
     eid:
@@ -61,6 +62,7 @@ participant:
       
 
 hesin:
+  output: hermes3_data/data_hesin.tsv
   entity: hesin
   columns:
     eid:
@@ -78,6 +80,7 @@ hesin:
       
 
 hes_diag:
+  output: hermes3_data/data_hesin_diag.tsv
   entity: hesin_diag
   columns:
     eid:
@@ -95,6 +98,7 @@ hes_diag:
       
       
 hesin_oper:
+  output: hermes3_data/data_hesin_oper.tsv
   entity: hesin_oper
   columns:
     eid:
@@ -112,6 +116,7 @@ hesin_oper:
       
 
 gp_clinical:
+  output: hermes3_data/data_gp_clinical.tsv
   entity: gp_clinical
   columns:
     eid:
@@ -132,6 +137,7 @@ gp_clinical:
       
       
 gp_scripts:
+  output: hermes3_data/data_gp_scripts.tsv
   entity: gp_scripts
   columns:
     eid:
@@ -161,6 +167,7 @@ gp_scripts:
 
 
 olink_instance_0:
+  output: hermes3_data/data_olink_instance_0.tsv
   entity: olink_instance_0
   columns:
     eid:
@@ -175,6 +182,7 @@ olink_instance_0:
       
       
 olink_instance_2:
+  output: hermes3_data/data_olink_instance_2.tsv
   entity: olink_instance_2
   columns:
     eid:
@@ -186,6 +194,7 @@ olink_instance_2:
       
 
 olink_instance_3:
+  output: hermes3_data/data_olink_instance_3.tsv
   entity: olink_instance_3
   columns:
     eid:
@@ -194,3 +203,4 @@ olink_instance_3:
     ntprobnp:
       name: ntprobnp
       search: matches
+

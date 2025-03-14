@@ -1,4 +1,4 @@
-#' @title filter_data_dict
+#' @title filter_ukbb_data_dict
 #'
 #' @param dict_path, str, path to the dataset.data_dictionary.csv
 #' @param entity_name, str, entity name
@@ -8,7 +8,7 @@
 #'
 #' @returns a filtered subset of the data_dictionary
 #'
-filter_data_dict <- function(dict_path, entity_name, columns_list) {
+filter_ukbb_data_dict <- function(dict_path, entity_name, columns_list) {
 
     data_dict <- fread(dict_path)
 
@@ -35,7 +35,7 @@ filter_data_dict <- function(dict_path, entity_name, columns_list) {
 
 
 
-#' @title extract_data
+#' @title extract_ukbb_data
 #'
 #' @param dataset, str, a valid dataset id - format "{projectid}:{recordid}"
 #' @param fields, str, vector of UK-BB format column names e.g. p31
@@ -50,7 +50,7 @@ filter_data_dict <- function(dict_path, entity_name, columns_list) {
 #' @importFrom glue glue
 #' @importFrom tools file_ext file_path_sans_ext
 #'
-extract_data <- function(dataset, fields, entity, output, header_style="FIELD-NAME", coding_option="RAW", verbose=TRUE) {
+extract_ukbb_data <- function(dataset, fields, entity, output, header_style="FIELD-NAME", coding_option="RAW", verbose=TRUE) {
 
   # check options
   header_style <- match.arg(header_style, choices = c("FIELD-NAME","FIELD-TITLE","NONE","UKB-FORMAT"))

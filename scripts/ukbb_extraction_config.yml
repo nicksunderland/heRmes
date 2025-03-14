@@ -17,6 +17,15 @@ participant:
     sample_collection_date:
       name: p21842
       search: startswith
+    weight:
+      name: p21002_i
+      search: startswith
+    height:
+      name: p50_i
+      search: matches
+    bmi:
+      name: p21001_i
+      search: startswith
     ethnicity:
       name: p21000
       search: startswith

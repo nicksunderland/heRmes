@@ -22,7 +22,7 @@ participant:
       search: startswith
     height:
       name: p50_i
-      search: matches
+      search: startswith
     bmi:
       name: p21001_i
       search: startswith

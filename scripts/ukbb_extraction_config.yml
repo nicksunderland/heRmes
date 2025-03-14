@@ -6,11 +6,11 @@ participant:
       name: eid
       search: matches
     assessment_date:
-      name: p53_i0
-      search: matches
+      name: p53_i
+      search: startswith
     assessment_age:
-      name: p21023
-      search: matches
+      name: p21003_i
+      search: startswith
     reason_lost_fu:
       name: p190
       search: matches

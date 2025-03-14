@@ -56,6 +56,12 @@ participant:
     self_rep_med:
       name: p20003
       search: startswith
+    creatinine:
+      name: p30700
+      search: startswith
+    cystatin_c:
+      name: p30720
+      search: startswith
       
 
 hesin:

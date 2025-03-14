@@ -1,34 +1,34 @@
 #' @title filter_data_dict
 #'
 #' @param dict_path, str, path to the dataset.data_dictionary.csv
-#' @param codes_str, list, list of lists representing UKBB column name, table entity, and search strategy list(name=, entity=, search=). 
+#' @param codes_str, list, list of lists representing UKBB column name, table entity, and search strategy list(name=, entity=, search=).
 #'   name must be a valid column name in the data_dictionary, entity a valid entity in the entity dictionary, and search either "matches"
 #'   for exact matches, or starts with to match cases of multiple instances (repeated measures usually)
 #'
-#' @returns a filtered subset of the data_dictionary 
+#' @returns a filtered subset of the data_dictionary
 #'
 filter_data_dict <- function(dict_path, codes_struc) {
-    
+
     data_dict <- fread(dict_path)
-    
+
     d <- lapply(codes_struc, function(x) {
-        
+
         d0 <- data.table()
         if (x$search=="matches") {
             d0 <- data_dict[entity==x$entity & name==x$name]
         } else if (x$search=="startswith") {
             d0 <- data_dict[entity==x$entity & grepl(paste0("^", x$name), name)]
         }
-        
+
         if (nrow(d0)==0) {
             cat(glue("Code [{x$name}] not found in data dictionary\n"))
             stop("Code not found error")
         }
-        
+
         d0
-        
+
     }) |> rbindlist(idcol = "item")
-    
+
     return(d)
 }
 
@@ -36,30 +36,67 @@ filter_data_dict <- function(dict_path, codes_struc) {
 
 #' @title extract_data
 #'
-#' @param dataset, str, a valid dataset id - format "{projectid}:{recordid}" 
+#' @param dataset, str, a valid dataset id - format "{projectid}:{recordid}"
 #' @param fields, str, vector of UK-BB format column names e.g. p31
 #' @param entity, str, string of length one - the entity to extract from e.g. participants
-#' @param output, str, the base name for the output file, no extension
+#' @param output, str, output path to save to, the extension will be used to determine the output format (options .csv or .tsv)
+#' @param header_style, str, "FIELD-NAME"(default),"FIELD-TITLE","NONE", or "UKB-FORMAT"
+#' @param coding_option, str, "RAW"(default),"REPLACE","EXCLUDE"
+#' @param verbose, logical, whether to print output
 #'
 #' @returns NULL side effect is starting a table-exporter job which outputs the file to /hermes3_data directory in the RAP
 #'
 #' @importFrom glue glue
-extract_data <- function(dataset, fields, entity, output) {
-    
-    field_str <- paste0('-ifield_names="', fields, '"', collapse=" ") 
-    
-    cmd <- glue::glue(
-      "dx run table-exporter ",
-      "-idataset_or_cohort_or_dashboard={dataset} ",
-      "-ioutput={output_name} ",
-      "-ioutput_format=TSV ",
-      "-iheader_style=FIELD-NAME ",
-      "-icoding_option=RAW ",
-      "{field_str} ",
-      "-ientity={entity} ",
-      "--destination {output_dir}/"
-    )    
+#' @importFrom tools file_ext file_path_sans_ext
+#'
+extract_data <- function(dataset, fields, entity, output, header_style="FIELD-NAME", coding_option="RAW", verbose=TRUE) {
 
-    o <- system(cmd, intern = TRUE)
+  # check options
+  header_style <- match.arg(header_style, choices = c("FIELD-NAME","FIELD-TITLE","NONE","UKB-FORMAT"))
+  coding_option <- match.arg(coding_option, choices = c("RAW","REPLACE","EXCLUDE"))
+
+  # flag is gzip requested
+  if (grepl("\\.gz$", output)) {
+    gz <- TRUE
+    output <- sub("\\.gz", "", output)
+  } else {
+    gz <- FALSE
+  }
+
+  # validate the extension
+  if (tools::file_ext(output) == "csv") {
+    output_format <- "CSV"
+  } else if (tools::file_ext(output) == "tsv") {
+    output_format <- "TSV"
+  } else {
+    stop("Invalid file extension. Only .csv or .tsv are allowed.")
+  }
+
+  # extract base name (without extension) and directory
+  output_name <- tools::file_path_sans_ext(basename(output))
+  output_dir <- dirname(output)
+
+  # string for the fields
+  field_str <- paste0('-ifield_names="', fields, '"', collapse=" ")
+
+  # command to execute
+  cmd <- glue::glue(
+    "dx run table-exporter ",
+    "-idataset_or_cohort_or_dashboard={dataset} ",
+    "-ioutput={output_name} ",
+    "-ioutput_format={output_format} ",
+    "-iheader_style={header_style} ",
+    "-icoding_option={coding_option} ",
+    "{field_str} ",
+    "-ientity={entity} ",
+    "--destination {output_dir}/"
+  )
+
+  # run
+  o <- system(cmd, intern = TRUE)
+
+  # print output
+  if (verbose) {
     cat(o, sep = "\n")
+  }
 }

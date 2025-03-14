@@ -6,7 +6,7 @@ participant:
       name: eid
       search: matches
     assessment_date:
-      name: p53
+      name: p53_i0
       search: matches
     assessment_age:
       name: p21023

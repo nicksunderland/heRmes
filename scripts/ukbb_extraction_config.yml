@@ -8,14 +8,14 @@ participant:
     assessment_date:
       name: p53
       search: matches
+    assessment_age:
+      name: p21023
+      search: matches
     reason_lost_fu:
       name: p190
       search: matches
     sex:
       name: p31
-      search: matches
-    age:
-      name: p21022
       search: matches
     sample_collection_date:
       name: p21842

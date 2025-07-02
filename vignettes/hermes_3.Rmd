@@ -53,12 +53,12 @@ dat <- dat[Concensus==1]# & Source != "SNOMED"
 dat[, agreement := rowSums(.SD)/4, .SDcols = c("QW","RTL","NS","LL")]
 dat[meta, Concept := i.Title, on="concept"]
 
-fwrite(dat, "/Users/xx20081/git/heRmes/vignettes/figures/hermes_3_codes_dat.tsv", sep="\t")
-fwrite(meta, "/Users/xx20081/git/heRmes/vignettes/figures/hermes_3_metadata_dat.tsv", sep="\t")
+fwrite(dat, "/Users/xx20081/git/heRmes/vignettes/figures/hermes_3_codes_dat_20250702.tsv", sep="\t")
+fwrite(meta, "/Users/xx20081/git/heRmes/vignettes/figures/hermes_3_metadata_dat_20250702.tsv", sep="\t")
 
-fwrite(dat[, .(Concept, Code, Source, Description)], "/Users/xx20081/git/heRmes/inst/extdata/hermes_3_codes/hermes_3_codes.tsv", sep="\t")
+fwrite(dat[, .(Concept, Code, Source, Description)], "/Users/xx20081/git/heRmes/inst/extdata/hermes_3_codes/hermes_3_codes_20250702.tsv", sep="\t")
 
-fwrite(meta[, .(Concept=Title, Definition, Reference, Terminologies, `Search expressions`)], "/Users/xx20081/git/heRmes/inst/extdata/hermes_3_codes/hermes_3_metadata.tsv", sep="\t")
+fwrite(meta[, .(Concept=Title, Definition, Reference, Terminologies, `Search expressions`)], "/Users/xx20081/git/heRmes/inst/extdata/hermes_3_codes/hermes_3_metadata_20250702.tsv", sep="\t")
 
 ```
 

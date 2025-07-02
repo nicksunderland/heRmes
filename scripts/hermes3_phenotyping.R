@@ -15,7 +15,7 @@ oper      <- fread(file.path(data_dir, "data_hesin_oper.tsv"))
 self_oper <- fread(file.path(data_dir, "data_self_reported_procedures.tsv"))
 
 # read the codes
-codes <- fread(system.file("extdata", "hermes_3_codes", "hermes_3_codes.tsv", package = "heRmes"))
+codes <- fread(system.file("extdata", "hermes_3_codes", "hermes_3_codes_20250702.tsv", package = "heRmes"))
 self_reported_codes <- list(
   list(name = "Heart Failure",                      code = "1076", code_type = "ukbb_self_reported_illness"),
   list(name = "Myocardial infarction",              code = "1075", code_type = "ukbb_self_reported_illness"),
@@ -167,7 +167,7 @@ for (g in concepts) {
 
   col_name <- tolower(gsub(" ", "_", gsub("[()]","",g)))
   cohort[combined[Concept == g], paste0(col_name, c("", "_first_date")) := list(TRUE, as.Date(i.date)), on = "eid"]
-  cohort[is.na(get(col_name)), (col_name) := FALSE]
+  cohort[is.na(base::get(col_name)), (col_name) := FALSE]
 
 }
 
@@ -257,7 +257,7 @@ summary
 
 # write summary
 fwrite(dcast(summary, name ~ sex, value.var = "N"),
-       file = file.path(Sys.getenv("DATA_DIR"), "ukbb_81499_20241114", "hermes3_phenotype_summary.tsv"),
+       file = file.path(Sys.getenv("DATA_DIR"), "ukbb_81499_20241114", "new_hermes3_phenotype_summary.tsv"),
        sep  = "\t")
 
 

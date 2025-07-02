@@ -194,7 +194,27 @@ olink_instance_0:
     glp1r:
       name: glp1r
       search: matches
-
+    adamts1:
+      name: adamts1
+      search: matches
+    pdzk1:
+      name: pdzk1
+      search: matches
+    lat2:
+      name: lat2
+      search: matches
+    lat2:
+      name: lat2
+      search: matches
+    serpinf2:
+      name: serpinf2
+      search: matches
+    pdcd6:
+      name: pdcd6
+      search: matches
+    jpt2:
+      name: jpt2
+      search: matches
 
 olink_instance_2:
   output: hermes3_data/data_olink_instance_2.tsv
@@ -206,7 +226,27 @@ olink_instance_2:
     ntprobnp:
       name: ntprobnp
       search: matches
-
+    adamts1:
+      name: adamts1
+      search: matches
+    pdzk1:
+      name: pdzk1
+      search: matches
+    lat2:
+      name: lat2
+      search: matches
+    lat2:
+      name: lat2
+      search: matches
+    serpinf2:
+      name: serpinf2
+      search: matches
+    pdcd6:
+      name: pdcd6
+      search: matches
+    jpt2:
+      name: jpt2
+      search: matches
 
 olink_instance_3:
   output: hermes3_data/data_olink_instance_3.tsv
@@ -218,4 +258,24 @@ olink_instance_3:
     ntprobnp:
       name: ntprobnp
       search: matches
-
+    adamts1:
+      name: adamts1
+      search: matches
+    pdzk1:
+      name: pdzk1
+      search: matches
+    lat2:
+      name: lat2
+      search: matches
+    lat2:
+      name: lat2
+      search: matches
+    serpinf2:
+      name: serpinf2
+      search: matches
+    pdcd6:
+      name: pdcd6
+      search: matches
+    jpt2:
+      name: jpt2
+      search: matches
